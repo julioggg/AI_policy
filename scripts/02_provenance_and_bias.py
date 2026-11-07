@@ -30,8 +30,8 @@ SELECT_COLS = ["openalex_id", "doi", "publication_year", "disciplinary_area",
                "status", "text_length", "ai_decision", "ft_decision"]
 COMPARE_COLS = ["publication_year", "disciplinary_area", "policy_dimension",
                 "type", "source_type", "is_oa", "oa_status"]
-INCLUDE = {"include", "included", "retain", "retained", "keep", "yes"}
-EXCLUDE = {"exclude", "excluded", "reject", "rejected", "no"}
+INCLUDE = {"include", "included", "retain", "retained", "keep", "yes", "include_core", "include_policy", "include_context"}
+EXCLUDE = {"exclude", "excluded", "reject", "rejected", "no", "exclude_fulltext"}
 
 
 def read_table(file):
@@ -194,6 +194,7 @@ def main():
     result = {"created_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
               "stage_summaries":details,"transitions":transitions,
               "fulltext_manifest":manifest_result,
+              "screening_inclusion_rule":"include_core + include_policy + include_context",
               "representativeness_screened_included_vs_fulltext":representative,
               "embeddings":embeddings,"kmeans_existing_quality":quality,
               "cautions":["Descriptive comparison is not causal inference.",
