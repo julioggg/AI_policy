@@ -142,3 +142,42 @@ git push origin main
 Esta fase contrasta los identificadores únicos y DOI entre captura original y corpus deduplicado; investiga los 786 IDs no retenidos, recoge las fechas de recuperación, lista únicamente cadenas de consulta simples verificadas como no sensibles y compara los manifiestos de 5000 intentos, descargas exitosas y extracciones. También confirma los ocho registros no elegibles y registra una aproximación (por DOI) de la selección de los 5000 documentos.
 
 Los resultados son descriptivos; un DOI coincidente no prueba un algoritmo de deduplicación y la presencia de 5000 registros en un manifiesto no justifica por sí misma el criterio de prioridad. Es indispensable cotejar los scripts originales antes de afirmar que está reconstruido el protocolo sistemático. El proyecto original permanece inalterado.
+
+
+## Fase 7 — Reglas originales y colisiones PDF
+
+~~~bash
+cd "$HOME/AI_policy"
+git pull --ff-only
+python -m py_compile scripts/07_original_rules_and_collisions.py
+python scripts/07_original_rules_and_collisions.py \
+  --project "$HOME/ai_policy_he" \
+  --out reports/phase07
+git add reports/phase07
+git diff --cached --quiet || git commit -m "Phase 7: original filter rules and PDF collisions"
+git push origin main
+~~~
+
+Esta fase inspecciona nombres de operaciones y parámetros permitidos de los scripts originales mediante AST, sin copiar el código; compara los 786 registros excluidos, audita la ruta PDF duplicada, y separa 3644 aceptaciones explícitas, cuatro decisiones dudosas y ocho exclusiones. Requiere pandas y pyarrow.
+
+## Fase 8 — Comparación pareada de representaciones semánticas
+
+~~~bash
+cd "$HOME/AI_policy"
+git pull --ff-only
+python -m py_compile scripts/08_abstract_fulltext_comparison.py
+python scripts/08_abstract_fulltext_comparison.py \
+  --project "$HOME/ai_policy_he" \
+  --out reports/phase08 \
+  --private-cache "$HOME/ai_policy_comparison_private" \
+  --threads 8 --batch-size 64
+git add reports/phase08
+git diff --cached --quiet || git commit -m "Phase 8: abstract vs fulltext semantic comparison"
+git push origin main
+~~~
+
+La fase 8 reutiliza embeddings de texto completo y codifica títulos y resúmenes en CEDIA, en modo sin conexión con el mismo modelo MiniLM. Valida primero la alineación de una muestra del campo topic_text; si la verificación falla o no se encuentra el modelo en la caché local, deja un informe bloqueado sin asumir comparabilidad. Si pasa, calcula concordancia entre particiones k=12, 18 y 25, silhouettes de coseno y contraste exploratorio de etiquetas automáticas.
+
+Las etiquetas policy_dimension y disciplinary_area no son ground truth independiente. Los resultados no sustituyen codificación humana ni prueban superioridad de una modalidad.
+
+El caché de embeddings recién calculados se guarda fuera del repositorio público en $HOME/ai_policy_comparison_private. Solo informes agregados van a GitHub. Requiere numpy, pandas, pyarrow, scikit-learn, sentence-transformers y torch, preferentemente del mismo entorno usado en el proyecto original.
