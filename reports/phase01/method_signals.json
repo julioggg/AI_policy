@@ -1,0 +1,1446 @@
+[
+  {
+    "path": "scripts/21b_zip_figures_v3.py",
+    "signals": {
+      "reproducibility": 2
+    },
+    "line_numbers": {
+      "reproducibility": [
+        3,
+        24
+      ]
+    },
+    "numeric_parameters": {},
+    "candidate_model_identifiers": []
+  },
+  {
+    "path": "scripts/01_collect_openalex.py",
+    "signals": {
+      "openalex_search": 17,
+      "filter_and_dedup": 1
+    },
+    "line_numbers": {
+      "openalex_search": [
+        12,
+        22,
+        23,
+        24,
+        27,
+        82,
+        113,
+        163,
+        178,
+        181,
+        182,
+        184,
+        187,
+        190,
+        193
+      ],
+      "filter_and_dedup": [
+        178
+      ]
+    },
+    "numeric_parameters": {},
+    "candidate_model_identifiers": []
+  },
+  {
+    "path": "scripts/04_refine_q1_outputs.py",
+    "signals": {
+      "openalex_search": 6,
+      "classification": 30,
+      "filter_and_dedup": 10,
+      "screening": 3,
+      "embedding": 2
+    },
+    "line_numbers": {
+      "openalex_search": [
+        16,
+        120,
+        121,
+        264,
+        284,
+        285
+      ],
+      "classification": [
+        19,
+        126,
+        132,
+        133,
+        134,
+        135,
+        138,
+        140,
+        149,
+        150,
+        201,
+        214,
+        215,
+        219,
+        220
+      ],
+      "filter_and_dedup": [
+        72,
+        101,
+        106,
+        117,
+        120,
+        121,
+        126,
+        264,
+        284,
+        285
+      ],
+      "screening": [
+        123,
+        129,
+        288
+      ],
+      "embedding": [
+        252,
+        264
+      ]
+    },
+    "numeric_parameters": {},
+    "candidate_model_identifiers": []
+  },
+  {
+    "path": "scripts/02_prepare_policy_corpus.py",
+    "signals": {
+      "openalex_search": 3,
+      "filter_and_dedup": 1,
+      "classification": 12,
+      "screening": 2
+    },
+    "line_numbers": {
+      "openalex_search": [
+        7,
+        99,
+        100
+      ],
+      "filter_and_dedup": [
+        35
+      ],
+      "classification": [
+        48,
+        76,
+        93,
+        94,
+        102,
+        103,
+        104,
+        108,
+        111,
+        112,
+        118,
+        120
+      ],
+      "screening": [
+        84,
+        96
+      ]
+    },
+    "numeric_parameters": {},
+    "candidate_model_identifiers": []
+  },
+  {
+    "path": "scripts/05_article_ready_package.py",
+    "signals": {
+      "openalex_search": 8,
+      "filter_and_dedup": 38,
+      "classification": 32,
+      "screening": 5,
+      "embedding": 2,
+      "kmeans": 1
+    },
+    "line_numbers": {
+      "openalex_search": [
+        16,
+        71,
+        72,
+        172,
+        200,
+        204,
+        239,
+        258
+      ],
+      "filter_and_dedup": [
+        16,
+        67,
+        71,
+        72,
+        93,
+        94,
+        95,
+        96,
+        100,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109
+      ],
+      "classification": [
+        18,
+        83,
+        84,
+        85,
+        88,
+        89,
+        91,
+        94,
+        100,
+        115,
+        127,
+        128,
+        130,
+        137,
+        138
+      ],
+      "screening": [
+        104,
+        111,
+        112,
+        245,
+        259
+      ],
+      "embedding": [
+        200,
+        208
+      ],
+      "kmeans": [
+        208
+      ]
+    },
+    "numeric_parameters": {},
+    "candidate_model_identifiers": []
+  },
+  {
+    "path": "scripts/07_ai_assisted_screening.py",
+    "signals": {
+      "embedding": 8,
+      "openalex_search": 1,
+      "filter_and_dedup": 9,
+      "classification": 5,
+      "screening": 13,
+      "fulltext_selection": 1
+    },
+    "line_numbers": {
+      "embedding": [
+        6,
+        106,
+        114,
+        117,
+        118,
+        119,
+        120,
+        240
+      ],
+      "openalex_search": [
+        19
+      ],
+      "filter_and_dedup": [
+        19,
+        25,
+        45,
+        94,
+        96,
+        201,
+        223,
+        240,
+        247
+      ],
+      "classification": [
+        23,
+        40,
+        75,
+        202,
+        244
+      ],
+      "screening": [
+        47,
+        55,
+        108,
+        192,
+        193,
+        225,
+        227,
+        236,
+        238,
+        240,
+        249,
+        259,
+        261
+      ],
+      "fulltext_selection": [
+        227
+      ]
+    },
+    "numeric_parameters": {
+      "batch_size": [
+        "256"
+      ]
+    },
+    "candidate_model_identifiers": [
+      "sentence-transformers/all-MiniLM-L6-v2"
+    ]
+  },
+  {
+    "path": "scripts/08_advanced_bibliometrics.py",
+    "signals": {
+      "screening": 3,
+      "classification": 6,
+      "filter_and_dedup": 1
+    },
+    "line_numbers": {
+      "screening": [
+        26,
+        124,
+        283
+      ],
+      "classification": [
+        41,
+        42,
+        98,
+        115,
+        288,
+        292
+      ],
+      "filter_and_dedup": [
+        282
+      ]
+    },
+    "numeric_parameters": {},
+    "candidate_model_identifiers": []
+  },
+  {
+    "path": "scripts/03_embeddings_and_clusters.py",
+    "signals": {
+      "embedding": 9,
+      "kmeans": 6,
+      "openalex_search": 4,
+      "fulltext_selection": 2,
+      "classification": 4
+    },
+    "line_numbers": {
+      "embedding": [
+        5,
+        39,
+        40,
+        41,
+        51,
+        53,
+        56,
+        100,
+        109
+      ],
+      "kmeans": [
+        6,
+        60,
+        61,
+        62,
+        63,
+        65
+      ],
+      "openalex_search": [
+        12,
+        57,
+        70,
+        71
+      ],
+      "fulltext_selection": [
+        26,
+        80
+      ],
+      "classification": [
+        102,
+        103,
+        104,
+        105
+      ]
+    },
+    "numeric_parameters": {
+      "batch_size": [
+        "256",
+        "4096"
+      ],
+      "n_clusters": [
+        "18"
+      ],
+      "random_state": [
+        "42"
+      ]
+    },
+    "candidate_model_identifiers": [
+      "sentence-transformers/all-MiniLM-L6-v2"
+    ]
+  },
+  {
+    "path": "scripts/10_download_open_access_pdfs.py",
+    "signals": {
+      "reproducibility": 7,
+      "fulltext_selection": 6,
+      "screening": 1,
+      "classification": 1
+    },
+    "line_numbers": {
+      "reproducibility": [
+        4,
+        89,
+        160,
+        161,
+        163,
+        170,
+        172
+      ],
+      "fulltext_selection": [
+        12,
+        84,
+        161,
+        164,
+        172,
+        173
+      ],
+      "screening": [
+        20
+      ],
+      "classification": [
+        24
+      ]
+    },
+    "numeric_parameters": {},
+    "candidate_model_identifiers": []
+  },
+  {
+    "path": "scripts/11_extract_fulltext_from_pdfs.py",
+    "signals": {
+      "fulltext_selection": 8,
+      "reproducibility": 5
+    },
+    "line_numbers": {
+      "fulltext_selection": [
+        10,
+        13,
+        38,
+        50,
+        58,
+        71,
+        72,
+        78
+      ],
+      "reproducibility": [
+        13,
+        14,
+        58,
+        62,
+        72
+      ]
+    },
+    "numeric_parameters": {},
+    "candidate_model_identifiers": []
+  },
+  {
+    "path": "scripts/13_fulltext_figures_and_tables.py",
+    "signals": {
+      "screening": 4,
+      "fulltext_selection": 11,
+      "classification": 2
+    },
+    "line_numbers": {
+      "screening": [
+        15,
+        26,
+        28,
+        75
+      ],
+      "fulltext_selection": [
+        15,
+        16,
+        17,
+        28,
+        40,
+        56,
+        68,
+        75,
+        76,
+        78,
+        85
+      ],
+      "classification": [
+        55,
+        63
+      ]
+    },
+    "numeric_parameters": {},
+    "candidate_model_identifiers": []
+  },
+  {
+    "path": "scripts/15_advanced_statistical_models.py",
+    "signals": {
+      "screening": 2,
+      "fulltext_selection": 3,
+      "classification": 43
+    },
+    "line_numbers": {
+      "screening": [
+        18,
+        299
+      ],
+      "fulltext_selection": [
+        18,
+        21,
+        22
+      ],
+      "classification": [
+        63,
+        72,
+        74,
+        82,
+        94,
+        97,
+        98,
+        107,
+        108,
+        111,
+        126,
+        130,
+        131,
+        148,
+        149
+      ]
+    },
+    "numeric_parameters": {},
+    "candidate_model_identifiers": []
+  },
+  {
+    "path": "scripts/14_finalize_meta_policy_outputs.py",
+    "signals": {
+      "screening": 6,
+      "fulltext_selection": 13,
+      "classification": 29,
+      "filter_and_dedup": 2,
+      "openalex_search": 1
+    },
+    "line_numbers": {
+      "screening": [
+        17,
+        147,
+        255,
+        288,
+        291,
+        298
+      ],
+      "fulltext_selection": [
+        17,
+        18,
+        19,
+        21,
+        35,
+        104,
+        125,
+        147,
+        191,
+        203,
+        253,
+        280,
+        301
+      ],
+      "classification": [
+        35,
+        69,
+        80,
+        82,
+        96,
+        112,
+        113,
+        114,
+        116,
+        117,
+        119,
+        120,
+        132,
+        134,
+        154
+      ],
+      "filter_and_dedup": [
+        253,
+        287
+      ],
+      "openalex_search": [
+        286
+      ]
+    },
+    "numeric_parameters": {},
+    "candidate_model_identifiers": []
+  },
+  {
+    "path": "scripts/22_create_table_zips_by_article.py",
+    "signals": {
+      "reproducibility": 9,
+      "classification": 35,
+      "fulltext_selection": 17,
+      "screening": 6,
+      "filter_and_dedup": 4,
+      "kmeans": 19,
+      "embedding": 1,
+      "umap": 2,
+      "hdbscan": 2
+    },
+    "line_numbers": {
+      "reproducibility": [
+        3,
+        29,
+        166,
+        189,
+        197,
+        216,
+        219,
+        222,
+        230
+      ],
+      "classification": [
+        36,
+        40,
+        41,
+        42,
+        48,
+        68,
+        70,
+        72,
+        86,
+        95,
+        96,
+        105,
+        108,
+        109,
+        113
+      ],
+      "fulltext_selection": [
+        38,
+        43,
+        44,
+        45,
+        46,
+        83,
+        91,
+        110,
+        112,
+        119,
+        123,
+        125,
+        126,
+        127,
+        128
+      ],
+      "screening": [
+        45,
+        50,
+        51,
+        52,
+        53,
+        111
+      ],
+      "filter_and_dedup": [
+        47,
+        48,
+        49,
+        107
+      ],
+      "kmeans": [
+        74,
+        75,
+        121,
+        124,
+        127,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140
+      ],
+      "embedding": [
+        121
+      ],
+      "umap": [
+        121,
+        125
+      ],
+      "hdbscan": [
+        121,
+        125
+      ]
+    },
+    "numeric_parameters": {},
+    "candidate_model_identifiers": []
+  },
+  {
+    "path": "scripts/23_create_figure1_evidence_flow.py",
+    "signals": {
+      "openalex_search": 1,
+      "filter_and_dedup": 2,
+      "screening": 1
+    },
+    "line_numbers": {
+      "openalex_search": [
+        10
+      ],
+      "filter_and_dedup": [
+        11,
+        13
+      ],
+      "screening": [
+        92
+      ]
+    },
+    "numeric_parameters": {},
+    "candidate_model_identifiers": []
+  },
+  {
+    "path": "scripts/17_create_future_article_packages.py",
+    "signals": {
+      "reproducibility": 2,
+      "fulltext_selection": 20,
+      "classification": 16,
+      "filter_and_dedup": 1,
+      "screening": 1,
+      "embedding": 1,
+      "umap": 3,
+      "hdbscan": 2
+    },
+    "line_numbers": {
+      "reproducibility": [
+        4,
+        152
+      ],
+      "fulltext_selection": [
+        45,
+        47,
+        54,
+        55,
+        84,
+        91,
+        109,
+        112,
+        115,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124
+      ],
+      "classification": [
+        46,
+        48,
+        50,
+        51,
+        52,
+        86,
+        94,
+        106,
+        107,
+        110,
+        111,
+        122,
+        123,
+        124,
+        127
+      ],
+      "filter_and_dedup": [
+        105
+      ],
+      "screening": [
+        108
+      ],
+      "embedding": [
+        117
+      ],
+      "umap": [
+        117,
+        120,
+        125
+      ],
+      "hdbscan": [
+        117,
+        120
+      ]
+    },
+    "numeric_parameters": {},
+    "candidate_model_identifiers": []
+  },
+  {
+    "path": "scripts/20_publication_grade_figure_suite.py",
+    "signals": {
+      "screening": 1,
+      "fulltext_selection": 5,
+      "classification": 91,
+      "kmeans": 14,
+      "reproducibility": 5
+    },
+    "line_numbers": {
+      "screening": [
+        170
+      ],
+      "fulltext_selection": [
+        170,
+        172,
+        173,
+        177,
+        188
+      ],
+      "classification": [
+        171,
+        174,
+        175,
+        183,
+        184,
+        187,
+        190,
+        191,
+        197,
+        200,
+        201,
+        202,
+        206,
+        207,
+        208
+      ],
+      "kmeans": [
+        188,
+        189,
+        190,
+        191,
+        561,
+        564,
+        566,
+        574,
+        575,
+        586,
+        605,
+        612,
+        621,
+        630
+      ],
+      "reproducibility": [
+        709,
+        715,
+        716,
+        720,
+        721
+      ]
+    },
+    "numeric_parameters": {},
+    "candidate_model_identifiers": []
+  },
+  {
+    "path": "scripts/20b_publication_figures_no_chrome.py",
+    "signals": {
+      "fulltext_selection": 11,
+      "classification": 64,
+      "kmeans": 13,
+      "screening": 1,
+      "reproducibility": 6
+    },
+    "line_numbers": {
+      "fulltext_selection": [
+        29,
+        246,
+        248,
+        260,
+        264,
+        400,
+        416,
+        421,
+        422,
+        425,
+        427
+      ],
+      "classification": [
+        80,
+        81,
+        82,
+        245,
+        247,
+        249,
+        250,
+        256,
+        259,
+        262,
+        263,
+        268,
+        269,
+        270,
+        271
+      ],
+      "kmeans": [
+        260,
+        261,
+        262,
+        263,
+        390,
+        392,
+        394,
+        396,
+        408,
+        421,
+        422,
+        425,
+        427
+      ],
+      "screening": [
+        264
+      ],
+      "reproducibility": [
+        468,
+        473,
+        474,
+        478,
+        479,
+        480
+      ]
+    },
+    "numeric_parameters": {},
+    "candidate_model_identifiers": []
+  },
+  {
+    "path": "scripts/06_screening_workbook_with_abstracts.py",
+    "signals": {
+      "openalex_search": 1,
+      "filter_and_dedup": 7,
+      "classification": 7,
+      "screening": 8
+    },
+    "line_numbers": {
+      "openalex_search": [
+        13
+      ],
+      "filter_and_dedup": [
+        13,
+        38,
+        53,
+        93,
+        114,
+        115,
+        116
+      ],
+      "classification": [
+        15,
+        54,
+        55,
+        77,
+        78,
+        79,
+        106
+      ],
+      "screening": [
+        44,
+        69,
+        81,
+        84,
+        93,
+        97,
+        136,
+        139
+      ]
+    },
+    "numeric_parameters": {},
+    "candidate_model_identifiers": []
+  },
+  {
+    "path": "scripts/12_fulltext_screening_and_extraction.py",
+    "signals": {
+      "embedding": 6,
+      "fulltext_selection": 20,
+      "screening": 16,
+      "filter_and_dedup": 3,
+      "classification": 15
+    },
+    "line_numbers": {
+      "embedding": [
+        6,
+        129,
+        136,
+        139,
+        140,
+        141
+      ],
+      "fulltext_selection": [
+        12,
+        20,
+        49,
+        89,
+        105,
+        171,
+        173,
+        177,
+        179,
+        180,
+        278,
+        279,
+        280,
+        282,
+        284
+      ],
+      "screening": [
+        19,
+        75,
+        88,
+        262,
+        274,
+        278,
+        282,
+        284,
+        287,
+        288,
+        289,
+        293,
+        295,
+        303,
+        316
+      ],
+      "filter_and_dedup": [
+        27,
+        120,
+        121
+      ],
+      "classification": [
+        76,
+        77,
+        78,
+        108,
+        111,
+        193,
+        194,
+        195,
+        226,
+        227,
+        243,
+        253,
+        254,
+        265,
+        266
+      ]
+    },
+    "numeric_parameters": {
+      "batch_size": [
+        "256"
+      ]
+    },
+    "candidate_model_identifiers": [
+      "sentence-transformers/all-MiniLM-L6-v2"
+    ]
+  },
+  {
+    "path": "scripts/16_fulltext_topic_modeling_umap_hdbscan.py",
+    "signals": {
+      "embedding": 5,
+      "umap": 14,
+      "hdbscan": 7,
+      "screening": 2,
+      "fulltext_selection": 19,
+      "classification": 20,
+      "kmeans": 1
+    },
+    "line_numbers": {
+      "embedding": [
+        6,
+        59,
+        66,
+        69,
+        207
+      ],
+      "umap": [
+        7,
+        71,
+        72,
+        74,
+        91,
+        92,
+        126,
+        142,
+        143,
+        144,
+        147,
+        195,
+        207,
+        218
+      ],
+      "hdbscan": [
+        8,
+        81,
+        82,
+        83,
+        126,
+        207,
+        218
+      ],
+      "screening": [
+        21,
+        22
+      ],
+      "fulltext_selection": [
+        21,
+        22,
+        69,
+        126,
+        128,
+        129,
+        135,
+        136,
+        137,
+        147,
+        158,
+        175,
+        188,
+        191,
+        198
+      ],
+      "classification": [
+        29,
+        39,
+        119,
+        120,
+        121,
+        131,
+        133,
+        135,
+        136,
+        137,
+        161,
+        162,
+        170,
+        175,
+        188
+      ],
+      "kmeans": [
+        76
+      ]
+    },
+    "numeric_parameters": {
+      "batch_size": [
+        "256"
+      ],
+      "n_neighbors": [
+        "25"
+      ],
+      "n_components": [
+        "2"
+      ],
+      "min_dist": [
+        "0.05"
+      ],
+      "random_state": [
+        "42"
+      ],
+      "min_samples": [
+        "10"
+      ]
+    },
+    "candidate_model_identifiers": [
+      "sentence-transformers/all-MiniLM-L6-v2"
+    ]
+  },
+  {
+    "path": "scripts/18_fulltext_topic_modeling_kmeans_robust.py",
+    "signals": {
+      "kmeans": 34,
+      "quality": 7,
+      "fulltext_selection": 6,
+      "embedding": 1,
+      "classification": 13,
+      "hdbscan": 2
+    },
+    "line_numbers": {
+      "kmeans": [
+        6,
+        36,
+        64,
+        65,
+        66,
+        67,
+        69,
+        72,
+        76,
+        99,
+        123,
+        125,
+        126,
+        127,
+        134
+      ],
+      "quality": [
+        8,
+        76,
+        81,
+        86,
+        92,
+        93,
+        94
+      ],
+      "fulltext_selection": [
+        20,
+        21,
+        157,
+        158,
+        170,
+        183
+      ],
+      "embedding": [
+        21
+      ],
+      "classification": [
+        27,
+        28,
+        29,
+        101,
+        102,
+        114,
+        115,
+        116,
+        125,
+        126,
+        127,
+        167,
+        168
+      ],
+      "hdbscan": [
+        176,
+        188
+      ]
+    },
+    "numeric_parameters": {
+      "n_components": [
+        "2"
+      ],
+      "random_state": [
+        "42"
+      ],
+      "batch_size": [
+        "2048"
+      ]
+    },
+    "candidate_model_identifiers": []
+  },
+  {
+    "path": "scripts/09_evidence_synthesis_and_meta_candidates.py",
+    "signals": {
+      "screening": 3,
+      "classification": 17,
+      "openalex_search": 1
+    },
+    "line_numbers": {
+      "screening": [
+        14,
+        150,
+        158
+      ],
+      "classification": [
+        18,
+        37,
+        38,
+        39,
+        44,
+        45,
+        51,
+        54,
+        55,
+        65,
+        72,
+        76,
+        83,
+        93,
+        107
+      ],
+      "openalex_search": [
+        158
+      ]
+    },
+    "numeric_parameters": {},
+    "candidate_model_identifiers": []
+  },
+  {
+    "path": "scripts/06_screening_workbook_with_abstracts_clean.py",
+    "signals": {
+      "openalex_search": 1,
+      "filter_and_dedup": 8,
+      "classification": 7,
+      "screening": 7
+    },
+    "line_numbers": {
+      "openalex_search": [
+        14
+      ],
+      "filter_and_dedup": [
+        14,
+        20,
+        79,
+        98,
+        134,
+        151,
+        152,
+        153
+      ],
+      "classification": [
+        18,
+        99,
+        100,
+        118,
+        119,
+        120,
+        143
+      ],
+      "screening": [
+        84,
+        89,
+        122,
+        125,
+        134,
+        173,
+        176
+      ]
+    },
+    "numeric_parameters": {},
+    "candidate_model_identifiers": []
+  },
+  {
+    "path": "scripts/19_create_clean_article_zips_and_master_summary.py",
+    "signals": {
+      "reproducibility": 6,
+      "openalex_search": 7,
+      "embedding": 3,
+      "filter_and_dedup": 7,
+      "screening": 22,
+      "fulltext_selection": 42,
+      "kmeans": 18,
+      "quality": 3,
+      "classification": 21,
+      "umap": 4,
+      "hdbscan": 3
+    },
+    "line_numbers": {
+      "reproducibility": [
+        3,
+        389,
+        409,
+        426,
+        431,
+        449
+      ],
+      "openalex_search": [
+        75,
+        98,
+        99,
+        100,
+        290,
+        336,
+        379
+      ],
+      "embedding": [
+        77,
+        105,
+        231
+      ],
+      "filter_and_dedup": [
+        79,
+        107,
+        108,
+        109,
+        217,
+        290,
+        336
+      ],
+      "screening": [
+        80,
+        83,
+        111,
+        112,
+        113,
+        114,
+        115,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        162
+      ],
+      "fulltext_selection": [
+        82,
+        83,
+        85,
+        120,
+        121,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        137,
+        138,
+        139
+      ],
+      "kmeans": [
+        85,
+        137,
+        138,
+        139,
+        231,
+        234,
+        237,
+        238,
+        239,
+        244,
+        245,
+        246,
+        247,
+        248,
+        249
+      ],
+      "quality": [
+        137,
+        138,
+        139
+      ],
+      "classification": [
+        147,
+        152,
+        153,
+        155,
+        157,
+        158,
+        195,
+        204,
+        218,
+        219,
+        222,
+        223,
+        242,
+        243,
+        256
+      ],
+      "umap": [
+        231,
+        235,
+        240,
+        252
+      ],
+      "hdbscan": [
+        231,
+        235,
+        252
+      ]
+    },
+    "numeric_parameters": {},
+    "candidate_model_identifiers": []
+  }
+]

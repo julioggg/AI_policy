@@ -1,0 +1,3432 @@
+{
+  "audit_utc": "2026-11-07T20:23:52.376405+00:00",
+  "project_label": "ai_policy_he",
+  "files_total": 4317,
+  "bytes_total": 12150396648,
+  "file_extensions": {
+    ".yaml": 2,
+    ".pdf": 3706,
+    ".parquet": 13,
+    ".csv": 236,
+    ".npy": 2,
+    ".py": 25,
+    ".png": 145,
+    ".xlsx": 38,
+    ".gexf": 6,
+    ".zip": 20,
+    ".md": 53,
+    ".docx": 3,
+    ".txt": 22,
+    ".log": 41,
+    ".gz": 5
+  },
+  "bytes_by_extension": {
+    ".yaml": 2852,
+    ".pdf": 3332358299,
+    ".parquet": 1675574633,
+    ".csv": 5768789285,
+    ".npy": 40183552,
+    ".py": 264378,
+    ".png": 182992186,
+    ".xlsx": 274562898,
+    ".gexf": 1374054,
+    ".zip": 677105221,
+    ".md": 91454,
+    ".docx": 117792,
+    ".txt": 8248,
+    ".log": 111787,
+    ".gz": 196860009
+  },
+  "candidate_data_files": [
+    {
+      "path": "data/processed/openalex_by_type.csv",
+      "size_bytes": 248,
+      "extension": ".csv",
+      "columns": [
+        "type",
+        "n"
+      ],
+      "column_count": 2,
+      "rows": 18
+    },
+    {
+      "path": "data/processed/openalex_by_year.csv",
+      "size_bytes": 93,
+      "extension": ".csv",
+      "columns": [
+        "publication_year",
+        "n"
+      ],
+      "column_count": 2,
+      "rows": 7
+    },
+    {
+      "path": "data/processed/openalex_query_stats.csv",
+      "size_bytes": 1341,
+      "extension": ".csv",
+      "columns": [
+        "query",
+        "rows_raw"
+      ],
+      "column_count": 2,
+      "rows": 27
+    },
+    {
+      "path": "data/processed/openalex_top_sources.csv",
+      "size_bytes": 3895,
+      "extension": ".csv",
+      "columns": [
+        "source",
+        "n"
+      ],
+      "column_count": 2,
+      "rows": 100
+    },
+    {
+      "path": "data/processed/embeddings_core_50k_minilm.npy",
+      "size_bytes": 34567808,
+      "extension": ".npy"
+    },
+    {
+      "path": "data/processed/openalex_ai_policy_he_core.csv",
+      "size_bytes": 159009798,
+      "extension": ".csv",
+      "columns": [
+        "openalex_id",
+        "doi",
+        "title",
+        "abstract",
+        "publication_year",
+        "publication_date",
+        "type",
+        "source",
+        "source_type",
+        "publisher",
+        "is_oa",
+        "oa_status",
+        "cited_by_count",
+        "authors",
+        "institutions",
+        "countries",
+        "concepts",
+        "topics",
+        "query",
+        "landing_page_url",
+        "pdf_url",
+        "retrieved_at",
+        "text_for_analysis",
+        "has_abstract",
+        "text",
+        "relevance_hits",
+        "disciplinary_area",
+        "policy_dimension"
+      ],
+      "column_count": 28
+    },
+    {
+      "path": "data/processed/openalex_ai_policy_he_works.csv",
+      "size_bytes": 422364920,
+      "extension": ".csv",
+      "columns": [
+        "openalex_id",
+        "doi",
+        "title",
+        "abstract",
+        "publication_year",
+        "publication_date",
+        "type",
+        "source",
+        "source_type",
+        "publisher",
+        "is_oa",
+        "oa_status",
+        "cited_by_count",
+        "authors",
+        "institutions",
+        "countries",
+        "concepts",
+        "topics",
+        "query",
+        "landing_page_url",
+        "pdf_url",
+        "retrieved_at",
+        "text_for_analysis",
+        "has_abstract"
+      ],
+      "column_count": 24
+    },
+    {
+      "path": "data/processed/openalex_ai_policy_he_core.parquet",
+      "size_bytes": 76261337,
+      "extension": ".parquet",
+      "rows": 22524,
+      "columns": [
+        "openalex_id",
+        "doi",
+        "title",
+        "abstract",
+        "publication_year",
+        "publication_date",
+        "type",
+        "source",
+        "source_type",
+        "publisher",
+        "is_oa",
+        "oa_status",
+        "cited_by_count",
+        "authors",
+        "institutions",
+        "countries",
+        "concepts",
+        "topics",
+        "query",
+        "landing_page_url",
+        "pdf_url",
+        "retrieved_at",
+        "text_for_analysis",
+        "has_abstract",
+        "text",
+        "relevance_hits",
+        "disciplinary_area",
+        "policy_dimension"
+      ],
+      "row_groups": 1
+    },
+    {
+      "path": "data/processed/openalex_ai_policy_he_works.parquet",
+      "size_bytes": 211277770,
+      "extension": ".parquet",
+      "rows": 102822,
+      "columns": [
+        "openalex_id",
+        "doi",
+        "title",
+        "abstract",
+        "publication_year",
+        "publication_date",
+        "type",
+        "source",
+        "source_type",
+        "publisher",
+        "is_oa",
+        "oa_status",
+        "cited_by_count",
+        "authors",
+        "institutions",
+        "countries",
+        "concepts",
+        "topics",
+        "query",
+        "landing_page_url",
+        "pdf_url",
+        "retrieved_at",
+        "text_for_analysis",
+        "has_abstract"
+      ],
+      "row_groups": 1
+    },
+    {
+      "path": "data/processed/fulltext_topic_embeddings_minilm.npy",
+      "size_bytes": 5615744,
+      "extension": ".npy"
+    },
+    {
+      "path": "data/processed/openalex_ai_policy_he_q1_refined.csv",
+      "size_bytes": 153730031,
+      "extension": ".csv",
+      "columns": [
+        "openalex_id",
+        "doi",
+        "title",
+        "abstract",
+        "publication_year",
+        "publication_date",
+        "type",
+        "source",
+        "source_type",
+        "publisher",
+        "is_oa",
+        "oa_status",
+        "cited_by_count",
+        "authors",
+        "institutions",
+        "countries",
+        "concepts",
+        "topics",
+        "query",
+        "landing_page_url",
+        "pdf_url",
+        "retrieved_at",
+        "text_for_analysis",
+        "has_abstract",
+        "text",
+        "relevance_hits",
+        "disciplinary_area",
+        "policy_dimension",
+        "abstract_len",
+        "cluster",
+        "q1_relevance_score"
+      ],
+      "column_count": 31
+    },
+    {
+      "path": "data/processed/fulltext_topic_model_documents.parquet",
+      "size_bytes": 246416793,
+      "extension": ".parquet",
+      "rows": 3656,
+      "columns": [
+        "status",
+        "pdf_path",
+        "page_count",
+        "pages_extracted",
+        "text_length",
+        "full_text",
+        "title",
+        "doi",
+        "download_url",
+        "openalex_id",
+        "abstract",
+        "publication_year",
+        "publication_date",
+        "type",
+        "source",
+        "source_type",
+        "publisher",
+        "is_oa",
+        "oa_status",
+        "cited_by_count",
+        "authors",
+        "institutions",
+        "countries",
+        "concepts",
+        "topics",
+        "query",
+        "landing_page_url",
+        "pdf_url",
+        "retrieved_at",
+        "text_for_analysis",
+        "has_abstract",
+        "text",
+        "relevance_hits",
+        "disciplinary_area",
+        "policy_dimension",
+        "abstract_len",
+        "cluster",
+        "q1_relevance_score",
+        "flag_genai",
+        "flag_he",
+        "flag_policy",
+        "flag_school",
+        "flag_generic_digital",
+        "flag_retracted",
+        "screen_text",
+        "flag_assessment",
+        "flag_training",
+        "flag_privacy",
+        "flag_latin",
+        "flag_review",
+        "flag_school_only",
+        "sim_include_core",
+        "sim_include_policy",
+        "sim_context",
+        "sim_exclude",
+        "ai_include_score",
+        "ai_exclude_score",
+        "ai_margin",
+        "ai_decision",
+        "ai_rationale",
+        "audit_priority",
+        "combined_text",
+        "lower",
+        "ft_governance_policy",
+        "snip_governance_policy",
+        "ft_ethical_integrity",
+        "snip_ethical_integrity",
+        "ft_assessment_redesign",
+        "snip_assessment_redesign",
+        "ft_training_literacy",
+        "snip_training_literacy",
+        "ft_privacy_security",
+        "snip_privacy_security",
+        "ft_equity_access",
+        "snip_equity_access",
+        "ft_discipline_health",
+        "snip_discipline_health",
+        "ft_discipline_engineering",
+        "snip_discipline_engineering",
+        "ft_discipline_ssh",
+        "snip_discipline_ssh",
+        "ft_quantitative_data",
+        "snip_quantitative_data",
+        "ft_intervention_design",
+        "snip_intervention_design",
+        "ft_review_synthesis",
+        "snip_review_synthesis",
+        "semantic_text",
+        "ft_sim_include",
+        "ft_sim_meta",
+        "ft_sim_exclude",
+        "ft_include_score",
+        "ft_meta_score",
+        "ft_exclude_score",
+        "ft_margin",
+        "ft_decision",
+        "ft_rationale",
+        "meta_feasibility_tier",
+        "policy_use_category",
+        "topic_text"
+      ],
+      "row_groups": 1
+    },
+    {
+      "path": "data/processed/ai_assisted_screening_decisions.parquet",
+      "size_bytes": 47401321,
+      "extension": ".parquet",
+      "rows": 10283,
+      "columns": [
+        "openalex_id",
+        "doi",
+        "title",
+        "abstract",
+        "publication_year",
+        "publication_date",
+        "type",
+        "source",
+        "source_type",
+        "publisher",
+        "is_oa",
+        "oa_status",
+        "cited_by_count",
+        "authors",
+        "institutions",
+        "countries",
+        "concepts",
+        "topics",
+        "query",
+        "landing_page_url",
+        "pdf_url",
+        "retrieved_at",
+        "text_for_analysis",
+        "has_abstract",
+        "text",
+        "relevance_hits",
+        "disciplinary_area",
+        "policy_dimension",
+        "abstract_len",
+        "cluster",
+        "q1_relevance_score",
+        "flag_genai",
+        "flag_he",
+        "flag_policy",
+        "flag_school",
+        "flag_generic_digital",
+        "flag_retracted",
+        "screen_text",
+        "flag_assessment",
+        "flag_training",
+        "flag_privacy",
+        "flag_latin",
+        "flag_review",
+        "flag_school_only",
+        "sim_include_core",
+        "sim_include_policy",
+        "sim_context",
+        "sim_exclude",
+        "ai_include_score",
+        "ai_exclude_score",
+        "ai_margin",
+        "ai_decision",
+        "ai_rationale",
+        "audit_priority"
+      ],
+      "row_groups": 1
+    },
+    {
+      "path": "data/processed/openalex_ai_policy_he_checkpoint.parquet",
+      "size_bytes": 229343693,
+      "extension": ".parquet",
+      "rows": 199366,
+      "columns": [
+        "openalex_id",
+        "doi",
+        "title",
+        "abstract",
+        "publication_year",
+        "publication_date",
+        "type",
+        "source",
+        "source_type",
+        "publisher",
+        "is_oa",
+        "oa_status",
+        "cited_by_count",
+        "authors",
+        "institutions",
+        "countries",
+        "concepts",
+        "topics",
+        "query",
+        "landing_page_url",
+        "pdf_url",
+        "retrieved_at"
+      ],
+      "row_groups": 1
+    },
+    {
+      "path": "data/processed/openalex_ai_policy_he_q1_refined.parquet",
+      "size_bytes": 73621599,
+      "extension": ".parquet",
+      "rows": 21676,
+      "columns": [
+        "openalex_id",
+        "doi",
+        "title",
+        "abstract",
+        "publication_year",
+        "publication_date",
+        "type",
+        "source",
+        "source_type",
+        "publisher",
+        "is_oa",
+        "oa_status",
+        "cited_by_count",
+        "authors",
+        "institutions",
+        "countries",
+        "concepts",
+        "topics",
+        "query",
+        "landing_page_url",
+        "pdf_url",
+        "retrieved_at",
+        "text_for_analysis",
+        "has_abstract",
+        "text",
+        "relevance_hits",
+        "disciplinary_area",
+        "policy_dimension",
+        "abstract_len",
+        "cluster",
+        "q1_relevance_score"
+      ],
+      "row_groups": 1
+    },
+    {
+      "path": "data/processed/fulltext/fulltext_extracted_texts.parquet",
+      "size_bytes": 101764802,
+      "extension": ".parquet",
+      "rows": 3656,
+      "columns": [
+        "status",
+        "pdf_path",
+        "page_count",
+        "pages_extracted",
+        "text_length",
+        "full_text",
+        "title",
+        "doi",
+        "download_url"
+      ],
+      "row_groups": 1
+    },
+    {
+      "path": "data/processed/fulltext_ai_screening_and_extraction.parquet",
+      "size_bytes": 228195105,
+      "extension": ".parquet",
+      "rows": 3656,
+      "columns": [
+        "status",
+        "pdf_path",
+        "page_count",
+        "pages_extracted",
+        "text_length",
+        "full_text",
+        "title",
+        "doi",
+        "download_url",
+        "openalex_id",
+        "abstract",
+        "publication_year",
+        "publication_date",
+        "type",
+        "source",
+        "source_type",
+        "publisher",
+        "is_oa",
+        "oa_status",
+        "cited_by_count",
+        "authors",
+        "institutions",
+        "countries",
+        "concepts",
+        "topics",
+        "query",
+        "landing_page_url",
+        "pdf_url",
+        "retrieved_at",
+        "text_for_analysis",
+        "has_abstract",
+        "text",
+        "relevance_hits",
+        "disciplinary_area",
+        "policy_dimension",
+        "abstract_len",
+        "cluster",
+        "q1_relevance_score",
+        "flag_genai",
+        "flag_he",
+        "flag_policy",
+        "flag_school",
+        "flag_generic_digital",
+        "flag_retracted",
+        "screen_text",
+        "flag_assessment",
+        "flag_training",
+        "flag_privacy",
+        "flag_latin",
+        "flag_review",
+        "flag_school_only",
+        "sim_include_core",
+        "sim_include_policy",
+        "sim_context",
+        "sim_exclude",
+        "ai_include_score",
+        "ai_exclude_score",
+        "ai_margin",
+        "ai_decision",
+        "ai_rationale",
+        "audit_priority",
+        "combined_text",
+        "lower",
+        "ft_governance_policy",
+        "snip_governance_policy",
+        "ft_ethical_integrity",
+        "snip_ethical_integrity",
+        "ft_assessment_redesign",
+        "snip_assessment_redesign",
+        "ft_training_literacy",
+        "snip_training_literacy",
+        "ft_privacy_security",
+        "snip_privacy_security",
+        "ft_equity_access",
+        "snip_equity_access",
+        "ft_discipline_health",
+        "snip_discipline_health",
+        "ft_discipline_engineering",
+        "snip_discipline_engineering",
+        "ft_discipline_ssh",
+        "snip_discipline_ssh",
+        "ft_quantitative_data",
+        "snip_quantitative_data",
+        "ft_intervention_design",
+        "snip_intervention_design",
+        "ft_review_synthesis",
+        "snip_review_synthesis",
+        "semantic_text",
+        "ft_sim_include",
+        "ft_sim_meta",
+        "ft_sim_exclude",
+        "ft_include_score",
+        "ft_meta_score",
+        "ft_exclude_score",
+        "ft_margin",
+        "ft_decision",
+        "ft_rationale"
+      ],
+      "row_groups": 1
+    },
+    {
+      "path": "data/processed/openalex_ai_policy_he_core_50k_clustered.csv",
+      "size_bytes": 159144181,
+      "extension": ".csv",
+      "columns": [
+        "openalex_id",
+        "doi",
+        "title",
+        "abstract",
+        "publication_year",
+        "publication_date",
+        "type",
+        "source",
+        "source_type",
+        "publisher",
+        "is_oa",
+        "oa_status",
+        "cited_by_count",
+        "authors",
+        "institutions",
+        "countries",
+        "concepts",
+        "topics",
+        "query",
+        "landing_page_url",
+        "pdf_url",
+        "retrieved_at",
+        "text_for_analysis",
+        "has_abstract",
+        "text",
+        "relevance_hits",
+        "disciplinary_area",
+        "policy_dimension",
+        "abstract_len",
+        "cluster"
+      ],
+      "column_count": 30
+    },
+    {
+      "path": "data/processed/openalex_ai_policy_he_article_ready_strict.csv",
+      "size_bytes": 76355901,
+      "extension": ".csv",
+      "columns": [
+        "openalex_id",
+        "doi",
+        "title",
+        "abstract",
+        "publication_year",
+        "publication_date",
+        "type",
+        "source",
+        "source_type",
+        "publisher",
+        "is_oa",
+        "oa_status",
+        "cited_by_count",
+        "authors",
+        "institutions",
+        "countries",
+        "concepts",
+        "topics",
+        "query",
+        "landing_page_url",
+        "pdf_url",
+        "retrieved_at",
+        "text_for_analysis",
+        "has_abstract",
+        "text",
+        "relevance_hits",
+        "disciplinary_area",
+        "policy_dimension",
+        "abstract_len",
+        "cluster",
+        "q1_relevance_score",
+        "flag_genai",
+        "flag_he",
+        "flag_policy",
+        "flag_school",
+        "flag_generic_digital",
+        "flag_retracted"
+      ],
+      "column_count": 37
+    },
+    {
+      "path": "data/processed/openalex_ai_policy_he_core_50k_embedded.parquet",
+      "size_bytes": 76325877,
+      "extension": ".parquet",
+      "rows": 22505,
+      "columns": [
+        "openalex_id",
+        "doi",
+        "title",
+        "abstract",
+        "publication_year",
+        "publication_date",
+        "type",
+        "source",
+        "source_type",
+        "publisher",
+        "is_oa",
+        "oa_status",
+        "cited_by_count",
+        "authors",
+        "institutions",
+        "countries",
+        "concepts",
+        "topics",
+        "query",
+        "landing_page_url",
+        "pdf_url",
+        "retrieved_at",
+        "text_for_analysis",
+        "has_abstract",
+        "text",
+        "relevance_hits",
+        "disciplinary_area",
+        "policy_dimension",
+        "abstract_len"
+      ],
+      "row_groups": 1
+    },
+    {
+      "path": "data/processed/openalex_ai_policy_he_core_50k_clustered.parquet",
+      "size_bytes": 76340660,
+      "extension": ".parquet",
+      "rows": 22505,
+      "columns": [
+        "openalex_id",
+        "doi",
+        "title",
+        "abstract",
+        "publication_year",
+        "publication_date",
+        "type",
+        "source",
+        "source_type",
+        "publisher",
+        "is_oa",
+        "oa_status",
+        "cited_by_count",
+        "authors",
+        "institutions",
+        "countries",
+        "concepts",
+        "topics",
+        "query",
+        "landing_page_url",
+        "pdf_url",
+        "retrieved_at",
+        "text_for_analysis",
+        "has_abstract",
+        "text",
+        "relevance_hits",
+        "disciplinary_area",
+        "policy_dimension",
+        "abstract_len",
+        "cluster"
+      ],
+      "row_groups": 1
+    },
+    {
+      "path": "data/processed/fulltext_topic_model_documents_with_kmeans.parquet",
+      "size_bytes": 246466275,
+      "extension": ".parquet",
+      "rows": 3656,
+      "columns": [
+        "status",
+        "pdf_path",
+        "page_count",
+        "pages_extracted",
+        "text_length",
+        "full_text",
+        "title",
+        "doi",
+        "download_url",
+        "openalex_id",
+        "abstract",
+        "publication_year",
+        "publication_date",
+        "type",
+        "source",
+        "source_type",
+        "publisher",
+        "is_oa",
+        "oa_status",
+        "cited_by_count",
+        "authors",
+        "institutions",
+        "countries",
+        "concepts",
+        "topics",
+        "query",
+        "landing_page_url",
+        "pdf_url",
+        "retrieved_at",
+        "text_for_analysis",
+        "has_abstract",
+        "text",
+        "relevance_hits",
+        "disciplinary_area",
+        "policy_dimension",
+        "abstract_len",
+        "cluster",
+        "q1_relevance_score",
+        "flag_genai",
+        "flag_he",
+        "flag_policy",
+        "flag_school",
+        "flag_generic_digital",
+        "flag_retracted",
+        "screen_text",
+        "flag_assessment",
+        "flag_training",
+        "flag_privacy",
+        "flag_latin",
+        "flag_review",
+        "flag_school_only",
+        "sim_include_core",
+        "sim_include_policy",
+        "sim_context",
+        "sim_exclude",
+        "ai_include_score",
+        "ai_exclude_score",
+        "ai_margin",
+        "ai_decision",
+        "ai_rationale",
+        "audit_priority",
+        "combined_text",
+        "lower",
+        "ft_governance_policy",
+        "snip_governance_policy",
+        "ft_ethical_integrity",
+        "snip_ethical_integrity",
+        "ft_assessment_redesign",
+        "snip_assessment_redesign",
+        "ft_training_literacy",
+        "snip_training_literacy",
+        "ft_privacy_security",
+        "snip_privacy_security",
+        "ft_equity_access",
+        "snip_equity_access",
+        "ft_discipline_health",
+        "snip_discipline_health",
+        "ft_discipline_engineering",
+        "snip_discipline_engineering",
+        "ft_discipline_ssh",
+        "snip_discipline_ssh",
+        "ft_quantitative_data",
+        "snip_quantitative_data",
+        "ft_intervention_design",
+        "snip_intervention_design",
+        "ft_review_synthesis",
+        "snip_review_synthesis",
+        "semantic_text",
+        "ft_sim_include",
+        "ft_sim_meta",
+        "ft_sim_exclude",
+        "ft_include_score",
+        "ft_meta_score",
+        "ft_exclude_score",
+        "ft_margin",
+        "ft_decision",
+        "ft_rationale",
+        "meta_feasibility_tier",
+        "policy_use_category",
+        "topic_text"
+      ],
+      "row_groups": 1
+    },
+    {
+      "path": "data/processed/openalex_ai_policy_he_article_ready_strict.parquet",
+      "size_bytes": 36455499,
+      "extension": ".parquet",
+      "rows": 10283,
+      "columns": [
+        "openalex_id",
+        "doi",
+        "title",
+        "abstract",
+        "publication_year",
+        "publication_date",
+        "type",
+        "source",
+        "source_type",
+        "publisher",
+        "is_oa",
+        "oa_status",
+        "cited_by_count",
+        "authors",
+        "institutions",
+        "countries",
+        "concepts",
+        "topics",
+        "query",
+        "landing_page_url",
+        "pdf_url",
+        "retrieved_at",
+        "text_for_analysis",
+        "has_abstract",
+        "text",
+        "relevance_hits",
+        "disciplinary_area",
+        "policy_dimension",
+        "abstract_len",
+        "cluster",
+        "q1_relevance_score",
+        "flag_genai",
+        "flag_he",
+        "flag_policy",
+        "flag_school",
+        "flag_generic_digital",
+        "flag_retracted"
+      ],
+      "row_groups": 1
+    },
+    {
+      "path": "outputs/tables/q1_table_area_counts.csv",
+      "size_bytes": 118,
+      "extension": ".csv",
+      "columns": [
+        "disciplinary_area",
+        "n"
+      ],
+      "column_count": 2,
+      "rows": 4
+    },
+    {
+      "path": "outputs/tables/q1_table_year_by_area.csv",
+      "size_bytes": 642,
+      "extension": ".csv",
+      "columns": [
+        "publication_year",
+        "disciplinary_area",
+        "n"
+      ],
+      "column_count": 3,
+      "rows": 22
+    },
+    {
+      "path": "outputs/tables/kmeans_12_topic_labels.csv",
+      "size_bytes": 10174,
+      "extension": ".csv",
+      "columns": [
+        "k",
+        "topic",
+        "n_records",
+        "label",
+        "top_terms",
+        "main_disciplinary_area",
+        "main_policy_dimension",
+        "main_meta_tier",
+        "top_titles"
+      ],
+      "column_count": 9,
+      "rows": 12,
+      "numeric_metric_preview": [
+        {
+          "k": 12.0,
+          "topic": 11.0,
+          "n_records": 536.0
+        },
+        {
+          "k": 12.0,
+          "topic": 3.0,
+          "n_records": 444.0
+        },
+        {
+          "k": 12.0,
+          "topic": 2.0,
+          "n_records": 396.0
+        },
+        {
+          "k": 12.0,
+          "topic": 1.0,
+          "n_records": 371.0
+        },
+        {
+          "k": 12.0,
+          "topic": 4.0,
+          "n_records": 369.0
+        },
+        {
+          "k": 12.0,
+          "topic": 6.0,
+          "n_records": 303.0
+        },
+        {
+          "k": 12.0,
+          "topic": 0.0,
+          "n_records": 251.0
+        },
+        {
+          "k": 12.0,
+          "topic": 9.0,
+          "n_records": 251.0
+        },
+        {
+          "k": 12.0,
+          "topic": 7.0,
+          "n_records": 231.0
+        },
+        {
+          "k": 12.0,
+          "topic": 8.0,
+          "n_records": 227.0
+        },
+        {
+          "k": 12.0,
+          "topic": 10.0,
+          "n_records": 158.0
+        },
+        {
+          "k": 12.0,
+          "topic": 5.0,
+          "n_records": 119.0
+        }
+      ]
+    },
+    {
+      "path": "outputs/tables/kmeans_18_topic_labels.csv",
+      "size_bytes": 14959,
+      "extension": ".csv",
+      "columns": [
+        "k",
+        "topic",
+        "n_records",
+        "label",
+        "top_terms",
+        "main_disciplinary_area",
+        "main_policy_dimension",
+        "main_meta_tier",
+        "top_titles"
+      ],
+      "column_count": 9,
+      "rows": 18,
+      "numeric_metric_preview": [
+        {
+          "k": 18.0,
+          "topic": 11.0,
+          "n_records": 382.0
+        },
+        {
+          "k": 18.0,
+          "topic": 4.0,
+          "n_records": 309.0
+        },
+        {
+          "k": 18.0,
+          "topic": 2.0,
+          "n_records": 286.0
+        },
+        {
+          "k": 18.0,
+          "topic": 1.0,
+          "n_records": 252.0
+        },
+        {
+          "k": 18.0,
+          "topic": 15.0,
+          "n_records": 246.0
+        },
+        {
+          "k": 18.0,
+          "topic": 13.0,
+          "n_records": 231.0
+        },
+        {
+          "k": 18.0,
+          "topic": 0.0,
+          "n_records": 225.0
+        },
+        {
+          "k": 18.0,
+          "topic": 3.0,
+          "n_records": 217.0
+        },
+        {
+          "k": 18.0,
+          "topic": 9.0,
+          "n_records": 216.0
+        },
+        {
+          "k": 18.0,
+          "topic": 12.0,
+          "n_records": 202.0
+        },
+        {
+          "k": 18.0,
+          "topic": 7.0,
+          "n_records": 190.0
+        },
+        {
+          "k": 18.0,
+          "topic": 14.0,
+          "n_records": 170.0
+        },
+        {
+          "k": 18.0,
+          "topic": 10.0,
+          "n_records": 160.0
+        },
+        {
+          "k": 18.0,
+          "topic": 17.0,
+          "n_records": 150.0
+        },
+        {
+          "k": 18.0,
+          "topic": 8.0,
+          "n_records": 144.0
+        },
+        {
+          "k": 18.0,
+          "topic": 6.0,
+          "n_records": 97.0
+        },
+        {
+          "k": 18.0,
+          "topic": 5.0,
+          "n_records": 96.0
+        },
+        {
+          "k": 18.0,
+          "topic": 16.0,
+          "n_records": 83.0
+        }
+      ]
+    },
+    {
+      "path": "outputs/tables/kmeans_25_topic_labels.csv",
+      "size_bytes": 21326,
+      "extension": ".csv",
+      "columns": [
+        "k",
+        "topic",
+        "n_records",
+        "label",
+        "top_terms",
+        "main_disciplinary_area",
+        "main_policy_dimension",
+        "main_meta_tier",
+        "top_titles"
+      ],
+      "column_count": 9,
+      "rows": 25,
+      "numeric_metric_preview": [
+        {
+          "k": 25.0,
+          "topic": 1.0,
+          "n_records": 227.0
+        },
+        {
+          "k": 25.0,
+          "topic": 7.0,
+          "n_records": 200.0
+        },
+        {
+          "k": 25.0,
+          "topic": 3.0,
+          "n_records": 200.0
+        },
+        {
+          "k": 25.0,
+          "topic": 9.0,
+          "n_records": 200.0
+        },
+        {
+          "k": 25.0,
+          "topic": 20.0,
+          "n_records": 193.0
+        },
+        {
+          "k": 25.0,
+          "topic": 4.0,
+          "n_records": 192.0
+        },
+        {
+          "k": 25.0,
+          "topic": 19.0,
+          "n_records": 187.0
+        },
+        {
+          "k": 25.0,
+          "topic": 5.0,
+          "n_records": 180.0
+        },
+        {
+          "k": 25.0,
+          "topic": 0.0,
+          "n_records": 178.0
+        },
+        {
+          "k": 25.0,
+          "topic": 15.0,
+          "n_records": 175.0
+        },
+        {
+          "k": 25.0,
+          "topic": 16.0,
+          "n_records": 167.0
+        },
+        {
+          "k": 25.0,
+          "topic": 12.0,
+          "n_records": 164.0
+        },
+        {
+          "k": 25.0,
+          "topic": 21.0,
+          "n_records": 152.0
+        },
+        {
+          "k": 25.0,
+          "topic": 13.0,
+          "n_records": 150.0
+        },
+        {
+          "k": 25.0,
+          "topic": 11.0,
+          "n_records": 142.0
+        },
+        {
+          "k": 25.0,
+          "topic": 24.0,
+          "n_records": 141.0
+        },
+        {
+          "k": 25.0,
+          "topic": 6.0,
+          "n_records": 128.0
+        },
+        {
+          "k": 25.0,
+          "topic": 8.0,
+          "n_records": 111.0
+        },
+        {
+          "k": 25.0,
+          "topic": 23.0,
+          "n_records": 100.0
+        },
+        {
+          "k": 25.0,
+          "topic": 14.0,
+          "n_records": 92.0
+        },
+        {
+          "k": 25.0,
+          "topic": 2.0,
+          "n_records": 91.0
+        },
+        {
+          "k": 25.0,
+          "topic": 22.0,
+          "n_records": 83.0
+        },
+        {
+          "k": 25.0,
+          "topic": 18.0,
+          "n_records": 82.0
+        },
+        {
+          "k": 25.0,
+          "topic": 10.0,
+          "n_records": 75.0
+        },
+        {
+          "k": 25.0,
+          "topic": 17.0,
+          "n_records": 46.0
+        }
+      ]
+    },
+    {
+      "path": "outputs/tables/kmeans_all_topic_labels.csv",
+      "size_bytes": 46249,
+      "extension": ".csv",
+      "columns": [
+        "k",
+        "topic",
+        "n_records",
+        "label",
+        "top_terms",
+        "main_disciplinary_area",
+        "main_policy_dimension",
+        "main_meta_tier",
+        "top_titles"
+      ],
+      "column_count": 9,
+      "rows": 55,
+      "numeric_metric_preview": [
+        {
+          "k": 12.0,
+          "topic": 0.0,
+          "n_records": 251.0
+        },
+        {
+          "k": 12.0,
+          "topic": 1.0,
+          "n_records": 371.0
+        },
+        {
+          "k": 12.0,
+          "topic": 2.0,
+          "n_records": 396.0
+        },
+        {
+          "k": 12.0,
+          "topic": 3.0,
+          "n_records": 444.0
+        },
+        {
+          "k": 12.0,
+          "topic": 4.0,
+          "n_records": 369.0
+        },
+        {
+          "k": 12.0,
+          "topic": 5.0,
+          "n_records": 119.0
+        },
+        {
+          "k": 12.0,
+          "topic": 6.0,
+          "n_records": 303.0
+        },
+        {
+          "k": 12.0,
+          "topic": 7.0,
+          "n_records": 231.0
+        },
+        {
+          "k": 12.0,
+          "topic": 8.0,
+          "n_records": 227.0
+        },
+        {
+          "k": 12.0,
+          "topic": 9.0,
+          "n_records": 251.0
+        },
+        {
+          "k": 12.0,
+          "topic": 10.0,
+          "n_records": 158.0
+        },
+        {
+          "k": 12.0,
+          "topic": 11.0,
+          "n_records": 536.0
+        },
+        {
+          "k": 18.0,
+          "topic": 0.0,
+          "n_records": 225.0
+        },
+        {
+          "k": 18.0,
+          "topic": 1.0,
+          "n_records": 252.0
+        },
+        {
+          "k": 18.0,
+          "topic": 2.0,
+          "n_records": 286.0
+        },
+        {
+          "k": 18.0,
+          "topic": 3.0,
+          "n_records": 217.0
+        },
+        {
+          "k": 18.0,
+          "topic": 4.0,
+          "n_records": 309.0
+        },
+        {
+          "k": 18.0,
+          "topic": 5.0,
+          "n_records": 96.0
+        },
+        {
+          "k": 18.0,
+          "topic": 6.0,
+          "n_records": 97.0
+        },
+        {
+          "k": 18.0,
+          "topic": 7.0,
+          "n_records": 190.0
+        },
+        {
+          "k": 18.0,
+          "topic": 8.0,
+          "n_records": 144.0
+        },
+        {
+          "k": 18.0,
+          "topic": 9.0,
+          "n_records": 216.0
+        },
+        {
+          "k": 18.0,
+          "topic": 10.0,
+          "n_records": 160.0
+        },
+        {
+          "k": 18.0,
+          "topic": 11.0,
+          "n_records": 382.0
+        },
+        {
+          "k": 18.0,
+          "topic": 12.0,
+          "n_records": 202.0
+        }
+      ]
+    },
+    {
+      "path": "outputs/tables/article_ready_area_counts.csv",
+      "size_bytes": 117,
+      "extension": ".csv",
+      "columns": [
+        "disciplinary_area",
+        "n"
+      ],
+      "column_count": 2,
+      "rows": 4
+    },
+    {
+      "path": "outputs/tables/article_ready_flow_counts.csv",
+      "size_bytes": 235,
+      "extension": ".csv",
+      "columns": [
+        "stage",
+        "n"
+      ],
+      "column_count": 2,
+      "rows": 7
+    },
+    {
+      "path": "outputs/tables/article_ready_ssh_top_300.csv",
+      "size_bytes": 87627,
+      "extension": ".csv",
+      "columns": [
+        "title",
+        "publication_year",
+        "type",
+        "source",
+        "doi",
+        "cited_by_count",
+        "q1_relevance_score",
+        "disciplinary_area",
+        "policy_dimension",
+        "cluster",
+        "countries",
+        "landing_page_url"
+      ],
+      "column_count": 12,
+      "rows": 300
+    },
+    {
+      "path": "outputs/tables/article_ready_year_counts.csv",
+      "size_bytes": 80,
+      "extension": ".csv",
+      "columns": [
+        "publication_year",
+        "n"
+      ],
+      "column_count": 2,
+      "rows": 7
+    },
+    {
+      "path": "outputs/tables/fulltext_screening_summary.csv",
+      "size_bytes": 161,
+      "extension": ".csv",
+      "columns": [
+        "ft_decision",
+        "n"
+      ],
+      "column_count": 2,
+      "rows": 6
+    },
+    {
+      "path": "outputs/tables/q1_cluster_summary_refined.csv",
+      "size_bytes": 11567,
+      "extension": ".csv",
+      "columns": [
+        "cluster",
+        "n",
+        "main_areas",
+        "main_policy_dimensions",
+        "top_titles"
+      ],
+      "column_count": 5,
+      "rows": 18
+    },
+    {
+      "path": "outputs/tables/final_policy_use_categories.csv",
+      "size_bytes": 1518,
+      "extension": ".csv",
+      "columns": [
+        "policy_use_category",
+        "n"
+      ],
+      "column_count": 2,
+      "rows": 29
+    },
+    {
+      "path": "outputs/tables/table_embedding_clusters_18.csv",
+      "size_bytes": 12432,
+      "extension": ".csv",
+      "columns": [
+        "cluster",
+        "n",
+        "top_terms",
+        "top_titles"
+      ],
+      "column_count": 4,
+      "rows": 18
+    },
+    {
+      "path": "outputs/tables/article_ready_health_top_300.csv",
+      "size_bytes": 82835,
+      "extension": ".csv",
+      "columns": [
+        "title",
+        "publication_year",
+        "type",
+        "source",
+        "doi",
+        "cited_by_count",
+        "q1_relevance_score",
+        "disciplinary_area",
+        "policy_dimension",
+        "cluster",
+        "countries",
+        "landing_page_url"
+      ],
+      "column_count": 12,
+      "rows": 300
+    },
+    {
+      "path": "outputs/tables/fulltext_extraction_manifest.csv",
+      "size_bytes": 1161835,
+      "extension": ".csv",
+      "columns": [
+        "status",
+        "pdf_path",
+        "page_count",
+        "pages_extracted",
+        "text_length",
+        "title",
+        "doi",
+        "download_url"
+      ],
+      "column_count": 8,
+      "rows": 3656
+    },
+    {
+      "path": "outputs/tables/kmeans_12_topic_by_meta_tier.csv",
+      "size_bytes": 421,
+      "extension": ".csv",
+      "columns": [
+        "kmeans_12",
+        "Not meta-analytic",
+        "Tier 1 - existing meta-analysis/review synthesis",
+        "Tier 1b - review/scoping synthesis",
+        "Tier 2 - primary intervention potentially extractable",
+        "Tier 3 - quantitative contextual evidence"
+      ],
+      "column_count": 6,
+      "rows": 12,
+      "numeric_metric_preview": [
+        {
+          "kmeans_12": 0.0
+        },
+        {
+          "kmeans_12": 1.0
+        },
+        {
+          "kmeans_12": 2.0
+        },
+        {
+          "kmeans_12": 3.0
+        },
+        {
+          "kmeans_12": 4.0
+        },
+        {
+          "kmeans_12": 5.0
+        },
+        {
+          "kmeans_12": 6.0
+        },
+        {
+          "kmeans_12": 7.0
+        },
+        {
+          "kmeans_12": 8.0
+        },
+        {
+          "kmeans_12": 9.0
+        },
+        {
+          "kmeans_12": 10.0
+        },
+        {
+          "kmeans_12": 11.0
+        }
+      ]
+    },
+    {
+      "path": "outputs/tables/kmeans_18_topic_by_meta_tier.csv",
+      "size_bytes": 518,
+      "extension": ".csv",
+      "columns": [
+        "kmeans_18",
+        "Not meta-analytic",
+        "Tier 1 - existing meta-analysis/review synthesis",
+        "Tier 1b - review/scoping synthesis",
+        "Tier 2 - primary intervention potentially extractable",
+        "Tier 3 - quantitative contextual evidence"
+      ],
+      "column_count": 6,
+      "rows": 18,
+      "numeric_metric_preview": [
+        {
+          "kmeans_18": 0.0
+        },
+        {
+          "kmeans_18": 1.0
+        },
+        {
+          "kmeans_18": 2.0
+        },
+        {
+          "kmeans_18": 3.0
+        },
+        {
+          "kmeans_18": 4.0
+        },
+        {
+          "kmeans_18": 5.0
+        },
+        {
+          "kmeans_18": 6.0
+        },
+        {
+          "kmeans_18": 7.0
+        },
+        {
+          "kmeans_18": 8.0
+        },
+        {
+          "kmeans_18": 9.0
+        },
+        {
+          "kmeans_18": 10.0
+        },
+        {
+          "kmeans_18": 11.0
+        },
+        {
+          "kmeans_18": 12.0
+        },
+        {
+          "kmeans_18": 13.0
+        },
+        {
+          "kmeans_18": 14.0
+        },
+        {
+          "kmeans_18": 15.0
+        },
+        {
+          "kmeans_18": 16.0
+        },
+        {
+          "kmeans_18": 17.0
+        }
+      ]
+    },
+    {
+      "path": "outputs/tables/kmeans_25_topic_by_meta_tier.csv",
+      "size_bytes": 628,
+      "extension": ".csv",
+      "columns": [
+        "kmeans_25",
+        "Not meta-analytic",
+        "Tier 1 - existing meta-analysis/review synthesis",
+        "Tier 1b - review/scoping synthesis",
+        "Tier 2 - primary intervention potentially extractable",
+        "Tier 3 - quantitative contextual evidence"
+      ],
+      "column_count": 6,
+      "rows": 25,
+      "numeric_metric_preview": [
+        {
+          "kmeans_25": 0.0
+        },
+        {
+          "kmeans_25": 1.0
+        },
+        {
+          "kmeans_25": 2.0
+        },
+        {
+          "kmeans_25": 3.0
+        },
+        {
+          "kmeans_25": 4.0
+        },
+        {
+          "kmeans_25": 5.0
+        },
+        {
+          "kmeans_25": 6.0
+        },
+        {
+          "kmeans_25": 7.0
+        },
+        {
+          "kmeans_25": 8.0
+        },
+        {
+          "kmeans_25": 9.0
+        },
+        {
+          "kmeans_25": 10.0
+        },
+        {
+          "kmeans_25": 11.0
+        },
+        {
+          "kmeans_25": 12.0
+        },
+        {
+          "kmeans_25": 13.0
+        },
+        {
+          "kmeans_25": 14.0
+        },
+        {
+          "kmeans_25": 15.0
+        },
+        {
+          "kmeans_25": 16.0
+        },
+        {
+          "kmeans_25": 17.0
+        },
+        {
+          "kmeans_25": 18.0
+        },
+        {
+          "kmeans_25": 19.0
+        },
+        {
+          "kmeans_25": 20.0
+        },
+        {
+          "kmeans_25": 21.0
+        },
+        {
+          "kmeans_25": 22.0
+        },
+        {
+          "kmeans_25": 23.0
+        },
+        {
+          "kmeans_25": 24.0
+        }
+      ]
+    },
+    {
+      "path": "outputs/tables/AI_assisted_screening_summary.csv",
+      "size_bytes": 82,
+      "extension": ".csv",
+      "columns": [
+        "ai_decision",
+        "n"
+      ],
+      "column_count": 2,
+      "rows": 4
+    },
+    {
+      "path": "outputs/tables/article_ready_reviews_top_500.csv",
+      "size_bytes": 147264,
+      "extension": ".csv",
+      "columns": [
+        "title",
+        "publication_year",
+        "type",
+        "source",
+        "doi",
+        "cited_by_count",
+        "q1_relevance_score",
+        "disciplinary_area",
+        "policy_dimension",
+        "cluster",
+        "countries",
+        "landing_page_url"
+      ],
+      "column_count": 12,
+      "rows": 500
+    },
+    {
+      "path": "outputs/tables/fulltext_pdf_download_success.csv",
+      "size_bytes": 1175557,
+      "extension": ".csv",
+      "columns": [
+        "status",
+        "pdf_path",
+        "bytes",
+        "download_url",
+        "title",
+        "doi"
+      ],
+      "column_count": 6,
+      "rows": 3656
+    },
+    {
+      "path": "outputs/tables/kmeans_12_topic_by_discipline.csv",
+      "size_bytes": 207,
+      "extension": ".csv",
+      "columns": [
+        "kmeans_12",
+        "engineering",
+        "health_sciences",
+        "social_sciences_humanities"
+      ],
+      "column_count": 4,
+      "rows": 12,
+      "numeric_metric_preview": [
+        {
+          "kmeans_12": 0.0
+        },
+        {
+          "kmeans_12": 1.0
+        },
+        {
+          "kmeans_12": 2.0
+        },
+        {
+          "kmeans_12": 3.0
+        },
+        {
+          "kmeans_12": 4.0
+        },
+        {
+          "kmeans_12": 5.0
+        },
+        {
+          "kmeans_12": 6.0
+        },
+        {
+          "kmeans_12": 7.0
+        },
+        {
+          "kmeans_12": 8.0
+        },
+        {
+          "kmeans_12": 9.0
+        },
+        {
+          "kmeans_12": 10.0
+        },
+        {
+          "kmeans_12": 11.0
+        }
+      ]
+    },
+    {
+      "path": "outputs/tables/kmeans_12_topic_by_policy_use.csv",
+      "size_bytes": 2217,
+      "extension": ".csv",
+      "columns": [
+        "kmeans_12",
+        "assessment_integrity",
+        "assessment_integrity; latin_america_adaptation",
+        "assessment_integrity; privacy_security",
+        "assessment_integrity; training_literacy",
+        "assessment_integrity; training_literacy; latin_america_adaptation",
+        "assessment_integrity; training_literacy; privacy_security",
+        "assessment_integrity; training_literacy; privacy_security; latin_america_adaptation",
+        "general_context",
+        "governance",
+        "governance; assessment_integrity",
+        "governance; assessment_integrity; latin_america_adaptation",
+        "governance; assessment_integrity; privacy_security",
+        "governance; assessment_integrity; privacy_security; latin_america_adaptation",
+        "governance; assessment_integrity; training_literacy",
+        "governance; assessment_integrity; training_literacy; latin_america_adaptation",
+        "governance; assessment_integrity; training_literacy; privacy_security",
+        "governance; assessment_integrity; training_literacy; privacy_security; latin_america_adapt",
+        "governance; latin_america_adaptation",
+        "governance; privacy_security",
+        "governance; privacy_security; latin_america_adaptation",
+        "governance; training_literacy",
+        "governance; training_literacy; latin_america_adaptation",
+        "governance; training_literacy; privacy_security",
+        "governance; training_literacy; privacy_security; latin_america_adaptation",
+        "latin_america_adaptation",
+        "training_literacy",
+        "training_literacy; latin_america_adaptation",
+        "training_literacy; privacy_security",
+        "training_literacy; privacy_security; latin_america_adaptation"
+      ],
+      "column_count": 30,
+      "rows": 12,
+      "numeric_metric_preview": [
+        {
+          "kmeans_12": 0.0
+        },
+        {
+          "kmeans_12": 1.0
+        },
+        {
+          "kmeans_12": 2.0
+        },
+        {
+          "kmeans_12": 3.0
+        },
+        {
+          "kmeans_12": 4.0
+        },
+        {
+          "kmeans_12": 5.0
+        },
+        {
+          "kmeans_12": 6.0
+        },
+        {
+          "kmeans_12": 7.0
+        },
+        {
+          "kmeans_12": 8.0
+        },
+        {
+          "kmeans_12": 9.0
+        },
+        {
+          "kmeans_12": 10.0
+        },
+        {
+          "kmeans_12": 11.0
+        }
+      ]
+    },
+    {
+      "path": "outputs/tables/kmeans_18_topic_by_discipline.csv",
+      "size_bytes": 273,
+      "extension": ".csv",
+      "columns": [
+        "kmeans_18",
+        "engineering",
+        "health_sciences",
+        "social_sciences_humanities"
+      ],
+      "column_count": 4,
+      "rows": 18,
+      "numeric_metric_preview": [
+        {
+          "kmeans_18": 0.0
+        },
+        {
+          "kmeans_18": 1.0
+        },
+        {
+          "kmeans_18": 2.0
+        },
+        {
+          "kmeans_18": 3.0
+        },
+        {
+          "kmeans_18": 4.0
+        },
+        {
+          "kmeans_18": 5.0
+        },
+        {
+          "kmeans_18": 6.0
+        },
+        {
+          "kmeans_18": 7.0
+        },
+        {
+          "kmeans_18": 8.0
+        },
+        {
+          "kmeans_18": 9.0
+        },
+        {
+          "kmeans_18": 10.0
+        },
+        {
+          "kmeans_18": 11.0
+        },
+        {
+          "kmeans_18": 12.0
+        },
+        {
+          "kmeans_18": 13.0
+        },
+        {
+          "kmeans_18": 14.0
+        },
+        {
+          "kmeans_18": 15.0
+        },
+        {
+          "kmeans_18": 16.0
+        },
+        {
+          "kmeans_18": 17.0
+        }
+      ]
+    },
+    {
+      "path": "outputs/tables/kmeans_18_topic_by_policy_use.csv",
+      "size_bytes": 2584,
+      "extension": ".csv",
+      "columns": [
+        "kmeans_18",
+        "assessment_integrity",
+        "assessment_integrity; latin_america_adaptation",
+        "assessment_integrity; privacy_security",
+        "assessment_integrity; training_literacy",
+        "assessment_integrity; training_literacy; latin_america_adaptation",
+        "assessment_integrity; training_literacy; privacy_security",
+        "assessment_integrity; training_literacy; privacy_security; latin_america_adaptation",
+        "general_context",
+        "governance",
+        "governance; assessment_integrity",
+        "governance; assessment_integrity; latin_america_adaptation",
+        "governance; assessment_integrity; privacy_security",
+        "governance; assessment_integrity; privacy_security; latin_america_adaptation",
+        "governance; assessment_integrity; training_literacy",
+        "governance; assessment_integrity; training_literacy; latin_america_adaptation",
+        "governance; assessment_integrity; training_literacy; privacy_security",
+        "governance; assessment_integrity; training_literacy; privacy_security; latin_america_adapt",
+        "governance; latin_america_adaptation",
+        "governance; privacy_security",
+        "governance; privacy_security; latin_america_adaptation",
+        "governance; training_literacy",
+        "governance; training_literacy; latin_america_adaptation",
+        "governance; training_literacy; privacy_security",
+        "governance; training_literacy; privacy_security; latin_america_adaptation",
+        "latin_america_adaptation",
+        "training_literacy",
+        "training_literacy; latin_america_adaptation",
+        "training_literacy; privacy_security",
+        "training_literacy; privacy_security; latin_america_adaptation"
+      ],
+      "column_count": 30,
+      "rows": 18,
+      "numeric_metric_preview": [
+        {
+          "kmeans_18": 0.0
+        },
+        {
+          "kmeans_18": 1.0
+        },
+        {
+          "kmeans_18": 2.0
+        },
+        {
+          "kmeans_18": 3.0
+        },
+        {
+          "kmeans_18": 4.0
+        },
+        {
+          "kmeans_18": 5.0
+        },
+        {
+          "kmeans_18": 6.0
+        },
+        {
+          "kmeans_18": 7.0
+        },
+        {
+          "kmeans_18": 8.0
+        },
+        {
+          "kmeans_18": 9.0
+        },
+        {
+          "kmeans_18": 10.0
+        },
+        {
+          "kmeans_18": 11.0
+        },
+        {
+          "kmeans_18": 12.0
+        },
+        {
+          "kmeans_18": 13.0
+        },
+        {
+          "kmeans_18": 14.0
+        },
+        {
+          "kmeans_18": 15.0
+        },
+        {
+          "kmeans_18": 16.0
+        },
+        {
+          "kmeans_18": 17.0
+        }
+      ]
+    },
+    {
+      "path": "outputs/tables/kmeans_25_topic_by_discipline.csv",
+      "size_bytes": 347,
+      "extension": ".csv",
+      "columns": [
+        "kmeans_25",
+        "engineering",
+        "health_sciences",
+        "social_sciences_humanities"
+      ],
+      "column_count": 4,
+      "rows": 25,
+      "numeric_metric_preview": [
+        {
+          "kmeans_25": 0.0
+        },
+        {
+          "kmeans_25": 1.0
+        },
+        {
+          "kmeans_25": 2.0
+        },
+        {
+          "kmeans_25": 3.0
+        },
+        {
+          "kmeans_25": 4.0
+        },
+        {
+          "kmeans_25": 5.0
+        },
+        {
+          "kmeans_25": 6.0
+        },
+        {
+          "kmeans_25": 7.0
+        },
+        {
+          "kmeans_25": 8.0
+        },
+        {
+          "kmeans_25": 9.0
+        },
+        {
+          "kmeans_25": 10.0
+        },
+        {
+          "kmeans_25": 11.0
+        },
+        {
+          "kmeans_25": 12.0
+        },
+        {
+          "kmeans_25": 13.0
+        },
+        {
+          "kmeans_25": 14.0
+        },
+        {
+          "kmeans_25": 15.0
+        },
+        {
+          "kmeans_25": 16.0
+        },
+        {
+          "kmeans_25": 17.0
+        },
+        {
+          "kmeans_25": 18.0
+        },
+        {
+          "kmeans_25": 19.0
+        },
+        {
+          "kmeans_25": 20.0
+        },
+        {
+          "kmeans_25": 21.0
+        },
+        {
+          "kmeans_25": 22.0
+        },
+        {
+          "kmeans_25": 23.0
+        },
+        {
+          "kmeans_25": 24.0
+        }
+      ]
+    },
+    {
+      "path": "outputs/tables/kmeans_25_topic_by_policy_use.csv",
+      "size_bytes": 3010,
+      "extension": ".csv",
+      "columns": [
+        "kmeans_25",
+        "assessment_integrity",
+        "assessment_integrity; latin_america_adaptation",
+        "assessment_integrity; privacy_security",
+        "assessment_integrity; training_literacy",
+        "assessment_integrity; training_literacy; latin_america_adaptation",
+        "assessment_integrity; training_literacy; privacy_security",
+        "assessment_integrity; training_literacy; privacy_security; latin_america_adaptation",
+        "general_context",
+        "governance",
+        "governance; assessment_integrity",
+        "governance; assessment_integrity; latin_america_adaptation",
+        "governance; assessment_integrity; privacy_security",
+        "governance; assessment_integrity; privacy_security; latin_america_adaptation",
+        "governance; assessment_integrity; training_literacy",
+        "governance; assessment_integrity; training_literacy; latin_america_adaptation",
+        "governance; assessment_integrity; training_literacy; privacy_security",
+        "governance; assessment_integrity; training_literacy; privacy_security; latin_america_adapt",
+        "governance; latin_america_adaptation",
+        "governance; privacy_security",
+        "governance; privacy_security; latin_america_adaptation",
+        "governance; training_literacy",
+        "governance; training_literacy; latin_america_adaptation",
+        "governance; training_literacy; privacy_security",
+        "governance; training_literacy; privacy_security; latin_america_adaptation",
+        "latin_america_adaptation",
+        "training_literacy",
+        "training_literacy; latin_america_adaptation",
+        "training_literacy; privacy_security",
+        "training_literacy; privacy_security; latin_america_adaptation"
+      ],
+      "column_count": 30,
+      "rows": 25,
+      "numeric_metric_preview": [
+        {
+          "kmeans_25": 0.0
+        },
+        {
+          "kmeans_25": 1.0
+        },
+        {
+          "kmeans_25": 2.0
+        },
+        {
+          "kmeans_25": 3.0
+        },
+        {
+          "kmeans_25": 4.0
+        },
+        {
+          "kmeans_25": 5.0
+        },
+        {
+          "kmeans_25": 6.0
+        },
+        {
+          "kmeans_25": 7.0
+        },
+        {
+          "kmeans_25": 8.0
+        },
+        {
+          "kmeans_25": 9.0
+        },
+        {
+          "kmeans_25": 10.0
+        },
+        {
+          "kmeans_25": 11.0
+        },
+        {
+          "kmeans_25": 12.0
+        },
+        {
+          "kmeans_25": 13.0
+        },
+        {
+          "kmeans_25": 14.0
+        },
+        {
+          "kmeans_25": 15.0
+        },
+        {
+          "kmeans_25": 16.0
+        },
+        {
+          "kmeans_25": 17.0
+        },
+        {
+          "kmeans_25": 18.0
+        },
+        {
+          "kmeans_25": 19.0
+        },
+        {
+          "kmeans_25": 20.0
+        },
+        {
+          "kmeans_25": 21.0
+        },
+        {
+          "kmeans_25": 22.0
+        },
+        {
+          "kmeans_25": 23.0
+        },
+        {
+          "kmeans_25": 24.0
+        }
+      ]
+    },
+    {
+      "path": "outputs/tables/table_policy_dimension_counts.csv",
+      "size_bytes": 205,
+      "extension": ".csv",
+      "columns": [
+        "policy_dimension",
+        "n"
+      ],
+      "column_count": 2,
+      "rows": 9
+    },
+    {
+      "path": "outputs/tables/fulltext_pdf_download_manifest.csv",
+      "size_bytes": 1484874,
+      "extension": ".csv",
+      "columns": [
+        "status",
+        "pdf_path",
+        "bytes",
+        "download_url",
+        "title",
+        "doi"
+      ],
+      "column_count": 6,
+      "rows": 5000
+    },
+    {
+      "path": "outputs/tables/fulltext_topic_model_documents.csv",
+      "size_bytes": 540156715,
+      "extension": ".csv",
+      "columns": [
+        "status",
+        "pdf_path",
+        "page_count",
+        "pages_extracted",
+        "text_length",
+        "full_text",
+        "title",
+        "doi",
+        "download_url",
+        "openalex_id",
+        "abstract",
+        "publication_year",
+        "publication_date",
+        "type",
+        "source",
+        "source_type",
+        "publisher",
+        "is_oa",
+        "oa_status",
+        "cited_by_count",
+        "authors",
+        "institutions",
+        "countries",
+        "concepts",
+        "topics",
+        "query",
+        "landing_page_url",
+        "pdf_url",
+        "retrieved_at",
+        "text_for_analysis",
+        "has_abstract",
+        "text",
+        "relevance_hits",
+        "disciplinary_area",
+        "policy_dimension",
+        "abstract_len",
+        "cluster",
+        "q1_relevance_score",
+        "flag_genai",
+        "flag_he",
+        "flag_policy",
+        "flag_school",
+        "flag_generic_digital",
+        "flag_retracted",
+        "screen_text",
+        "flag_assessment",
+        "flag_training",
+        "flag_privacy",
+        "flag_latin",
+        "flag_review",
+        "flag_school_only",
+        "sim_include_core",
+        "sim_include_policy",
+        "sim_context",
+        "sim_exclude",
+        "ai_include_score",
+        "ai_exclude_score",
+        "ai_margin",
+        "ai_decision",
+        "ai_rationale",
+        "audit_priority",
+        "combined_text",
+        "lower",
+        "ft_governance_policy",
+        "snip_governance_policy",
+        "ft_ethical_integrity",
+        "snip_ethical_integrity",
+        "ft_assessment_redesign",
+        "snip_assessment_redesign",
+        "ft_training_literacy",
+        "snip_training_literacy",
+        "ft_privacy_security",
+        "snip_privacy_security",
+        "ft_equity_access",
+        "snip_equity_access",
+        "ft_discipline_health",
+        "snip_discipline_health",
+        "ft_discipline_engineering",
+        "snip_discipline_engineering",
+        "ft_discipline_ssh",
+        "snip_discipline_ssh",
+        "ft_quantitative_data",
+        "snip_quantitative_data",
+        "ft_intervention_design",
+        "snip_intervention_design",
+        "ft_review_synthesis",
+        "snip_review_synthesis",
+        "semantic_text",
+        "ft_sim_include",
+        "ft_sim_meta",
+        "ft_sim_exclude",
+        "ft_include_score",
+        "ft_meta_score",
+        "ft_exclude_score",
+        "ft_margin",
+        "ft_decision",
+        "ft_rationale",
+        "meta_feasibility_tier",
+        "policy_use_category",
+        "topic_text"
+      ],
+      "column_count": 103
+    },
+    {
+      "path": "outputs/tables/q1_dynamic_ai_policy_framework.csv",
+      "size_bytes": 3427,
+      "extension": ".csv",
+      "columns": [
+        "policy_domain",
+        "institutional_rule",
+        "social_sciences_humanities",
+        "health_sciences",
+        "engineering",
+        "latin_america_adaptation"
+      ],
+      "column_count": 6,
+      "rows": 6
+    },
+    {
+      "path": "outputs/tables/screening_priority_top_1500_q1.csv",
+      "size_bytes": 426300,
+      "extension": ".csv",
+      "columns": [
+        "title",
+        "publication_year",
+        "type",
+        "source",
+        "doi",
+        "cited_by_count",
+        "q1_relevance_score",
+        "disciplinary_area",
+        "policy_dimension",
+        "cluster",
+        "countries",
+        "landing_page_url"
+      ],
+      "column_count": 12,
+      "rows": 1500
+    },
+    {
+      "path": "outputs/tables/final_area_by_policy_use_matrix.csv",
+      "size_bytes": 1704,
+      "extension": ".csv",
+      "columns": [
+        "disciplinary_area",
+        "assessment_integrity",
+        "assessment_integrity; latin_america_adaptation",
+        "assessment_integrity; privacy_security",
+        "assessment_integrity; training_literacy",
+        "assessment_integrity; training_literacy; latin_america_adaptation",
+        "assessment_integrity; training_literacy; privacy_security",
+        "assessment_integrity; training_literacy; privacy_security; latin_america_adaptation",
+        "general_context",
+        "governance",
+        "governance; assessment_integrity",
+        "governance; assessment_integrity; latin_america_adaptation",
+        "governance; assessment_integrity; privacy_security",
+        "governance; assessment_integrity; privacy_security; latin_america_adaptation",
+        "governance; assessment_integrity; training_literacy",
+        "governance; assessment_integrity; training_literacy; latin_america_adaptation",
+        "governance; assessment_integrity; training_literacy; privacy_security",
+        "governance; assessment_integrity; training_literacy; privacy_security; latin_america_adapt",
+        "governance; latin_america_adaptation",
+        "governance; privacy_security",
+        "governance; privacy_security; latin_america_adaptation",
+        "governance; training_literacy",
+        "governance; training_literacy; latin_america_adaptation",
+        "governance; training_literacy; privacy_security",
+        "governance; training_literacy; privacy_security; latin_america_adaptation",
+        "latin_america_adaptation",
+        "training_literacy",
+        "training_literacy; latin_america_adaptation",
+        "training_literacy; privacy_security",
+        "training_literacy; privacy_security; latin_america_adaptation"
+      ],
+      "column_count": 30,
+      "rows": 3
+    },
+    {
+      "path": "outputs/tables/matrix_area_by_policy_dimension.csv",
+      "size_bytes": 366,
+      "extension": ".csv",
+      "columns": [
+        "disciplinary_area",
+        "ai_literacy_training",
+        "assessment",
+        "equity_access",
+        "ethics_integrity",
+        "general",
+        "governance_policy",
+        "privacy_security",
+        "research_scholarship",
+        "teaching_learning"
+      ],
+      "column_count": 10,
+      "rows": 4
+    },
+    {
+      "path": "outputs/tables/article_ready_screening_top_2000.csv",
+      "size_bytes": 569852,
+      "extension": ".csv",
+      "columns": [
+        "title",
+        "publication_year",
+        "type",
+        "source",
+        "doi",
+        "cited_by_count",
+        "q1_relevance_score",
+        "disciplinary_area",
+        "policy_dimension",
+        "cluster",
+        "countries",
+        "landing_page_url"
+      ],
+      "column_count": 12,
+      "rows": 2000
+    },
+    {
+      "path": "outputs/tables/fulltext_area_by_decision_matrix.csv",
+      "size_bytes": 250,
+      "extension": ".csv",
+      "columns": [
+        "disciplinary_area",
+        "Exclude_fulltext",
+        "Exclude_fulltext_unusable",
+        "Include_core_fulltext",
+        "Include_meta_candidate",
+        "Include_policy_fulltext",
+        "Unclear_fulltext"
+      ],
+      "column_count": 7,
+      "rows": 3
+    },
+    {
+      "path": "outputs/tables/fulltext_quantitative_candidates.csv",
+      "size_bytes": 31647152,
+      "extension": ".csv",
+      "columns": [
+        "title",
+        "doi",
+        "ft_decision",
+        "disciplinary_area",
+        "policy_dimension",
+        "candidate_type",
+        "snippet",
+        "source",
+        "publication_year",
+        "pdf_path",
+        "landing_page_url"
+      ],
+      "column_count": 11
+    },
+    {
+      "path": "outputs/tables/q1_table_policy_dimension_counts.csv",
+      "size_bytes": 204,
+      "extension": ".csv",
+      "columns": [
+        "policy_dimension",
+        "n"
+      ],
+      "column_count": 2,
+      "rows": 9
+    },
+    {
+      "path": "outputs/tables/article_ready_engineering_top_300.csv",
+      "size_bytes": 79971,
+      "extension": ".csv",
+      "columns": [
+        "title",
+        "publication_year",
+        "type",
+        "source",
+        "doi",
+        "cited_by_count",
+        "q1_relevance_score",
+        "disciplinary_area",
+        "policy_dimension",
+        "cluster",
+        "countries",
+        "landing_page_url"
+      ],
+      "column_count": 12,
+      "rows": 300
+    },
+    {
+      "path": "outputs/tables/advanced_evidence_maturity_dataset.csv",
+      "size_bytes": 56607794,
+      "extension": ".csv",
+      "columns": [
+        "meta_feasibility_tier",
+        "ft_decision",
+        "policy_use_category",
+        "title",
+        "abstract",
+        "publication_year",
+        "type",
+        "source",
+        "doi",
+        "cited_by_count",
+        "disciplinary_area",
+        "policy_dimension",
+        "ft_rationale",
+        "ft_include_score",
+        "ft_meta_score",
+        "snip_quantitative_data",
+        "snip_intervention_design",
+        "snip_assessment_redesign",
+        "snip_governance_policy",
+        "snip_ethical_integrity",
+        "snip_training_literacy",
+        "snip_privacy_security",
+        "snip_equity_access",
+        "pdf_path",
+        "landing_page_url",
+        "quant_snippet_count",
+        "policy_snippet_count",
+        "policy_component_diversity",
+        "tier_base_score",
+        "evidence_maturity_score",
+        "policy_richness_score",
+        "is_tier2_extractable",
+        "is_tier1_review",
+        "is_high_policy_value"
+      ],
+      "column_count": 34
+    },
+    {
+      "path": "outputs/tables/advanced_pairwise_discipline_tests.csv",
+      "size_bytes": 442,
+      "extension": ".csv",
+      "columns": [
+        "area_1",
+        "area_2",
+        "mann_whitney_U",
+        "p_value",
+        "cliffs_delta",
+        "median_1",
+        "median_2",
+        "p_adjusted_BH"
+      ],
+      "column_count": 8,
+      "rows": 3
+    },
+    {
+      "path": "outputs/tables/fulltext_topic_by_meta_tier_matrix.csv",
+      "size_bytes": 265,
+      "extension": ".csv",
+      "columns": [
+        "topic_cluster",
+        "Not meta-analytic",
+        "Tier 1 - existing meta-analysis/review synthesis",
+        "Tier 1b - review/scoping synthesis",
+        "Tier 2 - primary intervention potentially extractable",
+        "Tier 3 - quantitative contextual evidence"
+      ],
+      "column_count": 6,
+      "rows": 3
+    },
+    {
+      "path": "outputs/tables/fulltext_umap_hdbscan_topic_labels.csv",
+      "size_bytes": 1654,
+      "extension": ".csv",
+      "columns": [
+        "topic_cluster",
+        "n_records",
+        "top_terms",
+        "main_discipline",
+        "main_policy_dimension",
+        "main_meta_tier",
+        "top_titles"
+      ],
+      "column_count": 7,
+      "rows": 2
+    },
+    {
+      "path": "outputs/tables/kmeans_topic_model_quality_metrics.csv",
+      "size_bytes": 236,
+      "extension": ".csv",
+      "columns": [
+        "k",
+        "silhouette_cosine_sample",
+        "davies_bouldin",
+        "calinski_harabasz"
+      ],
+      "column_count": 4,
+      "rows": 3,
+      "numeric_metric_preview": [
+        {
+          "k": 12.0,
+          "silhouette_cosine_sample": 0.05905936285853386,
+          "davies_bouldin": 3.789302435261666,
+          "calinski_harabasz": 70.78704833984375
+        },
+        {
+          "k": 18.0,
+          "silhouette_cosine_sample": 0.04462435469031334,
+          "davies_bouldin": 3.906539527652682,
+          "calinski_harabasz": 53.504478454589844
+        },
+        {
+          "k": 25.0,
+          "silhouette_cosine_sample": 0.03601225093007088,
+          "davies_bouldin": 3.8371131309677,
+          "calinski_harabasz": 42.60254669189453
+        }
+      ]
+    },
+    {
+      "path": "outputs/tables/q1_matrix_area_by_policy_dimension.csv",
+      "size_bytes": 366,
+      "extension": ".csv",
+      "columns": [
+        "disciplinary_area",
+        "ai_literacy_training",
+        "assessment",
+        "equity_access",
+        "ethics_integrity",
+        "general",
+        "governance_policy",
+        "privacy_security",
+        "research_scholarship",
+        "teaching_learning"
+      ],
+      "column_count": 10,
+      "rows": 4
+    },
+    {
+      "path": "outputs/tables/fulltext_topic_by_discipline_matrix.csv",
+      "size_bytes": 106,
+      "extension": ".csv",
+      "columns": [
+        "topic_cluster",
+        "engineering",
+        "health_sciences",
+        "social_sciences_humanities"
+      ],
+      "column_count": 4,
+      "rows": 3
+    },
+    {
+      "path": "outputs/tables/fulltext_topic_by_policy_use_matrix.csv",
+      "size_bytes": 1640,
+      "extension": ".csv",
+      "columns": [
+        "topic_cluster",
+        "assessment_integrity",
+        "assessment_integrity; latin_america_adaptation",
+        "assessment_integrity; privacy_security",
+        "assessment_integrity; training_literacy",
+        "assessment_integrity; training_literacy; latin_america_adaptation",
+        "assessment_integrity; training_literacy; privacy_security",
+        "assessment_integrity; training_literacy; privacy_security; latin_america_adaptation",
+        "general_context",
+        "governance",
+        "governance; assessment_integrity",
+        "governance; assessment_integrity; latin_america_adaptation",
+        "governance; assessment_integrity; privacy_security",
+        "governance; assessment_integrity; privacy_security; latin_america_adaptation",
+        "governance; assessment_integrity; training_literacy",
+        "governance; assessment_integrity; training_literacy; latin_america_adaptation",
+        "governance; assessment_integrity; training_literacy; privacy_security",
+        "governance; assessment_integrity; training_literacy; privacy_security; latin_america_adapt",
+        "governance; latin_america_adaptation",
+        "governance; privacy_security",
+        "governance; privacy_security; latin_america_adaptation",
+        "governance; training_literacy",
+        "governance; training_literacy; latin_america_adaptation",
+        "governance; training_literacy; privacy_security",
+        "governance; training_literacy; privacy_security; latin_america_adaptation",
+        "latin_america_adaptation",
+        "training_literacy",
+        "training_literacy; latin_america_adaptation",
+        "training_literacy; privacy_security",
+        "training_literacy; privacy_security; latin_america_adaptation"
+      ],
+      "column_count": 30,
+      "rows": 3
+    },
+    {
+      "path": "outputs/tables/q1_disciplinary_risk_control_matrix.csv",
+      "size_bytes": 944,
+      "extension": ".csv",
+      "columns": [
+        "disciplinary_area",
+        "main_risks",
+        "controls",
+        "assessment_strategies"
+      ],
+      "column_count": 4,
+      "rows": 3
+    },
+    {
+      "path": "outputs/tables/final_fulltext_screening_all_records.csv",
+      "size_bytes": 56460077,
+      "extension": ".csv",
+      "columns": [
+        "meta_feasibility_tier",
+        "ft_decision",
+        "policy_use_category",
+        "title",
+        "abstract",
+        "publication_year",
+        "type",
+        "source",
+        "doi",
+        "cited_by_count",
+        "disciplinary_area",
+        "policy_dimension",
+        "ft_rationale",
+        "ft_include_score",
+        "ft_meta_score",
+        "snip_quantitative_data",
+        "snip_intervention_design",
+        "snip_assessment_redesign",
+        "snip_governance_policy",
+        "snip_ethical_integrity",
+        "snip_training_literacy",
+        "snip_privacy_security",
+        "snip_equity_access",
+        "pdf_path",
+        "landing_page_url"
+      ],
+      "column_count": 25
+    },
+    {
+      "path": "outputs/tables/fulltext_policy_component_extraction.csv",
+      "size_bytes": 62528321,
+      "extension": ".csv",
+      "columns": [
+        "title",
+        "doi",
+        "ft_decision",
+        "component",
+        "snippet",
+        "disciplinary_area",
+        "policy_dimension",
+        "source",
+        "publication_year",
+        "pdf_path"
+      ],
+      "column_count": 10
+    },
+    {
+      "path": "outputs/tables/AI_policy_HE_FULLTEXT_topic_modeling.xlsx",
+      "size_bytes": 2623182,
+      "extension": ".xlsx"
+    },
+    {
+      "path": "outputs/tables/article_ready_policy_dimension_counts.csv",
+      "size_bytes": 200,
+      "extension": ".csv",
+      "columns": [
+        "policy_dimension",
+        "n"
+      ],
+      "column_count": 2,
+      "rows": 9
+    },
+    {
+      "path": "outputs/tables/advanced_evidence_maturity_dataset.parquet",
+      "size_bytes": 25703902,
+      "extension": ".parquet",
+      "rows": 3656,
+      "columns": [
+        "meta_feasibility_tier",
+        "ft_decision",
+        "policy_use_category",
+        "title",
+        "abstract",
+        "publication_year",
+        "type",
+        "source",
+        "doi",
+        "cited_by_count",
+        "disciplinary_area",
+        "policy_dimension",
+        "ft_rationale",
+        "ft_include_score",
+        "ft_meta_score",
+        "snip_quantitative_data",
+        "snip_intervention_design",
+        "snip_assessment_redesign",
+        "snip_governance_policy",
+        "snip_ethical_integrity",
+        "snip_training_literacy",
+        "snip_privacy_security",
+        "snip_equity_access",
+        "pdf_path",
+        "landing_page_url",
+        "quant_snippet_count",
+        "policy_snippet_count",
+        "policy_component_diversity",
+        "tier_base_score",
+        "evidence_maturity_score",
+        "policy_richness_score",
+        "is_tier2_extractable",
+        "is_tier1_review",
+        "is_high_policy_value"
+      ],
+      "row_groups": 1
+    },
+    {
+      "path": "outputs/tables/article_ready_area_by_dimension_matrix.csv",
+      "size_bytes": 357,
+      "extension": ".csv",
+      "columns": [
+        "disciplinary_area",
+        "ai_literacy_training",
+        "assessment",
+        "equity_access",
+        "ethics_integrity",
+        "general",
+        "governance_policy",
+        "privacy_security",
+        "research_scholarship",
+        "teaching_learning"
+      ],
+      "column_count": 10,
+      "rows": 4
+    },
+    {
+      "path": "outputs/table_zips_by_article/TABLE_ZIPS_FILE_MANIFEST.csv",
+      "size_bytes": 18135,
+      "extension": ".csv",
+      "columns": [
+        "package",
+        "file",
+        "source_path",
+        "status"
+      ],
+      "column_count": 4,
+      "rows": 94
+    },
+    {
+      "path": "outputs/tables/evidence_matrix_area_by_policy_dimension.csv",
+      "size_bytes": 18509,
+      "extension": ".csv",
+      "columns": [
+        "disciplinary_area",
+        "policy_dimension",
+        "n_records",
+        "n_reviews",
+        "n_meta_analyses",
+        "n_empirical_or_intervention",
+        "top_titles",
+        "policy_use"
+      ],
+      "column_count": 8,
+      "rows": 27
+    },
+    {
+      "path": "outputs/tables/AI_policy_HE_ADVANCED_statistical_models.xlsx",
+      "size_bytes": 9690863,
+      "extension": ".xlsx"
+    },
+    {
+      "path": "outputs/tables/AI_policy_HE_KMEANS_topic_modeling_robust.xlsx",
+      "size_bytes": 585187,
+      "extension": ".xlsx"
+    },
+    {
+      "path": "outputs/tables/fulltext_topic_model_documents_with_kmeans.csv",
+      "size_bytes": 540268070,
+      "extension": ".csv",
+      "columns": [
+        "status",
+        "pdf_path",
+        "page_count",
+        "pages_extracted",
+        "text_length",
+        "full_text",
+        "title",
+        "doi",
+        "download_url",
+        "openalex_id",
+        "abstract",
+        "publication_year",
+        "publication_date",
+        "type",
+        "source",
+        "source_type",
+        "publisher",
+        "is_oa",
+        "oa_status",
+        "cited_by_count",
+        "authors",
+        "institutions",
+        "countries",
+        "concepts",
+        "topics",
+        "query",
+        "landing_page_url",
+        "pdf_url",
+        "retrieved_at",
+        "text_for_analysis",
+        "has_abstract",
+        "text",
+        "relevance_hits",
+        "disciplinary_area",
+        "policy_dimension",
+        "abstract_len",
+        "cluster",
+        "q1_relevance_score",
+        "flag_genai",
+        "flag_he",
+        "flag_policy",
+        "flag_school",
+        "flag_generic_digital",
+        "flag_retracted",
+        "screen_text",
+        "flag_assessment",
+        "flag_training",
+        "flag_privacy",
+        "flag_latin",
+        "flag_review",
+        "flag_school_only",
+        "sim_include_core",
+        "sim_include_policy",
+        "sim_context",
+        "sim_exclude",
+        "ai_include_score",
+        "ai_exclude_score",
+        "ai_margin",
+        "ai_decision",
+        "ai_rationale",
+        "audit_priority",
+        "combined_text",
+        "lower",
+        "ft_governance_policy",
+        "snip_governance_policy",
+        "ft_ethical_integrity",
+        "snip_ethical_integrity",
+        "ft_assessment_redesign",
+        "snip_assessment_redesign",
+        "ft_training_literacy",
+        "snip_training_literacy",
+        "ft_privacy_security",
+        "snip_privacy_security",
+        "ft_equity_access",
+        "snip_equity_access",
+        "ft_discipline_health",
+        "snip_discipline_health",
+        "ft_discipline_engineering",
+        "snip_discipline_engineering",
+        "ft_discipline_ssh",
+        "snip_discipline_ssh",
+        "ft_quantitative_data",
+        "snip_quantitative_data",
+        "ft_intervention_design",
+        "snip_intervention_design",
+        "ft_review_synthesis",
+        "snip_review_synthesis",
+        "semantic_text",
+        "ft_sim_include",
+        "ft_sim_meta",
+        "ft_sim_exclude",
+        "ft_include_score",
+        "ft_meta_score",
+        "ft_exclude_score",
+        "ft_margin",
+        "ft_decision",
+        "ft_rationale",
+        "meta_feasibility_tier",
+        "policy_use_category",
+        "topic_text"
+      ],
+      "column_count": 108
+    },
+    {
+      "path": "outputs/tables/final_policy_component_counts_from_fulltext.csv",
+      "size_bytes": 218,
+      "extension": ".csv",
+      "columns": [
+        "component",
+        "n"
+      ],
+      "column_count": 2,
+      "rows": 9
+    },
+    {
+      "path": "outputs/tables/policy_domain_by_discipline_evidence_counts.csv",
+      "size_bytes": 10554,
+      "extension": ".csv",
+      "columns": [
+        "policy_domain",
+        "disciplinary_area",
+        "evidence_records",
+        "top_examples",
+        "recommended_policy_translation"
+      ],
+      "column_count": 5,
+      "rows": 21
+    },
+    {
+      "path": "outputs/figures_v3_publication_by_paper/FIGURES_V3_MANIFEST.csv",
+      "size_bytes": 9661,
+      "extension": ".csv",
+      "columns": [
+        "paper_folder",
+        "file",
+        "path",
+        "size_mb"
+      ],
+      "column_count": 4,
+      "rows": 50
+    },
+    {
+      "path": "outputs/tables/AI_policy_HE_AI_assisted_screening_decisions.csv",
+      "size_bytes": 99810381,
+      "extension": ".csv",
+      "columns": [
+        "openalex_id",
+        "doi",
+        "title",
+        "abstract",
+        "publication_year",
+        "publication_date",
+        "type",
+        "source",
+        "source_type",
+        "publisher",
+        "is_oa",
+        "oa_status",
+        "cited_by_count",
+        "authors",
+        "institutions",
+        "countries",
+        "concepts",
+        "topics",
+        "query",
+        "landing_page_url",
+        "pdf_url",
+        "retrieved_at",
+        "text_for_analysis",
+        "has_abstract",
+        "text",
+        "relevance_hits",
+        "disciplinary_area",
+        "policy_dimension",
+        "abstract_len",
+        "cluster",
+        "q1_relevance_score",
+        "flag_genai",
+        "flag_he",
+        "flag_policy",
+        "flag_school",
+        "flag_generic_digital",
+        "flag_retracted",
+        "screen_text",
+        "flag_assessment",
+        "flag_training",
+        "flag_privacy",
+        "flag_latin",
+        "flag_review",
+        "flag_school_only",
+        "sim_include_core",
+        "sim_include_policy",
+        "sim_context",
+        "sim_exclude",
+        "ai_include_score",
+        "ai_exclude_score",
+        "ai_margin",
+        "ai_decision",
+        "ai_rationale",
+        "audit_priority"
+      ],
+      "column_count": 54
+    },
+    {
+      "path": "outputs/tables/AI_policy_HE_AI_assisted_screening_workbook.xlsx",
+      "size_bytes": 6974120,
+      "extension": ".xlsx"
+    },
+    {
+      "path": "outputs/tables/AI_policy_HE_manual_screening_with_abstracts.xlsx",
+      "size_bytes": 1111134,
+      "extension": ".xlsx"
+    },
+    {
+      "path": "outputs/tables/AI_policy_HE_article_ready_screening_workbook.xlsx",
+      "size_bytes": 465815,
+      "extension": ".xlsx"
+    },
+    {
+      "path": "outputs/tables/AI_policy_HE_fulltext_screening_and_extraction.xlsx",
+      "size_bytes": 26823293,
+      "extension": ".xlsx"
+    },
+    {
+      "path": "outputs/tables/AI_policy_HE_FINAL_meta_policy_fulltext_package.xlsx",
+      "size_bytes": 14679387,
+      "extension": ".xlsx"
+    },
+    {
+      "path": "outputs/tables/article_ready_latin_america_global_south_top_300.csv",
+      "size_bytes": 85766,
+      "extension": ".csv",
+      "columns": [
+        "title",
+        "publication_year",
+        "type",
+        "source",
+        "doi",
+        "cited_by_count",
+        "q1_relevance_score",
+        "disciplinary_area",
+        "policy_dimension",
+        "cluster",
+        "countries",
+        "landing_page_url"
+      ],
+      "column_count": 12,
+      "rows": 300
+    },
+    {
+      "path": "outputs/tables/AI_policy_HE_manual_screening_with_abstracts_CLEAN.xlsx",
+      "size_bytes": 4441605,
+      "extension": ".xlsx"
+    },
+    {
+      "path": "outputs/tables/AI_policy_HE_evidence_synthesis_and_meta_candidates.xlsx",
+      "size_bytes": 828208,
+      "extension": ".xlsx"
+    },
+    {
+      "path": "outputs/table_zips_by_article/00_Master_Methodology_Traceability_Tables/ARTICLE_ZIPS_FILE_MANIFEST.csv",
+      "size_bytes": 19735,
+      "extension": ".csv",
+      "columns": [
+        "package",
+        "file",
+        "source"
+      ],
+      "column_count": 3,
+      "rows": 106
+    },
+    {
+      "path": "outputs/table_zips_by_article/00_Master_Methodology_Traceability_Tables/MASTER_METHODS_QUANTITATIVE_TRACEABILITY_SUMMARY.xlsx",
+      "size_bytes": 8431,
+      "extension": ".xlsx"
+    }
+  ],
+  "report_stage_mentions": [
+    {
+      "path": "manuscript/results_skeleton_q1.md",
+      "stage_count_mentions": [
+        102822,
+        22524,
+        21676
+      ]
+    },
+    {
+      "path": "manuscript/fulltext_figures_report.md",
+      "stage_count_mentions": [
+        3656
+      ]
+    },
+    {
+      "path": "manuscript/manual_screening_protocol.md",
+      "stage_count_mentions": []
+    },
+    {
+      "path": "manuscript/ai_assisted_screening_method.md",
+      "stage_count_mentions": [
+        10283
+      ]
+    },
+    {
+      "path": "manuscript/FULLTEXT_topic_modelling_report.md",
+      "stage_count_mentions": [
+        3656
+      ]
+    },
+    {
+      "path": "manuscript/methods_results_article_ready_draft.md",
+      "stage_count_mentions": [
+        102822,
+        22524,
+        21676,
+        10283
+      ]
+    },
+    {
+      "path": "manuscript/KMEANS_topic_modelling_robust_report.md",
+      "stage_count_mentions": []
+    },
+    {
+      "path": "manuscript/FINAL_fulltext_results_for_manuscript.md",
+      "stage_count_mentions": [
+        5000,
+        3656,
+        3655
+      ]
+    },
+    {
+      "path": "manuscript/fulltext_screening_and_extraction_report.md",
+      "stage_count_mentions": [
+        3656
+      ]
+    },
+    {
+      "path": "manuscript/FINAL_methods_AI_assisted_fulltext_synthesis.md",
+      "stage_count_mentions": [
+        3656
+      ]
+    },
+    {
+      "path": "manuscript/evidence_synthesis_and_meta_analysis_feasibility.md",
+      "stage_count_mentions": [
+        10265
+      ]
+    },
+    {
+      "path": "outputs/table_zips_by_article/05_Full_Text_Topic_Modeling_AI_Policy_HE/FILES_INCLUDED.txt",
+      "stage_count_mentions": []
+    },
+    {
+      "path": "ARTICLE_ZIPS_CLEAN/00_Master_Methodology_Traceability_All_Articles/MASTER_METHODS_QUANTITATIVE_TRACEABILITY_SUMMARY.md",
+      "stage_count_mentions": [
+        199366,
+        102822,
+        97267,
+        22524,
+        21676,
+        10283,
+        5000,
+        3656,
+        3655
+      ]
+    }
+  ],
+  "deep_fulltext_count": {
+    "path": "fulltext_topic_model_documents.csv",
+    "text_column_detected": [
+      "full_text",
+      "text"
+    ],
+    "row_count": 3656,
+    "empty_text_count": 0
+  },
+  "privacy": "No row-level scholarly data, document text, titles, authors, identifiers or source code exported."
+}
