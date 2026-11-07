@@ -227,3 +227,22 @@ git push origin main
 Salidas: reports/phase09/summary.md y reports/phase09/embedding_forensics.json. Contienen únicamente estadísticos agregados sobre igualdad numérica de vectores, similitudes, distancias, longitudes de los campos de texto, concordancia de prefijos y señales estáticas de código original. No exportan textos, nombres de artículos, identificadores ni vectores.
 
 Precaución metodológica: un resultado coseno próximo a 1 no prueba que la entrada fuera idéntica; no atribuir truncamiento ni ausencia de contenido completo sin cotejar las reglas de construcción de topic_text, la codificación y el max_seq_length del modelo original.
+
+
+## Fase 10 — Comprobar límites reales de tokenización y localizar MiniLM offline
+
+El resultado 2502/3644 vectores exactamente iguales (fase09) exige verificar la fuente de los vectores y el truncamiento por tokens antes de atribuir información novedosa al análisis de texto completo. Esta fase no recalcula embeddings y solo busca indicios de configuración en código, paquete/modelo/tokenizador local y coincidencia de prefijos; evita publicar texto de documentos o ubicaciones privadas.
+
+~~~bash
+cd "$HOME/AI_policy"
+git pull --ff-only
+python -m py_compile scripts/10_tokenizer_environment_audit.py
+python scripts/10_tokenizer_environment_audit.py \
+  --project "$HOME/ai_policy_he" \
+  --out reports/phase10
+git add reports/phase10
+git diff --cached --quiet || git commit -m "Phase 10: tokenizer truncation and offline model environment"
+git push origin main
+~~~
+
+Los resultados de Python/paquetes del contenedor actual no prueban la inexistencia de un modelo en otro ambiente Singularity, conda o venv. Tampoco hay que afirmar que el modelo truncó el PDF sin comprobar la secuencia entrada -> tokenizador -> max_seq_length -> embedding. El script indica si encuentra un tokenizador ya instalado sin descargar nada.
