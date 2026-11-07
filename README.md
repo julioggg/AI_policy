@@ -291,3 +291,27 @@ git push origin main
 ~~~
 
 La selección y los vectores pueden reanudarse si se interrumpe el proceso, siempre que no cambien los parámetros ni los datos. No subir $HOME/ai_policy_chunk_private a GitHub. Comprobar los informes de fase12 antes de decidir qué pipeline final ejecutar sobre todos los documentos.
+
+
+## Fase 13 — Representación cuerpo por fragmentos para todo el corpus elegible
+
+La fase 12 (n=240) mostró un cambio semántico real: similaridad coseno mediana entre bibliografía y cuerpo 0.82669 frente a 1.00000 entre bibliografía y vector original, con silhouette (k18) de 0.10544 para chunks, 0.09303 para híbrido, 0.06156 original y 0.04903 bibliográfico. Pero hubo clústeres pequeños y la muestra no constituye validación independiente. No declarar calidad superior todavía.
+
+Esta fase toma los **3644 documentos aceptados explícitamente**, excluye las cuatro decisiones `unclear_fulltext` y las ocho exclusiones, y utiliza el `.venv` MiniLM original en modo offline para construir matrices nuevas SOLO PRIVADAS. El documento se representa mediante promedio normalizado de hasta 12 fragmentos de 192 WordPiece con 32 tokens de solape; se omiten los primeros 512 tokens y el 15% final. El texto disponible procede del campo `full_text` y está limitado en la extracción original; no afirmar cobertura de toda la publicación. El vector bibliográfico se codifica por separado a partir de título+resumen. El script compara preliminarmente ambas representaciones mediante coseno, pero deja las pruebas comparativas kmeans y robustez para una fase posterior.
+
+~~~bash
+set -e
+cd "$HOME/AI_policy"
+git pull --ff-only
+python -m py_compile scripts/13_full_corpus_body_chunks.py
+"$HOME/ai_policy_he/.venv/bin/python" scripts/13_full_corpus_body_chunks.py \
+  --project "$HOME/ai_policy_he" \
+  --out reports/phase13 \
+  --private-cache "$HOME/ai_policy_chunks_full_private" \
+  --threads 8 --batch-size 32
+git add reports/phase13
+git diff --cached --quiet || git commit -m "Phase 13: full-corpus private chunk embeddings"
+git push origin main
+~~~
+
+El proceso guarda los vectores y checkpoints en `$HOME/ai_policy_chunks_full_private`, que NUNCA debe añadirse a GitHub. Si la sesión CEDIA termina antes de finalizar, el mismo comando reanuda los documentos pendientes sin sobrescribir los vectores originales. Si necesita una ejecución parcial controlada, agregue `--max-new-docs 400` y repita posteriormente para completar. El informe público muestra el estado como `partial_resumable` mientras queden documentos pendientes y `completed_vectors_private` al terminar.
