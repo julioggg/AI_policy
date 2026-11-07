@@ -97,3 +97,28 @@ git push origin main
 La fase 3 realiza nuevos **ajustes de KMeans sobre los embeddings previamente guardados**, para k=12/18/25 con cinco semillas y cinco remuestreos cada uno. Reporta ARI/NMI, dispersión entre semillas, silhouette coseno muestral, Davies–Bouldin, Calinski–Harabasz y sensibilidad al excluir registros marcados como no aceptados o sin longitud de texto. Los valores por defecto están pensados como primera sensibilidad; se pueden aumentar semillas/remuestreos después de revisar los resultados. No se escribe ninguna modificación al corpus original.
 
 Advertencias: la alineación exacta entre la matriz .npy y las filas de la base se presume conforme al pipeline original y se comprueba indirectamente; los índices no identifican publicaciones. La coherencia sustantiva de las etiquetas temáticas requiere validación humana. Las métricas no prueban por sí solas que k=18 sea una estructura natural.
+
+
+## Fases 4 y 5: sensibilidad por fuente y preparación de validación humana
+
+~~~bash
+cd "$HOME/AI_policy"
+git pull --ff-only
+
+python scripts/04_source_topic_sensitivity.py \
+  --project "$HOME/ai_policy_he" \
+  --out reports/phase04
+
+python scripts/05_prepare_human_validation.py \
+  --project "$HOME/ai_policy_he" \
+  --private-out "$HOME/ai_policy_validation_private" \
+  --public-out reports/phase05
+
+git add reports/phase04 reports/phase05
+git diff --cached --quiet || git commit -m "Phases 4-5: source sensitivity and blinded validation sampling"
+git push origin main
+~~~
+
+**Fase 4** evalúa distribuciones de disciplinas, dimensiones políticas y clústeres k=12,18,25 entre corpus total, subconjunto de revistas (solo proxy de revisión por pares), textos completos y subconjunto elegible sin exclusiones ni textos vacíos. Entrega tablas agregadas, distancias TV y divergencia Jensen–Shannon, sin exportar registros.
+
+**Fase 5** prepara hojas de codificación independientes para dos revisores: el material con títulos, resúmenes y OpenAlex ID permanece exclusivamente en la carpeta privada fuera del repositorio, situada en $HOME/ai_policy_validation_private. Solo los conteos de muestreo se versionan en GitHub. No afirmar que se ha realizado validación humana hasta que ambos revisores hayan codificado de verdad. El protocolo está en docs/human_validation_protocol.md.
