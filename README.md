@@ -341,3 +341,29 @@ git push origin main
 ~~~
 
 Los reportes de fase14 contienen solo resultados agregados, y todas las etiquetas derivadas de los nuevos modelos permanecen en `$HOME/ai_policy_cluster_labels_private`. Este script NO vuelve a cargar MiniLM, procesar PDFs ni calcular embeddings; se ejecuta con el Python científico de Singularity. No sustituye automáticamente los k=18 anteriores del manuscrito.
+
+
+## Fase 15 — Preparación privada de validación humana e interpretabilidad de tópicos
+
+**Motivación de resultados de fase 14:** el cuerpo con k=12 tiene silhouette de coseno 0.116005, ARI mediano entre semillas 0.69458 y mínimo por clúster 47; cuerpo con k=18 tiene silhouette 0.100827, estabilidad mediana ARI 0.54807 y mínimo 44; híbrido 50/50 con k=18 tiene silhouette 0.076961, estabilidad ARI 0.63437 y mínimo 63. Ninguna métrica comprueba que los tópicos representen políticas de IA en educación superior. Las métricas de concordancia con etiquetas políticas automáticas son menores para cuerpo por chunks; se requieren revisores humanos.
+
+El programa prepara tres particiones candidatas, **sin elegir una ganadora**: body_chunks k12, body_chunks k18 y hybrid_equal k18. Comprueba la huella privada de origen (fase13) y el manifiesto de etiquetas (fase14), toma siete ejemplos por tema (3 cerca del centroide, 3 aleatorios, 1 periférico) y crea 48 grupos ciegos que no revelan modalidad ni k. Produce dos juegos independientes de planillas CSV, cada uno con 48 temas y 336 filas de evaluación de documentos, además de una clave privada. Los textos solo están en CEDIA; el repositorio público recibe un informe de conteos. El documento docs/topic_validation_codebook.md define los criterios y el proceso de adjudicación.
+
+~~~bash
+set -e
+cd "$HOME/AI_policy"
+git pull --ff-only
+python -m py_compile scripts/15_prepare_blinded_topic_review.py
+python scripts/15_prepare_blinded_topic_review.py \
+  --project "$HOME/ai_policy_he" \
+  --phase13-cache "$HOME/ai_policy_chunks_full_private" \
+  --phase14-labels "$HOME/ai_policy_cluster_labels_private" \
+  --phase13-report reports/phase13/full_corpus_chunk_encoding.json \
+  --private-out "$HOME/ai_policy_topic_validation_private" \
+  --out reports/phase15
+git add reports/phase15
+git diff --cached --quiet || git commit -m "Phase 15: blinded topic review sample (aggregate only)"
+git push origin main
+~~~
+
+Los resultados individuales, nombres, resúmenes, fragmentos de cuerpo y clave de códigos permanecen SOLO bajo `$HOME/ai_policy_topic_validation_private`, jamás en GitHub. Las hojas pueden abrirse con Excel/LibreOffice desde una copia local protegida. **No declarar validación humana hasta que dos evaluadores completen sus planillas independientes y se calculen concordancia y adjudicación.**
