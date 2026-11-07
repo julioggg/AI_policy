@@ -59,12 +59,12 @@ def stage_summary(df):
     if "openalex_id" in df:
         ids = normalized(df["openalex_id"])
         r["unique_ids"] = int(ids[ids!=""].nunique())
-        r["duplicate_ids"] = int(len(ids[ids!=""]])-r["unique_ids"])
+        r["duplicate_ids"] = int(len(ids[ids != ""]) - r["unique_ids"])
         r["missing_ids"] = int((ids=="").sum())
     if "doi" in df:
         dois = normalized(df["doi"], doi=True)
         r["unique_dois"] = int(dois[dois!=""].nunique())
-        r["duplicate_doi_rows"] = int(len(dois[dois!=""]])-r["unique_dois"])
+        r["duplicate_doi_rows"] = int(len(dois[dois != ""]) - r["unique_dois"])
         r["missing_doi_rows"] = int((dois=="").sum())
     for col in ["ai_decision","ft_decision","status"]:
         if col in df:
