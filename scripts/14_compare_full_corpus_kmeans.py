@@ -10,6 +10,7 @@ This is a robustness audit, NOT a validation of policy-topic meaning.
 from __future__ import annotations
 
 import argparse
+import collections
 import datetime as dt
 import hashlib
 import itertools
