@@ -1,0 +1,247 @@
+{
+  "created_utc": "2026-11-07T20:41:29.650075+00:00",
+  "stage_summaries": {
+    "raw": {
+      "rows": 199366,
+      "unique_ids": 103608,
+      "missing_id_rows": 0,
+      "duplicate_id_rows": 95758,
+      "unique_dois": 99931,
+      "nonnull_doi_rows": 192323
+    },
+    "deduplicated": {
+      "rows": 102822,
+      "unique_ids": 102822,
+      "missing_id_rows": 0,
+      "duplicate_id_rows": 0,
+      "unique_dois": 99145,
+      "nonnull_doi_rows": 99177
+    },
+    "core": {
+      "rows": 22524,
+      "unique_ids": 22524,
+      "missing_id_rows": 0,
+      "duplicate_id_rows": 0,
+      "unique_dois": 21655,
+      "nonnull_doi_rows": 21659
+    },
+    "q1_refined": {
+      "rows": 21676,
+      "unique_ids": 21676,
+      "missing_id_rows": 0,
+      "duplicate_id_rows": 0,
+      "unique_dois": 20839,
+      "nonnull_doi_rows": 20842
+    },
+    "article_ready": {
+      "rows": 10283,
+      "unique_ids": 10283,
+      "missing_id_rows": 0,
+      "duplicate_id_rows": 0,
+      "unique_dois": 9792,
+      "nonnull_doi_rows": 9794
+    },
+    "screening": {
+      "rows": 10283,
+      "unique_ids": 10283,
+      "missing_id_rows": 0,
+      "duplicate_id_rows": 0,
+      "unique_dois": 9792,
+      "nonnull_doi_rows": 10283,
+      "raw_decisions": {
+        "include_core": 9264,
+        "include_policy": 899,
+        "include_context": 102,
+        "exclude": 18
+      },
+      "recognized_include_rows": 0,
+      "recognized_exclude_rows": 18,
+      "other_decision_rows": 10265
+    },
+    "fulltext": {
+      "rows": 3656,
+      "unique_ids": 3656,
+      "missing_id_rows": 0,
+      "duplicate_id_rows": 0,
+      "unique_dois": 3537,
+      "nonnull_doi_rows": 3656,
+      "raw_decisions": {
+        "include_core": 3519,
+        "include_policy": 124,
+        "include_context": 13
+      },
+      "recognized_include_rows": 0,
+      "recognized_exclude_rows": 0,
+      "other_decision_rows": 3656,
+      "ft_decision": {
+        "include_meta_candidate": 2722,
+        "include_core_fulltext": 911,
+        "include_policy_fulltext": 11,
+        "exclude_fulltext": 7,
+        "[rare combined]": 5
+      },
+      "status": {
+        "ok": 3656
+      },
+      "nonpositive_text_length": 1,
+      "text_length_quantiles": {
+        "0": 0,
+        "0.01": 5921,
+        "0.05": 16509,
+        "0.5": 49043,
+        "0.95": 99820,
+        "1": 422611
+      }
+    },
+    "fulltext_kmeans": {
+      "rows": 3656,
+      "unique_ids": 3656,
+      "missing_id_rows": 0,
+      "duplicate_id_rows": 0,
+      "unique_dois": 3537,
+      "nonnull_doi_rows": 3656,
+      "raw_decisions": {
+        "include_core": 3519,
+        "include_policy": 124,
+        "include_context": 13
+      },
+      "recognized_include_rows": 0,
+      "recognized_exclude_rows": 0,
+      "other_decision_rows": 3656,
+      "ft_decision": {
+        "include_meta_candidate": 2722,
+        "include_core_fulltext": 911,
+        "include_policy_fulltext": 11,
+        "exclude_fulltext": 7,
+        "[rare combined]": 5
+      },
+      "status": {
+        "ok": 3656
+      },
+      "nonpositive_text_length": 1,
+      "text_length_quantiles": {
+        "0": 0,
+        "0.01": 5921,
+        "0.05": 16509,
+        "0.5": 49043,
+        "0.95": 99820,
+        "1": 422611
+      }
+    },
+    "extracted": {
+      "rows": 3656,
+      "unique_dois": 3537,
+      "nonnull_doi_rows": 3538,
+      "status": {
+        "ok": 3656
+      },
+      "nonpositive_text_length": 1,
+      "text_length_quantiles": {
+        "0": 0,
+        "0.01": 5921,
+        "0.05": 16509,
+        "0.5": 49043,
+        "0.95": 99820,
+        "1": 422611
+      }
+    }
+  },
+  "transitions": {
+    "raw -> deduplicated": {
+      "shared": 102822,
+      "child_not_in_parent": 0,
+      "parent_not_in_child": 786
+    },
+    "deduplicated -> core": {
+      "shared": 22524,
+      "child_not_in_parent": 0,
+      "parent_not_in_child": 80298
+    },
+    "core -> q1_refined": {
+      "shared": 21676,
+      "child_not_in_parent": 0,
+      "parent_not_in_child": 848
+    },
+    "q1_refined -> article_ready": {
+      "shared": 10283,
+      "child_not_in_parent": 0,
+      "parent_not_in_child": 11393
+    },
+    "article_ready -> screening": {
+      "shared": 10283,
+      "child_not_in_parent": 0,
+      "parent_not_in_child": 0
+    },
+    "screening -> fulltext": {
+      "shared": 3656,
+      "child_not_in_parent": 0,
+      "parent_not_in_child": 6627
+    },
+    "article_ready -> fulltext": {
+      "shared": 3656,
+      "child_not_in_parent": 0,
+      "parent_not_in_child": 6627
+    },
+    "fulltext -> fulltext_kmeans": {
+      "shared": 3656,
+      "child_not_in_parent": 0,
+      "parent_not_in_child": 0
+    }
+  },
+  "fulltext_manifest": {
+    "attempts": 5000,
+    "statuses": {
+      "http_403": 922,
+      "downloaded": 3655,
+      "http_404": 73,
+      "too_small": 134,
+      "error_sslerror": 42,
+      "error_connecttimeout": 62,
+      "[other]": 30,
+      "error_connectionerror": 30,
+      "error_readtimeout": 13,
+      "http_429": 15,
+      "http_503": 13
+    },
+    "other_status_total": 11,
+    "unique_dois": 4835,
+    "matched_fulltext_dois": 3537
+  },
+  "representativeness_screened_included_vs_fulltext": {},
+  "embeddings": {
+    "shape": [
+      3656,
+      384
+    ],
+    "dtype": "float32",
+    "first_128_vectors_finite": true
+  },
+  "kmeans_existing_quality": [
+    {
+      "k": 12.0,
+      "silhouette_cosine_sample": 0.05905936285853386,
+      "davies_bouldin": 3.789302435261666,
+      "calinski_harabasz": 70.78704833984375
+    },
+    {
+      "k": 18.0,
+      "silhouette_cosine_sample": 0.04462435469031334,
+      "davies_bouldin": 3.906539527652682,
+      "calinski_harabasz": 53.504478454589844
+    },
+    {
+      "k": 25.0,
+      "silhouette_cosine_sample": 0.03601225093007088,
+      "davies_bouldin": 3.8371131309677,
+      "calinski_harabasz": 42.60254669189453
+    }
+  ],
+  "cautions": [
+    "Descriptive comparison is not causal inference.",
+    "Counts of records do not establish that their texts were extracted correctly.",
+    "Included corpus membership must be confirmed from decision labels.",
+    "DOI duplication may be different record versions.",
+    "No source data or embeddings were modified."
+  ],
+  "privacy": "aggregate only, no document identifiers, titles, authors, DOI or texts"
+}
