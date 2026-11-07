@@ -1,0 +1,244 @@
+{
+  "generated_utc": "2026-11-07T20:49:56.970389+00:00",
+  "parameters": {
+    "k_values": [
+      12,
+      18,
+      25
+    ],
+    "seeds": 5,
+    "subsamples": 5,
+    "fraction": 0.8,
+    "n_init": 10,
+    "max_iter": 300,
+    "space": "raw",
+    "threads": 8,
+    "silhouette_sample_size": 1200
+  },
+  "source": {
+    "all_embeddings": 3656,
+    "zero_or_missing_text_length": 1,
+    "fulltext_exclusion_flags": 8,
+    "overlap_invalid_and_excluded": 1,
+    "clean_subset": 3648,
+    "row_order_verified_for_two_parquet_tables": true,
+    "existing_label_columns": [
+      "kmeans_12",
+      "kmeans_18",
+      "kmeans_25"
+    ]
+  },
+  "by_k": {
+    "12": {
+      "seeds": [
+        42,
+        55,
+        68,
+        81,
+        94
+      ],
+      "full_corpus_seed_ari": {
+        "mean": 0.5781,
+        "median": 0.54702,
+        "min": 0.48913,
+        "max": 0.71639,
+        "std": 0.07354
+      },
+      "full_corpus_seed_nmi": {
+        "mean": 0.67626,
+        "median": 0.65291,
+        "min": 0.61116,
+        "max": 0.75968,
+        "std": 0.05157
+      },
+      "inertia": {
+        "mean": 1642.66069,
+        "median": 1642.48999,
+        "min": 1641.79651,
+        "max": 1643.78369,
+        "std": 0.70572
+      },
+      "resampling_ari_full_predictions": {
+        "mean": 0.574,
+        "median": 0.56927,
+        "min": 0.52115,
+        "max": 0.64172,
+        "std": 0.04063
+      },
+      "resampling_ari_on_selected_rows": {
+        "mean": 0.57169,
+        "median": 0.57119,
+        "min": 0.51752,
+        "max": 0.63777,
+        "std": 0.04062
+      },
+      "resampling_nmi_full_predictions": {
+        "mean": 0.66636,
+        "median": 0.65611,
+        "min": 0.63494,
+        "max": 0.7112,
+        "std": 0.02821
+      },
+      "cluster_min_size": 167,
+      "cluster_median_size": 313.0,
+      "cluster_max_size": 394,
+      "davies_bouldin_refit": 3.854116,
+      "calinski_harabasz_refit": 73.45516,
+      "silhouette_cosine_refit_sample": 0.054929,
+      "original_label_agreement": {
+        "original_clusters": 12,
+        "adjusted_rand_original_vs_refit": 0.41536,
+        "nmi_original_vs_refit": 0.53621
+      },
+      "excluded_textless_sensitivity": {
+        "clean_rows": 3648,
+        "excluded_or_textless_rows": 8,
+        "ari_full_vs_clean_fit_on_retained": 0.58663,
+        "nmi_full_vs_clean_fit_on_retained": 0.67927
+      }
+    },
+    "18": {
+      "seeds": [
+        42,
+        55,
+        68,
+        81,
+        94
+      ],
+      "full_corpus_seed_ari": {
+        "mean": 0.49121,
+        "median": 0.49987,
+        "min": 0.40966,
+        "max": 0.52826,
+        "std": 0.03567
+      },
+      "full_corpus_seed_nmi": {
+        "mean": 0.64803,
+        "median": 0.65165,
+        "min": 0.59776,
+        "max": 0.68277,
+        "std": 0.02297
+      },
+      "inertia": {
+        "mean": 1587.02202,
+        "median": 1587.31433,
+        "min": 1584.81396,
+        "max": 1588.85693,
+        "std": 1.30787
+      },
+      "resampling_ari_full_predictions": {
+        "mean": 0.49958,
+        "median": 0.49772,
+        "min": 0.46684,
+        "max": 0.52556,
+        "std": 0.02108
+      },
+      "resampling_ari_on_selected_rows": {
+        "mean": 0.5036,
+        "median": 0.50114,
+        "min": 0.47279,
+        "max": 0.52826,
+        "std": 0.02127
+      },
+      "resampling_nmi_full_predictions": {
+        "mean": 0.64026,
+        "median": 0.63766,
+        "min": 0.62403,
+        "max": 0.66087,
+        "std": 0.01192
+      },
+      "cluster_min_size": 105,
+      "cluster_median_size": 204.0,
+      "cluster_max_size": 312,
+      "davies_bouldin_refit": 3.705765,
+      "calinski_harabasz_refit": 56.539694,
+      "silhouette_cosine_refit_sample": 0.052967,
+      "original_label_agreement": {
+        "original_clusters": 18,
+        "adjusted_rand_original_vs_refit": 0.38483,
+        "nmi_original_vs_refit": 0.55257
+      },
+      "excluded_textless_sensitivity": {
+        "clean_rows": 3648,
+        "excluded_or_textless_rows": 8,
+        "ari_full_vs_clean_fit_on_retained": 0.5882,
+        "nmi_full_vs_clean_fit_on_retained": 0.69499
+      }
+    },
+    "25": {
+      "seeds": [
+        42,
+        55,
+        68,
+        81,
+        94
+      ],
+      "full_corpus_seed_ari": {
+        "mean": 0.51014,
+        "median": 0.5132,
+        "min": 0.45415,
+        "max": 0.57159,
+        "std": 0.03116
+      },
+      "full_corpus_seed_nmi": {
+        "mean": 0.67925,
+        "median": 0.67548,
+        "min": 0.65068,
+        "max": 0.722,
+        "std": 0.0195
+      },
+      "inertia": {
+        "mean": 1539.88972,
+        "median": 1540.19507,
+        "min": 1538.28687,
+        "max": 1540.78052,
+        "std": 0.85905
+      },
+      "resampling_ari_full_predictions": {
+        "mean": 0.48254,
+        "median": 0.48263,
+        "min": 0.45366,
+        "max": 0.50659,
+        "std": 0.01877
+      },
+      "resampling_ari_on_selected_rows": {
+        "mean": 0.48007,
+        "median": 0.48721,
+        "min": 0.45154,
+        "max": 0.49982,
+        "std": 0.01727
+      },
+      "resampling_nmi_full_predictions": {
+        "mean": 0.65964,
+        "median": 0.66162,
+        "min": 0.64538,
+        "max": 0.67183,
+        "std": 0.00908
+      },
+      "cluster_min_size": 59,
+      "cluster_median_size": 150.0,
+      "cluster_max_size": 259,
+      "davies_bouldin_refit": 3.581343,
+      "calinski_harabasz_refit": 45.823232,
+      "silhouette_cosine_refit_sample": 0.051934,
+      "original_label_agreement": {
+        "original_clusters": 25,
+        "adjusted_rand_original_vs_refit": 0.32883,
+        "nmi_original_vs_refit": 0.53999
+      },
+      "excluded_textless_sensitivity": {
+        "clean_rows": 3648,
+        "excluded_or_textless_rows": 8,
+        "ari_full_vs_clean_fit_on_retained": 0.50951,
+        "nmi_full_vs_clean_fit_on_retained": 0.68725
+      }
+    }
+  },
+  "warnings": [
+    "The embedding-array/document alignment is inferred from matching stage order and Parquet ID alignment, not independently cryptographically proven.",
+    "Labels of alternative KMeans partitions are arbitrary; ARI/NMI are permutation invariant.",
+    "Strong seed stability does not prove semantically distinct or policy-relevant clusters.",
+    "Results depend on raw/L2 embedding setting; compare original code before treating refit as identical to manuscript.",
+    "Excluded/textless sensitivity removes records flagged by original extraction metadata, not by newly performed human eligibility screening."
+  ]
+}

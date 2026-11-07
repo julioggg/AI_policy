@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-11-07T20:41:29.650075+00:00",
+  "created_utc": "2026-11-07T20:49:23.797552+00:00",
   "stage_summaries": {
     "raw": {
       "rows": 199366,
@@ -54,9 +54,9 @@
         "include_context": 102,
         "exclude": 18
       },
-      "recognized_include_rows": 0,
+      "recognized_include_rows": 10265,
       "recognized_exclude_rows": 18,
-      "other_decision_rows": 10265
+      "other_decision_rows": 0
     },
     "fulltext": {
       "rows": 3656,
@@ -70,9 +70,9 @@
         "include_policy": 124,
         "include_context": 13
       },
-      "recognized_include_rows": 0,
+      "recognized_include_rows": 3656,
       "recognized_exclude_rows": 0,
-      "other_decision_rows": 3656,
+      "other_decision_rows": 0,
       "ft_decision": {
         "include_meta_candidate": 2722,
         "include_core_fulltext": 911,
@@ -105,9 +105,9 @@
         "include_policy": 124,
         "include_context": 13
       },
-      "recognized_include_rows": 0,
+      "recognized_include_rows": 3656,
       "recognized_exclude_rows": 0,
-      "other_decision_rows": 3656,
+      "other_decision_rows": 0,
       "ft_decision": {
         "include_meta_candidate": 2722,
         "include_core_fulltext": 911,
@@ -207,7 +207,364 @@
     "unique_dois": 4835,
     "matched_fulltext_dois": 3537
   },
-  "representativeness_screened_included_vs_fulltext": {},
+  "screening_inclusion_rule": "include_core + include_policy + include_context",
+  "representativeness_screened_included_vs_fulltext": {
+    "publication_year": {
+      "total_variation_distance": 0.023,
+      "rows": [
+        {
+          "group": "2023",
+          "parent_n": 874,
+          "fulltext_n": 300,
+          "parent_pct": 8.51,
+          "fulltext_pct": 8.21,
+          "difference_pp": -0.31
+        },
+        {
+          "group": "2024",
+          "parent_n": 2188,
+          "fulltext_n": 782,
+          "parent_pct": 21.32,
+          "fulltext_pct": 21.39,
+          "difference_pp": 0.07
+        },
+        {
+          "group": "2025",
+          "parent_n": 4587,
+          "fulltext_n": 1715,
+          "parent_pct": 44.69,
+          "fulltext_pct": 46.91,
+          "difference_pp": 2.22
+        },
+        {
+          "group": "2026",
+          "parent_n": 2589,
+          "fulltext_n": 855,
+          "parent_pct": 25.22,
+          "fulltext_pct": 23.39,
+          "difference_pp": -1.84
+        },
+        {
+          "group": "[other/rare]",
+          "parent_n": 27,
+          "fulltext_n": 4,
+          "parent_pct": 0.26,
+          "fulltext_pct": 0.11,
+          "difference_pp": -0.15
+        }
+      ]
+    },
+    "disciplinary_area": {
+      "total_variation_distance": 0.0279,
+      "rows": [
+        {
+          "group": "engineering",
+          "parent_n": 2329,
+          "fulltext_n": 858,
+          "parent_pct": 22.69,
+          "fulltext_pct": 23.47,
+          "difference_pp": 0.78
+        },
+        {
+          "group": "health_sciences",
+          "parent_n": 1261,
+          "fulltext_n": 348,
+          "parent_pct": 12.28,
+          "fulltext_pct": 9.52,
+          "difference_pp": -2.77
+        },
+        {
+          "group": "social_sciences_humanities",
+          "parent_n": 6673,
+          "fulltext_n": 2450,
+          "parent_pct": 65.01,
+          "fulltext_pct": 67.01,
+          "difference_pp": 2.01
+        },
+        {
+          "group": "[other/rare]",
+          "parent_n": 2,
+          "fulltext_n": 0,
+          "parent_pct": 0.02,
+          "fulltext_pct": 0.0,
+          "difference_pp": -0.02
+        }
+      ]
+    },
+    "policy_dimension": {
+      "total_variation_distance": 0.0302,
+      "rows": [
+        {
+          "group": "ai_literacy_training",
+          "parent_n": 181,
+          "fulltext_n": 57,
+          "parent_pct": 1.76,
+          "fulltext_pct": 1.56,
+          "difference_pp": -0.2
+        },
+        {
+          "group": "assessment",
+          "parent_n": 1848,
+          "fulltext_n": 576,
+          "parent_pct": 18.0,
+          "fulltext_pct": 15.75,
+          "difference_pp": -2.25
+        },
+        {
+          "group": "equity_access",
+          "parent_n": 75,
+          "fulltext_n": 25,
+          "parent_pct": 0.73,
+          "fulltext_pct": 0.68,
+          "difference_pp": -0.05
+        },
+        {
+          "group": "ethics_integrity",
+          "parent_n": 2157,
+          "fulltext_n": 803,
+          "parent_pct": 21.01,
+          "fulltext_pct": 21.96,
+          "difference_pp": 0.95
+        },
+        {
+          "group": "governance_policy",
+          "parent_n": 1775,
+          "fulltext_n": 623,
+          "parent_pct": 17.29,
+          "fulltext_pct": 17.04,
+          "difference_pp": -0.25
+        },
+        {
+          "group": "privacy_security",
+          "parent_n": 54,
+          "fulltext_n": 14,
+          "parent_pct": 0.53,
+          "fulltext_pct": 0.38,
+          "difference_pp": -0.14
+        },
+        {
+          "group": "research_scholarship",
+          "parent_n": 404,
+          "fulltext_n": 140,
+          "parent_pct": 3.94,
+          "fulltext_pct": 3.83,
+          "difference_pp": -0.11
+        },
+        {
+          "group": "teaching_learning",
+          "parent_n": 3766,
+          "fulltext_n": 1417,
+          "parent_pct": 36.69,
+          "fulltext_pct": 38.76,
+          "difference_pp": 2.07
+        },
+        {
+          "group": "[other/rare]",
+          "parent_n": 5,
+          "fulltext_n": 1,
+          "parent_pct": 0.05,
+          "fulltext_pct": 0.03,
+          "difference_pp": -0.02
+        }
+      ]
+    },
+    "type": {
+      "total_variation_distance": 0.0511,
+      "rows": [
+        {
+          "group": "article",
+          "parent_n": 8518,
+          "fulltext_n": 3202,
+          "parent_pct": 82.98,
+          "fulltext_pct": 87.58,
+          "difference_pp": 4.6
+        },
+        {
+          "group": "book",
+          "parent_n": 46,
+          "fulltext_n": 7,
+          "parent_pct": 0.45,
+          "fulltext_pct": 0.19,
+          "difference_pp": -0.26
+        },
+        {
+          "group": "book-chapter",
+          "parent_n": 246,
+          "fulltext_n": 57,
+          "parent_pct": 2.4,
+          "fulltext_pct": 1.56,
+          "difference_pp": -0.84
+        },
+        {
+          "group": "editorial",
+          "parent_n": 64,
+          "fulltext_n": 18,
+          "parent_pct": 0.62,
+          "fulltext_pct": 0.49,
+          "difference_pp": -0.13
+        },
+        {
+          "group": "other",
+          "parent_n": 183,
+          "fulltext_n": 18,
+          "parent_pct": 1.78,
+          "fulltext_pct": 0.49,
+          "difference_pp": -1.29
+        },
+        {
+          "group": "preprint",
+          "parent_n": 738,
+          "fulltext_n": 239,
+          "parent_pct": 7.19,
+          "fulltext_pct": 6.54,
+          "difference_pp": -0.65
+        },
+        {
+          "group": "review",
+          "parent_n": 231,
+          "fulltext_n": 101,
+          "parent_pct": 2.25,
+          "fulltext_pct": 2.76,
+          "difference_pp": 0.51
+        },
+        {
+          "group": "[other/rare]",
+          "parent_n": 239,
+          "fulltext_n": 14,
+          "parent_pct": 2.33,
+          "fulltext_pct": 0.38,
+          "difference_pp": -1.95
+        }
+      ]
+    },
+    "source_type": {
+      "total_variation_distance": 0.1178,
+      "rows": [
+        {
+          "group": "[missing]",
+          "parent_n": 1016,
+          "fulltext_n": 196,
+          "parent_pct": 9.9,
+          "fulltext_pct": 5.36,
+          "difference_pp": -4.54
+        },
+        {
+          "group": "book series",
+          "parent_n": 95,
+          "fulltext_n": 19,
+          "parent_pct": 0.93,
+          "fulltext_pct": 0.52,
+          "difference_pp": -0.41
+        },
+        {
+          "group": "conference",
+          "parent_n": 60,
+          "fulltext_n": 30,
+          "parent_pct": 0.58,
+          "fulltext_pct": 0.82,
+          "difference_pp": 0.24
+        },
+        {
+          "group": "ebook platform",
+          "parent_n": 34,
+          "fulltext_n": 6,
+          "parent_pct": 0.33,
+          "fulltext_pct": 0.16,
+          "difference_pp": -0.17
+        },
+        {
+          "group": "journal",
+          "parent_n": 7346,
+          "fulltext_n": 3038,
+          "parent_pct": 71.56,
+          "fulltext_pct": 83.1,
+          "difference_pp": 11.53
+        },
+        {
+          "group": "repository",
+          "parent_n": 1714,
+          "fulltext_n": 367,
+          "parent_pct": 16.7,
+          "fulltext_pct": 10.04,
+          "difference_pp": -6.66
+        }
+      ]
+    },
+    "is_oa": {
+      "total_variation_distance": 0.084,
+      "rows": [
+        {
+          "group": "true",
+          "parent_n": 9403,
+          "fulltext_n": 3656,
+          "parent_pct": 91.6,
+          "fulltext_pct": 100.0,
+          "difference_pp": 8.4
+        },
+        {
+          "group": "[other/rare]",
+          "parent_n": 862,
+          "fulltext_n": 0,
+          "parent_pct": 8.4,
+          "fulltext_pct": 0.0,
+          "difference_pp": -8.4
+        }
+      ]
+    },
+    "oa_status": {
+      "total_variation_distance": 0.185,
+      "rows": [
+        {
+          "group": "bronze",
+          "parent_n": 630,
+          "fulltext_n": 256,
+          "parent_pct": 6.14,
+          "fulltext_pct": 7.0,
+          "difference_pp": 0.86
+        },
+        {
+          "group": "diamond",
+          "parent_n": 3200,
+          "fulltext_n": 1684,
+          "parent_pct": 31.17,
+          "fulltext_pct": 46.06,
+          "difference_pp": 14.89
+        },
+        {
+          "group": "gold",
+          "parent_n": 2397,
+          "fulltext_n": 727,
+          "parent_pct": 23.35,
+          "fulltext_pct": 19.89,
+          "difference_pp": -3.47
+        },
+        {
+          "group": "green",
+          "parent_n": 1715,
+          "fulltext_n": 368,
+          "parent_pct": 16.71,
+          "fulltext_pct": 10.07,
+          "difference_pp": -6.64
+        },
+        {
+          "group": "hybrid",
+          "parent_n": 1461,
+          "fulltext_n": 621,
+          "parent_pct": 14.23,
+          "fulltext_pct": 16.99,
+          "difference_pp": 2.75
+        },
+        {
+          "group": "[other/rare]",
+          "parent_n": 862,
+          "fulltext_n": 0,
+          "parent_pct": 8.4,
+          "fulltext_pct": 0.0,
+          "difference_pp": -8.4
+        }
+      ]
+    }
+  },
   "embeddings": {
     "shape": [
       3656,

@@ -1,6 +1,6 @@
 # Phase 2 — Provenance and representativeness
 
-Date UTC: 2026-11-07T20:41:29.650075+00:00
+Date UTC: 2026-11-07T20:49:23.797552+00:00
 
 ## Corpus counts
 - raw: 199366 rows
@@ -41,6 +41,12 @@ Date UTC: 2026-11-07T20:41:29.650075+00:00
 - {'k': 25.0, 'silhouette_cosine_sample': 0.03601225093007088, 'davies_bouldin': 3.8371131309677, 'calinski_harabasz': 42.60254669189453}
 
 ## Observable sample differences
-- Not calculated; recognized include label was not present.
+- publication_year: TV distance = 0.023
+- disciplinary_area: TV distance = 0.0279
+- policy_dimension: TV distance = 0.0302
+- type: TV distance = 0.0511
+- source_type: TV distance = 0.1178
+- is_oa: TV distance = 0.084
+- oa_status: TV distance = 0.185
 
 This is an aggregate audit, not independent validation of screening or topics.
