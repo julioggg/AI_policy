@@ -1,0 +1,257 @@
+{
+  "created_utc": "2026-11-07T22:11:39.602447+00:00",
+  "environment": {
+    "python_version": "3.10.20",
+    "python_executable_basename": "python",
+    "running_inside_singularity": true,
+    "dependency_availability": {
+      "numpy": {
+        "import_discoverable": true,
+        "version": "1.26.4"
+      },
+      "pandas": {
+        "import_discoverable": true,
+        "version": "2.3.3"
+      },
+      "pyarrow": {
+        "import_discoverable": true,
+        "version": "24.0.0"
+      },
+      "scikit-learn": {
+        "import_discoverable": true,
+        "version": "1.7.2"
+      },
+      "torch": {
+        "import_discoverable": false,
+        "version": null
+      },
+      "transformers": {
+        "import_discoverable": false,
+        "version": null
+      },
+      "sentence-transformers": {
+        "import_discoverable": false,
+        "version": null
+      },
+      "tokenizers": {
+        "import_discoverable": false,
+        "version": null
+      }
+    },
+    "common_virtualenv_candidates": {
+      ".venv": false,
+      "venv": false,
+      "ai_policy_he/.venv": true,
+      "ai_policy_he/venv": false,
+      "ai_policy_he/env": false,
+      "ai_policy_he/.conda": false,
+      ".local/share/virtualenvs": false,
+      "miniconda3": false,
+      "mambaforge": false,
+      "anaconda3": false
+    },
+    "model_cache_presence": {
+      "hf_hub_model_default_cache": true,
+      "torch_sentence_transformer_cache": false,
+      "HF_HOME_is_configured": false,
+      "SENTENCE_TRANSFORMERS_HOME_is_configured": false,
+      "HF_HUB_OFFLINE_is_configured": false
+    }
+  },
+  "original_scripts": [
+    {
+      "filename": "03_embeddings_and_clusters.py",
+      "whitelisted_field_occurrences": {
+        "abstract": 3,
+        "title": 3
+      },
+      "runtime_or_truncation_signals": [
+        {
+          "line": 41,
+          "kind": "call",
+          "name": "SentenceTransformer",
+          "first_arg": "[expression]",
+          "safe_kwargs": {}
+        },
+        {
+          "line": 43,
+          "kind": "assignment",
+          "parameter": "batch_size",
+          "value": "[expression]"
+        },
+        {
+          "line": 46,
+          "kind": "call",
+          "name": "encode",
+          "first_arg": null,
+          "safe_kwargs": {
+            "batch_size": "[expression]",
+            "normalize_embeddings": true
+          }
+        }
+      ],
+      "warning": "Static syntax clues are not evidence that a particular code path ran."
+    },
+    {
+      "filename": "12_fulltext_screening_and_extraction.py",
+      "whitelisted_field_occurrences": {
+        "abstract": 3,
+        "combined_text": 5,
+        "full_text": 1,
+        "semantic_text": 2,
+        "title": 10
+      },
+      "runtime_or_truncation_signals": [
+        {
+          "line": 102,
+          "kind": "slice_limit",
+          "upper_bound": 8000
+        },
+        {
+          "line": 129,
+          "kind": "call",
+          "name": "SentenceTransformer",
+          "first_arg": "sentence-transformers/all-MiniLM-L6-v2",
+          "safe_kwargs": {}
+        },
+        {
+          "line": 131,
+          "kind": "call",
+          "name": "encode",
+          "first_arg": null,
+          "safe_kwargs": {
+            "batch_size": "[expression]",
+            "normalize_embeddings": true
+          }
+        },
+        {
+          "line": 139,
+          "kind": "call",
+          "name": "encode",
+          "first_arg": null,
+          "safe_kwargs": {
+            "normalize_embeddings": true
+          }
+        },
+        {
+          "line": 140,
+          "kind": "call",
+          "name": "encode",
+          "first_arg": null,
+          "safe_kwargs": {
+            "normalize_embeddings": true
+          }
+        },
+        {
+          "line": 141,
+          "kind": "call",
+          "name": "encode",
+          "first_arg": null,
+          "safe_kwargs": {
+            "normalize_embeddings": true
+          }
+        }
+      ],
+      "warning": "Static syntax clues are not evidence that a particular code path ran."
+    },
+    {
+      "filename": "16_fulltext_topic_modeling_umap_hdbscan.py",
+      "whitelisted_field_occurrences": {
+        "abstract": 3,
+        "semantic_text": 2,
+        "title": 7,
+        "topic_text": 5
+      },
+      "runtime_or_truncation_signals": [
+        {
+          "line": 59,
+          "kind": "call",
+          "name": "SentenceTransformer",
+          "first_arg": "sentence-transformers/all-MiniLM-L6-v2",
+          "safe_kwargs": {}
+        },
+        {
+          "line": 61,
+          "kind": "call",
+          "name": "encode",
+          "first_arg": null,
+          "safe_kwargs": {
+            "batch_size": "[expression]",
+            "normalize_embeddings": true
+          }
+        },
+        {
+          "line": 71,
+          "kind": "call",
+          "name": "UMAP",
+          "first_arg": null,
+          "safe_kwargs": {
+            "random_state": 42
+          }
+        },
+        {
+          "line": 81,
+          "kind": "call",
+          "name": "HDBSCAN",
+          "first_arg": null,
+          "safe_kwargs": {}
+        }
+      ],
+      "warning": "Static syntax clues are not evidence that a particular code path ran."
+    },
+    {
+      "filename": "18_fulltext_topic_modeling_kmeans_robust.py",
+      "whitelisted_field_occurrences": {
+        "abstract": 1,
+        "title": 3,
+        "topic_text": 2
+      },
+      "runtime_or_truncation_signals": [],
+      "warning": "Static syntax clues are not evidence that a particular code path ran."
+    }
+  ],
+  "text_prefix_audit": {
+    "paired_explicitly_accepted": 3644,
+    "whitespace_token_prefix_comparison": {
+      "64": {
+        "eligible_pairs_with_at_least_n_words": 3630,
+        "identical_first_n_words": 3630
+      },
+      "128": {
+        "eligible_pairs_with_at_least_n_words": 3474,
+        "identical_first_n_words": 3464
+      },
+      "256": {
+        "eligible_pairs_with_at_least_n_words": 1171,
+        "identical_first_n_words": 1158
+      },
+      "384": {
+        "eligible_pairs_with_at_least_n_words": 219,
+        "identical_first_n_words": 217
+      },
+      "512": {
+        "eligible_pairs_with_at_least_n_words": 104,
+        "identical_first_n_words": 103
+      },
+      "768": {
+        "eligible_pairs_with_at_least_n_words": 60,
+        "identical_first_n_words": 53
+      }
+    },
+    "source_text_caps": {
+      "full_text_exactly_30003_characters": 2932,
+      "topic_text_exactly_16000_characters": 1819
+    },
+    "caution": "Word splits are NOT MiniLM WordPiece token counts; actual tokenizer inspection remains required."
+  },
+  "local_tokenizer_probe": {
+    "status": "offline_tokenizer_not_available",
+    "exception_type": "ModuleNotFoundError"
+  },
+  "limitations": [
+    "Identical vectors are confirmed by phase09, but identifying truncation requires original tokenizer/model settings.",
+    "The online/offline model availability of the current Python does not rule out other Singularity or virtualenv installations.",
+    "Source-code syntax signals do not establish that a parameter was used in the saved embedding matrices.",
+    "No model downloads, new embeddings, raw texts or source-project modifications were performed."
+  ]
+}
