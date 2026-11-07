@@ -15,3 +15,12 @@ jobs:
       - uses: actions/checkout@v4
       - name: Compile all Python scripts (no dataset required)
         run: python3 -m compileall -q scripts
+
+  human_rating_synthetic_tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install analytic dependencies
+        run: python3 -m pip install -q numpy pandas scikit-learn
+      - name: Run Phase 16 synthetic-only integration tests
+        run: python3 -m unittest discover -s tests -p 'test_phase16_synthetic.py' -v
