@@ -1,0 +1,226 @@
+{
+  "created_utc": "2026-11-07T22:01:13.803025+00:00",
+  "scope": "Existing vectors on common records; forensic provenance, NOT model validation",
+  "n_paired_explicitly_accepted": 3644,
+  "vector_dimensions": 384,
+  "vector_comparison": {
+    "exact_all_components_equal": 2502,
+    "max_component_abs_difference_le_1e-7": 2502,
+    "max_component_abs_difference_le_1e-5": 2502,
+    "cosine_ge_0_999999": 2502,
+    "cosine_ge_0_999": 2553,
+    "cosine_ge_0_99": 2838,
+    "cosine_below_0_90": 49,
+    "cosine_summary": {
+      "median": 1.0,
+      "p10": 0.9692643,
+      "p90": 1.0,
+      "min": 0.7244761,
+      "max": 1.0
+    },
+    "raw_max_component_difference_summary": {
+      "median": 0.0,
+      "p10": 0.0,
+      "p90": 0.0412548,
+      "min": 0.0,
+      "max": 0.1474547
+    },
+    "raw_l2_difference_summary": {
+      "median": 0.0,
+      "p10": 0.0,
+      "p90": 0.2479332,
+      "min": 0.0,
+      "max": 0.742326
+    },
+    "core_norm_summary": {
+      "median": 1.0,
+      "p10": 1.0,
+      "p90": 1.0000001,
+      "min": 0.9999999,
+      "max": 1.0000001
+    },
+    "fulltext_norm_summary": {
+      "median": 1.0,
+      "p10": 1.0,
+      "p90": 1.0000001,
+      "min": 0.9999999,
+      "max": 1.0000001
+    }
+  },
+  "text_lengths": {
+    "abstract": {
+      "rows": 3644,
+      "zero_length": 0,
+      "median_characters": 1534,
+      "p10_characters": 1002,
+      "p90_characters": 2306,
+      "max_characters": 6000
+    },
+    "full_text": {
+      "rows": 3644,
+      "zero_length": 0,
+      "median_characters": 30003,
+      "p10_characters": 22223,
+      "p90_characters": 30003,
+      "max_characters": 30003
+    },
+    "topic_text": {
+      "rows": 3644,
+      "zero_length": 0,
+      "median_characters": 15993,
+      "p10_characters": 11910,
+      "p90_characters": 16000,
+      "max_characters": 16000
+    },
+    "semantic_text": {
+      "rows": 3644,
+      "zero_length": 0,
+      "median_characters": 15993,
+      "p10_characters": 11910,
+      "p90_characters": 16003,
+      "max_characters": 16003
+    },
+    "combined_text": {
+      "rows": 3644,
+      "zero_length": 0,
+      "median_characters": 31549,
+      "p10_characters": 23961,
+      "p90_characters": 32292,
+      "max_characters": 36154
+    },
+    "core_abstract": {
+      "rows": 3644,
+      "zero_length": 0,
+      "median_characters": 1534,
+      "p10_characters": 1002,
+      "p90_characters": 2306,
+      "max_characters": 27772
+    },
+    "core_text_for_analysis": {
+      "rows": 3644,
+      "zero_length": 0,
+      "median_characters": 1639,
+      "p10_characters": 1104,
+      "p90_characters": 2419,
+      "max_characters": 27878
+    },
+    "core_text": {
+      "rows": 3644,
+      "zero_length": 0,
+      "median_characters": 2009,
+      "p10_characters": 1397,
+      "p90_characters": 2813,
+      "max_characters": 28378
+    }
+  },
+  "text_relationships": {
+    "core_text_for_analysis_vs_topic_text": {
+      "exact_text_match": 0,
+      "identical_first_256_characters": 3642,
+      "identical_first_512_characters": 3628,
+      "core_first_128_characters_found_in_topic_head": 3644,
+      "compared_records": 3644
+    },
+    "core_abstract_vs_topic_text": {
+      "exact_text_match": 0,
+      "identical_first_256_characters": 0,
+      "identical_first_512_characters": 0,
+      "core_first_128_characters_found_in_topic_head": 3643,
+      "compared_records": 3644
+    },
+    "core_title_vs_topic_text": {
+      "exact_text_match": 0,
+      "identical_first_256_characters": 3,
+      "identical_first_512_characters": 1,
+      "core_first_128_characters_found_in_topic_head": 3644,
+      "compared_records": 3644
+    }
+  },
+  "script_provenance_signals": [
+    {
+      "filename": "03_embeddings_and_clusters.py",
+      "field_occurrence_counts": {
+        "abstract": 3,
+        "title": 3
+      },
+      "encode_calls": [
+        {
+          "line": 46,
+          "argument_is_named_variable": true,
+          "argument_variable_references_whitelisted_fields": [
+            "abstract",
+            "title"
+          ]
+        }
+      ],
+      "caution": "Static AST indications do not reconstruct function-call dependencies or prove runtime provenance."
+    },
+    {
+      "filename": "12_fulltext_screening_and_extraction.py",
+      "field_occurrence_counts": {
+        "title": 10,
+        "combined_text": 5,
+        "semantic_text": 2,
+        "abstract": 3,
+        "full_text": 1
+      },
+      "encode_calls": [
+        {
+          "line": 131,
+          "argument_is_named_variable": false,
+          "argument_variable_references_whitelisted_fields": []
+        },
+        {
+          "line": 139,
+          "argument_is_named_variable": true,
+          "argument_variable_references_whitelisted_fields": []
+        },
+        {
+          "line": 140,
+          "argument_is_named_variable": true,
+          "argument_variable_references_whitelisted_fields": []
+        },
+        {
+          "line": 141,
+          "argument_is_named_variable": true,
+          "argument_variable_references_whitelisted_fields": []
+        }
+      ],
+      "caution": "Static AST indications do not reconstruct function-call dependencies or prove runtime provenance."
+    },
+    {
+      "filename": "16_fulltext_topic_modeling_umap_hdbscan.py",
+      "field_occurrence_counts": {
+        "title": 7,
+        "abstract": 3,
+        "semantic_text": 2,
+        "topic_text": 5
+      },
+      "encode_calls": [
+        {
+          "line": 61,
+          "argument_is_named_variable": false,
+          "argument_variable_references_whitelisted_fields": []
+        }
+      ],
+      "caution": "Static AST indications do not reconstruct function-call dependencies or prove runtime provenance."
+    },
+    {
+      "filename": "18_fulltext_topic_modeling_kmeans_robust.py",
+      "field_occurrence_counts": {
+        "title": 3,
+        "abstract": 1,
+        "topic_text": 2
+      },
+      "encode_calls": [],
+      "caution": "Static AST indications do not reconstruct function-call dependencies or prove runtime provenance."
+    }
+  ],
+  "limitations": [
+    "High cosine similarity alone does not imply identical vectors; raw component equality is tested separately.",
+    "Identical embeddings can arise from identical or truncated inputs; these summaries do not prove which mechanism occurred.",
+    "Full-text extraction can exist without full-text representation in the model; both pipeline stages must be audited.",
+    "The original sentence-transformer model, tokenizer and max_seq_length must be verified locally before making a truncation claim.",
+    "The script exports no document identifiers, full texts, abstracts, vectors or article titles."
+  ]
+}
