@@ -181,3 +181,28 @@ La fase 8 reutiliza embeddings de texto completo y codifica títulos y resúmene
 Las etiquetas policy_dimension y disciplinary_area no son ground truth independiente. Los resultados no sustituyen codificación humana ni prueban superioridad de una modalidad.
 
 El caché de embeddings recién calculados se guarda fuera del repositorio público en $HOME/ai_policy_comparison_private. Solo informes agregados van a GitHub. Requiere numpy, pandas, pyarrow, scikit-learn, sentence-transformers y torch, preferentemente del mismo entorno usado en el proyecto original.
+
+
+## Fase 8b: comparación con ambos arrays originales (sin SentenceTransformer)
+
+El intento de la fase 8 quedó bloqueado (`blocked_missing_offline_model`) porque el entorno no pudo cargar el modelo. En vez de instalar o redescargar MiniLM, fase 8b utiliza exclusivamente estas dos matrices ya existentes en CEDIA:
+
+- `data/processed/embeddings_core_50k_minilm.npy` (matriz del corpus core/short-text; fuente exacta a verificar en script 03 original).
+- `data/processed/fulltext_topic_embeddings_minilm.npy` (matriz del corpus fulltext).
+
+El script enlaza por OpenAlex ID y restringe el análisis a registros explícitamente aceptados y con resúmenes disponibles. Antes de calcular los clústeres pareados, exige una señal de correspondencia entre similitudes emparejadas y una permutación aleatoria; si es inconclusa, no fuerza el análisis. Mantiene la distinción entre datos reutilizados y evidencia independiente. No se exportan identificadores, títulos, textos, embeddings ni resultados por documento.
+
+~~~bash
+cd "$HOME/AI_policy"
+git pull --ff-only
+python -m py_compile scripts/08b_reuse_original_embeddings.py
+python scripts/08b_reuse_original_embeddings.py \
+  --project "$HOME/ai_policy_he" \
+  --out reports/phase08b \
+  --threads 8
+git add reports/phase08b
+git diff --cached --quiet || git commit -m "Phase 8b: paired original embeddings without model loading"
+git push origin main
+~~~
+
+Interpretación: el par de matrices solo constituye una comparación realmente *título/resumen frente a texto completo* si se verifica en los scripts originales que la matriz core fue codificada a partir de esas unidades de texto. Por defecto se etiqueta con precisión como *core/short-text baseline vs fulltext*. Las etiquetas automáticas y los cambios en clústeres no son validación humana.
