@@ -1,5 +1,5 @@
 {
-  "created_utc": "2026-11-07T21:39:23.531984+00:00",
+  "created_utc": "2026-11-07T21:41:21.737485+00:00",
   "status": "blocked_missing_offline_model",
   "preflight": {
     "model": "sentence-transformers/all-MiniLM-L6-v2",

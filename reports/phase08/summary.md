@@ -1,7 +1,7 @@
 # Phase 8 — Paired abstract/fulltext experiment
 
 Status: blocked_missing_offline_model
-UTC: 2026-11-07T21:39:23.531984+00:00
+UTC: 2026-11-07T21:41:21.737485+00:00
 
 ## Alignment preflight
 - model: sentence-transformers/all-MiniLM-L6-v2

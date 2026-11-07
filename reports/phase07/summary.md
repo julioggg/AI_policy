@@ -1,6 +1,6 @@
 # Phase 7 — Original program rule and edge-case audit
 
-UTC: 2026-11-07T21:39:07.252080+00:00
+UTC: 2026-11-07T21:41:17.726216+00:00
 
 ## OpenAlex attrition
 - {'not_retained': {'distinct_openalex_records': 786, 'with_nonempty_abstract': 601, 'no_abstract': 185, 'publication_year_counts': {'2025': 337, '2024': 164, '2023': 130, '2026': 79, '2022': 32, '2021': 23, '2020': 21}, 'type_counts': {'[other]': 769, '[rare combined]': 7, 'article': 10}}, 'retained_from_initial_distinct_ids': {'distinct_openalex_records': 102822, 'with_nonempty_abstract': 97891, 'no_abstract': 4931, 'publication_year_counts': {'2025': 44984, '2024': 24202, '2026': 16883, '2023': 11269, '2022': 2721, '2021': 1710, '2020': 1053}, 'type_counts': {'[other]': 731, '[rare combined]': 10, 'article': 82263, 'book': 1383, 'book-chapter': 2922, 'dissertation': 607, 'editorial': 372, 'other': 1154, 'preprint': 7543, 'report': 668, 'review': 5169}}, 'note': 'Classification of the 786 lost IDs by metadata does NOT establish the causal filter or why it was applied.'}
