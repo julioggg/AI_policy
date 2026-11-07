@@ -367,3 +367,25 @@ git push origin main
 ~~~
 
 Los resultados individuales, nombres, resúmenes, fragmentos de cuerpo y clave de códigos permanecen SOLO bajo `$HOME/ai_policy_topic_validation_private`, jamás en GitHub. Las hojas pueden abrirse con Excel/LibreOffice desde una copia local protegida. **No declarar validación humana hasta que dos evaluadores completen sus planillas independientes y se calculen concordancia y adjudicación.**
+
+
+## Fase 16 — Integridad de planillas y análisis de concordancia humana
+
+La fase 15 **solo preparó** 48 grupos temáticos ciegos, con siete publicaciones cada uno, que representan tres estructuras candidatas: cuerpo k12, cuerpo k18 e híbrido k18. Cada uno de los dos evaluadores tiene 336 filas de documentos y 48 filas temáticas por calificar. Esta fase NO genera evaluaciones ni permite declarar validación humana sin las planillas originales completadas por dos expertos independientes.
+
+Los archivos viven bajo `$HOME/ai_policy_topic_validation_private` en CEDIA. Para revisarlos los investigadores deben descargar de manera segura una copia privada mediante un cliente SFTP/SSH autorizado, completar las planillas separadamente y devolverlas al mismo directorio protegido conservando los nombres y encabezados. Consultar `docs/topic_validation_codebook.md`. **Nunca publicar, adjuntar a una incidencia pública ni subir los CSV a GitHub.** No compartir la clave `private_sampling_key.csv` con los evaluadores.
+
+~~~bash
+set -e
+cd "$HOME/AI_policy"
+git pull --ff-only
+python -m py_compile scripts/16_score_human_topic_review.py
+python scripts/16_score_human_topic_review.py \
+  --private-in "$HOME/ai_policy_topic_validation_private" \
+  --out reports/phase16
+git add reports/phase16
+git diff --cached --quiet || git commit -m "Phase 16: human rating readiness and aggregate agreement"
+git push origin main
+~~~
+
+**Antes de las calificaciones** la salida esperada es `awaiting_independent_human_ratings`, con conteos de celdas completadas; no inventa kappa ni puntuaciones. **Cuando estén completas ambas planillas** produce resumen por modelo, medidas de concordancia de Cohen (binaria para pertenencia; ponderada cuadrática para ordinal), denominadores, desacuerdos y casos inciertos. Incluso entonces, sigue pendiente la adjudicación experta de etiquetas y conflictos. Este análisis es distinto de la validación del cribado de la fase 5. No utilizar la tabla como ranking automático definitivo de modelos.
