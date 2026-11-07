@@ -153,7 +153,10 @@ def query_inventory(path):
 
 
 def date_span(series):
-    parsed=pd.to_datetime(series,errors="coerce",utc=True,format="mixed")
+    try:
+        parsed=pd.to_datetime(series,errors="coerce",utc=True,format="mixed")
+    except TypeError:
+        parsed=pd.to_datetime(series,errors="coerce",utc=True)
     valid=parsed.dropna()
     if not len(valid):
         return {"valid_dates":0,"total_rows":len(series)}
