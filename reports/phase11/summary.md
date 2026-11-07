@@ -1,0 +1,33 @@
+# Phase 11 — Offline MiniLM original-environment preflight
+
+Date (UTC): 2026-11-07T22:26:16.968843+00:00
+
+## Result
+{
+  "python_version": "3.10.20",
+  "torch": "2.5.1+cu121",
+  "sentence_transformers": "5.5.1",
+  "transformers": "5.9.0",
+  "model_limit_tokens": 256,
+  "tokenizer_reported_limit": 512,
+  "status": "completed",
+  "sample_size": 120,
+  "topic_tokens_median": 2997,
+  "topic_tokens_p10": 2440,
+  "topic_tokens_p90": 3272,
+  "full_text_tokens_median": 6041,
+  "abstract_tokens_median": 282,
+  "topic_over_model_limit": 120,
+  "full_text_over_model_limit": 120,
+  "abstract_over_model_limit": 77,
+  "weak_topic_abstract_prefix_matches": 0,
+  "candidate": "project_dot_venv_python",
+  "exit_code": 0
+}
+
+## Scientific limits
+- Tokenizer/model loaded with HF offline and no downloads.
+- Token-length summaries are sampled, not population-wide.
+- No source texts, identifiers, weights, vectors or environment paths are exported.
+- A sentence-transformer limit is evidence of sequence truncation, but original vector provenance still requires separate verification.
+- If this preflight succeeds, a chunk-based alternative must be compared on the same explicitly eligible records.
