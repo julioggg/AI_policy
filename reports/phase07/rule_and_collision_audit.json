@@ -1,0 +1,1214 @@
+{
+  "created_utc": "2026-11-07T21:39:07.252080+00:00",
+  "original_scripts_ast": [
+    {
+      "filename": "01_collect_openalex.py",
+      "operations_detected": 12,
+      "operations": [
+        {
+          "line": 163,
+          "operation": "to_parquet",
+          "keywords": {}
+        },
+        {
+          "line": 177,
+          "operation": "sort_values",
+          "keywords": {
+            "ascending": "[collection]"
+          }
+        },
+        {
+          "line": 178,
+          "operation": "drop_duplicates",
+          "keywords": {
+            "subset": [
+              "openalex_id"
+            ],
+            "keep": "first"
+          }
+        },
+        {
+          "line": 181,
+          "operation": "to_parquet",
+          "keywords": {}
+        },
+        {
+          "line": 182,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 184,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 187,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 189,
+          "operation": "sort_values",
+          "keywords": {
+            "ascending": false
+          }
+        },
+        {
+          "line": 190,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 192,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 192,
+          "operation": "sort_values",
+          "keywords": {
+            "ascending": false
+          }
+        },
+        {
+          "line": 193,
+          "operation": "to_csv",
+          "keywords": {}
+        }
+      ],
+      "note": "AST lexical evidence only; not proof code paths were executed"
+    },
+    {
+      "filename": "02_prepare_policy_corpus.py",
+      "operations_detected": 13,
+      "operations": [
+        {
+          "line": 12,
+          "operation": "read_parquet",
+          "keywords": {}
+        },
+        {
+          "line": 41,
+          "operation": "contains",
+          "keywords": {}
+        },
+        {
+          "line": 44,
+          "operation": "contains",
+          "keywords": {}
+        },
+        {
+          "line": 97,
+          "operation": "sort_values",
+          "keywords": {
+            "ascending": "[collection]"
+          }
+        },
+        {
+          "line": 99,
+          "operation": "to_parquet",
+          "keywords": {}
+        },
+        {
+          "line": 100,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 102,
+          "operation": "sort_values",
+          "keywords": {
+            "ascending": false
+          }
+        },
+        {
+          "line": 103,
+          "operation": "sort_values",
+          "keywords": {
+            "ascending": false
+          }
+        },
+        {
+          "line": 106,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 111,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 112,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 113,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 114,
+          "operation": "to_csv",
+          "keywords": {}
+        }
+      ],
+      "note": "AST lexical evidence only; not proof code paths were executed"
+    },
+    {
+      "filename": "04_refine_q1_outputs.py",
+      "operations_detected": 25,
+      "operations": [
+        {
+          "line": 17,
+          "operation": "read_parquet",
+          "keywords": {}
+        },
+        {
+          "line": 111,
+          "operation": "contains",
+          "keywords": {}
+        },
+        {
+          "line": 113,
+          "operation": "contains",
+          "keywords": {}
+        },
+        {
+          "line": 117,
+          "operation": "sort_values",
+          "keywords": {
+            "ascending": "[collection]"
+          }
+        },
+        {
+          "line": 120,
+          "operation": "to_parquet",
+          "keywords": {}
+        },
+        {
+          "line": 121,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 129,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 129,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 132,
+          "operation": "sort_values",
+          "keywords": {
+            "ascending": false
+          }
+        },
+        {
+          "line": 133,
+          "operation": "sort_values",
+          "keywords": {
+            "ascending": false
+          }
+        },
+        {
+          "line": 137,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 138,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 139,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 140,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 144,
+          "operation": "dropna",
+          "keywords": {}
+        },
+        {
+          "line": 149,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 150,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 151,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 151,
+          "operation": "sort_values",
+          "keywords": {
+            "ascending": false
+          }
+        },
+        {
+          "line": 154,
+          "operation": "sort_values",
+          "keywords": {
+            "ascending": false
+          }
+        },
+        {
+          "line": 155,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 208,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 215,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 251,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 304,
+          "operation": "head",
+          "keywords": {}
+        }
+      ],
+      "note": "AST lexical evidence only; not proof code paths were executed"
+    },
+    {
+      "filename": "05_article_ready_package.py",
+      "operations_detected": 39,
+      "operations": [
+        {
+          "line": 16,
+          "operation": "read_parquet",
+          "keywords": {}
+        },
+        {
+          "line": 38,
+          "operation": "contains",
+          "keywords": {}
+        },
+        {
+          "line": 39,
+          "operation": "contains",
+          "keywords": {}
+        },
+        {
+          "line": 40,
+          "operation": "contains",
+          "keywords": {}
+        },
+        {
+          "line": 41,
+          "operation": "contains",
+          "keywords": {}
+        },
+        {
+          "line": 42,
+          "operation": "contains",
+          "keywords": {}
+        },
+        {
+          "line": 43,
+          "operation": "contains",
+          "keywords": {}
+        },
+        {
+          "line": 55,
+          "operation": "contains",
+          "keywords": {}
+        },
+        {
+          "line": 62,
+          "operation": "contains",
+          "keywords": {}
+        },
+        {
+          "line": 66,
+          "operation": "sort_values",
+          "keywords": {
+            "ascending": "[collection]"
+          }
+        },
+        {
+          "line": 71,
+          "operation": "to_parquet",
+          "keywords": {}
+        },
+        {
+          "line": 72,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 76,
+          "operation": "contains",
+          "keywords": {}
+        },
+        {
+          "line": 80,
+          "operation": "contains",
+          "keywords": {}
+        },
+        {
+          "line": 88,
+          "operation": "sort_values",
+          "keywords": {
+            "ascending": false
+          }
+        },
+        {
+          "line": 89,
+          "operation": "sort_values",
+          "keywords": {
+            "ascending": false
+          }
+        },
+        {
+          "line": 93,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 94,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 95,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 96,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 104,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 104,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 105,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 105,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 106,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 106,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 107,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 107,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 108,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 108,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 109,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 109,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 118,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 119,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 120,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 121,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 122,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 123,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 182,
+          "operation": "to_csv",
+          "keywords": {}
+        }
+      ],
+      "note": "AST lexical evidence only; not proof code paths were executed"
+    },
+    {
+      "filename": "07_ai_assisted_screening.py",
+      "operations_detected": 27,
+      "operations": [
+        {
+          "line": 19,
+          "operation": "read_parquet",
+          "keywords": {}
+        },
+        {
+          "line": 58,
+          "operation": "contains",
+          "keywords": {}
+        },
+        {
+          "line": 69,
+          "operation": "contains",
+          "keywords": {}
+        },
+        {
+          "line": 109,
+          "operation": "encode",
+          "keywords": {
+            "batch_size": "[expression]",
+            "normalize_embeddings": true
+          }
+        },
+        {
+          "line": 117,
+          "operation": "encode",
+          "keywords": {
+            "normalize_embeddings": true
+          }
+        },
+        {
+          "line": 118,
+          "operation": "encode",
+          "keywords": {
+            "normalize_embeddings": true
+          }
+        },
+        {
+          "line": 119,
+          "operation": "encode",
+          "keywords": {
+            "normalize_embeddings": true
+          }
+        },
+        {
+          "line": 120,
+          "operation": "encode",
+          "keywords": {
+            "normalize_embeddings": true
+          }
+        },
+        {
+          "line": 185,
+          "operation": "where",
+          "keywords": {}
+        },
+        {
+          "line": 187,
+          "operation": "where",
+          "keywords": {}
+        },
+        {
+          "line": 190,
+          "operation": "sort_values",
+          "keywords": {
+            "ascending": "[collection]"
+          }
+        },
+        {
+          "line": 194,
+          "operation": "to_parquet",
+          "keywords": {}
+        },
+        {
+          "line": 195,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 217,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 217,
+          "operation": "drop_duplicates",
+          "keywords": {
+            "subset": [
+              "title",
+              "doi"
+            ]
+          }
+        },
+        {
+          "line": 218,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 219,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 220,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 221,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 221,
+          "operation": "sort_values",
+          "keywords": {
+            "ascending": false
+          }
+        },
+        {
+          "line": 222,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 227,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 228,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 229,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 230,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 231,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 236,
+          "operation": "to_csv",
+          "keywords": {}
+        }
+      ],
+      "note": "AST lexical evidence only; not proof code paths were executed"
+    },
+    {
+      "filename": "10_download_open_access_pdfs.py",
+      "operations_detected": 14,
+      "operations": [
+        {
+          "line": 20,
+          "operation": "read_parquet",
+          "keywords": {}
+        },
+        {
+          "line": 34,
+          "operation": "contains",
+          "keywords": {}
+        },
+        {
+          "line": 40,
+          "operation": "contains",
+          "keywords": {}
+        },
+        {
+          "line": 46,
+          "operation": "contains",
+          "keywords": {}
+        },
+        {
+          "line": 52,
+          "operation": "contains",
+          "keywords": {}
+        },
+        {
+          "line": 58,
+          "operation": "isin",
+          "keywords": {}
+        },
+        {
+          "line": 82,
+          "operation": "sort_values",
+          "keywords": {
+            "ascending": "[collection]"
+          }
+        },
+        {
+          "line": 85,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 89,
+          "operation": "encode",
+          "keywords": {}
+        },
+        {
+          "line": 161,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 163,
+          "operation": "isin",
+          "keywords": {}
+        },
+        {
+          "line": 164,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 167,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 167,
+          "operation": "head",
+          "keywords": {}
+        }
+      ],
+      "note": "AST lexical evidence only; not proof code paths were executed"
+    },
+    {
+      "filename": "11_extract_fulltext_from_pdfs.py",
+      "operations_detected": 3,
+      "operations": [
+        {
+          "line": 13,
+          "operation": "read_csv",
+          "keywords": {}
+        },
+        {
+          "line": 71,
+          "operation": "to_parquet",
+          "keywords": {}
+        },
+        {
+          "line": 72,
+          "operation": "to_csv",
+          "keywords": {}
+        }
+      ],
+      "note": "AST lexical evidence only; not proof code paths were executed"
+    },
+    {
+      "filename": "12_fulltext_screening_and_extraction.py",
+      "operations_detected": 19,
+      "operations": [
+        {
+          "line": 19,
+          "operation": "read_parquet",
+          "keywords": {}
+        },
+        {
+          "line": 20,
+          "operation": "read_parquet",
+          "keywords": {}
+        },
+        {
+          "line": 27,
+          "operation": "drop_duplicates",
+          "keywords": {
+            "subset": [
+              "doi",
+              "title"
+            ]
+          }
+        },
+        {
+          "line": 85,
+          "operation": "contains",
+          "keywords": {}
+        },
+        {
+          "line": 131,
+          "operation": "encode",
+          "keywords": {
+            "batch_size": "[expression]",
+            "normalize_embeddings": true
+          }
+        },
+        {
+          "line": 139,
+          "operation": "encode",
+          "keywords": {
+            "normalize_embeddings": true
+          }
+        },
+        {
+          "line": 140,
+          "operation": "encode",
+          "keywords": {
+            "normalize_embeddings": true
+          }
+        },
+        {
+          "line": 141,
+          "operation": "encode",
+          "keywords": {
+            "normalize_embeddings": true
+          }
+        },
+        {
+          "line": 278,
+          "operation": "to_parquet",
+          "keywords": {}
+        },
+        {
+          "line": 279,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 280,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 284,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 284,
+          "operation": "sort_values",
+          "keywords": {
+            "ascending": "[collection]"
+          }
+        },
+        {
+          "line": 285,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 286,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 287,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 288,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 289,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 293,
+          "operation": "to_csv",
+          "keywords": {}
+        }
+      ],
+      "note": "AST lexical evidence only; not proof code paths were executed"
+    },
+    {
+      "filename": "16_fulltext_topic_modeling_umap_hdbscan.py",
+      "operations_detected": 22,
+      "operations": [
+        {
+          "line": 21,
+          "operation": "read_parquet",
+          "keywords": {}
+        },
+        {
+          "line": 22,
+          "operation": "read_csv",
+          "keywords": {}
+        },
+        {
+          "line": 61,
+          "operation": "encode",
+          "keywords": {
+            "batch_size": "[expression]",
+            "normalize_embeddings": true
+          }
+        },
+        {
+          "line": 71,
+          "operation": "UMAP",
+          "keywords": {
+            "n_neighbors": 25,
+            "n_components": 2,
+            "min_dist": 0.05,
+            "metric": "cosine",
+            "random_state": 42
+          }
+        },
+        {
+          "line": 81,
+          "operation": "HDBSCAN",
+          "keywords": {
+            "min_cluster_size": "[expression]",
+            "min_samples": 10,
+            "metric": "euclidean"
+          }
+        },
+        {
+          "line": 88,
+          "operation": "fit_predict",
+          "keywords": {}
+        },
+        {
+          "line": 122,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 122,
+          "operation": "sort_values",
+          "keywords": {
+            "ascending": false
+          }
+        },
+        {
+          "line": 125,
+          "operation": "sort_values",
+          "keywords": {
+            "ascending": false
+          }
+        },
+        {
+          "line": 126,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 128,
+          "operation": "to_parquet",
+          "keywords": {}
+        },
+        {
+          "line": 129,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 135,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 136,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 137,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 153,
+          "operation": "tail",
+          "keywords": {}
+        },
+        {
+          "line": 153,
+          "operation": "sort_values",
+          "keywords": {}
+        },
+        {
+          "line": 163,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 163,
+          "operation": "sort_values",
+          "keywords": {
+            "ascending": false
+          }
+        },
+        {
+          "line": 179,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 179,
+          "operation": "sort_values",
+          "keywords": {
+            "ascending": false
+          }
+        },
+        {
+          "line": 194,
+          "operation": "head",
+          "keywords": {}
+        }
+      ],
+      "note": "AST lexical evidence only; not proof code paths were executed"
+    },
+    {
+      "filename": "18_fulltext_topic_modeling_kmeans_robust.py",
+      "operations_detected": 16,
+      "operations": [
+        {
+          "line": 23,
+          "operation": "read_parquet",
+          "keywords": {}
+        },
+        {
+          "line": 71,
+          "operation": "fit_predict",
+          "keywords": {}
+        },
+        {
+          "line": 104,
+          "operation": "head",
+          "keywords": {}
+        },
+        {
+          "line": 104,
+          "operation": "sort_values",
+          "keywords": {
+            "ascending": false
+          }
+        },
+        {
+          "line": 122,
+          "operation": "sort_values",
+          "keywords": {
+            "ascending": false
+          }
+        },
+        {
+          "line": 123,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 125,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 126,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 127,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 143,
+          "operation": "sort_values",
+          "keywords": {}
+        },
+        {
+          "line": 154,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 155,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 157,
+          "operation": "to_parquet",
+          "keywords": {}
+        },
+        {
+          "line": 158,
+          "operation": "to_csv",
+          "keywords": {}
+        },
+        {
+          "line": 165,
+          "operation": "read_csv",
+          "keywords": {}
+        },
+        {
+          "line": 166,
+          "operation": "head",
+          "keywords": {}
+        }
+      ],
+      "note": "AST lexical evidence only; not proof code paths were executed"
+    }
+  ],
+  "initial_unique_id_attrition": {
+    "not_retained": {
+      "distinct_openalex_records": 786,
+      "with_nonempty_abstract": 601,
+      "no_abstract": 185,
+      "publication_year_counts": {
+        "2025": 337,
+        "2024": 164,
+        "2023": 130,
+        "2026": 79,
+        "2022": 32,
+        "2021": 23,
+        "2020": 21
+      },
+      "type_counts": {
+        "[other]": 769,
+        "[rare combined]": 7,
+        "article": 10
+      }
+    },
+    "retained_from_initial_distinct_ids": {
+      "distinct_openalex_records": 102822,
+      "with_nonempty_abstract": 97891,
+      "no_abstract": 4931,
+      "publication_year_counts": {
+        "2025": 44984,
+        "2024": 24202,
+        "2026": 16883,
+        "2023": 11269,
+        "2022": 2721,
+        "2021": 1710,
+        "2020": 1053
+      },
+      "type_counts": {
+        "[other]": 731,
+        "[rare combined]": 10,
+        "article": 82263,
+        "book": 1383,
+        "book-chapter": 2922,
+        "dissertation": 607,
+        "editorial": 372,
+        "other": 1154,
+        "preprint": 7543,
+        "report": 668,
+        "review": 5169
+      }
+    },
+    "note": "Classification of the 786 lost IDs by metadata does NOT establish the causal filter or why it was applied."
+  },
+  "pdf_path_collisions": {
+    "success_rows": 3656,
+    "unique_nonempty_pdf_paths": 3655,
+    "duplicated_pdf_path_groups": 1,
+    "duplicated_pdf_path_group_properties": [
+      {
+        "records": 2,
+        "all_dois_identical": true,
+        "all_titles_identical": false,
+        "statuses": {
+          "downloaded": 1,
+          "exists": 1
+        }
+      }
+    ],
+    "note": "No PDF paths or document identifiers are disclosed. Shared path does not prove independent PDF contents."
+  },
+  "fulltext_screening": {
+    "records": 3656,
+    "ft_decisions": {
+      "include_meta_candidate": 2722,
+      "include_core_fulltext": 911,
+      "include_policy_fulltext": 11,
+      "exclude_fulltext": 7,
+      "unclear_fulltext": 4,
+      "exclude_fulltext_unusable": 1
+    },
+    "explicit_acceptances": 3644,
+    "unclear_needs_manual_review": 4,
+    "explicit_exclusions": 8,
+    "nonpositive_text_length": 1,
+    "accepted_with_nonpositive_text_length": 0,
+    "unclear_with_nonpositive_text_length": 0,
+    "unrecognized_other": 0,
+    "note": "Unclear cases are NOT validated eligible; only a human evaluation can adjudicate them."
+  },
+  "query_log_counts": {
+    "number_of_logged_queries": 27,
+    "queries_with_positive_results": 12,
+    "queries_with_zero_results": 15,
+    "sum_raw_hits_across_queries": 199366,
+    "note": "Summing query hits double-counts overlaps; 24,000 may reflect a per-query cap."
+  },
+  "privacy": "only aggregate counts, whitelisted AST operation names, line numbers, and safe numeric keywords"
+}
