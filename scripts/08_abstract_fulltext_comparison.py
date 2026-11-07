@@ -140,7 +140,7 @@ def main():
 
     file=root/"data/processed/fulltext_topic_model_documents_with_kmeans.parquet"
     columns=set(pq.ParquetFile(file).schema_arrow.names)
-    required={"openalex_id","title","abstract","topic_text",
+    required={"openalex_id","doi","title","abstract","topic_text",
               "ft_decision","text_length","policy_dimension","disciplinary_area"}
     if not required.issubset(columns):
         raise ValueError("Missing required full-text columns: "+", ".join(sorted(required-columns)))
@@ -268,10 +268,11 @@ def main():
             "cosine_silhouette_title_abstract":round(float(silhouette_score(
                 x_abs,la,metric="cosine",sample_size=min(1000,len(la)),random_state=args.seed)),5)
         }
-    key=df.iloc[accepted_indices]["openalex_id"].fillna("").astype(str)
-    # DOIs are more appropriate for grouping versions, but this phase's
-    # selected table is not read with DOI; OpenAlex IDs guard only exact record repeats.
-    groups=key.to_numpy()
+    selected=df.iloc[accepted_indices]
+    doi=selected["doi"].fillna("").astype(str).str.strip().str.lower()
+    doi=doi.str.replace(r"^(https?://(dx\.)?doi\.org/|doi:)", "", regex=True)
+    ids=selected["openalex_id"].fillna("").astype(str)
+    groups=np.where(doi.ne(""),doi,ids)
     targets={}
     for field in ["policy_dimension","disciplinary_area"]:
         values=df.iloc[accepted_indices][field].fillna("[missing]").astype(str)
