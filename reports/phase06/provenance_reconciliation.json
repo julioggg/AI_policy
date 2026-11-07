@@ -1,0 +1,393 @@
+{
+  "created_utc": "2026-11-07T21:27:28.683558+00:00",
+  "stages": {
+    "raw": {
+      "rows": 199366,
+      "unique_ids": 103608,
+      "duplicate_ids": 95758,
+      "missing_ids": 0,
+      "unique_dois": 99931,
+      "duplicate_doi_rows": 92392,
+      "missing_doi_rows": 7043
+    },
+    "unique": {
+      "rows": 102822,
+      "unique_ids": 102822,
+      "duplicate_ids": 0,
+      "missing_ids": 0,
+      "unique_dois": 99145,
+      "duplicate_doi_rows": 32,
+      "missing_doi_rows": 3645
+    },
+    "core": {
+      "rows": 22524,
+      "unique_ids": 22524,
+      "duplicate_ids": 0,
+      "missing_ids": 0,
+      "unique_dois": 21655,
+      "duplicate_doi_rows": 4,
+      "missing_doi_rows": 865
+    },
+    "refined": {
+      "rows": 21676,
+      "unique_ids": 21676,
+      "duplicate_ids": 0,
+      "missing_ids": 0,
+      "unique_dois": 20839,
+      "duplicate_doi_rows": 3,
+      "missing_doi_rows": 834,
+      "relevance_score_quantiles": {
+        "0": 8.0,
+        "0.05": 8.0,
+        "0.25": 10.0,
+        "0.5": 12.0,
+        "0.75": 14.0,
+        "0.95": 16.0,
+        "1": 20.0
+      }
+    },
+    "ready": {
+      "rows": 10283,
+      "unique_ids": 10283,
+      "duplicate_ids": 0,
+      "missing_ids": 0,
+      "unique_dois": 9792,
+      "duplicate_doi_rows": 2,
+      "missing_doi_rows": 489,
+      "relevance_score_quantiles": {
+        "0": 9.0,
+        "0.05": 11.0,
+        "0.25": 12.0,
+        "0.5": 14.0,
+        "0.75": 16.0,
+        "0.95": 17.0,
+        "1": 20.0
+      }
+    },
+    "screening": {
+      "rows": 10283,
+      "unique_ids": 10283,
+      "duplicate_ids": 0,
+      "missing_ids": 0,
+      "unique_dois": 9792,
+      "duplicate_doi_rows": 2,
+      "missing_doi_rows": 489,
+      "ai_decision_counts": {
+        "exclude": 18,
+        "include_context": 102,
+        "include_core": 9264,
+        "include_policy": 899
+      },
+      "relevance_score_quantiles": {
+        "0": 9.0,
+        "0.05": 11.0,
+        "0.25": 12.0,
+        "0.5": 14.0,
+        "0.75": 16.0,
+        "0.95": 17.0,
+        "1": 20.0
+      }
+    },
+    "fulltext": {
+      "rows": 3656,
+      "unique_ids": 3656,
+      "duplicate_ids": 0,
+      "missing_ids": 0,
+      "unique_dois": 3537,
+      "duplicate_doi_rows": 1,
+      "missing_doi_rows": 118,
+      "ai_decision_counts": {
+        "include_context": 13,
+        "include_core": 3519,
+        "include_policy": 124
+      },
+      "ft_decision_counts": {
+        "exclude_fulltext": 7,
+        "exclude_fulltext_unusable": 1,
+        "include_core_fulltext": 911,
+        "include_meta_candidate": 2722,
+        "include_policy_fulltext": 11,
+        "unclear_fulltext": 4
+      },
+      "status_counts": {
+        "ok": 3656
+      },
+      "text_length_nonpositive": 1,
+      "text_length_missing": 0,
+      "relevance_score_quantiles": {
+        "0": 9.0,
+        "0.05": 12.0,
+        "0.25": 12.0,
+        "0.5": 14.0,
+        "0.75": 16.0,
+        "0.95": 17.0,
+        "1": 20.0
+      }
+    },
+    "extracted": {
+      "rows": 3656,
+      "unique_dois": 3537,
+      "duplicate_doi_rows": 1,
+      "missing_doi_rows": 118,
+      "status_counts": {
+        "ok": 3656
+      },
+      "text_length_nonpositive": 1,
+      "text_length_missing": 0
+    }
+  },
+  "raw_to_unique_missing_ids": {
+    "raw_distinct_openalex_ids": 103608,
+    "retained_distinct_openalex_ids": 102822,
+    "distinct_ids_not_retained": 786,
+    "not_retained_with_doi_matching_kept_id": 0,
+    "not_retained_with_missing_doi": 0,
+    "not_retained_with_distinct_nonempty_doi": 786,
+    "caution": "Matching DOI is not conclusive proof of the filtering/deduplication rule."
+  },
+  "retrieval_dates": {
+    "valid_dates": 199366,
+    "total_rows": 199366,
+    "first_utc_date": "2026-05-25",
+    "last_utc_date": "2026-05-25",
+    "distinct_utc_dates": 1,
+    "daily_counts": {
+      "2026-05-25": 199366
+    }
+  },
+  "retrieval_queries": {
+    "queries_logged": 27,
+    "query_log": [
+      {
+        "search_term": "[redacted]",
+        "term_sha256": "ea0ffe8b402d",
+        "raw_rows": 12483
+      },
+      {
+        "search_term": "[redacted]",
+        "term_sha256": "4cf7a68e2244",
+        "raw_rows": 24000
+      },
+      {
+        "search_term": "[redacted]",
+        "term_sha256": "b042c8049443",
+        "raw_rows": 24000
+      },
+      {
+        "search_term": "[redacted]",
+        "term_sha256": "9121c1199e46",
+        "raw_rows": 24000
+      },
+      {
+        "search_term": "[redacted]",
+        "term_sha256": "d154dcd999cc",
+        "raw_rows": 11110
+      },
+      {
+        "search_term": "[redacted]",
+        "term_sha256": "53cc8ee5b2f5",
+        "raw_rows": 7270
+      },
+      {
+        "search_term": "[redacted]",
+        "term_sha256": "1660e8df1b19",
+        "raw_rows": 24000
+      },
+      {
+        "search_term": "[redacted]",
+        "term_sha256": "04bf6015b5c3",
+        "raw_rows": 24000
+      },
+      {
+        "search_term": "[redacted]",
+        "term_sha256": "851f347faa31",
+        "raw_rows": 14898
+      },
+      {
+        "search_term": "[redacted]",
+        "term_sha256": "06571985f411",
+        "raw_rows": 11161
+      },
+      {
+        "search_term": "[redacted]",
+        "term_sha256": "08c6402b225d",
+        "raw_rows": 12644
+      },
+      {
+        "search_term": "[redacted]",
+        "term_sha256": "564b7d83ffd1",
+        "raw_rows": 9800
+      },
+      {
+        "search_term": "[redacted]",
+        "term_sha256": "fdab36735878",
+        "raw_rows": 0
+      },
+      {
+        "search_term": "[redacted]",
+        "term_sha256": "0bc53bc41013",
+        "raw_rows": 0
+      },
+      {
+        "search_term": "[redacted]",
+        "term_sha256": "4a65e3a57fcf",
+        "raw_rows": 0
+      },
+      {
+        "search_term": "[redacted]",
+        "term_sha256": "92a4d196a465",
+        "raw_rows": 0
+      },
+      {
+        "search_term": "[redacted]",
+        "term_sha256": "d3367553244c",
+        "raw_rows": 0
+      },
+      {
+        "search_term": "[redacted]",
+        "term_sha256": "2a0c8a170d17",
+        "raw_rows": 0
+      },
+      {
+        "search_term": "[redacted]",
+        "term_sha256": "859c26456932",
+        "raw_rows": 0
+      },
+      {
+        "search_term": "[redacted]",
+        "term_sha256": "e1d60e8309fb",
+        "raw_rows": 0
+      },
+      {
+        "search_term": "[redacted]",
+        "term_sha256": "e159c3afeb15",
+        "raw_rows": 0
+      },
+      {
+        "search_term": "[redacted]",
+        "term_sha256": "426227d0abd4",
+        "raw_rows": 0
+      },
+      {
+        "search_term": "[redacted]",
+        "term_sha256": "4bd6a190cfb1",
+        "raw_rows": 0
+      },
+      {
+        "search_term": "[redacted]",
+        "term_sha256": "aed57bd2e2b2",
+        "raw_rows": 0
+      },
+      {
+        "search_term": "[redacted]",
+        "term_sha256": "65b5170fec4a",
+        "raw_rows": 0
+      },
+      {
+        "search_term": "[redacted]",
+        "term_sha256": "9884e6931125",
+        "raw_rows": 0
+      },
+      {
+        "search_term": "[redacted]",
+        "term_sha256": "32891bfff508",
+        "raw_rows": 0
+      }
+    ],
+    "warning": "This query log is not a full API request history; API fields, filters and dates must be corroborated from original code."
+  },
+  "fulltext_attempts": {
+    "rows": 5000,
+    "status_counts": {
+      "downloaded": 3655,
+      "error_connectionerror": 30,
+      "error_connecttimeout": 62,
+      "error_readtimeout": 13,
+      "error_sslerror": 42,
+      "error_toomanyredirects": 1,
+      "exists": 1,
+      "http_400": 2,
+      "http_403": 922,
+      "http_404": 73,
+      "http_405": 2,
+      "http_410": 1,
+      "http_429": 15,
+      "http_500": 3,
+      "http_503": 13,
+      "not_pdf_text/html": 1,
+      "not_pdf_text/html; charset=utf-8": 29,
+      "not_pdf_text/html;charset=utf-8": 1,
+      "too_small": 134
+    },
+    "unique_dois": 4835,
+    "missing_doi": 164,
+    "unique_nonempty_pdf_paths": 3655,
+    "missing_pdf_path": 1344
+  },
+  "fulltext_success_table": {
+    "rows": 3656,
+    "status_counts": {
+      "downloaded": 3655,
+      "exists": 1
+    },
+    "unique_dois": 3537,
+    "missing_doi": 118,
+    "unique_nonempty_pdf_paths": 3655,
+    "missing_pdf_path": 0
+  },
+  "fulltext_extraction_table": {
+    "rows": 3656,
+    "status_counts": {
+      "ok": 3656
+    },
+    "unique_dois": 3537,
+    "missing_doi": 118,
+    "unique_nonempty_pdf_paths": 3655,
+    "missing_pdf_path": 0,
+    "nonpositive_text_length": 1
+  },
+  "manifest_set_comparison": {
+    "_doi": {
+      "distinct_attempt_keys": 4835,
+      "distinct_success_keys": 3537,
+      "success_keys_not_in_attempts": 0,
+      "success_keys_matching_attempts": 3537
+    },
+    "_file": {
+      "distinct_attempt_keys": 3655,
+      "distinct_success_keys": 3655,
+      "success_keys_not_in_attempts": 0,
+      "success_keys_matching_attempts": 3655
+    },
+    "extraction_vs_success_pdf_paths": {
+      "extracted_unique_paths": 3655,
+      "success_unique_paths": 3655,
+      "extracted_paths_not_in_success": 0
+    }
+  },
+  "fulltext_screening_concordance": {
+    "excluded_fulltext": 8,
+    "text_length_nonpositive": 1,
+    "both": 1,
+    "retained_after_both_filters": 3648
+  },
+  "five_thousand_selection_doi_proxy": {
+    "screen_included_rows": 10265,
+    "attempt_manifest_rows": 5000,
+    "attempt_manifest_distinct_dois": 4835,
+    "included_rows_matching_attempt_doi": 4836,
+    "included_rows_unmatched_or_no_doi": 5429,
+    "matching_is_a_proxy": true,
+    "caution": "A DOI-based match does not reconstruct the exact 5000 selected OpenAlex records when DOIs are duplicated or missing.",
+    "relevance_score_median_attempt_doi_match": 14.0,
+    "relevance_score_median_unmatched": 14.0
+  },
+  "limitations": [
+    "Recorded query labels and retrieval timestamps do not specify the full API endpoints and filter parameters.",
+    "Full-text extraction record, successful download, usable text, and assigned embedding are separate units.",
+    "DOI-based selected-record matching is incomplete when DOI is missing or duplicated.",
+    "The 786 missing OpenAlex IDs cannot be called duplicates until their removals are attributed to executable rules.",
+    "This analysis does not perform new expert assessment or rerun NLP models.",
+    "All published findings are aggregate. The original research project is unmodified."
+  ]
+}
