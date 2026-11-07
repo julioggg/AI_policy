@@ -1,0 +1,17 @@
+name: Python syntax validation
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile all Python scripts (no dataset required)
+        run: python3 -m compileall -q scripts
