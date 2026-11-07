@@ -122,3 +122,23 @@ git push origin main
 **Fase 4** evalúa distribuciones de disciplinas, dimensiones políticas y clústeres k=12,18,25 entre corpus total, subconjunto de revistas (solo proxy de revisión por pares), textos completos y subconjunto elegible sin exclusiones ni textos vacíos. Entrega tablas agregadas, distancias TV y divergencia Jensen–Shannon, sin exportar registros.
 
 **Fase 5** prepara hojas de codificación independientes para dos revisores: el material con títulos, resúmenes y OpenAlex ID permanece exclusivamente en la carpeta privada fuera del repositorio, situada en $HOME/ai_policy_validation_private. Solo los conteos de muestreo se versionan en GitHub. No afirmar que se ha realizado validación humana hasta que ambos revisores hayan codificado de verdad. El protocolo está en docs/human_validation_protocol.md.
+
+
+## Fase 6: procedencia OpenAlex y reconciliación de denominadores
+
+~~~bash
+cd "$HOME/AI_policy"
+git pull --ff-only
+python -m py_compile scripts/06_trace_and_reconcile.py
+python scripts/06_trace_and_reconcile.py \
+  --project "$HOME/ai_policy_he" \
+  --out reports/phase06
+
+git add reports/phase06
+git diff --cached --quiet || git commit -m "Phase 6: reconcile OpenAlex stages and PDF extraction"
+git push origin main
+~~~
+
+Esta fase contrasta los identificadores únicos y DOI entre captura original y corpus deduplicado; investiga los 786 IDs no retenidos, recoge las fechas de recuperación, lista únicamente cadenas de consulta simples verificadas como no sensibles y compara los manifiestos de 5000 intentos, descargas exitosas y extracciones. También confirma los ocho registros no elegibles y registra una aproximación (por DOI) de la selección de los 5000 documentos.
+
+Los resultados son descriptivos; un DOI coincidente no prueba un algoritmo de deduplicación y la presencia de 5000 registros en un manifiesto no justifica por sí misma el criterio de prioridad. Es indispensable cotejar los scripts originales antes de afirmar que está reconstruido el protocolo sistemático. El proyecto original permanece inalterado.
