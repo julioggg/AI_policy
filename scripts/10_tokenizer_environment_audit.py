@@ -188,6 +188,10 @@ def text_probe(project):
                      "identical_first_n_words": matches[k]}
             for k in limits
         },
+        "source_text_caps": {
+            "full_text_exactly_30003_characters": int((desc["full_text"].fillna("").astype(str).str.len() == 30003).sum()),
+            "topic_text_exactly_16000_characters": int((desc["topic_text"].fillna("").astype(str).str.len() == 16000).sum())
+        },
         "caution": "Word splits are NOT MiniLM WordPiece token counts; actual tokenizer inspection remains required."
     }
 
