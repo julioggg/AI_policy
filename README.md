@@ -265,3 +265,29 @@ git push origin main
 ~~~
 
 Un marcador de caché en disco no garantiza que el modelo esté completo; el script informa explícitamente si se puede cargar. El modelo funciona en CPU solo durante la inspección de tokens. Los resultados ayudarán a escoger entre reconstrucción de embeddings por fragmentos y alternativas. No afirmar que el texto fue tokenizado por completo sin verificar model.max_seq_length y el procedimiento original.
+
+
+## Fase 12 — PILOTO de embeddings del cuerpo con chunks, sin truncamiento al encabezado
+
+La fase 11 demostró que el modelo original MiniLM tiene max_seq_length=256 tokens. En la muestra de 120, las 120 secuencias topic_text tenían más de 256 tokens (mediana 2997); el cuerpo de PDF alcanzaba mediana 6041. La codificación directa de un texto largo con SentenceTransformer no captura todo su contenido. Fase12 es una prueba exploratoria pareada, todavía NO una revisión final del corpus completo.
+
+Se toma una muestra determinista estratificada por dimensión política de hasta 240 publicaciones aceptadas explícitamente, se carga MiniLM solo desde la caché local y se produce una representación de cuerpo excluyendo los primeros 512 tokens del PDF y el 15% final; en medio se seleccionan uniformemente hasta 12 chunks de 192 tokens con 32 de solape. Se genera por separado embedding título+resumen; la agregación del cuerpo es promedio normalizado de chunks; el híbrido es combinación 50/50 normalizada. Se compara con el embedding original del supuesto fulltext, sin reemplazarlo. Se reportan similitudes, cambios en vecinos próximos, ARI/NMI y silhouette k12/18/25. No hay etiquetas humanas independientes todavía; estas son pruebas diagnósticas, NO verificación de utilidad/precisión semántica.
+
+Se emplea el Python original del proyecto, donde el modelo local está disponible. El script escribe vectores y estado de reanudación SOLO bajo $HOME/ai_policy_chunk_private (fuera del repositorio público). En GitHub se envían exclusivamente estadísticas agregadas.
+
+~~~bash
+set -e
+cd "$HOME/AI_policy"
+git pull --ff-only
+python -m py_compile scripts/12_body_chunks_pilot.py
+"$HOME/ai_policy_he/.venv/bin/python" scripts/12_body_chunks_pilot.py \
+  --project "$HOME/ai_policy_he" \
+  --out reports/phase12 \
+  --private-cache "$HOME/ai_policy_chunk_private" \
+  --sample-size 240 --max-chunks 12 --threads 8 --batch-size 32
+git add reports/phase12
+git diff --cached --quiet || git commit -m "Phase 12: private body-chunk pilot and aggregate diagnostics"
+git push origin main
+~~~
+
+La selección y los vectores pueden reanudarse si se interrumpe el proceso, siempre que no cambien los parámetros ni los datos. No subir $HOME/ai_policy_chunk_private a GitHub. Comprobar los informes de fase12 antes de decidir qué pipeline final ejecutar sobre todos los documentos.
