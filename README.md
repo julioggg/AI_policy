@@ -51,3 +51,22 @@ La carpeta de trabajo que se versiona es "$HOME/AI_policy". El corpus permanece 
 ## Estado
 
 Fase 1: código de inspección disponible; pendiente ejecución en CEDIA y evaluación de resultados.
+
+## Fase 2: reconciliación de corpus y evaluación de representatividad
+
+Una vez publicada la fase 1, ejecutar desde CEDIA:
+
+~~~bash
+cd "$HOME/AI_policy"
+git pull --ff-only
+python scripts/02_provenance_and_bias.py \
+  --project "$HOME/ai_policy_he" \
+  --out reports/phase02
+git add reports/phase02
+git diff --cached --quiet || git commit -m "Phase 2: corpus provenance and representativeness"
+git push origin main
+~~~
+
+Dependencias: Python 3.9+, pandas, numpy y pyarrow. Se utilizan las bases Parquet y los embeddings existentes (lectura), sin reinstanciar los modelos de lenguaje ni descargar PDF.
+
+Salidas: reports/phase02/summary.md y reports/phase02/provenance_bias.json. Se comparten únicamente frecuencias agregadas, distancias descriptivas y metadatos de arrays, nunca registros individuales. Las diferencias de distribución NO constituyen estimaciones causales ni pruebas de calidad del contenido.
