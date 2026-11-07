@@ -206,3 +206,24 @@ git push origin main
 ~~~
 
 Interpretación: el par de matrices solo constituye una comparación realmente *título/resumen frente a texto completo* si se verifica en los scripts originales que la matriz core fue codificada a partir de esas unidades de texto. Por defecto se etiqueta con precisión como *core/short-text baseline vs fulltext*. Las etiquetas automáticas y los cambios en clústeres no son validación humana.
+
+
+## Fase 9 — Forensia de embeddings: comprobar si el texto completo realmente alimenta el modelo
+
+Ante la similitud coseno mediana de 1.000 entre representaciones original core y full-text de las mismas 3644 publicaciones, es imprescindible distinguir embeddings numéricamente idénticos de vectores diferentes con dirección similar. También hay que documentar cuánto texto realmente llega a topic_text, su semejanza con título/resumen y los nombres de las columnas utilizadas por los scripts originales. La fase 9 hace esta auditoría sin recalcular embeddings.
+
+~~~bash
+cd "$HOME/AI_policy"
+git pull --ff-only
+python -m py_compile scripts/09_embedding_provenance_forensics.py
+python scripts/09_embedding_provenance_forensics.py \
+  --project "$HOME/ai_policy_he" \
+  --out reports/phase09
+git add reports/phase09
+git diff --cached --quiet || git commit -m "Phase 9: audit numerical embedding identity and source texts"
+git push origin main
+~~~
+
+Salidas: reports/phase09/summary.md y reports/phase09/embedding_forensics.json. Contienen únicamente estadísticos agregados sobre igualdad numérica de vectores, similitudes, distancias, longitudes de los campos de texto, concordancia de prefijos y señales estáticas de código original. No exportan textos, nombres de artículos, identificadores ni vectores.
+
+Precaución metodológica: un resultado coseno próximo a 1 no prueba que la entrada fuera idéntica; no atribuir truncamiento ni ausencia de contenido completo sin cotejar las reglas de construcción de topic_text, la codificación y el max_seq_length del modelo original.
