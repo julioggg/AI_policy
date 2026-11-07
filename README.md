@@ -246,3 +246,22 @@ git push origin main
 ~~~
 
 Los resultados de Python/paquetes del contenedor actual no prueban la inexistencia de un modelo en otro ambiente Singularity, conda o venv. Tampoco hay que afirmar que el modelo truncó el PDF sin comprobar la secuencia entrada -> tokenizador -> max_seq_length -> embedding. El script indica si encuentra un tokenizador ya instalado sin descargar nada.
+
+
+## Fase 11 — Preflight del entorno virtual original y presupuesto real de MiniLM
+
+La fase 10 detectó $HOME/ai_policy_he/.venv y un directorio de caché de Hugging Face para all-MiniLM-L6-v2, pero el Python general de Singularity no tenía torch/transformers. Este preflight ejecuta un proceso aislado con el Python del .venv original, fuerza HF_HUB_OFFLINE/TRANSFORMERS_OFFLINE, comprueba imports y modelo, mide model.max_seq_length y el recuento de tokens de una muestra fija de hasta 120 registros aceptados. No reentrena ni genera embeddings, y no exporta documentos.
+
+~~~bash
+cd "$HOME/AI_policy"
+git pull --ff-only
+python -m py_compile scripts/11_original_venv_tokenizer_preflight.py
+python scripts/11_original_venv_tokenizer_preflight.py \
+  --project "$HOME/ai_policy_he" \
+  --out reports/phase11
+git add reports/phase11
+git diff --cached --quiet || git commit -m "Phase 11: offline MiniLM model and tokenizer preflight"
+git push origin main
+~~~
+
+Un marcador de caché en disco no garantiza que el modelo esté completo; el script informa explícitamente si se puede cargar. El modelo funciona en CPU solo durante la inspección de tokens. Los resultados ayudarán a escoger entre reconstrucción de embeddings por fragmentos y alternativas. No afirmar que el texto fue tokenizado por completo sin verificar model.max_seq_length y el procedimiento original.
