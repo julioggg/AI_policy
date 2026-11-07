@@ -1,0 +1,70 @@
+{
+  "created_utc": "2026-11-07T23:03:54.468613+00:00",
+  "parameters": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "model_max_seq_length": 256,
+    "chunk_content_tokens": 192,
+    "max_chunks_per_document": 12,
+    "chunk_overlap": 32,
+    "first_tokens_excluded": 512,
+    "tail_fraction_excluded": 0.15,
+    "source_field": "full_text, which is capped in the original extraction workflow",
+    "pooling": "unit-normalize chunks, arithmetic mean, unit-normalize document",
+    "baseline": "fresh unit-normalized encoding of title followed by abstract",
+    "hybrid": "computed later by unit-normalized sum of baseline and body vectors",
+    "tokenizer_and_model": "local offline MiniLM in original project virtualenv",
+    "device": "cpu"
+  },
+  "limitations": [
+    "Explicit original AI decisions are not a substitute for independent human eligibility coding.",
+    "The available full_text field is truncated by the preexisting extraction pipeline for many PDFs; this is not every page of every original publication.",
+    "Skipping the first 512 tokens and last 15 percent is a reproducible heuristic, not section-aware rhetorical segmentation.",
+    "No model, source text, document label or original fulltext vector is overwritten.",
+    "The public report contains aggregate metadata only; per-document vectors, source hashes and progress arrays remain private.",
+    "No topic validity, policy impact or scientific superiority can be claimed until full-corpus and expert analyses."
+  ],
+  "status": "completed_vectors_private",
+  "counts": {
+    "original_fulltext_rows": 3656,
+    "explicit_accepted_input_rows": 3644,
+    "new_documents_this_call": 3644,
+    "processed_in_private_cache": 3644,
+    "remaining_unprocessed": 0,
+    "eligible_with_body_vectors": 3629,
+    "no_usable_body_after_exclusion_rules": 15
+  },
+  "diagnostics": {
+    "bibliographic_body_cosine": {
+      "min": -0.04413723945617676,
+      "p10": 0.7172958612442016,
+      "median": 0.823973536491394,
+      "p90": 0.8783201575279236,
+      "max": 0.934506356716156,
+      "mean": 0.796086900601393
+    },
+    "document_body_chunk_counts": {
+      "min": 2.0,
+      "p10": 12.0,
+      "median": 12.0,
+      "p90": 12.0,
+      "max": 12.0,
+      "mean": 11.868007715624138
+    },
+    "input_fulltext_token_counts": {
+      "min": 847.0,
+      "p10": 4828.2,
+      "median": 6068.0,
+      "p90": 6985.6,
+      "max": 42153.0,
+      "mean": 6350.771837971893
+    },
+    "usable_body_token_counts": {
+      "min": 207.0,
+      "p10": 3591.4,
+      "median": 4645.0,
+      "p90": 5425.400000000001,
+      "max": 35318.0,
+      "mean": 4885.682006062276
+    }
+  }
+}
