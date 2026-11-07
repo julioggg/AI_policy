@@ -70,3 +70,30 @@ git push origin main
 Dependencias: Python 3.9+, pandas, numpy y pyarrow. Se utilizan las bases Parquet y los embeddings existentes (lectura), sin reinstanciar los modelos de lenguaje ni descargar PDF.
 
 Salidas: reports/phase02/summary.md y reports/phase02/provenance_bias.json. Se comparten únicamente frecuencias agregadas, distancias descriptivas y metadatos de arrays, nunca registros individuales. Las diferencias de distribución NO constituyen estimaciones causales ni pruebas de calidad del contenido.
+
+
+## Corrección fase 2 + Fase 3: estabilidad semántica, sin volver a descargar textos
+
+El cribado original utiliza los valores \`include_core\`, \`include_policy\`, \`include_context\` y \`exclude\`. La primera versión de fase 2 no reconocía los tres primeros para la comparación de muestras, por lo que fue corregida.
+
+~~~bash
+cd "$HOME/AI_policy"
+git pull --ff-only
+
+python scripts/02_provenance_and_bias.py \
+  --project "$HOME/ai_policy_he" \
+  --out reports/phase02
+
+python scripts/03_kmeans_robustness.py \
+  --project "$HOME/ai_policy_he" \
+  --out reports/phase03 \
+  --seeds 5 --subsamples 5 --fraction 0.8 --n-init 10 --threads 8
+
+git add reports/phase02 reports/phase03
+git diff --cached --quiet || git commit -m "Phase 2 corrected and Phase 3 KMeans robustness"
+git push origin main
+~~~
+
+La fase 3 realiza nuevos **ajustes de KMeans sobre los embeddings previamente guardados**, para k=12/18/25 con cinco semillas y cinco remuestreos cada uno. Reporta ARI/NMI, dispersión entre semillas, silhouette coseno muestral, Davies–Bouldin, Calinski–Harabasz y sensibilidad al excluir registros marcados como no aceptados o sin longitud de texto. Los valores por defecto están pensados como primera sensibilidad; se pueden aumentar semillas/remuestreos después de revisar los resultados. No se escribe ninguna modificación al corpus original.
+
+Advertencias: la alineación exacta entre la matriz .npy y las filas de la base se presume conforme al pipeline original y se comprueba indirectamente; los índices no identifican publicaciones. La coherencia sustantiva de las etiquetas temáticas requiere validación humana. Las métricas no prueban por sí solas que k=18 sea una estructura natural.
