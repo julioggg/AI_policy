@@ -1,0 +1,3051 @@
+{
+  "generated_utc": "2026-11-07T21:10:32.578005+00:00",
+  "scope": "observational sensitivity, not evidence quality assessment",
+  "populations": {
+    "included_all": {
+      "n": 10265,
+      "ai_decision": {
+        "include_context": 102,
+        "include_core": 9264,
+        "include_policy": 899
+      },
+      "source_type": {
+        "journal": 7346,
+        "[missing]": 1016,
+        "repository": 1714,
+        "ebook platform": 34,
+        "book series": 95,
+        "conference": 60
+      },
+      "type": {
+        "editorial": 64,
+        "article": 8518,
+        "book": 46,
+        "other": 183,
+        "dataset": 128,
+        "letter": 8,
+        "peer-review": 16,
+        "preprint": 738,
+        "book-chapter": 246,
+        "review": 231,
+        "dissertation": 39,
+        "report": 40,
+        "paratext": 6,
+        "[rare groups combined]": 2
+      },
+      "policy_dimension": {
+        "governance_policy": 1775,
+        "ai_literacy_training": 181,
+        "ethics_integrity": 2157,
+        "teaching_learning": 3766,
+        "assessment": 1848,
+        "equity_access": 75,
+        "research_scholarship": 404,
+        "privacy_security": 54,
+        "general": 5
+      },
+      "disciplinary_area": {
+        "social_sciences_humanities": 6673,
+        "engineering": 2329,
+        "health_sciences": 1261,
+        "[rare groups combined]": 2
+      }
+    },
+    "included_journal_article_review": {
+      "n": 7216,
+      "ai_decision": {
+        "include_context": 74,
+        "include_core": 6461,
+        "include_policy": 681
+      },
+      "source_type": {
+        "journal": 7216
+      },
+      "type": {
+        "article": 7014,
+        "review": 202
+      },
+      "policy_dimension": {
+        "ai_literacy_training": 137,
+        "ethics_integrity": 1465,
+        "governance_policy": 1144,
+        "teaching_learning": 2777,
+        "assessment": 1286,
+        "equity_access": 56,
+        "research_scholarship": 311,
+        "privacy_security": 36,
+        "[rare groups combined]": 4
+      },
+      "disciplinary_area": {
+        "social_sciences_humanities": 4756,
+        "engineering": 1409,
+        "health_sciences": 1051
+      }
+    },
+    "fulltext_all": {
+      "n": 3656,
+      "ai_decision": {
+        "include_core": 3519,
+        "include_policy": 124,
+        "include_context": 13
+      },
+      "ft_decision": {
+        "include_meta_candidate": 2722,
+        "include_core_fulltext": 911,
+        "include_policy_fulltext": 11,
+        "exclude_fulltext": 7,
+        "[rare groups combined]": 5
+      },
+      "source_type": {
+        "journal": 3038,
+        "[missing]": 196,
+        "repository": 367,
+        "book series": 19,
+        "conference": 30,
+        "ebook platform": 6
+      },
+      "type": {
+        "article": 3202,
+        "review": 101,
+        "preprint": 239,
+        "book": 7,
+        "book-chapter": 57,
+        "other": 18,
+        "editorial": 18,
+        "[rare groups combined]": 14
+      },
+      "policy_dimension": {
+        "ethics_integrity": 803,
+        "equity_access": 25,
+        "governance_policy": 623,
+        "teaching_learning": 1417,
+        "assessment": 576,
+        "research_scholarship": 140,
+        "ai_literacy_training": 57,
+        "privacy_security": 14,
+        "[rare groups combined]": 1
+      },
+      "disciplinary_area": {
+        "social_sciences_humanities": 2450,
+        "engineering": 858,
+        "health_sciences": 348
+      },
+      "kmeans_18": {
+        "topic_11": 382,
+        "topic_0": 225,
+        "topic_17": 150,
+        "topic_13": 231,
+        "topic_12": 202,
+        "topic_1": 252,
+        "topic_16": 83,
+        "topic_15": 246,
+        "topic_5": 96,
+        "topic_4": 309,
+        "topic_2": 286,
+        "topic_6": 97,
+        "topic_7": 190,
+        "topic_8": 144,
+        "topic_9": 216,
+        "topic_10": 160,
+        "topic_3": 217,
+        "topic_14": 170
+      }
+    },
+    "fulltext_journal_article_review": {
+      "n": 2992,
+      "ai_decision": {
+        "include_core": 2885,
+        "include_policy": 95,
+        "include_context": 12
+      },
+      "ft_decision": {
+        "include_meta_candidate": 2228,
+        "include_core_fulltext": 746,
+        "include_policy_fulltext": 8,
+        "exclude_fulltext": 7,
+        "[rare groups combined]": 3
+      },
+      "source_type": {
+        "journal": 2992
+      },
+      "type": {
+        "article": 2903,
+        "review": 89
+      },
+      "policy_dimension": {
+        "ethics_integrity": 675,
+        "equity_access": 20,
+        "governance_policy": 509,
+        "teaching_learning": 1173,
+        "assessment": 444,
+        "research_scholarship": 108,
+        "ai_literacy_training": 52,
+        "privacy_security": 10,
+        "[rare groups combined]": 1
+      },
+      "disciplinary_area": {
+        "social_sciences_humanities": 2070,
+        "engineering": 624,
+        "health_sciences": 298
+      },
+      "kmeans_18": {
+        "topic_11": 285,
+        "topic_0": 211,
+        "topic_17": 128,
+        "topic_13": 186,
+        "topic_12": 154,
+        "topic_1": 199,
+        "topic_16": 63,
+        "topic_15": 215,
+        "topic_5": 84,
+        "topic_4": 246,
+        "topic_2": 253,
+        "topic_6": 84,
+        "topic_7": 110,
+        "topic_8": 107,
+        "topic_9": 183,
+        "topic_10": 147,
+        "topic_3": 184,
+        "topic_14": 153
+      }
+    },
+    "fulltext_eligible": {
+      "n": 3648,
+      "ai_decision": {
+        "include_core": 3513,
+        "include_policy": 122,
+        "include_context": 13
+      },
+      "ft_decision": {
+        "include_meta_candidate": 2722,
+        "include_core_fulltext": 911,
+        "include_policy_fulltext": 11,
+        "[rare groups combined]": 4
+      },
+      "source_type": {
+        "journal": 3031,
+        "[missing]": 195,
+        "repository": 367,
+        "book series": 19,
+        "conference": 30,
+        "ebook platform": 6
+      },
+      "type": {
+        "article": 3194,
+        "review": 101,
+        "preprint": 239,
+        "book": 7,
+        "book-chapter": 57,
+        "other": 18,
+        "editorial": 18,
+        "[rare groups combined]": 14
+      },
+      "policy_dimension": {
+        "ethics_integrity": 803,
+        "equity_access": 25,
+        "governance_policy": 622,
+        "teaching_learning": 1412,
+        "assessment": 575,
+        "research_scholarship": 139,
+        "ai_literacy_training": 57,
+        "privacy_security": 14,
+        "[rare groups combined]": 1
+      },
+      "disciplinary_area": {
+        "social_sciences_humanities": 2444,
+        "engineering": 856,
+        "health_sciences": 348
+      },
+      "kmeans_18": {
+        "topic_11": 380,
+        "topic_0": 225,
+        "topic_17": 150,
+        "topic_13": 230,
+        "topic_12": 202,
+        "topic_1": 252,
+        "topic_16": 83,
+        "topic_15": 246,
+        "topic_5": 96,
+        "topic_4": 309,
+        "topic_2": 285,
+        "topic_6": 97,
+        "topic_7": 190,
+        "topic_8": 143,
+        "topic_9": 216,
+        "topic_10": 160,
+        "topic_3": 214,
+        "topic_14": 170
+      }
+    },
+    "fulltext_eligible_journal_article_review": {
+      "n": 2985,
+      "ai_decision": {
+        "include_core": 2880,
+        "include_policy": 93,
+        "include_context": 12
+      },
+      "ft_decision": {
+        "include_meta_candidate": 2228,
+        "include_core_fulltext": 746,
+        "include_policy_fulltext": 8,
+        "[rare groups combined]": 3
+      },
+      "source_type": {
+        "journal": 2985
+      },
+      "type": {
+        "article": 2896,
+        "review": 89
+      },
+      "policy_dimension": {
+        "ethics_integrity": 675,
+        "equity_access": 20,
+        "governance_policy": 508,
+        "teaching_learning": 1168,
+        "assessment": 444,
+        "research_scholarship": 107,
+        "ai_literacy_training": 52,
+        "privacy_security": 10,
+        "[rare groups combined]": 1
+      },
+      "disciplinary_area": {
+        "social_sciences_humanities": 2065,
+        "engineering": 622,
+        "health_sciences": 298
+      },
+      "kmeans_18": {
+        "topic_11": 283,
+        "topic_0": 211,
+        "topic_17": 128,
+        "topic_13": 185,
+        "topic_12": 154,
+        "topic_1": 199,
+        "topic_16": 63,
+        "topic_15": 215,
+        "topic_5": 84,
+        "topic_4": 246,
+        "topic_2": 252,
+        "topic_6": 84,
+        "topic_7": 110,
+        "topic_8": 107,
+        "topic_9": 183,
+        "topic_10": 147,
+        "topic_3": 181,
+        "topic_14": 153
+      }
+    }
+  },
+  "comparisons": {
+    "included_all -> included_journal_article_review": {
+      "disciplinary_area": {
+        "parent_n": 10265,
+        "subset_n": 7216,
+        "total_variation": 0.03182,
+        "jensen_shannon_divergence_bits": 0.00167,
+        "largest_absolute_difference_pp": 3.16,
+        "distribution": [
+          {
+            "label": "engineering",
+            "parent_n": 2329,
+            "subset_n": 1409,
+            "parent_pct": 22.69,
+            "subset_pct": 19.53,
+            "difference_pp": -3.16
+          },
+          {
+            "label": "health_sciences",
+            "parent_n": 1261,
+            "subset_n": 1051,
+            "parent_pct": 12.28,
+            "subset_pct": 14.56,
+            "difference_pp": 2.28
+          },
+          {
+            "label": "social_sciences_humanities",
+            "parent_n": 6673,
+            "subset_n": 4756,
+            "parent_pct": 65.01,
+            "subset_pct": 65.91,
+            "difference_pp": 0.9
+          },
+          {
+            "label": "[other/rare]",
+            "parent_n": 2,
+            "subset_n": 0,
+            "parent_pct": 0.02,
+            "subset_pct": 0.0,
+            "difference_pp": -0.02
+          }
+        ]
+      },
+      "policy_dimension": {
+        "parent_n": 10265,
+        "subset_n": 7216,
+        "total_variation": 0.02358,
+        "jensen_shannon_divergence_bits": 0.00052,
+        "largest_absolute_difference_pp": 1.8,
+        "distribution": [
+          {
+            "label": "teaching_learning",
+            "parent_n": 3766,
+            "subset_n": 2777,
+            "parent_pct": 36.69,
+            "subset_pct": 38.48,
+            "difference_pp": 1.8
+          },
+          {
+            "label": "governance_policy",
+            "parent_n": 1775,
+            "subset_n": 1144,
+            "parent_pct": 17.29,
+            "subset_pct": 15.85,
+            "difference_pp": -1.44
+          },
+          {
+            "label": "ethics_integrity",
+            "parent_n": 2157,
+            "subset_n": 1465,
+            "parent_pct": 21.01,
+            "subset_pct": 20.3,
+            "difference_pp": -0.71
+          },
+          {
+            "label": "research_scholarship",
+            "parent_n": 404,
+            "subset_n": 311,
+            "parent_pct": 3.94,
+            "subset_pct": 4.31,
+            "difference_pp": 0.37
+          },
+          {
+            "label": "assessment",
+            "parent_n": 1848,
+            "subset_n": 1286,
+            "parent_pct": 18.0,
+            "subset_pct": 17.82,
+            "difference_pp": -0.18
+          },
+          {
+            "label": "ai_literacy_training",
+            "parent_n": 181,
+            "subset_n": 137,
+            "parent_pct": 1.76,
+            "subset_pct": 1.9,
+            "difference_pp": 0.14
+          },
+          {
+            "label": "equity_access",
+            "parent_n": 75,
+            "subset_n": 56,
+            "parent_pct": 0.73,
+            "subset_pct": 0.78,
+            "difference_pp": 0.05
+          },
+          {
+            "label": "privacy_security",
+            "parent_n": 54,
+            "subset_n": 36,
+            "parent_pct": 0.53,
+            "subset_pct": 0.5,
+            "difference_pp": -0.03
+          },
+          {
+            "label": "[other/rare]",
+            "parent_n": 5,
+            "subset_n": 4,
+            "parent_pct": 0.05,
+            "subset_pct": 0.06,
+            "difference_pp": 0.01
+          }
+        ]
+      },
+      "publication_year": {
+        "parent_n": 10265,
+        "subset_n": 7216,
+        "total_variation": 0.03026,
+        "jensen_shannon_divergence_bits": 0.00081,
+        "largest_absolute_difference_pp": 2.52,
+        "distribution": [
+          {
+            "label": "2026",
+            "parent_n": 2589,
+            "subset_n": 1638,
+            "parent_pct": 25.22,
+            "subset_pct": 22.7,
+            "difference_pp": -2.52
+          },
+          {
+            "label": "2025",
+            "parent_n": 4587,
+            "subset_n": 3404,
+            "parent_pct": 44.69,
+            "subset_pct": 47.17,
+            "difference_pp": 2.49
+          },
+          {
+            "label": "2024",
+            "parent_n": 2188,
+            "subset_n": 1577,
+            "parent_pct": 21.32,
+            "subset_pct": 21.85,
+            "difference_pp": 0.54
+          },
+          {
+            "label": "2023",
+            "parent_n": 874,
+            "subset_n": 581,
+            "parent_pct": 8.51,
+            "subset_pct": 8.05,
+            "difference_pp": -0.46
+          },
+          {
+            "label": "2022",
+            "parent_n": 16,
+            "subset_n": 10,
+            "parent_pct": 0.16,
+            "subset_pct": 0.14,
+            "difference_pp": -0.02
+          },
+          {
+            "label": "[other/rare]",
+            "parent_n": 11,
+            "subset_n": 6,
+            "parent_pct": 0.11,
+            "subset_pct": 0.08,
+            "difference_pp": -0.02
+          }
+        ]
+      },
+      "source_type": {
+        "parent_n": 10265,
+        "subset_n": 7216,
+        "total_variation": 0.28436,
+        "jensen_shannon_divergence_bits": 0.15926,
+        "largest_absolute_difference_pp": 28.44,
+        "distribution": [
+          {
+            "label": "[other/rare]",
+            "parent_n": 2919,
+            "subset_n": 0,
+            "parent_pct": 28.44,
+            "subset_pct": 0.0,
+            "difference_pp": -28.44
+          },
+          {
+            "label": "journal",
+            "parent_n": 7346,
+            "subset_n": 7216,
+            "parent_pct": 71.56,
+            "subset_pct": 100.0,
+            "difference_pp": 28.44
+          }
+        ]
+      },
+      "type": {
+        "parent_n": 10265,
+        "subset_n": 7216,
+        "total_variation": 0.14769,
+        "jensen_shannon_divergence_bits": 0.07811,
+        "largest_absolute_difference_pp": 14.77,
+        "distribution": [
+          {
+            "label": "[other/rare]",
+            "parent_n": 1516,
+            "subset_n": 0,
+            "parent_pct": 14.77,
+            "subset_pct": 0.0,
+            "difference_pp": -14.77
+          },
+          {
+            "label": "article",
+            "parent_n": 8518,
+            "subset_n": 7014,
+            "parent_pct": 82.98,
+            "subset_pct": 97.2,
+            "difference_pp": 14.22
+          },
+          {
+            "label": "review",
+            "parent_n": 231,
+            "subset_n": 202,
+            "parent_pct": 2.25,
+            "subset_pct": 2.8,
+            "difference_pp": 0.55
+          }
+        ]
+      }
+    },
+    "fulltext_all -> fulltext_journal_article_review": {
+      "disciplinary_area": {
+        "parent_n": 3656,
+        "subset_n": 2992,
+        "total_variation": 0.02613,
+        "jensen_shannon_divergence_bits": 0.00072,
+        "largest_absolute_difference_pp": 2.61,
+        "distribution": [
+          {
+            "label": "engineering",
+            "parent_n": 858,
+            "subset_n": 624,
+            "parent_pct": 23.47,
+            "subset_pct": 20.86,
+            "difference_pp": -2.61
+          },
+          {
+            "label": "social_sciences_humanities",
+            "parent_n": 2450,
+            "subset_n": 2070,
+            "parent_pct": 67.01,
+            "subset_pct": 69.18,
+            "difference_pp": 2.17
+          },
+          {
+            "label": "health_sciences",
+            "parent_n": 348,
+            "subset_n": 298,
+            "parent_pct": 9.52,
+            "subset_pct": 9.96,
+            "difference_pp": 0.44
+          }
+        ]
+      },
+      "policy_dimension": {
+        "parent_n": 3656,
+        "subset_n": 2992,
+        "total_variation": 0.01228,
+        "jensen_shannon_divergence_bits": 0.00021,
+        "largest_absolute_difference_pp": 0.92,
+        "distribution": [
+          {
+            "label": "assessment",
+            "parent_n": 576,
+            "subset_n": 444,
+            "parent_pct": 15.75,
+            "subset_pct": 14.84,
+            "difference_pp": -0.92
+          },
+          {
+            "label": "ethics_integrity",
+            "parent_n": 803,
+            "subset_n": 675,
+            "parent_pct": 21.96,
+            "subset_pct": 22.56,
+            "difference_pp": 0.6
+          },
+          {
+            "label": "teaching_learning",
+            "parent_n": 1417,
+            "subset_n": 1173,
+            "parent_pct": 38.76,
+            "subset_pct": 39.2,
+            "difference_pp": 0.45
+          },
+          {
+            "label": "research_scholarship",
+            "parent_n": 140,
+            "subset_n": 108,
+            "parent_pct": 3.83,
+            "subset_pct": 3.61,
+            "difference_pp": -0.22
+          },
+          {
+            "label": "ai_literacy_training",
+            "parent_n": 57,
+            "subset_n": 52,
+            "parent_pct": 1.56,
+            "subset_pct": 1.74,
+            "difference_pp": 0.18
+          },
+          {
+            "label": "privacy_security",
+            "parent_n": 14,
+            "subset_n": 10,
+            "parent_pct": 0.38,
+            "subset_pct": 0.33,
+            "difference_pp": -0.05
+          },
+          {
+            "label": "governance_policy",
+            "parent_n": 623,
+            "subset_n": 509,
+            "parent_pct": 17.04,
+            "subset_pct": 17.01,
+            "difference_pp": -0.03
+          },
+          {
+            "label": "equity_access",
+            "parent_n": 25,
+            "subset_n": 20,
+            "parent_pct": 0.68,
+            "subset_pct": 0.67,
+            "difference_pp": -0.02
+          },
+          {
+            "label": "[other/rare]",
+            "parent_n": 1,
+            "subset_n": 1,
+            "parent_pct": 0.03,
+            "subset_pct": 0.03,
+            "difference_pp": 0.01
+          }
+        ]
+      },
+      "publication_year": {
+        "parent_n": 3656,
+        "subset_n": 2992,
+        "total_variation": 0.03535,
+        "jensen_shannon_divergence_bits": 0.00122,
+        "largest_absolute_difference_pp": 2.76,
+        "distribution": [
+          {
+            "label": "2025",
+            "parent_n": 1715,
+            "subset_n": 1486,
+            "parent_pct": 46.91,
+            "subset_pct": 49.67,
+            "difference_pp": 2.76
+          },
+          {
+            "label": "2024",
+            "parent_n": 782,
+            "subset_n": 578,
+            "parent_pct": 21.39,
+            "subset_pct": 19.32,
+            "difference_pp": -2.07
+          },
+          {
+            "label": "2023",
+            "parent_n": 300,
+            "subset_n": 202,
+            "parent_pct": 8.21,
+            "subset_pct": 6.75,
+            "difference_pp": -1.45
+          },
+          {
+            "label": "2026",
+            "parent_n": 855,
+            "subset_n": 723,
+            "parent_pct": 23.39,
+            "subset_pct": 24.16,
+            "difference_pp": 0.78
+          },
+          {
+            "label": "[other/rare]",
+            "parent_n": 4,
+            "subset_n": 3,
+            "parent_pct": 0.11,
+            "subset_pct": 0.1,
+            "difference_pp": -0.01
+          }
+        ]
+      },
+      "source_type": {
+        "parent_n": 3656,
+        "subset_n": 2992,
+        "total_variation": 0.16904,
+        "jensen_shannon_divergence_bits": 0.09016,
+        "largest_absolute_difference_pp": 16.9,
+        "distribution": [
+          {
+            "label": "[other/rare]",
+            "parent_n": 618,
+            "subset_n": 0,
+            "parent_pct": 16.9,
+            "subset_pct": 0.0,
+            "difference_pp": -16.9
+          },
+          {
+            "label": "journal",
+            "parent_n": 3038,
+            "subset_n": 2992,
+            "parent_pct": 83.1,
+            "subset_pct": 100.0,
+            "difference_pp": 16.9
+          }
+        ]
+      },
+      "type": {
+        "parent_n": 3656,
+        "subset_n": 2992,
+        "total_variation": 0.09655,
+        "jensen_shannon_divergence_bits": 0.05005,
+        "largest_absolute_difference_pp": 9.66,
+        "distribution": [
+          {
+            "label": "[other/rare]",
+            "parent_n": 353,
+            "subset_n": 0,
+            "parent_pct": 9.66,
+            "subset_pct": 0.0,
+            "difference_pp": -9.66
+          },
+          {
+            "label": "article",
+            "parent_n": 3202,
+            "subset_n": 2903,
+            "parent_pct": 87.58,
+            "subset_pct": 97.03,
+            "difference_pp": 9.44
+          },
+          {
+            "label": "review",
+            "parent_n": 101,
+            "subset_n": 89,
+            "parent_pct": 2.76,
+            "subset_pct": 2.97,
+            "difference_pp": 0.21
+          }
+        ]
+      },
+      "kmeans_12": {
+        "parent_n": 3656,
+        "subset_n": 2992,
+        "total_variation": 0.03285,
+        "jensen_shannon_divergence_bits": 0.00167,
+        "largest_absolute_difference_pp": 1.77,
+        "distribution": [
+          {
+            "label": "topic_7",
+            "parent_n": 231,
+            "subset_n": 136,
+            "parent_pct": 6.32,
+            "subset_pct": 4.55,
+            "difference_pp": -1.77
+          },
+          {
+            "label": "topic_0",
+            "parent_n": 251,
+            "subset_n": 234,
+            "parent_pct": 6.87,
+            "subset_pct": 7.82,
+            "difference_pp": 0.96
+          },
+          {
+            "label": "topic_11",
+            "parent_n": 536,
+            "subset_n": 410,
+            "parent_pct": 14.66,
+            "subset_pct": 13.7,
+            "difference_pp": -0.96
+          },
+          {
+            "label": "topic_3",
+            "parent_n": 444,
+            "subset_n": 386,
+            "parent_pct": 12.14,
+            "subset_pct": 12.9,
+            "difference_pp": 0.76
+          },
+          {
+            "label": "topic_2",
+            "parent_n": 396,
+            "subset_n": 340,
+            "parent_pct": 10.83,
+            "subset_pct": 11.36,
+            "difference_pp": 0.53
+          },
+          {
+            "label": "topic_4",
+            "parent_n": 369,
+            "subset_n": 289,
+            "parent_pct": 10.09,
+            "subset_pct": 9.66,
+            "difference_pp": -0.43
+          },
+          {
+            "label": "topic_10",
+            "parent_n": 158,
+            "subset_n": 142,
+            "parent_pct": 4.32,
+            "subset_pct": 4.75,
+            "difference_pp": 0.42
+          },
+          {
+            "label": "topic_9",
+            "parent_n": 251,
+            "subset_n": 213,
+            "parent_pct": 6.87,
+            "subset_pct": 7.12,
+            "difference_pp": 0.25
+          },
+          {
+            "label": "topic_5",
+            "parent_n": 119,
+            "subset_n": 103,
+            "parent_pct": 3.25,
+            "subset_pct": 3.44,
+            "difference_pp": 0.19
+          },
+          {
+            "label": "topic_6",
+            "parent_n": 303,
+            "subset_n": 252,
+            "parent_pct": 8.29,
+            "subset_pct": 8.42,
+            "difference_pp": 0.13
+          },
+          {
+            "label": "topic_1",
+            "parent_n": 371,
+            "subset_n": 300,
+            "parent_pct": 10.15,
+            "subset_pct": 10.03,
+            "difference_pp": -0.12
+          },
+          {
+            "label": "topic_8",
+            "parent_n": 227,
+            "subset_n": 187,
+            "parent_pct": 6.21,
+            "subset_pct": 6.25,
+            "difference_pp": 0.04
+          }
+        ]
+      },
+      "kmeans_18": {
+        "parent_n": 3656,
+        "subset_n": 2992,
+        "total_variation": 0.03922,
+        "jensen_shannon_divergence_bits": 0.00189,
+        "largest_absolute_difference_pp": 1.52,
+        "distribution": [
+          {
+            "label": "topic_7",
+            "parent_n": 190,
+            "subset_n": 110,
+            "parent_pct": 5.2,
+            "subset_pct": 3.68,
+            "difference_pp": -1.52
+          },
+          {
+            "label": "topic_11",
+            "parent_n": 382,
+            "subset_n": 285,
+            "parent_pct": 10.45,
+            "subset_pct": 9.53,
+            "difference_pp": -0.92
+          },
+          {
+            "label": "topic_0",
+            "parent_n": 225,
+            "subset_n": 211,
+            "parent_pct": 6.15,
+            "subset_pct": 7.05,
+            "difference_pp": 0.9
+          },
+          {
+            "label": "topic_2",
+            "parent_n": 286,
+            "subset_n": 253,
+            "parent_pct": 7.82,
+            "subset_pct": 8.46,
+            "difference_pp": 0.63
+          },
+          {
+            "label": "topic_10",
+            "parent_n": 160,
+            "subset_n": 147,
+            "parent_pct": 4.38,
+            "subset_pct": 4.91,
+            "difference_pp": 0.54
+          },
+          {
+            "label": "topic_14",
+            "parent_n": 170,
+            "subset_n": 153,
+            "parent_pct": 4.65,
+            "subset_pct": 5.11,
+            "difference_pp": 0.46
+          },
+          {
+            "label": "topic_15",
+            "parent_n": 246,
+            "subset_n": 215,
+            "parent_pct": 6.73,
+            "subset_pct": 7.19,
+            "difference_pp": 0.46
+          },
+          {
+            "label": "topic_12",
+            "parent_n": 202,
+            "subset_n": 154,
+            "parent_pct": 5.53,
+            "subset_pct": 5.15,
+            "difference_pp": -0.38
+          },
+          {
+            "label": "topic_8",
+            "parent_n": 144,
+            "subset_n": 107,
+            "parent_pct": 3.94,
+            "subset_pct": 3.58,
+            "difference_pp": -0.36
+          },
+          {
+            "label": "topic_1",
+            "parent_n": 252,
+            "subset_n": 199,
+            "parent_pct": 6.89,
+            "subset_pct": 6.65,
+            "difference_pp": -0.24
+          },
+          {
+            "label": "topic_4",
+            "parent_n": 309,
+            "subset_n": 246,
+            "parent_pct": 8.45,
+            "subset_pct": 8.22,
+            "difference_pp": -0.23
+          },
+          {
+            "label": "topic_3",
+            "parent_n": 217,
+            "subset_n": 184,
+            "parent_pct": 5.94,
+            "subset_pct": 6.15,
+            "difference_pp": 0.21
+          },
+          {
+            "label": "topic_9",
+            "parent_n": 216,
+            "subset_n": 183,
+            "parent_pct": 5.91,
+            "subset_pct": 6.12,
+            "difference_pp": 0.21
+          },
+          {
+            "label": "topic_17",
+            "parent_n": 150,
+            "subset_n": 128,
+            "parent_pct": 4.1,
+            "subset_pct": 4.28,
+            "difference_pp": 0.18
+          },
+          {
+            "label": "topic_5",
+            "parent_n": 96,
+            "subset_n": 84,
+            "parent_pct": 2.63,
+            "subset_pct": 2.81,
+            "difference_pp": 0.18
+          },
+          {
+            "label": "topic_16",
+            "parent_n": 83,
+            "subset_n": 63,
+            "parent_pct": 2.27,
+            "subset_pct": 2.11,
+            "difference_pp": -0.16
+          },
+          {
+            "label": "topic_6",
+            "parent_n": 97,
+            "subset_n": 84,
+            "parent_pct": 2.65,
+            "subset_pct": 2.81,
+            "difference_pp": 0.15
+          },
+          {
+            "label": "topic_13",
+            "parent_n": 231,
+            "subset_n": 186,
+            "parent_pct": 6.32,
+            "subset_pct": 6.22,
+            "difference_pp": -0.1
+          }
+        ]
+      },
+      "kmeans_25": {
+        "parent_n": 3656,
+        "subset_n": 2992,
+        "total_variation": 0.03814,
+        "jensen_shannon_divergence_bits": 0.0025,
+        "largest_absolute_difference_pp": 1.17,
+        "distribution": [
+          {
+            "label": "topic_22",
+            "parent_n": 83,
+            "subset_n": 33,
+            "parent_pct": 2.27,
+            "subset_pct": 1.1,
+            "difference_pp": -1.17
+          },
+          {
+            "label": "topic_7",
+            "parent_n": 200,
+            "subset_n": 182,
+            "parent_pct": 5.47,
+            "subset_pct": 6.08,
+            "difference_pp": 0.61
+          },
+          {
+            "label": "topic_0",
+            "parent_n": 178,
+            "subset_n": 163,
+            "parent_pct": 4.87,
+            "subset_pct": 5.45,
+            "difference_pp": 0.58
+          },
+          {
+            "label": "topic_16",
+            "parent_n": 167,
+            "subset_n": 122,
+            "parent_pct": 4.57,
+            "subset_pct": 4.08,
+            "difference_pp": -0.49
+          },
+          {
+            "label": "topic_8",
+            "parent_n": 111,
+            "subset_n": 105,
+            "parent_pct": 3.04,
+            "subset_pct": 3.51,
+            "difference_pp": 0.47
+          },
+          {
+            "label": "topic_2",
+            "parent_n": 91,
+            "subset_n": 86,
+            "parent_pct": 2.49,
+            "subset_pct": 2.87,
+            "difference_pp": 0.39
+          },
+          {
+            "label": "topic_4",
+            "parent_n": 192,
+            "subset_n": 168,
+            "parent_pct": 5.25,
+            "subset_pct": 5.61,
+            "difference_pp": 0.36
+          },
+          {
+            "label": "topic_12",
+            "parent_n": 164,
+            "subset_n": 124,
+            "parent_pct": 4.49,
+            "subset_pct": 4.14,
+            "difference_pp": -0.34
+          },
+          {
+            "label": "topic_13",
+            "parent_n": 150,
+            "subset_n": 132,
+            "parent_pct": 4.1,
+            "subset_pct": 4.41,
+            "difference_pp": 0.31
+          },
+          {
+            "label": "topic_1",
+            "parent_n": 227,
+            "subset_n": 177,
+            "parent_pct": 6.21,
+            "subset_pct": 5.92,
+            "difference_pp": -0.29
+          },
+          {
+            "label": "topic_15",
+            "parent_n": 175,
+            "subset_n": 152,
+            "parent_pct": 4.79,
+            "subset_pct": 5.08,
+            "difference_pp": 0.29
+          },
+          {
+            "label": "topic_3",
+            "parent_n": 200,
+            "subset_n": 156,
+            "parent_pct": 5.47,
+            "subset_pct": 5.21,
+            "difference_pp": -0.26
+          },
+          {
+            "label": "topic_10",
+            "parent_n": 75,
+            "subset_n": 69,
+            "parent_pct": 2.05,
+            "subset_pct": 2.31,
+            "difference_pp": 0.25
+          },
+          {
+            "label": "topic_14",
+            "parent_n": 92,
+            "subset_n": 68,
+            "parent_pct": 2.52,
+            "subset_pct": 2.27,
+            "difference_pp": -0.24
+          },
+          {
+            "label": "topic_18",
+            "parent_n": 82,
+            "subset_n": 60,
+            "parent_pct": 2.24,
+            "subset_pct": 2.01,
+            "difference_pp": -0.24
+          },
+          {
+            "label": "topic_5",
+            "parent_n": 180,
+            "subset_n": 154,
+            "parent_pct": 4.92,
+            "subset_pct": 5.15,
+            "difference_pp": 0.22
+          },
+          {
+            "label": "topic_9",
+            "parent_n": 200,
+            "subset_n": 157,
+            "parent_pct": 5.47,
+            "subset_pct": 5.25,
+            "difference_pp": -0.22
+          },
+          {
+            "label": "topic_19",
+            "parent_n": 187,
+            "subset_n": 147,
+            "parent_pct": 5.11,
+            "subset_pct": 4.91,
+            "difference_pp": -0.2
+          },
+          {
+            "label": "topic_21",
+            "parent_n": 152,
+            "subset_n": 130,
+            "parent_pct": 4.16,
+            "subset_pct": 4.34,
+            "difference_pp": 0.19
+          },
+          {
+            "label": "topic_11",
+            "parent_n": 142,
+            "subset_n": 111,
+            "parent_pct": 3.88,
+            "subset_pct": 3.71,
+            "difference_pp": -0.17
+          },
+          {
+            "label": "topic_24",
+            "parent_n": 141,
+            "subset_n": 118,
+            "parent_pct": 3.86,
+            "subset_pct": 3.94,
+            "difference_pp": 0.09
+          },
+          {
+            "label": "topic_20",
+            "parent_n": 193,
+            "subset_n": 156,
+            "parent_pct": 5.28,
+            "subset_pct": 5.21,
+            "difference_pp": -0.07
+          },
+          {
+            "label": "topic_23",
+            "parent_n": 100,
+            "subset_n": 80,
+            "parent_pct": 2.74,
+            "subset_pct": 2.67,
+            "difference_pp": -0.06
+          },
+          {
+            "label": "topic_6",
+            "parent_n": 128,
+            "subset_n": 103,
+            "parent_pct": 3.5,
+            "subset_pct": 3.44,
+            "difference_pp": -0.06
+          },
+          {
+            "label": "topic_17",
+            "parent_n": 46,
+            "subset_n": 39,
+            "parent_pct": 1.26,
+            "subset_pct": 1.3,
+            "difference_pp": 0.05
+          }
+        ]
+      }
+    },
+    "fulltext_all -> fulltext_eligible": {
+      "disciplinary_area": {
+        "parent_n": 3656,
+        "subset_n": 3648,
+        "total_variation": 0.00021,
+        "jensen_shannon_divergence_bits": 0.0,
+        "largest_absolute_difference_pp": 0.02,
+        "distribution": [
+          {
+            "label": "health_sciences",
+            "parent_n": 348,
+            "subset_n": 348,
+            "parent_pct": 9.52,
+            "subset_pct": 9.54,
+            "difference_pp": 0.02
+          },
+          {
+            "label": "social_sciences_humanities",
+            "parent_n": 2450,
+            "subset_n": 2444,
+            "parent_pct": 67.01,
+            "subset_pct": 67.0,
+            "difference_pp": -0.02
+          },
+          {
+            "label": "engineering",
+            "parent_n": 858,
+            "subset_n": 856,
+            "parent_pct": 23.47,
+            "subset_pct": 23.46,
+            "difference_pp": -0.0
+          }
+        ]
+      },
+      "policy_dimension": {
+        "parent_n": 3656,
+        "subset_n": 3648,
+        "total_variation": 0.00071,
+        "jensen_shannon_divergence_bits": 0.0,
+        "largest_absolute_difference_pp": 0.05,
+        "distribution": [
+          {
+            "label": "ethics_integrity",
+            "parent_n": 803,
+            "subset_n": 803,
+            "parent_pct": 21.96,
+            "subset_pct": 22.01,
+            "difference_pp": 0.05
+          },
+          {
+            "label": "teaching_learning",
+            "parent_n": 1417,
+            "subset_n": 1412,
+            "parent_pct": 38.76,
+            "subset_pct": 38.71,
+            "difference_pp": -0.05
+          },
+          {
+            "label": "research_scholarship",
+            "parent_n": 140,
+            "subset_n": 139,
+            "parent_pct": 3.83,
+            "subset_pct": 3.81,
+            "difference_pp": -0.02
+          },
+          {
+            "label": "assessment",
+            "parent_n": 576,
+            "subset_n": 575,
+            "parent_pct": 15.75,
+            "subset_pct": 15.76,
+            "difference_pp": 0.01
+          },
+          {
+            "label": "governance_policy",
+            "parent_n": 623,
+            "subset_n": 622,
+            "parent_pct": 17.04,
+            "subset_pct": 17.05,
+            "difference_pp": 0.01
+          },
+          {
+            "label": "[other/rare]",
+            "parent_n": 1,
+            "subset_n": 1,
+            "parent_pct": 0.03,
+            "subset_pct": 0.03,
+            "difference_pp": 0.0
+          },
+          {
+            "label": "ai_literacy_training",
+            "parent_n": 57,
+            "subset_n": 57,
+            "parent_pct": 1.56,
+            "subset_pct": 1.56,
+            "difference_pp": 0.0
+          },
+          {
+            "label": "equity_access",
+            "parent_n": 25,
+            "subset_n": 25,
+            "parent_pct": 0.68,
+            "subset_pct": 0.69,
+            "difference_pp": 0.0
+          },
+          {
+            "label": "privacy_security",
+            "parent_n": 14,
+            "subset_n": 14,
+            "parent_pct": 0.38,
+            "subset_pct": 0.38,
+            "difference_pp": 0.0
+          }
+        ]
+      },
+      "publication_year": {
+        "parent_n": 3656,
+        "subset_n": 3648,
+        "total_variation": 0.0002,
+        "jensen_shannon_divergence_bits": 0.0,
+        "largest_absolute_difference_pp": 0.02,
+        "distribution": [
+          {
+            "label": "2024",
+            "parent_n": 782,
+            "subset_n": 781,
+            "parent_pct": 21.39,
+            "subset_pct": 21.41,
+            "difference_pp": 0.02
+          },
+          {
+            "label": "2023",
+            "parent_n": 300,
+            "subset_n": 299,
+            "parent_pct": 8.21,
+            "subset_pct": 8.2,
+            "difference_pp": -0.01
+          },
+          {
+            "label": "2025",
+            "parent_n": 1715,
+            "subset_n": 1711,
+            "parent_pct": 46.91,
+            "subset_pct": 46.9,
+            "difference_pp": -0.01
+          },
+          {
+            "label": "2026",
+            "parent_n": 855,
+            "subset_n": 853,
+            "parent_pct": 23.39,
+            "subset_pct": 23.38,
+            "difference_pp": -0.0
+          },
+          {
+            "label": "[other/rare]",
+            "parent_n": 4,
+            "subset_n": 4,
+            "parent_pct": 0.11,
+            "subset_pct": 0.11,
+            "difference_pp": 0.0
+          }
+        ]
+      },
+      "source_type": {
+        "parent_n": 3656,
+        "subset_n": 3648,
+        "total_variation": 0.00025,
+        "jensen_shannon_divergence_bits": 0.0,
+        "largest_absolute_difference_pp": 0.02,
+        "distribution": [
+          {
+            "label": "[missing]",
+            "parent_n": 196,
+            "subset_n": 195,
+            "parent_pct": 5.36,
+            "subset_pct": 5.35,
+            "difference_pp": -0.02
+          },
+          {
+            "label": "repository",
+            "parent_n": 367,
+            "subset_n": 367,
+            "parent_pct": 10.04,
+            "subset_pct": 10.06,
+            "difference_pp": 0.02
+          },
+          {
+            "label": "journal",
+            "parent_n": 3038,
+            "subset_n": 3031,
+            "parent_pct": 83.1,
+            "subset_pct": 83.09,
+            "difference_pp": -0.01
+          },
+          {
+            "label": "book series",
+            "parent_n": 19,
+            "subset_n": 19,
+            "parent_pct": 0.52,
+            "subset_pct": 0.52,
+            "difference_pp": 0.0
+          },
+          {
+            "label": "conference",
+            "parent_n": 30,
+            "subset_n": 30,
+            "parent_pct": 0.82,
+            "subset_pct": 0.82,
+            "difference_pp": 0.0
+          },
+          {
+            "label": "ebook platform",
+            "parent_n": 6,
+            "subset_n": 6,
+            "parent_pct": 0.16,
+            "subset_pct": 0.16,
+            "difference_pp": 0.0
+          }
+        ]
+      },
+      "type": {
+        "parent_n": 3656,
+        "subset_n": 3648,
+        "total_variation": 0.00027,
+        "jensen_shannon_divergence_bits": 0.0,
+        "largest_absolute_difference_pp": 0.03,
+        "distribution": [
+          {
+            "label": "article",
+            "parent_n": 3202,
+            "subset_n": 3194,
+            "parent_pct": 87.58,
+            "subset_pct": 87.55,
+            "difference_pp": -0.03
+          },
+          {
+            "label": "preprint",
+            "parent_n": 239,
+            "subset_n": 239,
+            "parent_pct": 6.54,
+            "subset_pct": 6.55,
+            "difference_pp": 0.01
+          },
+          {
+            "label": "review",
+            "parent_n": 101,
+            "subset_n": 101,
+            "parent_pct": 2.76,
+            "subset_pct": 2.77,
+            "difference_pp": 0.01
+          },
+          {
+            "label": "[other/rare]",
+            "parent_n": 14,
+            "subset_n": 14,
+            "parent_pct": 0.38,
+            "subset_pct": 0.38,
+            "difference_pp": 0.0
+          },
+          {
+            "label": "book",
+            "parent_n": 7,
+            "subset_n": 7,
+            "parent_pct": 0.19,
+            "subset_pct": 0.19,
+            "difference_pp": 0.0
+          },
+          {
+            "label": "book-chapter",
+            "parent_n": 57,
+            "subset_n": 57,
+            "parent_pct": 1.56,
+            "subset_pct": 1.56,
+            "difference_pp": 0.0
+          },
+          {
+            "label": "editorial",
+            "parent_n": 18,
+            "subset_n": 18,
+            "parent_pct": 0.49,
+            "subset_pct": 0.49,
+            "difference_pp": 0.0
+          },
+          {
+            "label": "other",
+            "parent_n": 18,
+            "subset_n": 18,
+            "parent_pct": 0.49,
+            "subset_pct": 0.49,
+            "difference_pp": 0.0
+          }
+        ]
+      },
+      "kmeans_12": {
+        "parent_n": 3656,
+        "subset_n": 3648,
+        "total_variation": 0.00104,
+        "jensen_shannon_divergence_bits": 0.0,
+        "largest_absolute_difference_pp": 0.06,
+        "distribution": [
+          {
+            "label": "topic_3",
+            "parent_n": 444,
+            "subset_n": 441,
+            "parent_pct": 12.14,
+            "subset_pct": 12.09,
+            "difference_pp": -0.06
+          },
+          {
+            "label": "topic_2",
+            "parent_n": 396,
+            "subset_n": 394,
+            "parent_pct": 10.83,
+            "subset_pct": 10.8,
+            "difference_pp": -0.03
+          },
+          {
+            "label": "topic_4",
+            "parent_n": 369,
+            "subset_n": 369,
+            "parent_pct": 10.09,
+            "subset_pct": 10.12,
+            "difference_pp": 0.02
+          },
+          {
+            "label": "topic_6",
+            "parent_n": 303,
+            "subset_n": 303,
+            "parent_pct": 8.29,
+            "subset_pct": 8.31,
+            "difference_pp": 0.02
+          },
+          {
+            "label": "topic_9",
+            "parent_n": 251,
+            "subset_n": 251,
+            "parent_pct": 6.87,
+            "subset_pct": 6.88,
+            "difference_pp": 0.02
+          },
+          {
+            "label": "topic_0",
+            "parent_n": 251,
+            "subset_n": 250,
+            "parent_pct": 6.87,
+            "subset_pct": 6.85,
+            "difference_pp": -0.01
+          },
+          {
+            "label": "topic_1",
+            "parent_n": 371,
+            "subset_n": 370,
+            "parent_pct": 10.15,
+            "subset_pct": 10.14,
+            "difference_pp": -0.01
+          },
+          {
+            "label": "topic_10",
+            "parent_n": 158,
+            "subset_n": 158,
+            "parent_pct": 4.32,
+            "subset_pct": 4.33,
+            "difference_pp": 0.01
+          },
+          {
+            "label": "topic_5",
+            "parent_n": 119,
+            "subset_n": 119,
+            "parent_pct": 3.25,
+            "subset_pct": 3.26,
+            "difference_pp": 0.01
+          },
+          {
+            "label": "topic_7",
+            "parent_n": 231,
+            "subset_n": 231,
+            "parent_pct": 6.32,
+            "subset_pct": 6.33,
+            "difference_pp": 0.01
+          },
+          {
+            "label": "topic_8",
+            "parent_n": 227,
+            "subset_n": 227,
+            "parent_pct": 6.21,
+            "subset_pct": 6.22,
+            "difference_pp": 0.01
+          },
+          {
+            "label": "topic_11",
+            "parent_n": 536,
+            "subset_n": 535,
+            "parent_pct": 14.66,
+            "subset_pct": 14.67,
+            "difference_pp": 0.0
+          }
+        ]
+      },
+      "kmeans_18": {
+        "parent_n": 3656,
+        "subset_n": 3648,
+        "total_variation": 0.00144,
+        "jensen_shannon_divergence_bits": 0.0,
+        "largest_absolute_difference_pp": 0.07,
+        "distribution": [
+          {
+            "label": "topic_3",
+            "parent_n": 217,
+            "subset_n": 214,
+            "parent_pct": 5.94,
+            "subset_pct": 5.87,
+            "difference_pp": -0.07
+          },
+          {
+            "label": "topic_11",
+            "parent_n": 382,
+            "subset_n": 380,
+            "parent_pct": 10.45,
+            "subset_pct": 10.42,
+            "difference_pp": -0.03
+          },
+          {
+            "label": "topic_1",
+            "parent_n": 252,
+            "subset_n": 252,
+            "parent_pct": 6.89,
+            "subset_pct": 6.91,
+            "difference_pp": 0.02
+          },
+          {
+            "label": "topic_4",
+            "parent_n": 309,
+            "subset_n": 309,
+            "parent_pct": 8.45,
+            "subset_pct": 8.47,
+            "difference_pp": 0.02
+          },
+          {
+            "label": "topic_8",
+            "parent_n": 144,
+            "subset_n": 143,
+            "parent_pct": 3.94,
+            "subset_pct": 3.92,
+            "difference_pp": -0.02
+          },
+          {
+            "label": "topic_0",
+            "parent_n": 225,
+            "subset_n": 225,
+            "parent_pct": 6.15,
+            "subset_pct": 6.17,
+            "difference_pp": 0.01
+          },
+          {
+            "label": "topic_10",
+            "parent_n": 160,
+            "subset_n": 160,
+            "parent_pct": 4.38,
+            "subset_pct": 4.39,
+            "difference_pp": 0.01
+          },
+          {
+            "label": "topic_12",
+            "parent_n": 202,
+            "subset_n": 202,
+            "parent_pct": 5.53,
+            "subset_pct": 5.54,
+            "difference_pp": 0.01
+          },
+          {
+            "label": "topic_13",
+            "parent_n": 231,
+            "subset_n": 230,
+            "parent_pct": 6.32,
+            "subset_pct": 6.3,
+            "difference_pp": -0.01
+          },
+          {
+            "label": "topic_14",
+            "parent_n": 170,
+            "subset_n": 170,
+            "parent_pct": 4.65,
+            "subset_pct": 4.66,
+            "difference_pp": 0.01
+          },
+          {
+            "label": "topic_15",
+            "parent_n": 246,
+            "subset_n": 246,
+            "parent_pct": 6.73,
+            "subset_pct": 6.74,
+            "difference_pp": 0.01
+          },
+          {
+            "label": "topic_17",
+            "parent_n": 150,
+            "subset_n": 150,
+            "parent_pct": 4.1,
+            "subset_pct": 4.11,
+            "difference_pp": 0.01
+          },
+          {
+            "label": "topic_2",
+            "parent_n": 286,
+            "subset_n": 285,
+            "parent_pct": 7.82,
+            "subset_pct": 7.81,
+            "difference_pp": -0.01
+          },
+          {
+            "label": "topic_5",
+            "parent_n": 96,
+            "subset_n": 96,
+            "parent_pct": 2.63,
+            "subset_pct": 2.63,
+            "difference_pp": 0.01
+          },
+          {
+            "label": "topic_6",
+            "parent_n": 97,
+            "subset_n": 97,
+            "parent_pct": 2.65,
+            "subset_pct": 2.66,
+            "difference_pp": 0.01
+          },
+          {
+            "label": "topic_7",
+            "parent_n": 190,
+            "subset_n": 190,
+            "parent_pct": 5.2,
+            "subset_pct": 5.21,
+            "difference_pp": 0.01
+          },
+          {
+            "label": "topic_9",
+            "parent_n": 216,
+            "subset_n": 216,
+            "parent_pct": 5.91,
+            "subset_pct": 5.92,
+            "difference_pp": 0.01
+          },
+          {
+            "label": "topic_16",
+            "parent_n": 83,
+            "subset_n": 83,
+            "parent_pct": 2.27,
+            "subset_pct": 2.28,
+            "difference_pp": 0.0
+          }
+        ]
+      },
+      "kmeans_25": {
+        "parent_n": 3656,
+        "subset_n": 3648,
+        "total_variation": 0.00169,
+        "jensen_shannon_divergence_bits": 0.0,
+        "largest_absolute_difference_pp": 0.07,
+        "distribution": [
+          {
+            "label": "topic_3",
+            "parent_n": 200,
+            "subset_n": 197,
+            "parent_pct": 5.47,
+            "subset_pct": 5.4,
+            "difference_pp": -0.07
+          },
+          {
+            "label": "topic_10",
+            "parent_n": 75,
+            "subset_n": 74,
+            "parent_pct": 2.05,
+            "subset_pct": 2.03,
+            "difference_pp": -0.02
+          },
+          {
+            "label": "topic_13",
+            "parent_n": 150,
+            "subset_n": 149,
+            "parent_pct": 4.1,
+            "subset_pct": 4.08,
+            "difference_pp": -0.02
+          },
+          {
+            "label": "topic_2",
+            "parent_n": 91,
+            "subset_n": 90,
+            "parent_pct": 2.49,
+            "subset_pct": 2.47,
+            "difference_pp": -0.02
+          },
+          {
+            "label": "topic_6",
+            "parent_n": 128,
+            "subset_n": 127,
+            "parent_pct": 3.5,
+            "subset_pct": 3.48,
+            "difference_pp": -0.02
+          },
+          {
+            "label": "topic_7",
+            "parent_n": 200,
+            "subset_n": 199,
+            "parent_pct": 5.47,
+            "subset_pct": 5.46,
+            "difference_pp": -0.02
+          },
+          {
+            "label": "topic_0",
+            "parent_n": 178,
+            "subset_n": 178,
+            "parent_pct": 4.87,
+            "subset_pct": 4.88,
+            "difference_pp": 0.01
+          },
+          {
+            "label": "topic_1",
+            "parent_n": 227,
+            "subset_n": 227,
+            "parent_pct": 6.21,
+            "subset_pct": 6.22,
+            "difference_pp": 0.01
+          },
+          {
+            "label": "topic_11",
+            "parent_n": 142,
+            "subset_n": 142,
+            "parent_pct": 3.88,
+            "subset_pct": 3.89,
+            "difference_pp": 0.01
+          },
+          {
+            "label": "topic_12",
+            "parent_n": 164,
+            "subset_n": 164,
+            "parent_pct": 4.49,
+            "subset_pct": 4.5,
+            "difference_pp": 0.01
+          },
+          {
+            "label": "topic_14",
+            "parent_n": 92,
+            "subset_n": 92,
+            "parent_pct": 2.52,
+            "subset_pct": 2.52,
+            "difference_pp": 0.01
+          },
+          {
+            "label": "topic_15",
+            "parent_n": 175,
+            "subset_n": 175,
+            "parent_pct": 4.79,
+            "subset_pct": 4.8,
+            "difference_pp": 0.01
+          },
+          {
+            "label": "topic_16",
+            "parent_n": 167,
+            "subset_n": 167,
+            "parent_pct": 4.57,
+            "subset_pct": 4.58,
+            "difference_pp": 0.01
+          },
+          {
+            "label": "topic_19",
+            "parent_n": 187,
+            "subset_n": 187,
+            "parent_pct": 5.11,
+            "subset_pct": 5.13,
+            "difference_pp": 0.01
+          },
+          {
+            "label": "topic_20",
+            "parent_n": 193,
+            "subset_n": 193,
+            "parent_pct": 5.28,
+            "subset_pct": 5.29,
+            "difference_pp": 0.01
+          },
+          {
+            "label": "topic_21",
+            "parent_n": 152,
+            "subset_n": 152,
+            "parent_pct": 4.16,
+            "subset_pct": 4.17,
+            "difference_pp": 0.01
+          },
+          {
+            "label": "topic_23",
+            "parent_n": 100,
+            "subset_n": 100,
+            "parent_pct": 2.74,
+            "subset_pct": 2.74,
+            "difference_pp": 0.01
+          },
+          {
+            "label": "topic_24",
+            "parent_n": 141,
+            "subset_n": 141,
+            "parent_pct": 3.86,
+            "subset_pct": 3.87,
+            "difference_pp": 0.01
+          },
+          {
+            "label": "topic_4",
+            "parent_n": 192,
+            "subset_n": 192,
+            "parent_pct": 5.25,
+            "subset_pct": 5.26,
+            "difference_pp": 0.01
+          },
+          {
+            "label": "topic_5",
+            "parent_n": 180,
+            "subset_n": 180,
+            "parent_pct": 4.92,
+            "subset_pct": 4.93,
+            "difference_pp": 0.01
+          },
+          {
+            "label": "topic_8",
+            "parent_n": 111,
+            "subset_n": 111,
+            "parent_pct": 3.04,
+            "subset_pct": 3.04,
+            "difference_pp": 0.01
+          },
+          {
+            "label": "topic_9",
+            "parent_n": 200,
+            "subset_n": 200,
+            "parent_pct": 5.47,
+            "subset_pct": 5.48,
+            "difference_pp": 0.01
+          },
+          {
+            "label": "topic_17",
+            "parent_n": 46,
+            "subset_n": 46,
+            "parent_pct": 1.26,
+            "subset_pct": 1.26,
+            "difference_pp": 0.0
+          },
+          {
+            "label": "topic_18",
+            "parent_n": 82,
+            "subset_n": 82,
+            "parent_pct": 2.24,
+            "subset_pct": 2.25,
+            "difference_pp": 0.0
+          },
+          {
+            "label": "topic_22",
+            "parent_n": 83,
+            "subset_n": 83,
+            "parent_pct": 2.27,
+            "subset_pct": 2.28,
+            "difference_pp": 0.0
+          }
+        ]
+      }
+    },
+    "fulltext_eligible -> fulltext_eligible_journal_article_review": {
+      "disciplinary_area": {
+        "parent_n": 3648,
+        "subset_n": 2985,
+        "total_variation": 0.02627,
+        "jensen_shannon_divergence_bits": 0.00073,
+        "largest_absolute_difference_pp": 2.63,
+        "distribution": [
+          {
+            "label": "engineering",
+            "parent_n": 856,
+            "subset_n": 622,
+            "parent_pct": 23.46,
+            "subset_pct": 20.84,
+            "difference_pp": -2.63
+          },
+          {
+            "label": "social_sciences_humanities",
+            "parent_n": 2444,
+            "subset_n": 2065,
+            "parent_pct": 67.0,
+            "subset_pct": 69.18,
+            "difference_pp": 2.18
+          },
+          {
+            "label": "health_sciences",
+            "parent_n": 348,
+            "subset_n": 298,
+            "parent_pct": 9.54,
+            "subset_pct": 9.98,
+            "difference_pp": 0.44
+          }
+        ]
+      },
+      "policy_dimension": {
+        "parent_n": 3648,
+        "subset_n": 2985,
+        "total_variation": 0.01209,
+        "jensen_shannon_divergence_bits": 0.00021,
+        "largest_absolute_difference_pp": 0.89,
+        "distribution": [
+          {
+            "label": "assessment",
+            "parent_n": 575,
+            "subset_n": 444,
+            "parent_pct": 15.76,
+            "subset_pct": 14.87,
+            "difference_pp": -0.89
+          },
+          {
+            "label": "ethics_integrity",
+            "parent_n": 803,
+            "subset_n": 675,
+            "parent_pct": 22.01,
+            "subset_pct": 22.61,
+            "difference_pp": 0.6
+          },
+          {
+            "label": "teaching_learning",
+            "parent_n": 1412,
+            "subset_n": 1168,
+            "parent_pct": 38.71,
+            "subset_pct": 39.13,
+            "difference_pp": 0.42
+          },
+          {
+            "label": "research_scholarship",
+            "parent_n": 139,
+            "subset_n": 107,
+            "parent_pct": 3.81,
+            "subset_pct": 3.58,
+            "difference_pp": -0.23
+          },
+          {
+            "label": "ai_literacy_training",
+            "parent_n": 57,
+            "subset_n": 52,
+            "parent_pct": 1.56,
+            "subset_pct": 1.74,
+            "difference_pp": 0.18
+          },
+          {
+            "label": "privacy_security",
+            "parent_n": 14,
+            "subset_n": 10,
+            "parent_pct": 0.38,
+            "subset_pct": 0.34,
+            "difference_pp": -0.05
+          },
+          {
+            "label": "governance_policy",
+            "parent_n": 622,
+            "subset_n": 508,
+            "parent_pct": 17.05,
+            "subset_pct": 17.02,
+            "difference_pp": -0.03
+          },
+          {
+            "label": "equity_access",
+            "parent_n": 25,
+            "subset_n": 20,
+            "parent_pct": 0.69,
+            "subset_pct": 0.67,
+            "difference_pp": -0.02
+          },
+          {
+            "label": "[other/rare]",
+            "parent_n": 1,
+            "subset_n": 1,
+            "parent_pct": 0.03,
+            "subset_pct": 0.03,
+            "difference_pp": 0.01
+          }
+        ]
+      },
+      "publication_year": {
+        "parent_n": 3648,
+        "subset_n": 2985,
+        "total_variation": 0.03551,
+        "jensen_shannon_divergence_bits": 0.00123,
+        "largest_absolute_difference_pp": 2.75,
+        "distribution": [
+          {
+            "label": "2025",
+            "parent_n": 1711,
+            "subset_n": 1482,
+            "parent_pct": 46.9,
+            "subset_pct": 49.65,
+            "difference_pp": 2.75
+          },
+          {
+            "label": "2024",
+            "parent_n": 781,
+            "subset_n": 577,
+            "parent_pct": 21.41,
+            "subset_pct": 19.33,
+            "difference_pp": -2.08
+          },
+          {
+            "label": "2023",
+            "parent_n": 299,
+            "subset_n": 201,
+            "parent_pct": 8.2,
+            "subset_pct": 6.73,
+            "difference_pp": -1.46
+          },
+          {
+            "label": "2026",
+            "parent_n": 853,
+            "subset_n": 722,
+            "parent_pct": 23.38,
+            "subset_pct": 24.19,
+            "difference_pp": 0.8
+          },
+          {
+            "label": "[other/rare]",
+            "parent_n": 4,
+            "subset_n": 3,
+            "parent_pct": 0.11,
+            "subset_pct": 0.1,
+            "difference_pp": -0.01
+          }
+        ]
+      },
+      "source_type": {
+        "parent_n": 3648,
+        "subset_n": 2985,
+        "total_variation": 0.16913,
+        "jensen_shannon_divergence_bits": 0.09021,
+        "largest_absolute_difference_pp": 16.91,
+        "distribution": [
+          {
+            "label": "[other/rare]",
+            "parent_n": 617,
+            "subset_n": 0,
+            "parent_pct": 16.91,
+            "subset_pct": 0.0,
+            "difference_pp": -16.91
+          },
+          {
+            "label": "journal",
+            "parent_n": 3031,
+            "subset_n": 2985,
+            "parent_pct": 83.09,
+            "subset_pct": 100.0,
+            "difference_pp": 16.91
+          }
+        ]
+      },
+      "type": {
+        "parent_n": 3648,
+        "subset_n": 2985,
+        "total_variation": 0.09677,
+        "jensen_shannon_divergence_bits": 0.05016,
+        "largest_absolute_difference_pp": 9.68,
+        "distribution": [
+          {
+            "label": "[other/rare]",
+            "parent_n": 353,
+            "subset_n": 0,
+            "parent_pct": 9.68,
+            "subset_pct": 0.0,
+            "difference_pp": -9.68
+          },
+          {
+            "label": "article",
+            "parent_n": 3194,
+            "subset_n": 2896,
+            "parent_pct": 87.55,
+            "subset_pct": 97.02,
+            "difference_pp": 9.46
+          },
+          {
+            "label": "review",
+            "parent_n": 101,
+            "subset_n": 89,
+            "parent_pct": 2.77,
+            "subset_pct": 2.98,
+            "difference_pp": 0.21
+          }
+        ]
+      },
+      "kmeans_12": {
+        "parent_n": 3648,
+        "subset_n": 2985,
+        "total_variation": 0.03299,
+        "jensen_shannon_divergence_bits": 0.00168,
+        "largest_absolute_difference_pp": 1.78,
+        "distribution": [
+          {
+            "label": "topic_7",
+            "parent_n": 231,
+            "subset_n": 136,
+            "parent_pct": 6.33,
+            "subset_pct": 4.56,
+            "difference_pp": -1.78
+          },
+          {
+            "label": "topic_0",
+            "parent_n": 250,
+            "subset_n": 234,
+            "parent_pct": 6.85,
+            "subset_pct": 7.84,
+            "difference_pp": 0.99
+          },
+          {
+            "label": "topic_11",
+            "parent_n": 535,
+            "subset_n": 409,
+            "parent_pct": 14.67,
+            "subset_pct": 13.7,
+            "difference_pp": -0.96
+          },
+          {
+            "label": "topic_3",
+            "parent_n": 441,
+            "subset_n": 383,
+            "parent_pct": 12.09,
+            "subset_pct": 12.83,
+            "difference_pp": 0.74
+          },
+          {
+            "label": "topic_2",
+            "parent_n": 394,
+            "subset_n": 338,
+            "parent_pct": 10.8,
+            "subset_pct": 11.32,
+            "difference_pp": 0.52
+          },
+          {
+            "label": "topic_10",
+            "parent_n": 158,
+            "subset_n": 142,
+            "parent_pct": 4.33,
+            "subset_pct": 4.76,
+            "difference_pp": 0.43
+          },
+          {
+            "label": "topic_4",
+            "parent_n": 369,
+            "subset_n": 289,
+            "parent_pct": 10.12,
+            "subset_pct": 9.68,
+            "difference_pp": -0.43
+          },
+          {
+            "label": "topic_9",
+            "parent_n": 251,
+            "subset_n": 213,
+            "parent_pct": 6.88,
+            "subset_pct": 7.14,
+            "difference_pp": 0.26
+          },
+          {
+            "label": "topic_5",
+            "parent_n": 119,
+            "subset_n": 103,
+            "parent_pct": 3.26,
+            "subset_pct": 3.45,
+            "difference_pp": 0.19
+          },
+          {
+            "label": "topic_6",
+            "parent_n": 303,
+            "subset_n": 252,
+            "parent_pct": 8.31,
+            "subset_pct": 8.44,
+            "difference_pp": 0.14
+          },
+          {
+            "label": "topic_1",
+            "parent_n": 370,
+            "subset_n": 299,
+            "parent_pct": 10.14,
+            "subset_pct": 10.02,
+            "difference_pp": -0.13
+          },
+          {
+            "label": "topic_8",
+            "parent_n": 227,
+            "subset_n": 187,
+            "parent_pct": 6.22,
+            "subset_pct": 6.26,
+            "difference_pp": 0.04
+          }
+        ]
+      },
+      "kmeans_18": {
+        "parent_n": 3648,
+        "subset_n": 2985,
+        "total_variation": 0.03915,
+        "jensen_shannon_divergence_bits": 0.00189,
+        "largest_absolute_difference_pp": 1.52,
+        "distribution": [
+          {
+            "label": "topic_7",
+            "parent_n": 190,
+            "subset_n": 110,
+            "parent_pct": 5.21,
+            "subset_pct": 3.69,
+            "difference_pp": -1.52
+          },
+          {
+            "label": "topic_11",
+            "parent_n": 380,
+            "subset_n": 283,
+            "parent_pct": 10.42,
+            "subset_pct": 9.48,
+            "difference_pp": -0.94
+          },
+          {
+            "label": "topic_0",
+            "parent_n": 225,
+            "subset_n": 211,
+            "parent_pct": 6.17,
+            "subset_pct": 7.07,
+            "difference_pp": 0.9
+          },
+          {
+            "label": "topic_2",
+            "parent_n": 285,
+            "subset_n": 252,
+            "parent_pct": 7.81,
+            "subset_pct": 8.44,
+            "difference_pp": 0.63
+          },
+          {
+            "label": "topic_10",
+            "parent_n": 160,
+            "subset_n": 147,
+            "parent_pct": 4.39,
+            "subset_pct": 4.92,
+            "difference_pp": 0.54
+          },
+          {
+            "label": "topic_14",
+            "parent_n": 170,
+            "subset_n": 153,
+            "parent_pct": 4.66,
+            "subset_pct": 5.13,
+            "difference_pp": 0.47
+          },
+          {
+            "label": "topic_15",
+            "parent_n": 246,
+            "subset_n": 215,
+            "parent_pct": 6.74,
+            "subset_pct": 7.2,
+            "difference_pp": 0.46
+          },
+          {
+            "label": "topic_12",
+            "parent_n": 202,
+            "subset_n": 154,
+            "parent_pct": 5.54,
+            "subset_pct": 5.16,
+            "difference_pp": -0.38
+          },
+          {
+            "label": "topic_8",
+            "parent_n": 143,
+            "subset_n": 107,
+            "parent_pct": 3.92,
+            "subset_pct": 3.58,
+            "difference_pp": -0.34
+          },
+          {
+            "label": "topic_1",
+            "parent_n": 252,
+            "subset_n": 199,
+            "parent_pct": 6.91,
+            "subset_pct": 6.67,
+            "difference_pp": -0.24
+          },
+          {
+            "label": "topic_4",
+            "parent_n": 309,
+            "subset_n": 246,
+            "parent_pct": 8.47,
+            "subset_pct": 8.24,
+            "difference_pp": -0.23
+          },
+          {
+            "label": "topic_9",
+            "parent_n": 216,
+            "subset_n": 183,
+            "parent_pct": 5.92,
+            "subset_pct": 6.13,
+            "difference_pp": 0.21
+          },
+          {
+            "label": "topic_3",
+            "parent_n": 214,
+            "subset_n": 181,
+            "parent_pct": 5.87,
+            "subset_pct": 6.06,
+            "difference_pp": 0.2
+          },
+          {
+            "label": "topic_17",
+            "parent_n": 150,
+            "subset_n": 128,
+            "parent_pct": 4.11,
+            "subset_pct": 4.29,
+            "difference_pp": 0.18
+          },
+          {
+            "label": "topic_5",
+            "parent_n": 96,
+            "subset_n": 84,
+            "parent_pct": 2.63,
+            "subset_pct": 2.81,
+            "difference_pp": 0.18
+          },
+          {
+            "label": "topic_16",
+            "parent_n": 83,
+            "subset_n": 63,
+            "parent_pct": 2.28,
+            "subset_pct": 2.11,
+            "difference_pp": -0.16
+          },
+          {
+            "label": "topic_6",
+            "parent_n": 97,
+            "subset_n": 84,
+            "parent_pct": 2.66,
+            "subset_pct": 2.81,
+            "difference_pp": 0.16
+          },
+          {
+            "label": "topic_13",
+            "parent_n": 230,
+            "subset_n": 185,
+            "parent_pct": 6.3,
+            "subset_pct": 6.2,
+            "difference_pp": -0.11
+          }
+        ]
+      },
+      "kmeans_25": {
+        "parent_n": 3648,
+        "subset_n": 2985,
+        "total_variation": 0.03839,
+        "jensen_shannon_divergence_bits": 0.00251,
+        "largest_absolute_difference_pp": 1.17,
+        "distribution": [
+          {
+            "label": "topic_22",
+            "parent_n": 83,
+            "subset_n": 33,
+            "parent_pct": 2.28,
+            "subset_pct": 1.11,
+            "difference_pp": -1.17
+          },
+          {
+            "label": "topic_7",
+            "parent_n": 199,
+            "subset_n": 181,
+            "parent_pct": 5.46,
+            "subset_pct": 6.06,
+            "difference_pp": 0.61
+          },
+          {
+            "label": "topic_0",
+            "parent_n": 178,
+            "subset_n": 163,
+            "parent_pct": 4.88,
+            "subset_pct": 5.46,
+            "difference_pp": 0.58
+          },
+          {
+            "label": "topic_16",
+            "parent_n": 167,
+            "subset_n": 122,
+            "parent_pct": 4.58,
+            "subset_pct": 4.09,
+            "difference_pp": -0.49
+          },
+          {
+            "label": "topic_8",
+            "parent_n": 111,
+            "subset_n": 105,
+            "parent_pct": 3.04,
+            "subset_pct": 3.52,
+            "difference_pp": 0.47
+          },
+          {
+            "label": "topic_2",
+            "parent_n": 90,
+            "subset_n": 85,
+            "parent_pct": 2.47,
+            "subset_pct": 2.85,
+            "difference_pp": 0.38
+          },
+          {
+            "label": "topic_4",
+            "parent_n": 192,
+            "subset_n": 168,
+            "parent_pct": 5.26,
+            "subset_pct": 5.63,
+            "difference_pp": 0.36
+          },
+          {
+            "label": "topic_12",
+            "parent_n": 164,
+            "subset_n": 124,
+            "parent_pct": 4.5,
+            "subset_pct": 4.15,
+            "difference_pp": -0.34
+          },
+          {
+            "label": "topic_13",
+            "parent_n": 149,
+            "subset_n": 131,
+            "parent_pct": 4.08,
+            "subset_pct": 4.39,
+            "difference_pp": 0.3
+          },
+          {
+            "label": "topic_1",
+            "parent_n": 227,
+            "subset_n": 177,
+            "parent_pct": 6.22,
+            "subset_pct": 5.93,
+            "difference_pp": -0.29
+          },
+          {
+            "label": "topic_15",
+            "parent_n": 175,
+            "subset_n": 152,
+            "parent_pct": 4.8,
+            "subset_pct": 5.09,
+            "difference_pp": 0.29
+          },
+          {
+            "label": "topic_10",
+            "parent_n": 74,
+            "subset_n": 69,
+            "parent_pct": 2.03,
+            "subset_pct": 2.31,
+            "difference_pp": 0.28
+          },
+          {
+            "label": "topic_3",
+            "parent_n": 197,
+            "subset_n": 153,
+            "parent_pct": 5.4,
+            "subset_pct": 5.13,
+            "difference_pp": -0.27
+          },
+          {
+            "label": "topic_14",
+            "parent_n": 92,
+            "subset_n": 68,
+            "parent_pct": 2.52,
+            "subset_pct": 2.28,
+            "difference_pp": -0.24
+          },
+          {
+            "label": "topic_18",
+            "parent_n": 82,
+            "subset_n": 60,
+            "parent_pct": 2.25,
+            "subset_pct": 2.01,
+            "difference_pp": -0.24
+          },
+          {
+            "label": "topic_5",
+            "parent_n": 180,
+            "subset_n": 154,
+            "parent_pct": 4.93,
+            "subset_pct": 5.16,
+            "difference_pp": 0.22
+          },
+          {
+            "label": "topic_9",
+            "parent_n": 200,
+            "subset_n": 157,
+            "parent_pct": 5.48,
+            "subset_pct": 5.26,
+            "difference_pp": -0.22
+          },
+          {
+            "label": "topic_19",
+            "parent_n": 187,
+            "subset_n": 147,
+            "parent_pct": 5.13,
+            "subset_pct": 4.92,
+            "difference_pp": -0.2
+          },
+          {
+            "label": "topic_21",
+            "parent_n": 152,
+            "subset_n": 130,
+            "parent_pct": 4.17,
+            "subset_pct": 4.36,
+            "difference_pp": 0.19
+          },
+          {
+            "label": "topic_11",
+            "parent_n": 142,
+            "subset_n": 111,
+            "parent_pct": 3.89,
+            "subset_pct": 3.72,
+            "difference_pp": -0.17
+          },
+          {
+            "label": "topic_24",
+            "parent_n": 141,
+            "subset_n": 118,
+            "parent_pct": 3.87,
+            "subset_pct": 3.95,
+            "difference_pp": 0.09
+          },
+          {
+            "label": "topic_20",
+            "parent_n": 193,
+            "subset_n": 156,
+            "parent_pct": 5.29,
+            "subset_pct": 5.23,
+            "difference_pp": -0.06
+          },
+          {
+            "label": "topic_23",
+            "parent_n": 100,
+            "subset_n": 80,
+            "parent_pct": 2.74,
+            "subset_pct": 2.68,
+            "difference_pp": -0.06
+          },
+          {
+            "label": "topic_6",
+            "parent_n": 127,
+            "subset_n": 102,
+            "parent_pct": 3.48,
+            "subset_pct": 3.42,
+            "difference_pp": -0.06
+          },
+          {
+            "label": "topic_17",
+            "parent_n": 46,
+            "subset_n": 39,
+            "parent_pct": 1.26,
+            "subset_pct": 1.31,
+            "difference_pp": 0.05
+          }
+        ]
+      }
+    },
+    "included_all -> fulltext_all": {
+      "disciplinary_area": {
+        "parent_n": 10265,
+        "subset_n": 3656,
+        "total_variation": 0.02785,
+        "jensen_shannon_divergence_bits": 0.00152,
+        "largest_absolute_difference_pp": 2.77,
+        "distribution": [
+          {
+            "label": "health_sciences",
+            "parent_n": 1261,
+            "subset_n": 348,
+            "parent_pct": 12.28,
+            "subset_pct": 9.52,
+            "difference_pp": -2.77
+          },
+          {
+            "label": "social_sciences_humanities",
+            "parent_n": 6673,
+            "subset_n": 2450,
+            "parent_pct": 65.01,
+            "subset_pct": 67.01,
+            "difference_pp": 2.01
+          },
+          {
+            "label": "engineering",
+            "parent_n": 2329,
+            "subset_n": 858,
+            "parent_pct": 22.69,
+            "subset_pct": 23.47,
+            "difference_pp": 0.78
+          },
+          {
+            "label": "[other/rare]",
+            "parent_n": 2,
+            "subset_n": 0,
+            "parent_pct": 0.02,
+            "subset_pct": 0.0,
+            "difference_pp": -0.02
+          }
+        ]
+      },
+      "policy_dimension": {
+        "parent_n": 10265,
+        "subset_n": 3656,
+        "total_variation": 0.03021,
+        "jensen_shannon_divergence_bits": 0.00099,
+        "largest_absolute_difference_pp": 2.25,
+        "distribution": [
+          {
+            "label": "assessment",
+            "parent_n": 1848,
+            "subset_n": 576,
+            "parent_pct": 18.0,
+            "subset_pct": 15.75,
+            "difference_pp": -2.25
+          },
+          {
+            "label": "teaching_learning",
+            "parent_n": 3766,
+            "subset_n": 1417,
+            "parent_pct": 36.69,
+            "subset_pct": 38.76,
+            "difference_pp": 2.07
+          },
+          {
+            "label": "ethics_integrity",
+            "parent_n": 2157,
+            "subset_n": 803,
+            "parent_pct": 21.01,
+            "subset_pct": 21.96,
+            "difference_pp": 0.95
+          },
+          {
+            "label": "governance_policy",
+            "parent_n": 1775,
+            "subset_n": 623,
+            "parent_pct": 17.29,
+            "subset_pct": 17.04,
+            "difference_pp": -0.25
+          },
+          {
+            "label": "ai_literacy_training",
+            "parent_n": 181,
+            "subset_n": 57,
+            "parent_pct": 1.76,
+            "subset_pct": 1.56,
+            "difference_pp": -0.2
+          },
+          {
+            "label": "privacy_security",
+            "parent_n": 54,
+            "subset_n": 14,
+            "parent_pct": 0.53,
+            "subset_pct": 0.38,
+            "difference_pp": -0.14
+          },
+          {
+            "label": "research_scholarship",
+            "parent_n": 404,
+            "subset_n": 140,
+            "parent_pct": 3.94,
+            "subset_pct": 3.83,
+            "difference_pp": -0.11
+          },
+          {
+            "label": "equity_access",
+            "parent_n": 75,
+            "subset_n": 25,
+            "parent_pct": 0.73,
+            "subset_pct": 0.68,
+            "difference_pp": -0.05
+          },
+          {
+            "label": "[other/rare]",
+            "parent_n": 5,
+            "subset_n": 1,
+            "parent_pct": 0.05,
+            "subset_pct": 0.03,
+            "difference_pp": -0.02
+          }
+        ]
+      },
+      "publication_year": {
+        "parent_n": 10265,
+        "subset_n": 3656,
+        "total_variation": 0.02298,
+        "jensen_shannon_divergence_bits": 0.0007,
+        "largest_absolute_difference_pp": 2.22,
+        "distribution": [
+          {
+            "label": "2025",
+            "parent_n": 4587,
+            "subset_n": 1715,
+            "parent_pct": 44.69,
+            "subset_pct": 46.91,
+            "difference_pp": 2.22
+          },
+          {
+            "label": "2026",
+            "parent_n": 2589,
+            "subset_n": 855,
+            "parent_pct": 25.22,
+            "subset_pct": 23.39,
+            "difference_pp": -1.84
+          },
+          {
+            "label": "2023",
+            "parent_n": 874,
+            "subset_n": 300,
+            "parent_pct": 8.51,
+            "subset_pct": 8.21,
+            "difference_pp": -0.31
+          },
+          {
+            "label": "[other/rare]",
+            "parent_n": 27,
+            "subset_n": 4,
+            "parent_pct": 0.26,
+            "subset_pct": 0.11,
+            "difference_pp": -0.15
+          },
+          {
+            "label": "2024",
+            "parent_n": 2188,
+            "subset_n": 782,
+            "parent_pct": 21.32,
+            "subset_pct": 21.39,
+            "difference_pp": 0.07
+          }
+        ]
+      },
+      "source_type": {
+        "parent_n": 10265,
+        "subset_n": 3656,
+        "total_variation": 0.11769,
+        "jensen_shannon_divergence_bits": 0.01486,
+        "largest_absolute_difference_pp": 11.53,
+        "distribution": [
+          {
+            "label": "journal",
+            "parent_n": 7346,
+            "subset_n": 3038,
+            "parent_pct": 71.56,
+            "subset_pct": 83.1,
+            "difference_pp": 11.53
+          },
+          {
+            "label": "repository",
+            "parent_n": 1714,
+            "subset_n": 367,
+            "parent_pct": 16.7,
+            "subset_pct": 10.04,
+            "difference_pp": -6.66
+          },
+          {
+            "label": "[missing]",
+            "parent_n": 1016,
+            "subset_n": 196,
+            "parent_pct": 9.9,
+            "subset_pct": 5.36,
+            "difference_pp": -4.54
+          },
+          {
+            "label": "book series",
+            "parent_n": 95,
+            "subset_n": 19,
+            "parent_pct": 0.93,
+            "subset_pct": 0.52,
+            "difference_pp": -0.41
+          },
+          {
+            "label": "conference",
+            "parent_n": 60,
+            "subset_n": 30,
+            "parent_pct": 0.58,
+            "subset_pct": 0.82,
+            "difference_pp": 0.24
+          },
+          {
+            "label": "ebook platform",
+            "parent_n": 34,
+            "subset_n": 6,
+            "parent_pct": 0.33,
+            "subset_pct": 0.16,
+            "difference_pp": -0.17
+          }
+        ]
+      },
+      "type": {
+        "parent_n": 10265,
+        "subset_n": 3656,
+        "total_variation": 0.05113,
+        "jensen_shannon_divergence_bits": 0.01023,
+        "largest_absolute_difference_pp": 4.6,
+        "distribution": [
+          {
+            "label": "article",
+            "parent_n": 8518,
+            "subset_n": 3202,
+            "parent_pct": 82.98,
+            "subset_pct": 87.58,
+            "difference_pp": 4.6
+          },
+          {
+            "label": "[other/rare]",
+            "parent_n": 239,
+            "subset_n": 14,
+            "parent_pct": 2.33,
+            "subset_pct": 0.38,
+            "difference_pp": -1.95
+          },
+          {
+            "label": "other",
+            "parent_n": 183,
+            "subset_n": 18,
+            "parent_pct": 1.78,
+            "subset_pct": 0.49,
+            "difference_pp": -1.29
+          },
+          {
+            "label": "book-chapter",
+            "parent_n": 246,
+            "subset_n": 57,
+            "parent_pct": 2.4,
+            "subset_pct": 1.56,
+            "difference_pp": -0.84
+          },
+          {
+            "label": "preprint",
+            "parent_n": 738,
+            "subset_n": 239,
+            "parent_pct": 7.19,
+            "subset_pct": 6.54,
+            "difference_pp": -0.65
+          },
+          {
+            "label": "review",
+            "parent_n": 231,
+            "subset_n": 101,
+            "parent_pct": 2.25,
+            "subset_pct": 2.76,
+            "difference_pp": 0.51
+          },
+          {
+            "label": "book",
+            "parent_n": 46,
+            "subset_n": 7,
+            "parent_pct": 0.45,
+            "subset_pct": 0.19,
+            "difference_pp": -0.26
+          },
+          {
+            "label": "editorial",
+            "parent_n": 64,
+            "subset_n": 18,
+            "parent_pct": 0.62,
+            "subset_pct": 0.49,
+            "difference_pp": -0.13
+          }
+        ]
+      }
+    }
+  },
+  "quality_checks": {
+    "kmeans_18_missing_labels": 0,
+    "kmeans_18_unique_labels": 18,
+    "kmeans_18_suspect_rows_by_label": {
+      "topic_3": 3,
+      "topic_11": 2,
+      "topic_8": 1,
+      "topic_2": 1,
+      "topic_13": 1
+    },
+    "screening_categories": {
+      "Include_core": 9264,
+      "Include_policy": 899,
+      "Include_context": 102
+    },
+    "excluded_fulltext_count": 8,
+    "nonpositive_text_length": 1,
+    "excluded_and_textless_overlap": 1,
+    "valid_fulltext_count": 3648
+  },
+  "important_limitations": [
+    "OpenAlex source_type=journal and type=article/review is a journal-indexed proxy, NOT verified peer-review.",
+    "A genuine peer-reviewed-only analysis needs journal and publication version verification.",
+    "Changes in topic proportions across subsets do not demonstrate superiority of any KMeans solution.",
+    "Removing fulltext exclusions and textless records does not constitute human screening.",
+    "No document-level or copyrighted textual data have been exported."
+  ]
+}

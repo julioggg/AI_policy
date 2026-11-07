@@ -1,0 +1,33 @@
+{
+  "generated_utc": "2026-11-07T21:10:34.860342+00:00",
+  "random_seed": 20261107,
+  "sample_size": 368,
+  "strata": {
+    "screen_include_core": {
+      "population_n": 9264,
+      "sample_n": 120
+    },
+    "screen_include_policy": {
+      "population_n": 899,
+      "sample_n": 80
+    },
+    "screen_include_context": {
+      "population_n": 102,
+      "sample_n": 40
+    },
+    "screen_exclude": {
+      "population_n": 18,
+      "sample_n": 18
+    },
+    "q1_not_article_ready": {
+      "population_n": 11393,
+      "sample_n": 80
+    },
+    "core_not_q1": {
+      "population_n": 848,
+      "sample_n": 30
+    }
+  },
+  "id_set_sha256": "06bf2c2b41a8827675cd073875444014a4fc6abe8a90bdf07554f2b9c8be84cb",
+  "privacy": "Raw sample/abstracts/IDs remain in private CEDIA directory; not in public GitHub."
+}
