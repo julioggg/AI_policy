@@ -315,3 +315,29 @@ git push origin main
 ~~~
 
 El proceso guarda los vectores y checkpoints en `$HOME/ai_policy_chunks_full_private`, que NUNCA debe añadirse a GitHub. Si la sesión CEDIA termina antes de finalizar, el mismo comando reanuda los documentos pendientes sin sobrescribir los vectores originales. Si necesita una ejecución parcial controlada, agregue `--max-new-docs 400` y repita posteriormente para completar. El informe público muestra el estado como `partial_resumable` mientras queden documentos pendientes y `completed_vectors_private` al terminar.
+
+
+## Fase 14 — Comparación completa y robustez de los nuevos agrupamientos
+
+La fase 13 terminó con 3644 aceptaciones explícitas, 3629 embeddings de cuerpo utilizables y 15 documentos sin cuerpo suficiente tras aplicar los límites (primeros 512 tokens descartados, 15% final descartado, mínimo un chunk de 192). No deben confundirse los 3644 casos aceptados por cribado automático con los 3629 pares utilizables en este análisis. La similitud coseno mediana entre el nuevo embedding bibliográfico y el del cuerpo es 0.82397.
+
+El script de fase14 compara **exactamente los mismos 3629 documentos** en cuatro representaciones: bibliografía (nuevo título+resumen), fulltext original truncado, body-only chunks, híbrido L2 de bibliografía+cuerpo. Verifica por SHA-256 privado la procedencia y el orden de documentos del caché de fase13 (el hash no se publica), y que las filas del Parquet original y del archivo KMeans correspondan. Genera para k=12/18/25 silhouette coseno en una muestra idéntica y fija, Davies–Bouldin, Calinski–Harabasz, ARI/NMI de 3 semillas, ARI de 3 subconjuntos de 80%, tamaño de los clústeres, concordancia con etiquetas originales y AMI exploratorio contra variables clasificadas automáticamente. Conserva los arrays de etiquetas por documento únicamente en una carpeta privada separada de GitHub. Estos indicadores NO sustituyen evaluación humana ni demuestran validez/política de los tópicos.
+
+~~~bash
+set -e
+cd "$HOME/AI_policy"
+git pull --ff-only
+python -m py_compile scripts/14_compare_full_corpus_kmeans.py
+python scripts/14_compare_full_corpus_kmeans.py \
+  --project "$HOME/ai_policy_he" \
+  --private-cache "$HOME/ai_policy_chunks_full_private" \
+  --private-labels "$HOME/ai_policy_cluster_labels_private" \
+  --phase13-report reports/phase13/full_corpus_chunk_encoding.json \
+  --out reports/phase14 \
+  --seeds 3 --subsamples 3 --fraction 0.8 --n-init 10 --threads 8
+git add reports/phase14
+git diff --cached --quiet || git commit -m "Phase 14: full-corpus KMeans multi-seed robustness comparison"
+git push origin main
+~~~
+
+Los reportes de fase14 contienen solo resultados agregados, y todas las etiquetas derivadas de los nuevos modelos permanecen en `$HOME/ai_policy_cluster_labels_private`. Este script NO vuelve a cargar MiniLM, procesar PDFs ni calcular embeddings; se ejecuta con el Python científico de Singularity. No sustituye automáticamente los k=18 anteriores del manuscrito.
