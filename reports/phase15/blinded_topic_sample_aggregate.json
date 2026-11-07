@@ -1,0 +1,34 @@
+{
+  "status": "sample_prepared_no_human_ratings",
+  "created_utc": "2026-11-07T23:54:18.631991+00:00",
+  "source_explicit_acceptances": 3644,
+  "source_body_usable": 3629,
+  "blinded_candidate_topic_count": 48,
+  "document_evaluations_per_rater": 336,
+  "rater_count_expected": 2,
+  "topics_per_candidate": {
+    "body_chunks_k12": 12,
+    "body_chunks_k18": 18,
+    "hybrid_equal_k18": 18
+  },
+  "sampling": {
+    "items_per_topic": 7,
+    "per_topic_roles": {
+      "centroid_prototypes": 3,
+      "random": 3,
+      "peripheral": 1
+    },
+    "seed": 20261107,
+    "same_documents_across_raters": true,
+    "cluster_codes_blinded_to_modality_and_k": true
+  },
+  "privacy": "Raw examples, titles, abstracts, body excerpts, identifiers and cluster correspondence remain exclusively on private CEDIA.",
+  "limitations": [
+    "The blind hides the model/k source but not the fact that seven examples are presented as one proposed topic.",
+    "More central examples are oversampled intentionally; random and peripheral cases mitigate representativeness bias.",
+    "An expert agreement study must be performed before any manual validation claim.",
+    "Rater topic naming and document-level topic membership should be coded independently.",
+    "Document policy relevance is a separate judgment from within-topic coherence.",
+    "No rater assessment has been performed by this script."
+  ]
+}
