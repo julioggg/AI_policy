@@ -232,6 +232,37 @@ def read_normalization(path,qa):
     return (canonical if not pending else None),status
 
 
+
+def audit_corrected_qa(path, original_independent_qa, normalized_policy):
+    """Verify corrected QA remains a later revision, not a third independent rater."""
+    if normalized_policy is None:
+        raise ValueError("Corrected QA provenance requires a complete separate normalization workbook")
+    corrected=sheet_records(
+        xlsx_sheets(path,{"CONTROL_QA"})["CONTROL_QA"],QA_HEADERS,80,"Corrected QA")
+    if set(corrected)!=set(original_independent_qa):
+        raise ValueError("Corrected QA record identifiers differ from original review")
+    policy_changes=0
+    justification_changes=0
+    for code,row in corrected.items():
+        base=original_independent_qa[code]
+        if row[:7]!=base[:7]:
+            raise ValueError("Corrected QA edited titles, original evidence, relevance or discipline")
+        if row[7] not in POLICY or row[7]!=normalized_policy[code]:
+            raise ValueError("Revised QA policy category disagrees with normalized codebook worksheet")
+        if not row[8]:
+            raise ValueError("Corrected QA justification is missing")
+        policy_changes+=int(row[7]!=base[7])
+        justification_changes+=int(row[8]!=base[8])
+    return {
+        "corrected_file_items":80,
+        "original_QA_relevance_and_discipline_unchanged":True,
+        "original_QA_evidence_unchanged":True,
+        "revised_policy_code_rows":policy_changes,
+        "revised_justification_rows":justification_changes,
+        "normalized_policy_matches_corrected_workbook":True,
+        "source_provenance":"Later corrected QA workbook; policy and justification edits do NOT constitute additional independent coding."
+    }
+
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument("--qa-original-xlsx",default=str(
@@ -240,6 +271,7 @@ def main():
     parser.add_argument("--qa-private-key",default=str(
       Path.home()/"ai_policy_screening_qa_independent_privado/correspondencia_qa_privada.csv"))
     parser.add_argument("--normalization-xlsx")
+    parser.add_argument("--qa-corrected-xlsx")
     parser.add_argument("--phase24-report",default="reports/phase24/quality_audit_packet_aggregate.json")
     parser.add_argument("--out",default="reports/phase25")
     args=parser.parse_args()
@@ -282,6 +314,12 @@ def main():
         normalized_policy,map_status=read_normalization(
             Path(args.normalization_xlsx).expanduser().resolve(),qa)
         map_status["status"]="complete" if normalized_policy is not None else "pending"
+    corrected_source=None
+    if args.qa_corrected_xlsx:
+        corrected_path=Path(args.qa_corrected_xlsx).expanduser().resolve()
+        if out==corrected_path.parent or out in corrected_path.parent.parents:
+            parser.error("Do not save public reports in protected corrected QA workbook folder")
+        corrected_source=audit_corrected_qa(corrected_path,qa,normalized_policy)
     results=compare(qa,key,normalized_policy)
     report={
        "created_utc":dt.datetime.now(dt.timezone.utc).isoformat(),
@@ -297,6 +335,7 @@ def main():
            "independent_reviewer_labels_not_rewritten":True
        },
        "policy_normalization":map_status,
+       "corrected_QA_provenance":corrected_source,
        "results":results,
        "limitations":[
            "Independent QA assessor must have been procedurally blind to A/B, prior consensus, model labels and sample stratification; script cannot prove this.",
