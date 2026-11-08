@@ -26,6 +26,8 @@ jobs:
         run: python3 -m unittest discover -s tests -p 'test_phase16_synthetic.py' -v
       - name: Run Phase 18 adjudication packet privacy and synthetic disagreement tests
         run: python3 -m unittest discover -s tests -p 'test_phase18_synthetic.py' -v
+      - name: Run Phase 19 adjudication import readiness and aggregate tests
+        run: python3 -m unittest discover -s tests -p 'test_phase19_synthetic.py' -v
 
   reviewer_excel_roundtrip:
     runs-on: ubuntu-latest
