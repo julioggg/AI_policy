@@ -635,3 +635,34 @@ git push origin main
 ~~~
 
 Deliver only the XLSX `~/ai_policy_panel_conciliacion_fase26_privado/Conciliacion_Metodologica_Fase26.xlsx` to a competent methods panel; do not share it publicly or with GitHub. It contains 80 rows and all original textual evidence and ratings with four yellow columns for new **documented panel decisions**. BEFORE resolving 80 items, agree on a precise rule distinguishing codes 1 (educational AI without demonstrable policy), 2 (defensible indirect policy implications) and 3 (policy itself is investigated); resolve direct-policy overcalling, handling of 9, interdisciplinarity and primary-policy hierarchy. Full-text escalation should be recorded for ambiguous cases; the panel need not replace all 368 original ratings unless a systematic codebook fault is identified. The file's consensus fields start empty; no human judgments are fabricated.
+
+
+## Phase27 — completed methods panel (80 risk-selected cases): audit, not an independent gold standard
+
+A returned private workbook named `Conciliacion_Metodologica_Fase26_COMPLETADA.xlsx` was inspected before import. The 80 blinded QA codes are unique and all 80 rows have valid codes in the four panel fields (320/320), with 79 unique written rationales and a repeated `[R...]` rubric-style prefix in all 80 responses. These are **descriptive features**, not a procedural verification of independent human judgment. Relative to Phase23 consensus shown in the panel workbook, the latest panel retained relevance on 78/80 records (two 2→1 changes), discipline on 80/80 and main policy dimension on 79/80 (one `equity_access`→`teaching_learning` change). Against the original *independent* Phase24 QA, the panel's final classifications match on relevance 34/80, discipline 22/80, and later-normalized policy on 9/80. High agreement with previously visible consensus is not itself independent validation, even when rationales are filled. Risk-selected Phase24 QA was deliberately enriched for disagreement and cannot estimate overall population error rates.
+
+`scripts/27_audit_panel_reconciliation.py` requires both the ORIGINAL, blank protected Phase26 panel dossier and the distinctly returned completed panel dossier; it compares all unchanged source fields cell by cell and validates both against Phase25/Phase26 published aggregate fingerprints. It checks the 80×4 human panel entries and emits only aggregate retention/change counts, completedness and methodological stop-rule caveats in `reports/phase27`. It NEVER overwrites Phase23 estimates, Phase24 QA, confidential article text or reviewer scores. It does not invent new gold-standard labels or claim precision/recall.
+
+Upload the returned XLSX to the CEDIA working directory `~/AI_policy` from a local computer, then move it to a fresh private folder OUTSIDE GitHub and run:
+
+~~~bash
+cd "$HOME/AI_policy"
+git pull --ff-only
+PRIVATE="$HOME/ai_policy_panel_conciliacion_fase26_recibida_privado"
+mkdir -p "$PRIVATE" && chmod 700 "$PRIVATE"
+if [ -s "$HOME/AI_policy/Conciliacion_Metodologica_Fase26_COMPLETADA.xlsx" ] && [ ! -e "$PRIVATE/Conciliacion_Metodologica_Fase26_COMPLETADA.xlsx" ]; then
+  mv "$HOME/AI_policy/Conciliacion_Metodologica_Fase26_COMPLETADA.xlsx" "$PRIVATE/"
+  chmod 600 "$PRIVATE/Conciliacion_Metodologica_Fase26_COMPLETADA.xlsx"
+fi
+python scripts/27_audit_panel_reconciliation.py \
+  --original-xlsx "$HOME/ai_policy_panel_conciliacion_fase26_privado/Conciliacion_Metodologica_Fase26.xlsx" \
+  --returned-xlsx "$PRIVATE/Conciliacion_Metodologica_Fase26_COMPLETADA.xlsx" \
+  --phase26-report reports/phase26/panel_reconciliation_preparation_aggregate.json \
+  --phase25-report reports/phase25/independent_screening_qa_aggregate.json \
+  --out reports/phase27
+git add reports/phase27
+git diff --cached --quiet || git commit -m "Phase27: audit completed methodological reconciliation (aggregate only)"
+git push origin main
+~~~
+
+Expected Phase27 status if all inputs correspond: `completed_panel_reconciliation_reviewed_not_independently_validated`. The scientific decision remains whether to design a new blind, probability-sampled codebook validation or strictly report Phase23 preliminary screening strata and separately report the Phase24/26 disagreement/correction chain as limitations. Do not conceal poor independent agreement or treat 80 risk-enriched cases as representative. Before final manuscript inference, independently verify policy construct operationalization and, where necessary, full-text records scored 9.
