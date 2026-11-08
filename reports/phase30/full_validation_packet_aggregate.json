@@ -1,0 +1,37 @@
+{
+  "status": "prepared_full1200_two_blind_expert_workbooks_NO_human_ratings",
+  "generated_utc": "2026-11-08T05:37:29.796331+00:00",
+  "population_n": 10283,
+  "sample_n": 1200,
+  "selected_per_stratum": {
+    "screen_include_core": {
+      "population_n": 9264,
+      "sample_n": 800
+    },
+    "screen_include_policy": {
+      "population_n": 899,
+      "sample_n": 290
+    },
+    "screen_include_context": {
+      "population_n": 102,
+      "sample_n": 92
+    },
+    "screen_exclude": {
+      "population_n": 18,
+      "sample_n": 18
+    }
+  },
+  "actual_draw_counts": {
+    "screen_include_core": 800,
+    "screen_include_policy": 290,
+    "screen_include_context": 92,
+    "screen_exclude": 18
+  },
+  "reviewer_count": 2,
+  "human_assessments_completed": 0,
+  "pilot": false,
+  "codebook_version": "V1.0-FULL",
+  "sampling": "probability_stratified_with_full_census_of_18_screen_exclude",
+  "privacy": "All article records, original ids, machine outputs, complete reviewer books and private keys are kept OUTSIDE GitHub",
+  "caution": "Inter-rater agreement must be evaluated; no calibration pilot was conducted. Sample size does not guarantee precise rare-class recall."
+}
