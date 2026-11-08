@@ -107,9 +107,10 @@ def workbook_file(out,name,rater,records):
     ins=[["INSTRUCCIONES DE CRIBADO","Qué hacer"]]
     ins += [[key,value.replace("{REVIEWER}",rater.upper())] for key,value in INTRO]
     scale=[["CÓDIGO","SIGNIFICADO"]]+[list(x) for x in RUBRIC]
+    color_group_rows=[{"group_code":rec["sample_id"],**rec} for rec in records]
     tabs=[
         ("INSTRUCCIONES",excel.basic_sheet(ins,[35,113])),
-        ("CRIBADO",excel.section_xml("DOCUMENTOS",FIELDS,HEADERS,records,
+        ("CRIBADO",excel.section_xml("DOCUMENTOS",FIELDS,HEADERS,color_group_rows,
             [16,57,107,16,24,25,24,33,72],FIELD_EDIT)),
         ("ESCALAS",excel.basic_sheet(scale,[31,115]))
     ]
