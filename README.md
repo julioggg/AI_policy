@@ -918,3 +918,27 @@ fi
 ~~~
 
 **Interpretación:** país = registros con al menos una filiación de ese país; los porcentajes pueden sumar más de 100%. `country_parent_vs_fulltext` ofrece comparaciones por país para el conjunto realmente recuperado; `country_parent_vs_DOI_linked_attempt_proxy` identifica la parte rastreable por DOI de la selección inicial. Estas dos etapas separan sesgo de selección del candidato y disponibilidad del PDF. Revisar manualmente el original `~/ai_policy_he/scripts/10_download_open_access_pdfs.py` y generador del manifiesto para afirmar regla exacta de 5000.
+
+
+## Fase37 — reparación de campo countries (ISO2 separado por punto y coma), sin borrar fase36
+
+El diagnóstico CEDIA de la fase36 identificó **1689 registros** de los 10283 originales con cadena `countries` no interpretada por la función previa, todos con un punto y coma, y **587 registros** de los 3656 PDF recuperados. En la población de 10265 incluidos, el informe original fase36 contabilizaba **1685 formatos no interpretados**. El informe fase36 original **se conserva** como evidencia de detección del error; no debe citarse su tabla geográfica como resultado corregido.
+
+`scripts/37_country_semicolon_correction.py` conserva la extracción original, recupera exclusivamente códigos ISO2 separados por `;` (no infiere nombres de países), vuelve a calcular distribuciones de incidencia multilocal y prueba la coherencia del proxy DOI para 4834/5000 intentos. Si hay semicolon_unrecognized, esas filas permanecen como no parseadas y se reportan. Documenta también mediante AST que el script original contiene ordenación descendente por `priority_score` y `cited_by_count`, seguida de `head(MAX_PDFS)`; no demuestra la versión ejecutada ni cómo se define el score. El script solo publica un agregado nuevo en `reports/phase37`. No publica títulos, OpenAlex IDs, DOI ni literales privados.
+
+~~~bash
+cd "$HOME/AI_policy"
+git pull --ff-only
+if python scripts/37_country_semicolon_correction.py \
+  --project "$HOME/ai_policy_he" \
+  --phase36-report reports/phase36/five_thousand_geographic_bias_aggregate.json \
+  --out reports/phase37; then
+  git add reports/phase37
+  git diff --cached --quiet || git commit -m "Phase37: correct semicolon country incidence and priority-source audit"
+  git push origin main
+else
+  echo "ERROR: fase37; no sobrescribir reportes anteriores"
+fi
+~~~
+
+**Interpretación:** no afirmar sesgo geográfico nulo sin verificar ausencia de formatos sin parsear y muchos registros sin país. Como el corpus de texto completo fue una selección de prioridad y recuperación efectiva, sus distribuciones descriptivas no son estimaciones sin sesgo de la población total. Para verificar la regla exacta de los 5000, revisar manualmente la asignación de `priority_score`, `MAX_PDFS` y registro histórico de entrada.
