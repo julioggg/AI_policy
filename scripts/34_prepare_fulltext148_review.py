@@ -141,7 +141,7 @@ def main():
     if any(private==x or x in private.parents or private in x.parents
            for x in (repo,panel.parent,manifest.parent,out)):
         p.error("Full-text reviewer packet must be in a fresh PRIVATE folder outside GitHub")
-    if any(out==x or x in out.parents or x in out.parents
+    if any(out==x or x in out.parents or out in x.parents
            for x in (panel.parent,manifest.parent,private)):
         p.error("Aggregate reports may not overlap private source data")
     ph33=json.loads(Path(args.phase33_report).read_text(encoding="utf8"))
