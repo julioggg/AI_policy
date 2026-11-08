@@ -789,3 +789,47 @@ fi
 ~~~
 
 **Nota:** no enviar expediente de adjudicación a los evaluadores antes de que ambas evaluaciones estén selladas. Este algoritmo no verifica identidad, grado académico, independencia o autoría de los evaluadores; solicita documentación externa real.
+
+
+## Fase33 — preparar una adjudicación humana documentada de los 324 casos pendientes
+
+**Estado actual:** Fase32 COMPLETADA en CEDIA: 1200/1200 por cada evaluación atribuida por el PI a expertos; 258 registros con al menos una discrepancia, 97 con relevancia incierta en al menos un evaluador, 175 con solicitud de texto completo por alguno de los dos, unión **324 registros**. Los grupos se solapan. Las dos formas originales permanecen intactas. Solo hay 0 casos adjudicados hasta que el panel complete el Excel. Las etiquetas antiguas «Claude/IA» en los libros recibidos siguen siendo una diferencia de procedencia abierta: solicitar declaraciones individuales verificables antes de defender independencia humana ante la revista.
+
+**Archivo a entregar al PANEL DE ARBITRAJE (privado):**
+
+~~~
+~/ai_policy_validacion1200_discrepancias_privado/Adjudicacion_Validacion_1200_Humana.xlsx
+~~~
+
+Este libro tiene las 324 publicaciones con título/resumen, calificaciones A/B y razones, más SEIS columnas amarillas vacías de resolución (alcance, relevancia, tema, disciplina, motivo científico, solicitud texto completo). Es un panel INFORMADO por A/B, no una tercera evaluación ciega. Conservar el expediente vacío original. Un equipo humano debe revisar y completar científicamente TODAS las filas y justificar cada decisión; cualquier acceso a texto completo debe documentarse en una hoja privada con fecha/fuente/evidencia y evaluadores — la marca yes solo solicita consulta, no demuestra consulta efectiva.
+
+Para descargar una copia desde JupyterLab sin introducir datos privados al repositorio GitHub:
+
+~~~bash
+cp -n "$HOME/ai_policy_validacion1200_discrepancias_privado/Adjudicacion_Validacion_1200_Humana.xlsx" "$HOME/Adjudicacion_Validacion_1200_Humana_PARA_PANEL.xlsx"
+chmod 600 "$HOME/Adjudicacion_Validacion_1200_Humana_PARA_PANEL.xlsx"
+sha256sum "$HOME/ai_policy_validacion1200_discrepancias_privado/Adjudicacion_Validacion_1200_Humana.xlsx" "$HOME/Adjudicacion_Validacion_1200_Humana_PARA_PANEL.xlsx"
+~~~
+
+Localizar en el navegador de JupyterLab bajo HOME (NO `AI_policy`), descargar y remitir privadamente al panel. No publicar el archivo en GitHub. El panel devuelve un XLSX con idénticos títulos, códigos, filas, calificaciones A/B y columnas de fuente, y rellena exclusivamente las seis columnas amarillas. Guardar el recibido fuera del repo, por ejemplo en `~/ai_policy_validacion1200_panel_recibido_privado/Adjudicacion_Validacion_1200_Humana_COMPLETADA.xlsx`, preservando el original sin cambios.
+
+**Auditor de retorno listo, pero NO ejecutar hasta que el panel termine:** `scripts/33_audit_returned_panel1200.py`. Coteja muestra, fuente, calificaciones previas, reglas del codebook, campos completos, justificaciones y mantiene la distinción entre solicitud y prueba de texto completo. Solo publica agregados en `reports/phase33`.
+
+~~~bash
+cd "$HOME/AI_policy" && git pull --ff-only
+if python scripts/33_audit_returned_panel1200.py \
+  --original-panel-xlsx "$HOME/ai_policy_validacion1200_discrepancias_privado/Adjudicacion_Validacion_1200_Humana.xlsx" \
+  --returned-panel-xlsx "$HOME/ai_policy_validacion1200_panel_recibido_privado/Adjudicacion_Validacion_1200_Humana_COMPLETADA.xlsx" \
+  --phase32-report reports/phase32/human_expert_agreement_aggregate.json \
+  --codebook docs/phase30_full_validation_codebook_v1.0.md \
+  --phase30-manifest "$HOME/ai_policy_validation1200_private/private_locked_manifest.json" \
+  --out reports/phase33; then
+   git add reports/phase33
+   git diff --cached --quiet || git commit -m "Phase33: audit returned human panel adjudication"
+   git push origin main
+else
+  echo "ERROR: panel incomplete or source integrity failed; do not publish ratings"
+fi
+~~~
+
+Completar la Fase33 NO implica automáticamente haber leído los textos completos, verificar la autoría humana (la declaración de cada experto sigue pendiente) ni estimar precisión/recall. Esas actividades requieren evidencia y una fase separada para el análisis de diseño ponderado tras definir referencia final.
