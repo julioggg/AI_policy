@@ -588,3 +588,30 @@ python scripts/25_compare_independent_screening_qa.py \
 ~~~
 
 Una vez que esté completada y subida la normalización, repetir incorporando `--normalization-xlsx "$HOME/ai_policy_screening_qa_recibida_privado/Normalizacion_codigos_QA_Fase24_COMPLETA.xlsx"`. En ambos casos publicar solo `reports/phase25` y conservar los libros y claves privadas. El acuerdo QA no mide exactitud poblacional: la muestra de 80 fue intencionalmente enriquecida por incertidumbre, desacuerdos previos y conflictos de política. Si emergen desacuerdos importantes de relevancia o disciplina, analizar causas conceptuales y documentar una decisión independiente antes de declarar válida la adjudicación Phase23.
+
+
+### Phase25 — corrected Phase24 reviewer file (after original response; strict provenance)
+
+A later human-provided `Control_Independiente_Cribado_Fase24_Corregido.xlsx` was examined against the originally returned `Control_Independiente_Cribado_Fase24_Lleno.xlsx`: all **80** source codes, titles, abstracts, years, types, relevance ratings and discipline ratings remained unchanged; **all 80 policy labels and all 80 justifications changed**. The corrected policy labels use 34 `not_applicable`, 31 `ethics_integrity`, 12 `governance_policy`, and 3 `assessment`. In detail, the original 21 `Ética y Gobernanza` became `ethics_integrity`; the 14 original `Ética y Plagio` became 10 `ethics_integrity`, 3 `assessment`, 1 `governance_policy`. The 32 `Ninguna (Uso General)`, 11 `Marco Político/Regulatorio`, and 2 `N/A` became the natural official codebook counterparts. This is a **later revision**, NOT an additional independent reviewer.
+
+A separate protected normalization book, `Normalizacion_codigos_QA_Fase24_COMPLETA.xlsx`, was generated preserving the **original** 80 QA evidence texts and QA responses; it fills official final codes from the corrected workbook, with explicit review provenance. The 59 initial technical-equivalence proposals included four overrulings in `Ética y Plagio`. In total 25 final codes differ from/extend the original technical proposals (21 ambiguous plus four overrulings). Never silently replace the independent original with the corrected QA workbook.
+
+After uploading these three books privately into `~/ai_policy_screening_qa_recibida_privado` and **keeping** the original untouched, run:
+
+~~~bash
+cd "$HOME/AI_policy"
+git pull --ff-only
+python scripts/25_compare_independent_screening_qa.py \
+  --qa-original-xlsx "$HOME/ai_policy_screening_qa_independent_privado/Control_Independiente_Cribado_Fase24.xlsx" \
+  --qa-returned-xlsx "$HOME/ai_policy_screening_qa_recibida_privado/Control_Independiente_Cribado_Fase24_Lleno.xlsx" \
+  --qa-corrected-xlsx "$HOME/ai_policy_screening_qa_recibida_privado/Control_Independiente_Cribado_Fase24_Corregido.xlsx" \
+  --normalization-xlsx "$HOME/ai_policy_screening_qa_recibida_privado/Normalizacion_codigos_QA_Fase24_COMPLETA.xlsx" \
+  --qa-private-key "$HOME/ai_policy_screening_qa_independent_privado/correspondencia_qa_privada.csv" \
+  --phase24-report reports/phase24/quality_audit_packet_aggregate.json \
+  --out reports/phase25
+git add reports/phase25
+git diff --cached --quiet || git commit -m "Phase25: aggregate independent QA and corrected-codebook provenance"
+git push origin main
+~~~
+
+The added `--qa-corrected-xlsx` argument verifies that no original relevance, discipline, source evidence or sample correspondence was altered by the later corrected workbook; it requires a complete separate normalization file with identical official policy codes and reports only aggregated counts of revisions. QA risk-selection is **not representative**; comparisons should not be interpreted as classifier accuracy. The assessor's procedure/independence cannot be established computationally. Synthetic end-to-end tests for this provenance check pass in CI.
