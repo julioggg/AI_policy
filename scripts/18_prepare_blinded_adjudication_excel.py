@@ -273,8 +273,8 @@ def main():
     private.mkdir(parents=True,exist_ok=True,mode=0o700)
     os.chmod(private,0o700)
 
-    def sect(name,records,headers,widths,editable):
-        fields=list(records[0])
+    def sect(name,records,headers,widths,editable,fields=None):
+        fields=list(records[0]) if records else list(fields or [])
         if len(fields)!=len(headers):
             raise ValueError("Header mismatch")
         return excel.section_xml(name,fields,headers,records,widths,editable)
@@ -337,7 +337,14 @@ def main():
             [15,19,42,75,67,67,18,18,18,18],{})),
         ("DESACUERDOS",sect("DOCUMENTOS",disputes,disagreements_headers,
             [15,19,18,18,18,18,42,70,65,65,40,40,28,28,58],
-            {12:["0","1","9"],13:["0","1","2","3","9"],14:None})),
+            {12:["0","1","9"],13:["0","1","2","3","9"],14:None},
+            fields=[
+              "group_code","item_code","membership_a","membership_b",
+              "policy_a","policy_b","title","abstract","body_excerpt_A",
+              "body_excerpt_B","comment_a","comment_b",
+              "consensus_membership","consensus_policy_relevance",
+              "adjudication_reason"
+            ])),
         ("ESCALAS",excel.basic_sheet(scales,[34,95]))
     ]
     output=private/"Adjudicacion_Ciega_Fase18.xlsx"
