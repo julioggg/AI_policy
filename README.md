@@ -564,3 +564,27 @@ git push origin main
 ~~~
 
 Deliver ONLY `~/ai_policy_screening_qa_independent_privado/Control_Independiente_Cribado_Fase24.xlsx` to an independent expert who has **not** seen the Phase20 A/B or Phase22 consensus results. The expert must make all four judgments independently with specific explanations. Do NOT deliver `correspondencia_qa_privada.csv`, the previous A/B sheets, any code mapping or public report to that expert. The workbook and key must never be pushed to GitHub. No new judgment has been generated yet. If the independent QA disagrees systematically, return to the adjudication protocol and revise cautiously, preserving all earlier forms. Only after a documented QA decision should final screening conclusions be integrated into a manuscript.
+
+
+## Phase 25 — independiente QA: pertinencia y disciplina + normalización transparente de categorías políticas
+
+El archivo humano `Control_Independiente_Cribado_Fase24_Lleno.xlsx` recibió 80 evaluaciones con relevancia, disciplina y justificación completas. **El investigador utilizó cinco etiquetas no normalizadas para todas las 80 decisiones de política**: `Ninguna (Uso General)` (32), `Ética y Gobernanza` (21), `Ética y Plagio` (14), `Marco Político/Regulatorio` (11), `N/A` (2), ajenas al codebook oficial Phase24. NO traducir etiquetas arbitrariamente como si fueran decisiones humanas originales. Entre las 21 etiquetas `Ética y Gobernanza`, escoger por evidencia la dimensión PRINCIPAL (`ethics_integrity`, `governance_policy` u otra si procede).
+
+La copia privada `Normalizacion_codigos_QA_Fase24_PENDIENTE.xlsx`, generada desde el archivo recibido, conserva 80 etiquetas originales y propone 59 equivalencias textuales: `Ninguna (Uso General) -> not_applicable` (32), `Ética y Plagio -> ethics_integrity` (14), `Marco Político/Regulatorio -> governance_policy` (11), `N/A -> not_applicable` (2), e incluye 21 campos finales en blanco para decisión humana. Los 59 campos propuestos son **normalización técnica post hoc, no nueva evaluación humana independiente**. Revisar y corregir si la publicación contradice la equivalencia. La versión completada debe tener 80/80 códigos oficiales, con los mismos datos originales.
+
+`scripts/25_compare_independent_screening_qa.py` verifica la correspondencia privada de los 80 documentos Phase24 y la integridad de las calificaciones originales. Puede computar ya, sin normalización, la **concordancia descriptiva de relevancia y disciplina** en la muestra dirigida de calidad, dejando la concordancia de dimensión política como pendiente. Solo cuando se entregue una planilla de normalización completa calcula la concordancia sobre dimensión política **identificada expresamente como normalizada post hoc**. Ningún valor individual, título, resumen o código se exporta a GitHub.
+
+Tras subir la versión original recibida de QA a una carpeta privada separada del repositorio de trabajo:
+
+~~~bash
+cd "$HOME/AI_policy"
+git pull --ff-only
+python scripts/25_compare_independent_screening_qa.py \
+  --qa-original-xlsx "$HOME/ai_policy_screening_qa_independent_privado/Control_Independiente_Cribado_Fase24.xlsx" \
+  --qa-returned-xlsx "$HOME/ai_policy_screening_qa_recibida_privado/Control_Independiente_Cribado_Fase24_Lleno.xlsx" \
+  --qa-private-key "$HOME/ai_policy_screening_qa_independent_privado/correspondencia_qa_privada.csv" \
+  --phase24-report reports/phase24/quality_audit_packet_aggregate.json \
+  --out reports/phase25
+~~~
+
+Una vez que esté completada y subida la normalización, repetir incorporando `--normalization-xlsx "$HOME/ai_policy_screening_qa_recibida_privado/Normalizacion_codigos_QA_Fase24_COMPLETA.xlsx"`. En ambos casos publicar solo `reports/phase25` y conservar los libros y claves privadas. El acuerdo QA no mide exactitud poblacional: la muestra de 80 fue intencionalmente enriquecida por incertidumbre, desacuerdos previos y conflictos de política. Si emergen desacuerdos importantes de relevancia o disciplina, analizar causas conceptuales y documentar una decisión independiente antes de declarar válida la adjudicación Phase23.
