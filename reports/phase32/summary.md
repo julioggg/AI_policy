@@ -1,0 +1,178 @@
+# Phase32 — PI-attributed new expert screening evaluation
+
+**Status:** PI_attributed_expert_ratings_scored_with_unresolved_legacy_AI_metadata_provenance
+
+**Source note:** Returned workbooks still describe Claude AI. The PI attests the labels are from two humans, but this cannot be verified computationally. Documentary resolution remains outstanding.
+
+## Descriptive paired results
+{
+  "scope": {
+    "n": 1200,
+    "exact_agreement_n": 1161,
+    "disagreement_n": 39,
+    "agreement_fraction": 0.9675,
+    "kappa_nominal_including_uncertain": 0.91923,
+    "distribution_A": {
+      "0": 232,
+      "1": 895,
+      "9": 73
+    },
+    "distribution_B": {
+      "0": 219,
+      "1": 898,
+      "9": 83
+    }
+  },
+  "relevance": {
+    "n": 1200,
+    "exact_agreement_n": 1140,
+    "disagreement_n": 60,
+    "agreement_fraction": 0.95,
+    "kappa_nominal_including_uncertain": 0.893772,
+    "distribution_A": {
+      "0": 232,
+      "1": 839,
+      "2": 17,
+      "3": 36,
+      "9": 76
+    },
+    "distribution_B": {
+      "0": 219,
+      "1": 838,
+      "2": 16,
+      "3": 40,
+      "9": 87
+    },
+    "jointly_ordinal_0_3_n": 1103,
+    "excluded_if_any_uncertain_9_n": 97,
+    "kappa_ordinal_unweighted": 0.93318,
+    "kappa_ordinal_quadratic": 0.938039,
+    "relevance_crosstab_A_rows_B_cols_0_1_2_3_9": [
+      [
+        213,
+        9,
+        0,
+        1,
+        9
+      ],
+      [
+        2,
+        818,
+        7,
+        1,
+        11
+      ],
+      [
+        1,
+        3,
+        9,
+        4,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        34,
+        1
+      ],
+      [
+        3,
+        7,
+        0,
+        0,
+        66
+      ]
+    ]
+  },
+  "topic": {
+    "n": 1200,
+    "exact_agreement_n": 1090,
+    "disagreement_n": 110,
+    "agreement_fraction": 0.908333,
+    "kappa_nominal_including_uncertain": 0.87423,
+    "distribution_A": {
+      "ai_literacy_training": 52,
+      "assessment": 88,
+      "equity_access": 14,
+      "ethics_integrity": 68,
+      "general_policy": 17,
+      "governance_policy": 42,
+      "not_applicable": 232,
+      "privacy_security": 1,
+      "research_scholarship": 43,
+      "teaching_learning": 566,
+      "uncertain": 77
+    },
+    "distribution_B": {
+      "ai_literacy_training": 57,
+      "assessment": 85,
+      "equity_access": 21,
+      "ethics_integrity": 80,
+      "general_policy": 9,
+      "governance_policy": 47,
+      "not_applicable": 219,
+      "privacy_security": 2,
+      "research_scholarship": 42,
+      "teaching_learning": 553,
+      "uncertain": 85
+    }
+  },
+  "discipline": {
+    "n": 1200,
+    "exact_agreement_n": 1058,
+    "disagreement_n": 142,
+    "agreement_fraction": 0.881667,
+    "kappa_nominal_including_uncertain": 0.840236,
+    "distribution_A": {
+      "engineering": 154,
+      "general_he": 403,
+      "health_sciences": 170,
+      "ssh": 391,
+      "uncertain": 82
+    },
+    "distribution_B": {
+      "engineering": 158,
+      "general_he": 393,
+      "health_sciences": 186,
+      "ssh": 392,
+      "uncertain": 71
+    }
+  },
+  "fulltext_required": {
+    "n": 1200,
+    "exact_agreement_n": 1139,
+    "disagreement_n": 61,
+    "agreement_fraction": 0.949167,
+    "kappa_nominal_including_uncertain": 0.760145,
+    "distribution_A": {
+      "no": 1064,
+      "yes": 136
+    },
+    "distribution_B": {
+      "no": 1047,
+      "yes": 153
+    }
+  }
+}
+
+## Discrepancy / full text counts
+{
+  "priority": {
+    "records_with_any_disagreement": 258,
+    "relevance_uncertain_in_any_rating": 97,
+    "needs_full_text_in_any_rating": 175
+  },
+  "records": 324
+}
+
+The full casebook and all human ratings remain PRIVATE on CEDIA, never in GitHub.
+
+## Methodological limits
+- The returned Excel instructions expressly describe Claude AI classification. PI reports that this wording was leftover from a test and real human experts completed the assessments. The actual human provenance and independence are not verified by software.
+- Obtain dated statements from both experts documenting authorship, procedure, absence or type of AI assistance, independent rating, conflict-of-interest disclosures and confirmation they used the frozen V1.0 rubric.
+- The two original forms and the two returned forms are retained verbatim; do NOT erase or rewrite the conflicting instruction metadata.
+- The same humans may have systematic misunderstandings; high inter-rater kappa is reproducibility, not necessarily correctness.
+- No pre-rating pilot was conducted by explicit PI decision.
+- This is descriptive raw agreement in a disproportionate probability-stratified sample; classifier performance needs machine-label correspondence, adjudicated human outcomes and design weights.
+- The private disagreement file includes full article titles/abstracts and individual rater scores and MUST NOT be published.
