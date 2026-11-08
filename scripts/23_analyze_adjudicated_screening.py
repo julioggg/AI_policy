@@ -32,6 +32,7 @@ import xml.etree.ElementTree as ET
 import zipfile
 
 REL="http://schemas.openxmlformats.org/package/2006/relationships"
+DOC_REL="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
 XNS="http://schemas.openxmlformats.org/spreadsheetml/2006/main"
 VALID_RELEVANCE={"0","1","2","3","9"}
 VALID_DISCIPLINE={"ssh","engineering","health_sciences","general_he","uncertain"}
@@ -92,7 +93,7 @@ def sheet_data(path,helper):
             name=sheet.get("name","")
             if name not in needed:
                 raise ValueError("Unexpected Excel worksheet")
-            r_id=sheet.get(f"{{{REL}}}id")
+            r_id=sheet.get(f"{{{DOC_REL}}}id")
             target=by_id.get(r_id,"")
             if not target:
                 raise ValueError("Missing XLSX sheet relationship")
