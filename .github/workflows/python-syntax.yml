@@ -48,3 +48,5 @@ jobs:
         run: python3 -m unittest discover -s tests -p 'test_phase21_synthetic.py' -v
       - name: Test Phase22 private blinded screening adjudication export and integrity
         run: python3 -m unittest discover -s tests -p 'test_phase22_synthetic.py' -v
+      - name: Test Phase23 adjudicated screening correctness, privacy and tamper detection
+        run: python3 -m unittest discover -s tests -p 'test_phase23_synthetic.py' -v
