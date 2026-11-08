@@ -44,3 +44,5 @@ jobs:
         run: python3 -m pip install -q numpy pandas scikit-learn
       - name: Test Phase20 synthetic blinded screening Excel workbooks and import
         run: python3 -m unittest discover -s tests -p 'test_phase20_synthetic.py' -v
+      - name: Test Phase21 independent screening agreement and six-stratum public aggregation
+        run: python3 -m unittest discover -s tests -p 'test_phase21_synthetic.py' -v
