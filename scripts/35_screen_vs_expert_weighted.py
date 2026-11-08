@@ -60,11 +60,13 @@ def digest(file):
 def safe_ratio(a,b):
     return round(a/b,6) if b else None
 
-def count_full(groups,name,numer,denom):
+def count_full(groups,name,numer,denom,strata=None):
     """Finite-population variance for a stratified rate with KNOWN denom."""
     total=0.
     variance=0.
     for stratum,(decision,Nh,nh) in SAMPLE.items():
+        if strata is not None and stratum not in strata:
+            continue
         obs=groups[stratum]
         assert len(obs)==nh
         y=[float(numer(v)) for v in obs]
@@ -179,10 +181,14 @@ def analyze(groups):
           "definition":"Machine positive = include_core/include_policy/include_context; machine negative = screen_exclude ONLY. Human positive = S1. S9 are separately treated as possible nonpositive/positive.",
           "population_scope":"Original final-screening N=10,283, after substantial upstream filtering; NOT original OpenAlex retrieval",
           "uncertainty_scenarios":predictive_bounds,
-          "PPV_scope_with_S9_treated_negative_design_ci":count_full(
-              {k:v for k,v in groups.items() if k!="screen_exclude"},
-              "PPV scope",lambda x:x["S"]=="1",posN
-          ) if False else None,
+          "PPV_scope_lower_bound_including_uncertain9_as_negative":count_full(
+              groups,"PPV scope lower",lambda x:x["S"]=="1",posN,
+              strata={"screen_include_core","screen_include_policy","screen_include_context"}
+          ),
+          "PPV_scope_upper_bound_including_uncertain9_as_positive":count_full(
+              groups,"PPV scope upper",lambda x:x["S"] in ("1","9"),posN,
+              strata={"screen_include_core","screen_include_policy","screen_include_context"}
+          ),
           "limitations":[
            "The original classifier has only 18 final-screen exclusions, and the original OpenAlex upstream filters are OUTSIDE the current frame. Near-perfect recall within this frame would be structurally misleading as a claim about initial search sensitivity.",
            "Scope S9 and relevance R9 represent UNRESOLVED text/abstract eligibility; these are extreme-scenario sensitivity bounds, NOT a verified fulltext truth standard.",
