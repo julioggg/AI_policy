@@ -833,3 +833,34 @@ fi
 ~~~
 
 Completar la Fase33 NO implica automáticamente haber leído los textos completos, verificar la autoría humana (la declaración de cada experto sigue pendiente) ni estimar precisión/recall. Esas actividades requieren evidencia y una fase separada para el análisis de diseño ponderado tras definir referencia final.
+
+
+## Fase34 — registros con necesidad de consultar texto completo (NO más revisión de 1.200)
+
+Fase33 cerró técnicamente 324/324 decisiones de panel, pero reportó **74 relevancias R9 que siguen indeterminadas** y **148 registros cuya consulta de texto completo fue solicitada**. El archivo final del panel es ORIGINAL y PRIVADO: `~/ai_policy_validacion1200_panel_recibido_privado/Adjudicacion_Validacion_1200_Humana_COMPLETADA.xlsx`. El informe de referencia es `reports/phase33/panel_adjudication_aggregate.json`. Los 74 R9 están contenidos en los 148 para texto completo; no sumar ambas cifras como casos disjuntos.
+
+**Acción:** `scripts/34_prepare_fulltext148_review.py` genera dos libros privados e independientes con 148 entradas cada uno (misma bibliografía, distintos órdenes; campos de evaluación nuevos EN BLANCO) para documentar **texto completo efectivamente consultado** y resolver los R9. Las hojas no revelan estrato, decisiones IA anteriores, A/B ni panel. Un archivo privado conserva la correspondencia FT↔VAL y decisiones previas; no publicar.
+
+~~~bash
+cd "$HOME/AI_policy"
+git pull --ff-only
+if python scripts/34_prepare_fulltext148_review.py \
+  --returned-panel "$HOME/ai_policy_validacion1200_panel_recibido_privado/Adjudicacion_Validacion_1200_Humana_COMPLETADA.xlsx" \
+  --phase33-report reports/phase33/panel_adjudication_aggregate.json \
+  --phase30-manifest "$HOME/ai_policy_validation1200_private/private_locked_manifest.json" \
+  --codebook docs/phase30_full_validation_codebook_v1.0.md \
+  --private-out "$HOME/ai_policy_fulltext148_private" \
+  --out reports/phase34; then
+  git add reports/phase34
+  git diff --cached --quiet || git commit -m "Phase34: prepare 148 targeted fulltext evidence sheets"
+  git push origin main
+else
+  echo "ERROR: Phase34 stopped; do not publish source casebooks"
+fi
+~~~
+
+El script prepara las hojas de `~/ai_policy_fulltext148_private/TextoCompleto_148_A.xlsx` y `TextoCompleto_148_B.xlsx`, rubric `Rubrica_Validacion_V1.md`, `private_fulltext_key.csv` (CONFIDENCIAL), `private_fulltext_manifest.json` (CONFIDENCIAL). Distribuir solo su libro y rúbrica a cada revisor. Si no se encuentra o no se puede acceder al artículo, registrar `not_found` o `no_access` y dejar las decisiones de texto completo en blanco, en lugar de inventarlas. Si se obtuvo y LEYÓ el texto completo, registrar DOI/URL y páginas/secciones y evidencia específica, además de S/R/T/D y mecanismo R2/3 cuando aplique. Conservar las decisiones previas sin editar.
+
+**Proveniencia humana:** El PI y el adjudicador afirman que el trabajo fue humano y las menciones a Claude/IA quedaron de una plantilla. No alterar esos datos de origen. Obtener declaraciones reales firmadas/fechadas de los dos expertos y del adjudicador para sustentar el protocolo ante revisores; describir la adjudicación como *panel informado por A/B*, nunca tercera calificación ciega.
+
+Fase34 solo genera solicitudes, no resultados científicos, no verifica la lectura de texto completo y no calcula exactitud. La validación de retorno de las dos hojas, actualización de referencia y rendimiento ponderado corresponde a la fase posterior.
