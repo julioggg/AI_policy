@@ -492,3 +492,27 @@ git push origin main
 ~~~
 
 The script verifies the private correspondence IDs, immutable reviewed metadata, allowed categories, all six original sampling strata and completion. It publishes only aggregates. It reports unweighted and quadratic weighted Cohen kappa for relevance 0–3 excluding code 9, nominal kappas for discipline and principal policy dimension including `uncertain` as a class, and distributions with per-stratum denominators. It flags counts for human adjudication. It intentionally **does not** report machine screening precision/recall before human consensus, and never equates earlier bibliographic filter exclusions to classifier-negative cases. Original private CSVs, texts, IDs and keys must never be committed to GitHub. No AI-generated human assessments.
+
+
+## Phase 22 — adjudicar discordancias en el cribado humano de 368 registros
+
+Fase 21 procesó dos evaluaciones independientes completas (368/368 por revisor) y encontró **89 discordancias de relevancia**, **218 de disciplina** y **183 de dimensión principal de política**, cuya unión son **316 registros únicos**. Entre los 18 casos excluidos por la clasificación automatizada ambos anotadores calificaron los 18 como relevancia 0. El promedio de etiquetas de un estrato no prueba por sí solo que el clasificador sea erróneo. La concordancia sobre relevancia 0–3 excluye 17 pares con 9 incierto: κ sin ponderar=0.67334 y ponderado cuadrático=0.75365. Disciplina κ nominal=0.24698, política κ nominal=0.39749. El diseño estratificado obliga a no calcular precisión/recall global sin ponderación/inferencia válida.
+
+### Preparar el Excel privado de adjudicación
+
+~~~bash
+cd "$HOME/AI_policy"
+git pull --ff-only
+python scripts/22_prepare_screening_adjudication_excel.py \
+  --private-in "$HOME/ai_policy_screening_calificaciones_normalizadas_privado" \
+  --private-out "$HOME/ai_policy_screening_adjudicacion_privado" \
+  --phase21-report reports/phase21/human_screening_agreement_aggregate.json \
+  --out reports/phase22
+git add reports/phase22
+git diff --cached --quiet || git commit -m "Phase22: prepare human screening adjudication packet"
+git push origin main
+~~~
+
+El Excel **privado** `~/ai_policy_screening_adjudicacion_privado/Adjudicacion_Cribado_Fase22.xlsx` contiene las pestañas INSTRUCCIONES, DISCREPANCIAS (solo los 316 registros discordantes con puntuaciones A/B y texto), TODOS (368 registros, solo consulta) y ESCALAS. La persona responsable completa **4 columnas amarillas** por cada caso en DISCREPANCIAS: relevancia final, disciplina final, dimensión política final, justificación. Permitir decisión distinta de A/B y valor 9 si realmente no hay evidencia. No editar identificadores, los datos científicos fuente, puntuaciones A/B, pestañas o encabezados. No subir el Excel a GitHub. Reconciliar estos dictámenes es adjudicación posterior, **no** una nueva evaluación independiente. Quedan 52 registros sin discrepancias a los que podrá asignarse el valor compartido de A/B en una fase posterior, explícitamente diferenciado de dictamen adjudicado.
+
+El script solo publica conteos agregados en `reports/phase22`; no crea valores de consenso ni revela estratos, decisiones automáticas, códigos, textos o comentarios de artículos.
