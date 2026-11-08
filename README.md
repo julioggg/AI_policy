@@ -436,3 +436,40 @@ git push origin main
 ~~~
 
 Si el Excel está incompleto, devuelve `awaiting_human_adjudication` y **NO** desvela ni publica resultados por modelo; solo agregados de completitud y validación. Una vez completo, vincula internamente las claves privadas con tres modelos (cuerpo k12, cuerpo k18, híbrido k18) para entregar medias temáticas consensuadas y proporciones documentales. Para documentos donde A y B ya coincidían conserva su calificación común y la distingue de los 189 adjudicados. Nunca modifica los kappas de fase16 ni presenta la adjudicación como un tercer evaluador ciego independiente. No selecciona modelo ganador automáticamente. No publicar el libro, grupo individual, claves ni textos.
+
+
+## Phase 20 — Excel blind screening validation (Phase05 sample)
+
+The original `reports/phase05` sample remains **unrated**, 368 records in six strata: 120 `include_core`, 80 `include_policy`, 40 `include_context`, all 18 `screen_exclude`, 80 `q1_not_article_ready` and 30 `core_not_q1`. These are NOT 368 random items from a single inclusion population; especially Q1 and core filter exclusions must not be conflated with final AI-screening negatives. For independent human classification, new `scripts/20_screening_reviewer_excel.py` creates two private Excel workbooks, with INSTRUCCIONES, CRIBADO (368 rows), ESCALAS; reviewers never see model labels or strata. The screening codebook remains `docs/human_validation_protocol.md`.
+
+~~~bash
+cd "$HOME/AI_policy"
+git pull --ff-only
+python -m py_compile scripts/20_screening_reviewer_excel.py
+python scripts/20_screening_reviewer_excel.py \
+  --mode export \
+  --private-in "$HOME/ai_policy_validation_private" \
+  --out-dir "$HOME/ai_policy_screening_excel_para_evaluadores_privado"
+~~~
+
+Transfer `Cribado_A.xlsx` to reviewer A and `Cribado_B.xlsx` to reviewer B **privately**. Each rates 368 records: 0/1/2/3/9 relevance, one discipline category, one primary policy dimension and a short explanation. Edit only yellow cells; preserve original titles, abstracts, sample codes, headers and row counts. No coding or HPC access is required. Sample key `sampling_key.csv` stays in CEDIA and is **never** shared with the researchers. Do not publicize article titles/abstracts or review judgments.
+
+After the two annotated Excel workbooks are returned, upload them to `~/ai_policy_screening_excel_recibidos_privado` and execute:
+
+~~~bash
+cd "$HOME/AI_policy"
+python scripts/20_screening_reviewer_excel.py \
+  --mode import \
+  --private-in "$HOME/ai_policy_validation_private" \
+  --received-xlsx "$HOME/ai_policy_screening_excel_recibidos_privado/Cribado_A.xlsx" \
+  --rater a \
+  --out-dir "$HOME/ai_policy_screening_calificaciones_normalizadas_privado"
+python scripts/20_screening_reviewer_excel.py \
+  --mode import \
+  --private-in "$HOME/ai_policy_validation_private" \
+  --received-xlsx "$HOME/ai_policy_screening_excel_recibidos_privado/Cribado_B.xlsx" \
+  --rater b \
+  --out-dir "$HOME/ai_policy_screening_calificaciones_normalizadas_privado"
+~~~
+
+Phase20 import verifies exact sample IDs, evidence metadata, allowed categories and original reviewer identities; it preserves the original Phase05 private CSVs and key, while writing normalized responses into a different private folder. **It does NOT calculate kappa or classifier precision yet**: those will be implemented only after actual expert labels exist. The parent-universe metrics will require explicit stratum inclusion probabilities and eligibility logic; never claim naive 368/368 overall precision or recall.
