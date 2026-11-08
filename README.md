@@ -897,3 +897,24 @@ fi
 ~~~
 
 **Todo código nuevo sigue siendo herramienta, no resultado real, hasta que el usuario ejecute CEDIA y compruebe los informes.** El análisis condicionado a la procedencia humana declarada por el PI NO resuelve por software la contradicción con etiquetas antiguas Claude/IA. Mantener datos confidenciales fuera de GitHub.
+
+
+## Fase36 — representatividad geográfica y sesgo de selección de 5.000 intentos de PDF
+
+Script reproducible de solo lectura en `scripts/36_geographic_fulltext_bias.py`; la prueba sintética en CI **NO** equivale a haberlo ejecutado en CEDIA. Recupera los campos `countries` de las tablas congeladas `ai_assisted_screening_decisions.parquet` (N=10283, incluidos 10265) y `fulltext_topic_model_documents.parquet` (3656); compara frecuencias por país como incidencia de coautoría/afiliación multi-país, no cuota exclusiva de países. Audita además el manifiesto de 5000 intentos, mediante vínculo DOI unívoco solamente. Como este manifiesto carece de `openalex_id`, la submuestra pareada 5000 es un **proxy verificable por DOI**, NO una reconstrucción exacta de regla de prioridad. Solo emite agregados de países suficientemente representados y pistas de AST sobre la selección del script original; ningún ID/documento individual ni textos a GitHub.
+
+~~~bash
+cd "$HOME/AI_policy"
+git pull --ff-only
+if python scripts/36_geographic_fulltext_bias.py \
+  --project "$HOME/ai_policy_he" \
+  --out reports/phase36; then
+  git add reports/phase36
+  git diff --cached --quiet || git commit -m "Phase36: geographic fulltext representativeness and 5000 DOI selection proxy"
+  git push origin main
+else
+  echo "ERROR: phase36 source bias audit failed; preserve logs for debugging"
+fi
+~~~
+
+**Interpretación:** país = registros con al menos una filiación de ese país; los porcentajes pueden sumar más de 100%. `country_parent_vs_fulltext` ofrece comparaciones por país para el conjunto realmente recuperado; `country_parent_vs_DOI_linked_attempt_proxy` identifica la parte rastreable por DOI de la selección inicial. Estas dos etapas separan sesgo de selección del candidato y disponibilidad del PDF. Revisar manualmente el original `~/ai_policy_he/scripts/10_download_open_access_pdfs.py` y generador del manifiesto para afirmar regla exacta de 5000.
