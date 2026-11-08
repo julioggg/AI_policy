@@ -166,6 +166,13 @@ def validated_source(frame,old,phase05):
     ).hexdigest()
     if actual_hash!=phase05.get("id_set_sha256"):
         raise ValueError("Old protected Phase05 sample does not match published identity fingerprint")
+    observed_decisions=Counter(str(r["ai_decision"]).strip().lower() for r in frame.values())
+    for group in ("screen_include_core","screen_include_policy","screen_include_context","screen_exclude"):
+        decision="exclude" if group=="screen_exclude" else STRATA[group][0]
+        if observed_decisions[decision]!=int(phase05["strata"][group]["population_n"]):
+            raise ValueError("Original final screening population counts changed for "+group)
+    if sum(observed_decisions.values())!=sum(int(phase05["strata"][g]["population_n"]) for g in ("screen_include_core","screen_include_policy","screen_include_context","screen_exclude")):
+        raise ValueError("New or unknown machine screening classes found in frozen corpus")
     available={}
     for stratum,(decision,n) in STRATA.items():
         pool=sorted(k for k,r in frame.items()
