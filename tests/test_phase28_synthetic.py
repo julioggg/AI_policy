@@ -118,6 +118,7 @@ class TestPhase28(unittest.TestCase):
                     self.assertNotIn("include_policy",page)
                     self.assertNotIn("openalex_id",page)
                     self.assertIn("CAL001",page)
+            self.assertEqual((target/"Rubrica_V0_2_Piloto.md").read_bytes(),CODEBOOK.read_bytes())
             manifest=json.loads((target/"pilot_locked_manifest.json").read_text())
             self.assertEqual(manifest["codebook_sha256"],
                 hashlib.sha256(CODEBOOK.read_bytes()).hexdigest())
