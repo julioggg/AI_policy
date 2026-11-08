@@ -76,3 +76,5 @@ jobs:
         run: python3 -m unittest discover -s tests -p 'test_phase35_synthetic.py' -v
       - name: Test Phase36 geographic representativeness and 5000-attempt DOI-proxy diagnostics
         run: python3 -m unittest discover -s tests -p 'test_phase36_synthetic.py' -v
+      - name: Test Phase37 semicolon ISO2 country correction, preserved old reports and privacy
+        run: python3 -m unittest discover -s tests -p 'test_phase37_synthetic.py' -v
