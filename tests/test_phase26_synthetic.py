@@ -39,7 +39,9 @@ class TestPhase26(unittest.TestCase):
                    "--private-out",original_folder,
                    "--phase21-report",p21,"--out",out22)
             original22=original_folder/"Adjudicacion_Cribado_Fase22.xlsx"
-            returned22=root/"phase22_returned.xlsx"
+            returned_dir=root/"phase22_received_private"
+            returned_dir.mkdir()
+            returned22=returned_dir/"phase22_returned.xlsx"
             fill_xlsx(original22,returned22,True)
             out23=root/"phase23_aggregates"
             invoke(S23,"--original-xlsx",original22,"--returned-xlsx",returned22,
