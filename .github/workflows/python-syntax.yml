@@ -62,3 +62,5 @@ jobs:
         run: python3 -m unittest discover -s tests -p 'test_phase28_synthetic.py' -v
       - name: Test Phase29 independent pilot interrater scoring and source tamper guardrails
         run: python3 -m unittest discover -s tests -p 'test_phase29_synthetic.py' -v
+      - name: Test Phase30 immediate 1200-record blind full validation sample and privacy
+        run: python3 -m unittest discover -s tests -p 'test_phase30_synthetic.py' -v
