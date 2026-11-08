@@ -389,3 +389,26 @@ git push origin main
 ~~~
 
 **Antes de las calificaciones** la salida esperada es `awaiting_independent_human_ratings`, con conteos de celdas completadas; no inventa kappa ni puntuaciones. **Cuando estén completas ambas planillas** produce resumen por modelo, medidas de concordancia de Cohen (binaria para pertenencia; ponderada cuadrática para ordinal), denominadores, desacuerdos y casos inciertos. Incluso entonces, sigue pendiente la adjudicación experta de etiquetas y conflictos. Este análisis es distinto de la validación del cribado de la fase 5. No utilizar la tabla como ranking automático definitivo de modelos.
+
+
+## Fase 18 — Paquete privado de adjudicación ciega posterior a validación humana
+
+**Fase 16 confirmada (2026-11-08 UTC):** dos evaluadores completaron 48/48 grupos y 336/336 documentos por persona. Concordancia de pertenencia documental exacta=91.667%, κ=.73370; pertinencia política documental exacta=47.619%, κ ponderado=.44784. Para las tres opciones evaluadas, coherencia media de ambos revisores: cuerpo k12=2.8333, cuerpo k18=3.5278, híbrido k18=3.4722. Diferenciación media: 2.125, 2.5 y 2.6389 respectivamente. Pertinencia política de grupo: 1.6667, 1.7778 y 1.6944. Estas son evaluaciones descriptivas sobre muestras de solo siete documentos por tema, con diseño no probabilístico de prototipos y periferia. No seleccionar el modelo por estas medias solamente.
+
+La fase 18 crea un **ÚNICO Excel ciego privado para adjudicación humana** a partir de las cuatro planillas normalizadas de la fase 16 y del banco original de la fase 15, verificando que los textos no fueron alterados. El libro incluye INSTRUCCIONES, GRUPOS (48 grupos, con etiquetas y valoraciones separadas A/B y celdas para consenso), EJEMPLOS (336 textos para interpretar cada tema), DESACUERDOS (solo documentos en los que A y B difieren en pertenencia o pertinencia) y ESCALAS. La adjudicación NO es un nuevo juicio independiente; observa las calificaciones A/B pero no los modelos ni su k. El script nunca rellena consenso automáticamente.
+
+~~~bash
+cd "$HOME/AI_policy"
+git pull --ff-only
+python -m py_compile scripts/18_prepare_blinded_adjudication_excel.py
+python scripts/18_prepare_blinded_adjudication_excel.py \
+  --normalized-ratings "$HOME/ai_policy_calificaciones_normalizadas_privado" \
+  --phase15-private "$HOME/ai_policy_topic_validation_private" \
+  --private-out "$HOME/ai_policy_adjudicacion_privado" \
+  --out reports/phase18
+git add reports/phase18
+git diff --cached --quiet || git commit -m "Phase 18: prepare model-blinded adjudication packet (aggregate only)"
+git push origin main
+~~~
+
+El archivo privado `~/ai_policy_adjudicacion_privado/Adjudicacion_Ciega_Fase18.xlsx` debe descargarse mediante el mecanismo de transferencia privado del HPC, enviarse solo a la persona responsable de adjudicación, completarse exclusivamente en las columnas amarillas y guardarse en formato XLSX. **Nunca** cargar el Excel o los CSV de evaluadores en GitHub. `reports/phase18` solo incluye cantidades agregadas y el estado `adjudication_packet_prepared_human_consensus_pending`; no contiene decisiones humanas definitivas ni evidencia textual.
