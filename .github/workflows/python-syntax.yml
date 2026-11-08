@@ -58,3 +58,5 @@ jobs:
         run: python3 -m unittest discover -s tests -p 'test_phase26_synthetic.py' -v
       - name: Test Phase27 returned methods-panel integrity, readiness and validity guardrails
         run: python3 -m unittest discover -s tests -p 'test_phase27_synthetic.py' -v
+      - name: Test Phase28 prospective independent calibration pilot, historical exclusion and privacy
+        run: python3 -m unittest discover -s tests -p 'test_phase28_synthetic.py' -v
