@@ -28,7 +28,9 @@ def fixture(root):
     output=root/"phase34_private"
     public=root/"phase34_public"
     report=root/"phase33_report.json"
-    manifest=root/"phase30_manifest.json"
+    manifestdir=root/"source_manifest_private"
+    manifestdir.mkdir()
+    manifest=manifestdir/"phase30_manifest.json"
     manifest.write_text(json.dumps({
         "codebook_sha256":hashlib.sha256(CODEBOOK.read_bytes()).hexdigest()
     }))
