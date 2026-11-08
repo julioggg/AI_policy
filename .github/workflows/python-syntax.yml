@@ -52,3 +52,5 @@ jobs:
         run: python3 -m unittest discover -s tests -p 'test_phase23_synthetic.py' -v
       - name: Test Phase24 independent blinded QA sample privacy and export
         run: python3 -m unittest discover -s tests -p 'test_phase24_synthetic.py' -v
+      - name: Test Phase25 independent screening QA comparison and nonstandard policy normalization
+        run: python3 -m unittest discover -s tests -p 'test_phase25_synthetic.py' -v
