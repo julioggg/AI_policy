@@ -412,3 +412,27 @@ git push origin main
 ~~~
 
 El archivo privado `~/ai_policy_adjudicacion_privado/Adjudicacion_Ciega_Fase18.xlsx` debe descargarse mediante el mecanismo de transferencia privado del HPC, enviarse solo a la persona responsable de adjudicación, completarse exclusivamente en las columnas amarillas y guardarse en formato XLSX. **Nunca** cargar el Excel o los CSV de evaluadores en GitHub. `reports/phase18` solo incluye cantidades agregadas y el estado `adjudication_packet_prepared_human_consensus_pending`; no contiene decisiones humanas definitivas ni evidencia textual.
+
+
+## Fase 19 — Validación segura del Excel de adjudicación completado
+
+La fase 18 preparó, **pero no adjudicó**, 48 grupos, 336 ejemplos documentales y 189 casos documentales en disputa (28 de pertenencia, 176 de pertinencia, con solapamiento de 15). Fase 19 valida una **copia final** del Excel rellenada por un adjudicador humano. Comprueba que todas las filas, códigos, títulos, resúmenes, extractos y calificaciones independientes A/B sigan idénticos al archivo plantilla protegido; rechaza fórmulas, valores fuera de escala, filas editadas, grupos faltantes, archivos intercalados y hojas renombradas.
+
+**Procedimiento de entrega:** descargar de la carpeta privada `~/ai_policy_adjudicacion_privado/Adjudicacion_Ciega_Fase18.xlsx`, compartir con la persona adjudicadora por medio privado. Debe completar para los 48 grupos las cinco celdas de consenso (nombre, coherencia, diferenciación, pertinencia y justificación) y para los 189 casos en DESACUERDOS tres celdas (pertenencia, pertinencia y justificación). Los 336 ejemplos de EJEMPLOS son de consulta, no deben cambiarse. La persona ve A/B pero no modelo/k. Devuelve el XLSX protegido y el coordinador lo sube a `~/ai_policy_adjudicacion_recibida_privado/Adjudicacion_Ciega_Fase18_COMPLETADA.xlsx` mediante la opción privada de carga de CEDIA (no dentro del checkout GitHub). Conservar la plantilla original intacta.
+
+~~~bash
+cd "$HOME/AI_policy"
+git pull --ff-only
+python -m py_compile scripts/19_analyze_completed_adjudication.py
+python scripts/19_analyze_completed_adjudication.py \
+  --original-xlsx "$HOME/ai_policy_adjudicacion_privado/Adjudicacion_Ciega_Fase18.xlsx" \
+  --returned-xlsx "$HOME/ai_policy_adjudicacion_recibida_privado/Adjudicacion_Ciega_Fase18_COMPLETADA.xlsx" \
+  --phase18-report reports/phase18/adjudication_preparation_aggregate.json \
+  --normalized-ratings "$HOME/ai_policy_calificaciones_normalizadas_privado" \
+  --out reports/phase19
+git add reports/phase19
+git diff --cached --quiet || git commit -m "Phase 19: private adjudication audit and aggregate-only comparison"
+git push origin main
+~~~
+
+Si el Excel está incompleto, devuelve `awaiting_human_adjudication` y **NO** desvela ni publica resultados por modelo; solo agregados de completitud y validación. Una vez completo, vincula internamente las claves privadas con tres modelos (cuerpo k12, cuerpo k18, híbrido k18) para entregar medias temáticas consensuadas y proporciones documentales. Para documentos donde A y B ya coincidían conserva su calificación común y la distingue de los 189 adjudicados. Nunca modifica los kappas de fase16 ni presenta la adjudicación como un tercer evaluador ciego independiente. No selecciona modelo ganador automáticamente. No publicar el libro, grupo individual, claves ni textos.
