@@ -666,3 +666,48 @@ git push origin main
 ~~~
 
 Expected Phase27 status if all inputs correspond: `completed_panel_reconciliation_reviewed_not_independently_validated`. The scientific decision remains whether to design a new blind, probability-sampled codebook validation or strictly report Phase23 preliminary screening strata and separately report the Phase24/26 disagreement/correction chain as limitations. Do not conceal poor independent agreement or treat 80 risk-enriched cases as representative. Before final manuscript inference, independently verify policy construct operationalization and, where necessary, full-text records scored 9.
+
+
+## Phase28–29 — Camino B: validación prospectiva independiente (piloto de calibración)
+
+Después de la discrepancia sustantiva Fase25 y conciliación no ciega Fase27, **no** usar la Fase23 como patrón oro ni extrapolar datos de los 80 casos seleccionados por riesgo. La ruta científica es construir un codebook operacional nuevo, probarlo ciegamente y congelar una versión FINAL distinta antes del holdout probabilístico. Véanse `docs/phase28_pilot_codebook_v0.2.md` y `docs/phase28_final_validation_sampling_plan.md`.
+
+**Protocolo fase28**: 30 casos de calibración NUEVOS (10 include_core, 10 include_policy, 10 include_context), excluyendo todos los 368 casos de la muestra histórica Phase05. Los 18 machine-exclude son censo y se reservan para prueba posterior con evaluadores nuevos. Selección balanceada intencional, **no aleatoria representativa** para estimar precisión. El marco final debe preservar probabilidades sobre todos los no-piloto; NO excluir automáticamente los 368 historiales del futuro marco probabilístico porque se crearía sesgo de cobertura.
+
+### Preparar dos Excel ciegos y código de evaluación
+
+~~~bash
+cd "$HOME/AI_policy"
+git pull --ff-only
+python scripts/28_prepare_independent_pilot.py \
+  --project "$HOME/ai_policy_he" \
+  --phase05-key "$HOME/ai_policy_validation_private/sampling_key.csv" \
+  --phase05-report reports/phase05/sample_aggregate.json \
+  --codebook docs/phase28_pilot_codebook_v0.2.md \
+  --private-out "$HOME/ai_policy_pilot28_blind_private" \
+  --out reports/phase28
+git add reports/phase28
+git diff --cached --quiet || git commit -m "Phase28: prepare prospective independent 30-case screening pilot"
+git push origin main
+~~~
+
+Solamente si el script termina con éxito se publican conteos agregados. Los siguientes archivos deben permanecer en una carpeta PRIVADA fuera del repositorio: `Piloto_V02_A.xlsx`, `Piloto_V02_B.xlsx`, `Rubrica_V0_2_Piloto.md`, `pilot_private_key.csv` y `pilot_locked_manifest.json`. Distribuir SOLO `Piloto_V02_A.xlsx` con la rúbrica al nuevo evaluador A y `Piloto_V02_B.xlsx` con la misma rúbrica al nuevo evaluador B. Nunca entregar ni publicar la clave o los hashes privados; no enviar a evaluadores el repositorio con etiquetas históricas. Ambos califican sin comunicación previa y sin que un LLM emita las respuestas humanas. Guardar inalterados los libros iniciales.
+
+**Fase29 (preparada; ejecutar solo después de ambas calificaciones):** cargar a `~/ai_policy_pilot28_recibidos_privado` dos versiones COMPLETAS, `Piloto_V02_A_COMPLETO.xlsx` y `Piloto_V02_B_COMPLETO.xlsx`, preservando los formularios originales. Ejecutar:
+
+~~~bash
+cd "$HOME/AI_policy"
+python scripts/29_score_independent_pilot.py \
+  --original-a "$HOME/ai_policy_pilot28_blind_private/Piloto_V02_A.xlsx" \
+  --original-b "$HOME/ai_policy_pilot28_blind_private/Piloto_V02_B.xlsx" \
+  --returned-a "$HOME/ai_policy_pilot28_recibidos_privado/Piloto_V02_A_COMPLETO.xlsx" \
+  --returned-b "$HOME/ai_policy_pilot28_recibidos_privado/Piloto_V02_B_COMPLETO.xlsx" \
+  --manifest "$HOME/ai_policy_pilot28_blind_private/pilot_locked_manifest.json" \
+  --codebook docs/phase28_pilot_codebook_v0.2.md \
+  --phase28-report reports/phase28/pilot_preparation_aggregate.json \
+  --out reports/phase29
+~~~
+
+La Fase29 solo compara a los dos anotadores y verifica coherencia con el codebook; no adjudica ni calcula rendimiento del clasificador. No compartir los formularios A/B con el equipo de discusión hasta que ambos terminen y queden preservados. Discutir desacuerdos, documentar cambios y congelar V1.0-VALIDATION antes de muestreo final.
+
+**Plan final provisional:** universo original N=10.283, excluyendo 30 registros piloto N*=10.253 (core 9.254, policy 889, context 92, exclude 18). Ejemplo NO definitivo con n=518 (350/90/60/18), sujeto a justificación estadística del margen de error de la proporción objetivo y a la futura definición operacional. Las 11.393 y 848 exclusiones bibliográficas previas son un análisis separado.
