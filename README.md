@@ -516,3 +516,28 @@ git push origin main
 El Excel **privado** `~/ai_policy_screening_adjudicacion_privado/Adjudicacion_Cribado_Fase22.xlsx` contiene las pestañas INSTRUCCIONES, DISCREPANCIAS (solo los 316 registros discordantes con puntuaciones A/B y texto), TODOS (368 registros, solo consulta) y ESCALAS. La persona responsable completa **4 columnas amarillas** por cada caso en DISCREPANCIAS: relevancia final, disciplina final, dimensión política final, justificación. Permitir decisión distinta de A/B y valor 9 si realmente no hay evidencia. No editar identificadores, los datos científicos fuente, puntuaciones A/B, pestañas o encabezados. No subir el Excel a GitHub. Reconciliar estos dictámenes es adjudicación posterior, **no** una nueva evaluación independiente. Quedan 52 registros sin discrepancias a los que podrá asignarse el valor compartido de A/B en una fase posterior, explícitamente diferenciado de dictamen adjudicado.
 
 El script solo publica conteos agregados en `reports/phase22`; no crea valores de consenso ni revela estratos, decisiones automáticas, códigos, textos o comentarios de artículos.
+
+
+## Phase 23 — audit a completed private Phase22 human screening adjudication
+
+The coordinator receives a **separate copy** of the 316-case Phase22 adjudication Excel: `Adjudicacion_Cribado_Fase22_COMPLETADA.xlsx`. Do not overwrite the original blank `~/ai_policy_screening_adjudicacion_privado/Adjudicacion_Cribado_Fase22.xlsx`; retain source two-rater CSVs unchanged. Upload privately to `~/ai_policy_screening_adjudicacion_recibida_privado/`, outside the GitHub checkout.
+
+~~~bash
+cd "$HOME/AI_policy"
+git pull --ff-only
+python scripts/23_analyze_adjudicated_screening.py \
+  --original-xlsx "$HOME/ai_policy_screening_adjudicacion_privado/Adjudicacion_Cribado_Fase22.xlsx" \
+  --returned-xlsx "$HOME/ai_policy_screening_adjudicacion_recibida_privado/Adjudicacion_Cribado_Fase22_COMPLETADA.xlsx" \
+  --private-in "$HOME/ai_policy_screening_calificaciones_normalizadas_privado" \
+  --phase05-report reports/phase05/sample_aggregate.json \
+  --phase21-report reports/phase21/human_screening_agreement_aggregate.json \
+  --phase22-report reports/phase22/screening_adjudication_packet_aggregate.json \
+  --out reports/phase23
+git add reports/phase23
+git diff --cached --quiet || git commit -m "Phase23: audit adjudicated human screening (aggregate only)"
+git push origin main
+~~~
+
+Phase23 conservatively validates the unchanged immutable title/abstract metadata, original A/B scores and justifications, matching sample IDs and stratum sampling key, and all four consensus fields for 316 discordant records. When the workbook is complete, it reports aggregate code distributions within each original stratum and **approximate, explicitly conditional design-weighted prevalence** for the four final AI-screening strata only, with finite-population sampling correction and uncertainty separated as code 9. The two earlier bibliographic exclusion strata stay distinct. It does **not** automatically claim binary precision, recall, corpus-level full-text accuracy, or independently verified gold standard.
+
+**Methodological quality caution:** local pre-import audit of the delivered private file found all 1,264 required consensus cells filled, no invalid rubric codes, and unchanged source fields compared with uploaded original human workbooks. For the explicitly disputed dimensions, the adjudication matched reviewer B in 71/89 relevance cases, 212/218 discipline cases, 165/183 policy dimensions. This asymmetry does not prove bias or invalid human judgment; nevertheless, verify adjudicator process, written rationales and a risk-focused independent spot-check, especially of disciplines. Phase23 publishes these asymmetry counts but does not expose per-case details. The raw adjudication workbook must NOT be pushed to GitHub.
