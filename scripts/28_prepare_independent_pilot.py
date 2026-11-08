@@ -26,6 +26,7 @@ import os
 from pathlib import Path
 import random
 import re
+import shutil
 
 STRATA={
     "screen_include_core":("include_core",10),
@@ -279,6 +280,9 @@ def main():
         pack.xlsx_generic(target/f"Piloto_V02_{rater.upper()}.xlsx",tabs,excel)
     write_csv(target/"pilot_private_key.csv",
               ["pilot_code","openalex_id","stratum","machine_ai_decision"],source_meta)
+    reviewer_codebook=target/"Rubrica_V0_2_Piloto.md"
+    shutil.copy2(codebook,reviewer_codebook)
+    reviewer_codebook.chmod(0o600)
     manifest={
         "status":"pilot_30_prepared_NO_human_ratings",
         "created_utc":dt.datetime.now(dt.timezone.utc).isoformat(),
