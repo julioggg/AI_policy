@@ -864,3 +864,36 @@ El script prepara las hojas de `~/ai_policy_fulltext148_private/TextoCompleto_14
 **Proveniencia humana:** El PI y el adjudicador afirman que el trabajo fue humano y las menciones a Claude/IA quedaron de una plantilla. No alterar esos datos de origen. Obtener declaraciones reales firmadas/fechadas de los dos expertos y del adjudicador para sustentar el protocolo ante revisores; describir la adjudicación como *panel informado por A/B*, nunca tercera calificación ciega.
 
 Fase34 solo genera solicitudes, no resultados científicos, no verifica la lectura de texto completo y no calcula exactitud. La validación de retorno de las dos hojas, actualización de referencia y rendimiento ponderado corresponde a la fase posterior.
+
+
+## Estado de dos revisores: auditoría HPC y Fase35 (8 noviembre 2026)
+
+**Matriz detallada y priorización:** docs/reviewer1_reviewer2_HPC_gap_audit_2026-11-08.md. No recalcular fases02/03/04/06/09/11/13/14/19/32/33: los resultados agregados ya existen. Urgencias técnicas: comparar IA vs referencias humanas usando pesos del muestreo; documentar selección 5000 para fulltext, país/region y decidir representación semántica de las figuras.
+
+**Código Phase35 YA PUBLICADO Y PROBADO, pendiente de ejecución real CEDIA.** Compara n1200 por 4 estratos con expertos A/B reconciliados en fase33; 74 relevancias inciertas se tratan como cotas y la inclusión automática se evalúa SOLO para alcance universitario en 10283 ya prefiltrados. No claim de exactitud para política R3 ni recuerdo de los 199366 resultados.
+
+~~~bash
+cd "$HOME/AI_policy"
+git pull --ff-only
+if python scripts/35_screen_vs_expert_weighted.py \
+  --private-key "$HOME/ai_policy_validation1200_private/private_sampling_key.csv" \
+  --original-a "$HOME/ai_policy_validation1200_private/Validacion_1200_A.xlsx" \
+  --original-b "$HOME/ai_policy_validation1200_private/Validacion_1200_B.xlsx" \
+  --returned-a "$HOME/ai_policy_validacion1200_expertos_recibidos_privado/Validacion_1200_IA-1.xlsx" \
+  --returned-b "$HOME/ai_policy_validacion1200_expertos_recibidos_privado/Validacion_1200_IA-2.xlsx" \
+  --manifest "$HOME/ai_policy_validation1200_private/private_locked_manifest.json" \
+  --returned-panel "$HOME/ai_policy_validacion1200_panel_recibido_privado/Adjudicacion_Validacion_1200_Humana_COMPLETADA.xlsx" \
+  --phase30-report reports/phase30/full_validation_packet_aggregate.json \
+  --phase32-report reports/phase32/human_expert_agreement_aggregate.json \
+  --phase33-report reports/phase33/panel_adjudication_aggregate.json \
+  --codebook docs/phase30_full_validation_codebook_v1.0.md \
+  --out reports/phase35; then
+  git add reports/phase35
+  git diff --cached --quiet || git commit -m "Phase35: weighted machine-vs-expert title-abstract audit"
+  git push origin main
+else
+  echo "ERROR: fase35 no completada, no publicar resultados parciales"
+fi
+~~~
+
+**Todo código nuevo sigue siendo herramienta, no resultado real, hasta que el usuario ejecute CEDIA y compruebe los informes.** El análisis condicionado a la procedencia humana declarada por el PI NO resuelve por software la contradicción con etiquetas antiguas Claude/IA. Mantener datos confidenciales fuera de GitHub.
