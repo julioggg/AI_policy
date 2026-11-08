@@ -24,3 +24,10 @@ jobs:
         run: python3 -m pip install -q numpy pandas scikit-learn
       - name: Run Phase 16 synthetic-only integration tests
         run: python3 -m unittest discover -s tests -p 'test_phase16_synthetic.py' -v
+
+  reviewer_excel_roundtrip:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test Phase 17 synthetic Excel reviewer export and import
+        run: python3 -m unittest discover -s tests -p 'test_phase17_synthetic.py' -v
