@@ -384,9 +384,11 @@ def main():
     out=Path(args.out).expanduser().resolve()
     if original==returned or not original.is_file() or not returned.is_file() or not private.is_dir():
         ap.error("Original/returned private XLSX must be distinct, valid input files")
-    for folder in [private,original.parent,returned.parent]:
+    for folder in (private,original.parent):
         if out==folder or folder in out.parents or out in folder.parents:
-            ap.error("Public report destination must be separate from all private inputs")
+            ap.error("Public report destination must be separate from private sources")
+    if out==returned.parent or out in returned.parent.parents:
+        ap.error("Public output cannot be the same as or an ancestor of returned private files")
     phase05=json.loads(Path(args.phase05_report).read_text(encoding="utf8"))
     phase21=json.loads(Path(args.phase21_report).read_text(encoding="utf8"))
     phase22=json.loads(Path(args.phase22_report).read_text(encoding="utf8"))
