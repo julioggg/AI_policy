@@ -1,0 +1,49 @@
+{
+  "created_utc": "2026-11-08T07:02:49.873748+00:00",
+  "status": "completed_324_case_data_with_unresolved_panel_AI_provenance_and_fulltext",
+  "phase32_original_expert_labels_immutable": true,
+  "panel_derived_from_known_A_B_disagreements_not_blind": true,
+  "original_1200_case_sample_preserved": true,
+  "casebook_n": 324,
+  "panel_all_mandatory_fields_complete": true,
+  "panel_scientific_reason_diagnostics": {
+    "total": 324,
+    "missing_or_inadequate": {},
+    "adjudication_filled": 324,
+    "distinct_scientific_justifications": 324,
+    "residual": {
+      "uncertain_relevance_9": 74,
+      "requested_fulltext_yes": 148,
+      "any_policy_2_or_3": 25,
+      "direct_policy_3": 14
+    },
+    "comparisons": {
+      "relevance_differs_from_B": 36,
+      "relevance_differs_from_A": 26,
+      "relevance_differs_from_both_original_reviewers": 1
+    }
+  },
+  "panel_provenance_diagnostics": {
+    "returned_instructions_modified_from_original": true,
+    "panel_justifications_with_adjudicacion_IA_prefix_n": 324,
+    "panel_sheet_claims_third_blinded_rating": true,
+    "actual_panel_was_informed_by_visible_AB_ratings": true,
+    "human_authorship_verified_from_workbook": false,
+    "human_authorship_documentation_required": true,
+    "original_and_returned_workbook_SHA256_retained_privately": false,
+    "hashes_not_published_to_public_report": true
+  },
+  "prior_legacy_Claude_label_provenance_remains_unresolved": true,
+  "source_lineage_proved_from_original_phase32_packet": true,
+  "fulltext_actual_access_documented": false,
+  "classifier_accuracy_calculated": false,
+  "limitations": [
+    "The panel saw earlier A/B ratings, so adjudication cannot be portrayed as another independent blind expert review.",
+    "All returned panel reasons marked [Adjudicación IA], if observed, are explicitly disclosed as conflicting source provenance, not silently rebranded as independent human ratings.",
+    "Instruction-sheet edits and claims of a third blind rating must be disclosed; the sheet visibly contains A/B ratings so this panel was not third-party blinded.",
+    "PI states the two A/B labels were produced by new human experts despite original Excel stating Claude/AI; evidence of human authorship and independence must be obtained from both experts.",
+    "A fulltext_escalation=yes label records a REQUEST for full text, not proof it was read.",
+    "Still need a private auditable full-text consultation log, final eligible set definition, and design-weighted estimates for predeclared classifier-vs-reference outcomes.",
+    "Only aggregate counts, not original titles/abstracts/codes, human reviews or panel rationales are public."
+  ]
+}
