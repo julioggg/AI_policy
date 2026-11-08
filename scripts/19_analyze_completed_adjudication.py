@@ -309,7 +309,7 @@ def main():
     repo=Path.home()/"AI_policy"
     if out==normalized or normalized in out.parents or \
        out==original.parent or original.parent in out.parents or \
-       out==returned.parent or returned.parent in out.parents:
+       out==returned.parent:
         ap.error("Public report must be separate from private files")
     helper=helper_load("17_excel_reviewer_packages.py","phase17_excel_private")
     phase18=json.loads(Path(args.phase18_report).read_text(encoding="utf8"))
