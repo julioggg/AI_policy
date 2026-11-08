@@ -80,7 +80,9 @@ def scenario(tamper=False,incomplete=False):
           "--private-out",panel,"--out",out32,"--acknowledge-legacy-ai-metadata")
         assert p.returncode==0,p.stderr[-2500:]
         src=panel/"Adjudicacion_Validacion_1200_Humana.xlsx"
-        finished=temp/"returned_panel.xlsx"
+        returned_folder=temp/"returned_panel_private"
+        returned_folder.mkdir()
+        finished=returned_folder/"returned_panel.xlsx"
         returned_panel(src,finished,tamper=tamper,incomplete=incomplete)
         out33=temp/"out33"
         p=run(SCRIPT33,
