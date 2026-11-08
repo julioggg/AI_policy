@@ -1,0 +1,14 @@
+{
+  "created_utc": "2026-11-08T07:17:11.792979+00:00",
+  "status": "prepared_148_two_blind_fulltext_evidence_books_NOT_PERFORMED",
+  "n_requested_for_fulltext": 148,
+  "n_human_review_forms": 2,
+  "n_undecidable_R9_in_original_panel": 74,
+  "n_sources_read_in_this_step": 0,
+  "n_new_human_decisions": 0,
+  "source_decisions_from_324_case_phase33_panel": true,
+  "original_phase33_report_unchanged": true,
+  "scope": "targeted_fulltext_resolution_not_new_probability_screening_sample",
+  "privacy": "Fulltext source bibliography, prior panel decisions, individual FT case IDs and responses remain private outside GitHub.",
+  "warning": "An indicated need for full text is NOT proof full text was actually accessed; phase33 provenance conflict remains documentable."
+}
