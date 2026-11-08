@@ -752,3 +752,40 @@ Archivos exclusivos de carpeta privada **FUERA** de GitHub:
 Los formularios tienen los mismos 1.200 artículos con orden distinto. Todos los campos de valoración están VACÍOS. NO hay respuestas humanas fabricadas. Guardar los Excel originales en carpeta protegida y mantener los completados como COPIAS separadas. Al concluir ambas evaluaciones, se implementará verificación estricta, cálculo de concordancia, arbitraje independiente y solicitud de texto completo para los no decidibles.
 
 La muestra n=1.200 tiene precisión de diseño razonable para proporciones globales, pero puede ser insuficiente para identificar con gran precisión sensibilidad de la clase directa R3, dado que es rara. Los estratos exclude (18) son solo los negativos al FINAL del cribado automático: no son toda la población descartada en fases bibliográficas previas. Nunca reportar precisión/sensibilidad de todo el embudo sin analizar ese marco aparte.
+
+
+## Actualización de procedencia — Fase32: experto humano declarado, metadatos heredados
+
+**ACLARACIÓN POSTERIOR DEL INVESTIGADOR PRINCIPAL:** los libros recibidos con nombres `Validacion_1200_IA-1.xlsx` y `Validacion_1200_IA-2.xlsx` fueron completados, según el PI, por DOS EXPERTOS HUMANOS; las instrucciones dentro de los archivos que afirman `Claude`, `PASADA IA` y `NO es una evaluación humana` serían texto remanente de otra prueba. Esta declaración corrige la interpretación inicial que figura en la sección histórica Phase31. La diferencia entre el contenido explícito del archivo y la atribución del PI es un hecho de procedencia que NO se debe borrar, ocultar o reescribir. La autoría humana/independencia del juicio requiere documentación firmada o confirmación independiente de ambos expertos. No atribuir automáticamente naturaleza humana a una clasificación solo por tener dos archivos.
+
+**Flujo ACTIVO:** usar `scripts/32_audit_pi_attested_human1200.py`, NO `scripts/31_audit_two_claude_passes.py` para estos libros. Fase32 exige los 2 libros originales vacíos de Phase30 con SHA256 congelados, los 2 recibidos como archivos diferentes, la rúbrica V1.0 y `--acknowledge-legacy-ai-metadata`. El argumento indica la aclaración del PI: NO prueba la autoría. Se registran concordancias A/B y se genera un expediente de conflictos, incluida evaluación de incertidumbre/texto completo, en carpeta PRIVADA. Solo se publican agregados. Después del arbitraje documentado se puede estimar desempeño del cribado con pesos, siempre sujeto a la procedencia verificable.
+
+Procedimiento de declaración de autores de las calificaciones (mantener fuera del repositorio público): `docs/phase32_expert_provenance_declaration.md`. Conservar las hojas originales con la frase heredada; no cambiar B1/B2 ni ninguna valoración del evaluador.
+
+### CEDIA: importar dos libros y ejecutar Fase32
+
+1. Subir **únicamente** el ZIP `Paquete_IA1_IA2_1200_para_CEDIA.zip` al directorio `~/AI_policy` por JupyterLab. Extraer los Excel a `~/ai_policy_validacion1200_expertos_recibidos_privado`, con carpeta 0700 y archivos 0600, verificando firmas/hash y evitando cualquier sobreescritura. Mover el ZIP a esa carpeta privada para que el repo público quede sin datos individuales.
+2. Ejecutar:
+
+~~~bash
+cd "$HOME/AI_policy" && git pull --ff-only
+if python scripts/32_audit_pi_attested_human1200.py \
+  --original-a "$HOME/ai_policy_validation1200_private/Validacion_1200_A.xlsx" \
+  --original-b "$HOME/ai_policy_validation1200_private/Validacion_1200_B.xlsx" \
+  --returned-a "$HOME/ai_policy_validacion1200_expertos_recibidos_privado/Validacion_1200_IA-1.xlsx" \
+  --returned-b "$HOME/ai_policy_validacion1200_expertos_recibidos_privado/Validacion_1200_IA-2.xlsx" \
+  --manifest "$HOME/ai_policy_validation1200_private/private_locked_manifest.json" \
+  --codebook docs/phase30_full_validation_codebook_v1.0.md \
+  --phase30-report reports/phase30/full_validation_packet_aggregate.json \
+  --private-out "$HOME/ai_policy_validacion1200_discrepancias_privado" \
+  --out reports/phase32 \
+  --acknowledge-legacy-ai-metadata; then
+    git add reports/phase32
+    git diff --cached --quiet || git commit -m "Phase32: PI-attested human inter-rater screening agreement"
+    git push origin main
+else
+    echo "ERROR: auditoría Phase32 detenida; revisar salida"
+fi
+~~~
+
+**Nota:** no enviar expediente de adjudicación a los evaluadores antes de que ambas evaluaciones estén selladas. Este algoritmo no verifica identidad, grado académico, independencia o autoría de los evaluadores; solicita documentación externa real.
