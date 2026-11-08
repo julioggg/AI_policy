@@ -711,3 +711,44 @@ python scripts/29_score_independent_pilot.py \
 La Fase29 solo compara a los dos anotadores y verifica coherencia con el codebook; no adjudica ni calcula rendimiento del clasificador. No compartir los formularios A/B con el equipo de discusión hasta que ambos terminen y queden preservados. Discutir desacuerdos, documentar cambios y congelar V1.0-VALIDATION antes de muestreo final.
 
 **Plan final provisional:** universo original N=10.283, excluyendo 30 registros piloto N*=10.253 (core 9.254, policy 889, context 92, exclude 18). Ejemplo NO definitivo con n=518 (350/90/60/18), sujeto a justificación estadística del margen de error de la proporción objetivo y a la futura definición operacional. Las 11.393 y 848 exclusiones bibliográficas previas son un análisis separado.
+
+
+## Phase30 — DECISIÓN ACTIVA: evaluar DIRECTAMENTE 1.200 registros, SIN piloto
+
+**Esta es la instrucción vigente del investigador principal.** Sustituye las propuestas de piloto de 30 y los borradores de muestreo de 518/1.200 con 30 registros piloto excluidos. **NO ejecutar scripts/28_prepare_independent_pilot.py ni scripts/29_score_independent_pilot.py para el flujo vigente.** No borrar ni reescribir las fases históricas; son evidencia de desarrollo metodológico.
+
+El universo del cribado automático original consta de **10.283 publicaciones**. Selección aleatoria simple sin reemplazo dentro de cuatro estratos: include_core 800 de 9264, include_policy 290 de 899, include_context 92 de 102, exclude 18 de 18 (censo). Total 1.200. El muestreo NO excluye los 368 registros históricos, pues eso quitaría probabilidad de inclusión a una parte del universo. Si aparece alguno, solo los dos NUEVOS evaluadores independientes, realmente cegados, lo valoran desde cero.
+
+La rúbrica definitiva inicial, fijada **antes de distribuir las hojas** y con declaración explícita de que no existió un piloto, es docs/phase30_full_validation_codebook_v1.0.md. No se cambia a mitad de calificación. Alcance S, relevancia R, tema T y disciplina D son cuatro constructos diferentes. R2/3 requiere evidencia de mecanismo de política concreta. Se preserva y revela la ausencia de piloto como limitación metodológica.
+
+### Preparación de los dos Excel privados en CEDIA
+
+~~~bash
+cd "$HOME/AI_policy"
+git pull --ff-only
+
+if python scripts/30_prepare_full1200_validation.py \
+  --project "$HOME/ai_policy_he" \
+  --phase05-key "$HOME/ai_policy_validation_private/sampling_key.csv" \
+  --phase05-report reports/phase05/sample_aggregate.json \
+  --codebook docs/phase30_full_validation_codebook_v1.0.md \
+  --private-out "$HOME/ai_policy_validation1200_private" \
+  --out reports/phase30; then
+  git add reports/phase30
+  git diff --cached --quiet || git commit -m "Phase30: prepare new independent full 1200-record validation"
+  git push origin main
+else
+  echo "ERROR: Phase30 stopped; do NOT publish private XLSX"
+fi
+~~~
+
+Archivos exclusivos de carpeta privada **FUERA** de GitHub:
+- Validacion_1200_A.xlsx: enviar SOLO al experto A.
+- Validacion_1200_B.xlsx: enviar SOLO al experto B.
+- Rubrica_Validacion_V1.md: enviar COPIA idéntica a cada evaluador.
+- private_sampling_key.csv: nunca entregar a los evaluadores ni publicar.
+- private_locked_manifest.json: contiene hashes SHA256 de fuente, rúbrica y hojas originales. Preservar privado.
+
+Los formularios tienen los mismos 1.200 artículos con orden distinto. Todos los campos de valoración están VACÍOS. NO hay respuestas humanas fabricadas. Guardar los Excel originales en carpeta protegida y mantener los completados como COPIAS separadas. Al concluir ambas evaluaciones, se implementará verificación estricta, cálculo de concordancia, arbitraje independiente y solicitud de texto completo para los no decidibles.
+
+La muestra n=1.200 tiene precisión de diseño razonable para proporciones globales, pero puede ser insuficiente para identificar con gran precisión sensibilidad de la clase directa R3, dado que es rara. Los estratos exclude (18) son solo los negativos al FINAL del cribado automático: no son toda la población descartada en fases bibliográficas previas. Nunca reportar precisión/sensibilidad de todo el embudo sin analizar ese marco aparte.
