@@ -111,7 +111,35 @@ def make_map(private,blank_ambiguous):
     return output
 
 
-def scenario(with_mapping=False,blank_ambiguous=False):
+
+def corrected_QA_from_mapping(qafile,mapping,target):
+    import zipfile, xml.etree.ElementTree as ET
+    excel=module("17_excel_reviewer_packages.py","p25_source_reader")
+    with zipfile.ZipFile(mapping) as z:
+        source=excel.xlsx_sheet(z,"xl/worksheets/sheet1.xml",[])
+    normalized={r[0]:r[6] for r in source[1:]}
+    with zipfile.ZipFile(qafile) as inp:
+        with zipfile.ZipFile(target,"w",compression=zipfile.ZIP_DEFLATED) as out:
+            for info in inp.infolist():
+                payload=inp.read(info.filename)
+                if info.filename=="xl/worksheets/sheet2.xml":
+                    xml=ET.fromstring(payload)
+                    for c in xml.findall(f".//{{{NS}}}sheetData/{{{NS}}}row/{{{NS}}}c"):
+                        ref=c.get("r","")
+                        letters="".join(x for x in ref if x.isalpha())
+                        row=int("".join(x for x in ref if x.isdigit()))
+                        if row<2 or letters not in ("H","I"):
+                            continue
+                        code=f"Q{row-1:04d}"
+                        node=c.find(f"{{{NS}}}is/{{{NS}}}t")
+                        if letters=="H":
+                            node.text=normalized[code]
+                        else:
+                            node.text="Revised later QA justification; independent original remains unchanged."
+                    payload=ET.tostring(xml,encoding="utf-8",xml_declaration=True)
+                out.writestr(info,payload)
+
+def scenario(with_mapping=False,blank_ambiguous=False,corrected=False):
     with tempfile.TemporaryDirectory() as td:
         root=Path(td)
         private,p05,p21=make_originals(root)
@@ -146,6 +174,10 @@ def scenario(with_mapping=False,blank_ambiguous=False):
         if with_mapping:
             mapfile=make_map(p24dir,blank_ambiguous)
             arguments+=["--normalization-xlsx",mapfile]
+            if corrected and not blank_ambiguous:
+                corrected_file=p24dir/"QA_corregido.xlsx"
+                corrected_QA_from_mapping(received,mapfile,corrected_file)
+                arguments+=["--qa-corrected-xlsx",corrected_file]
         run(S25,*arguments)
         public=json.loads((root/"report25/independent_screening_qa_aggregate.json").read_text())
         out=json.dumps(public)
@@ -179,6 +211,15 @@ class TestPhase25(unittest.TestCase):
             "post_hoc_normalized_mixed_analyst_and_expert")
         self.assertEqual(r["results"]["independent_QA_relevance_vs_prior_human_consensus"][
             "paired_all_including_9"],80)
+
+    def test_corrected_qa_revised_policy_and_reason_are_tracked(self):
+        r=scenario(True,False,corrected=True)
+        provenance=r["corrected_QA_provenance"]
+        self.assertEqual(provenance["corrected_file_items"],80)
+        self.assertEqual(provenance["revised_policy_code_rows"],80)
+        self.assertEqual(provenance["revised_justification_rows"],80)
+        self.assertTrue(provenance["original_QA_relevance_and_discipline_unchanged"])
+        self.assertTrue(provenance["normalized_policy_matches_corrected_workbook"])
 
 
 if __name__=="__main__":
