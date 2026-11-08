@@ -84,7 +84,7 @@ def sample_case(disputes,fill):
         original_xlsx=priv/"Adjudicacion_Ciega_Fase18.xlsx"
         returned=home/"Adjudicacion_COMPLETADA.xlsx"
         if fill:
-            fill_workbook(original_xlsx,returned,disputes)
+            fill_workbook(original_xlsx,returned,2 if disputes else 0)
         else:
             import shutil
             shutil.copy2(original_xlsx,returned)
