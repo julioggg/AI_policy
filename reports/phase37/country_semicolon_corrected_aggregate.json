@@ -1,0 +1,1471 @@
+{
+  "created_utc": "2026-11-08T08:13:37.180453+00:00",
+  "status": "phase37_corrected_semicolon_ISO2_country_incidence_with_remaining_source_cautions",
+  "supersedes_phase36_country_results_only": true,
+  "phase36_original_report_preserved_unchanged": true,
+  "frame_n": 10283,
+  "included_n": 10265,
+  "attempt_n": 5000,
+  "available_fulltext_n": 3656,
+  "country_parser": "Previously recognized structured countries + strict ISO-2 semicolon-delimited country lists; no name/ISO conflation or inferred unknown codes",
+  "included_country_parser_diagnostics": {
+    "previously_recognized": 5817,
+    "semicolon_iso2_recovered": 1685,
+    "empty": 2763
+  },
+  "fulltext_country_parser_diagnostics": {
+    "semicolon_iso2_recovered": 587,
+    "previously_recognized": 2214,
+    "empty": 855
+  },
+  "comparison_included_vs_fulltext": {
+    "comparison": "included_10265_vs_fulltext_3656_semicolon_corrected",
+    "parent_records_n": 10265,
+    "subset_records_n": 3656,
+    "parent_missing_country_n": 2763,
+    "subset_missing_country_n": 855,
+    "parent_malformed_country_n": 0,
+    "subset_malformed_country_n": 0,
+    "multi_country_incidence": "A paper may have multiple countries: percentages and differences need not total 100%, not a multinomial composition.",
+    "country_reports_min_parent_count": 20,
+    "suppressed_country_count": 81,
+    "frequent_country_incidence": [
+      {
+        "country": "US",
+        "parent_records_with_country": 1524,
+        "subset_records_with_country": 498,
+        "parent_percent": 14.847,
+        "subset_percent": 13.621,
+        "difference_percentage_points": -1.225
+      },
+      {
+        "country": "CN",
+        "parent_records_with_country": 740,
+        "subset_records_with_country": 262,
+        "parent_percent": 7.209,
+        "subset_percent": 7.166,
+        "difference_percentage_points": -0.043
+      },
+      {
+        "country": "GB",
+        "parent_records_with_country": 654,
+        "subset_records_with_country": 202,
+        "parent_percent": 6.371,
+        "subset_percent": 5.525,
+        "difference_percentage_points": -0.846
+      },
+      {
+        "country": "ID",
+        "parent_records_with_country": 492,
+        "subset_records_with_country": 216,
+        "parent_percent": 4.793,
+        "subset_percent": 5.908,
+        "difference_percentage_points": 1.115
+      },
+      {
+        "country": "AU",
+        "parent_records_with_country": 426,
+        "subset_records_with_country": 163,
+        "parent_percent": 4.15,
+        "subset_percent": 4.458,
+        "difference_percentage_points": 0.308
+      },
+      {
+        "country": "SA",
+        "parent_records_with_country": 276,
+        "subset_records_with_country": 88,
+        "parent_percent": 2.689,
+        "subset_percent": 2.407,
+        "difference_percentage_points": -0.282
+      },
+      {
+        "country": "CA",
+        "parent_records_with_country": 273,
+        "subset_records_with_country": 101,
+        "parent_percent": 2.66,
+        "subset_percent": 2.763,
+        "difference_percentage_points": 0.103
+      },
+      {
+        "country": "IN",
+        "parent_records_with_country": 270,
+        "subset_records_with_country": 94,
+        "parent_percent": 2.63,
+        "subset_percent": 2.571,
+        "difference_percentage_points": -0.059
+      },
+      {
+        "country": "MY",
+        "parent_records_with_country": 240,
+        "subset_records_with_country": 105,
+        "parent_percent": 2.338,
+        "subset_percent": 2.872,
+        "difference_percentage_points": 0.534
+      },
+      {
+        "country": "TR",
+        "parent_records_with_country": 233,
+        "subset_records_with_country": 83,
+        "parent_percent": 2.27,
+        "subset_percent": 2.27,
+        "difference_percentage_points": 0.0
+      },
+      {
+        "country": "DE",
+        "parent_records_with_country": 227,
+        "subset_records_with_country": 78,
+        "parent_percent": 2.211,
+        "subset_percent": 2.133,
+        "difference_percentage_points": -0.078
+      },
+      {
+        "country": "ES",
+        "parent_records_with_country": 209,
+        "subset_records_with_country": 73,
+        "parent_percent": 2.036,
+        "subset_percent": 1.997,
+        "difference_percentage_points": -0.039
+      },
+      {
+        "country": "PK",
+        "parent_records_with_country": 207,
+        "subset_records_with_country": 74,
+        "parent_percent": 2.017,
+        "subset_percent": 2.024,
+        "difference_percentage_points": 0.008
+      },
+      {
+        "country": "PH",
+        "parent_records_with_country": 181,
+        "subset_records_with_country": 85,
+        "parent_percent": 1.763,
+        "subset_percent": 2.325,
+        "difference_percentage_points": 0.562
+      },
+      {
+        "country": "ZA",
+        "parent_records_with_country": 167,
+        "subset_records_with_country": 90,
+        "parent_percent": 1.627,
+        "subset_percent": 2.462,
+        "difference_percentage_points": 0.835
+      },
+      {
+        "country": "HK",
+        "parent_records_with_country": 149,
+        "subset_records_with_country": 50,
+        "parent_percent": 1.452,
+        "subset_percent": 1.368,
+        "difference_percentage_points": -0.084
+      },
+      {
+        "country": "AE",
+        "parent_records_with_country": 142,
+        "subset_records_with_country": 58,
+        "parent_percent": 1.383,
+        "subset_percent": 1.586,
+        "difference_percentage_points": 0.203
+      },
+      {
+        "country": "KR",
+        "parent_records_with_country": 137,
+        "subset_records_with_country": 43,
+        "parent_percent": 1.335,
+        "subset_percent": 1.176,
+        "difference_percentage_points": -0.158
+      },
+      {
+        "country": "JP",
+        "parent_records_with_country": 128,
+        "subset_records_with_country": 43,
+        "parent_percent": 1.247,
+        "subset_percent": 1.176,
+        "difference_percentage_points": -0.071
+      },
+      {
+        "country": "VN",
+        "parent_records_with_country": 124,
+        "subset_records_with_country": 61,
+        "parent_percent": 1.208,
+        "subset_percent": 1.668,
+        "difference_percentage_points": 0.461
+      },
+      {
+        "country": "IT",
+        "parent_records_with_country": 118,
+        "subset_records_with_country": 22,
+        "parent_percent": 1.15,
+        "subset_percent": 0.602,
+        "difference_percentage_points": -0.548
+      },
+      {
+        "country": "MX",
+        "parent_records_with_country": 98,
+        "subset_records_with_country": 44,
+        "parent_percent": 0.955,
+        "subset_percent": 1.204,
+        "difference_percentage_points": 0.249
+      },
+      {
+        "country": "RU",
+        "parent_records_with_country": 97,
+        "subset_records_with_country": 55,
+        "parent_percent": 0.945,
+        "subset_percent": 1.504,
+        "difference_percentage_points": 0.559
+      },
+      {
+        "country": "SE",
+        "parent_records_with_country": 93,
+        "subset_records_with_country": 28,
+        "parent_percent": 0.906,
+        "subset_percent": 0.766,
+        "difference_percentage_points": -0.14
+      },
+      {
+        "country": "JO",
+        "parent_records_with_country": 92,
+        "subset_records_with_country": 39,
+        "parent_percent": 0.896,
+        "subset_percent": 1.067,
+        "difference_percentage_points": 0.17
+      },
+      {
+        "country": "UA",
+        "parent_records_with_country": 92,
+        "subset_records_with_country": 35,
+        "parent_percent": 0.896,
+        "subset_percent": 0.957,
+        "difference_percentage_points": 0.061
+      },
+      {
+        "country": "NL",
+        "parent_records_with_country": 91,
+        "subset_records_with_country": 23,
+        "parent_percent": 0.887,
+        "subset_percent": 0.629,
+        "difference_percentage_points": -0.257
+      },
+      {
+        "country": "TW",
+        "parent_records_with_country": 90,
+        "subset_records_with_country": 30,
+        "parent_percent": 0.877,
+        "subset_percent": 0.821,
+        "difference_percentage_points": -0.056
+      },
+      {
+        "country": "SG",
+        "parent_records_with_country": 86,
+        "subset_records_with_country": 30,
+        "parent_percent": 0.838,
+        "subset_percent": 0.821,
+        "difference_percentage_points": -0.017
+      },
+      {
+        "country": "NG",
+        "parent_records_with_country": 85,
+        "subset_records_with_country": 39,
+        "parent_percent": 0.828,
+        "subset_percent": 1.067,
+        "difference_percentage_points": 0.239
+      },
+      {
+        "country": "BR",
+        "parent_records_with_country": 80,
+        "subset_records_with_country": 33,
+        "parent_percent": 0.779,
+        "subset_percent": 0.903,
+        "difference_percentage_points": 0.123
+      },
+      {
+        "country": "GR",
+        "parent_records_with_country": 80,
+        "subset_records_with_country": 30,
+        "parent_percent": 0.779,
+        "subset_percent": 0.821,
+        "difference_percentage_points": 0.041
+      },
+      {
+        "country": "CH",
+        "parent_records_with_country": 79,
+        "subset_records_with_country": 20,
+        "parent_percent": 0.77,
+        "subset_percent": 0.547,
+        "difference_percentage_points": -0.223
+      },
+      {
+        "country": "TH",
+        "parent_records_with_country": 79,
+        "subset_records_with_country": 32,
+        "parent_percent": 0.77,
+        "subset_percent": 0.875,
+        "difference_percentage_points": 0.106
+      },
+      {
+        "country": "EG",
+        "parent_records_with_country": 76,
+        "subset_records_with_country": 21,
+        "parent_percent": 0.74,
+        "subset_percent": 0.574,
+        "difference_percentage_points": -0.166
+      },
+      {
+        "country": "BD",
+        "parent_records_with_country": 72,
+        "subset_records_with_country": 24,
+        "parent_percent": 0.701,
+        "subset_percent": 0.656,
+        "difference_percentage_points": -0.045
+      },
+      {
+        "country": "IE",
+        "parent_records_with_country": 67,
+        "subset_records_with_country": 22,
+        "parent_percent": 0.653,
+        "subset_percent": 0.602,
+        "difference_percentage_points": -0.051
+      },
+      {
+        "country": "PT",
+        "parent_records_with_country": 62,
+        "subset_records_with_country": 27,
+        "parent_percent": 0.604,
+        "subset_percent": 0.739,
+        "difference_percentage_points": 0.135
+      },
+      {
+        "country": "PL",
+        "parent_records_with_country": 61,
+        "subset_records_with_country": 20,
+        "parent_percent": 0.594,
+        "subset_percent": 0.547,
+        "difference_percentage_points": -0.047
+      },
+      {
+        "country": "EC",
+        "parent_records_with_country": 60,
+        "subset_records_with_country": 34,
+        "parent_percent": 0.585,
+        "subset_percent": 0.93,
+        "difference_percentage_points": 0.345
+      },
+      {
+        "country": "NZ",
+        "parent_records_with_country": 60,
+        "subset_records_with_country": 20,
+        "parent_percent": 0.585,
+        "subset_percent": 0.547,
+        "difference_percentage_points": -0.037
+      },
+      {
+        "country": "FR",
+        "parent_records_with_country": 59,
+        "subset_records_with_country": 18,
+        "parent_percent": 0.575,
+        "subset_percent": 0.492,
+        "difference_percentage_points": -0.082
+      },
+      {
+        "country": "RO",
+        "parent_records_with_country": 56,
+        "subset_records_with_country": 25,
+        "parent_percent": 0.546,
+        "subset_percent": 0.684,
+        "difference_percentage_points": 0.138
+      },
+      {
+        "country": "AT",
+        "parent_records_with_country": 55,
+        "subset_records_with_country": 21,
+        "parent_percent": 0.536,
+        "subset_percent": 0.574,
+        "difference_percentage_points": 0.039
+      },
+      {
+        "country": "OM",
+        "parent_records_with_country": 55,
+        "subset_records_with_country": 19,
+        "parent_percent": 0.536,
+        "subset_percent": 0.52,
+        "difference_percentage_points": -0.016
+      },
+      {
+        "country": "PE",
+        "parent_records_with_country": 54,
+        "subset_records_with_country": 31,
+        "parent_percent": 0.526,
+        "subset_percent": 0.848,
+        "difference_percentage_points": 0.322
+      },
+      {
+        "country": "NO",
+        "parent_records_with_country": 53,
+        "subset_records_with_country": 15,
+        "parent_percent": 0.516,
+        "subset_percent": 0.41,
+        "difference_percentage_points": -0.106
+      },
+      {
+        "country": "FI",
+        "parent_records_with_country": 49,
+        "subset_records_with_country": 17,
+        "parent_percent": 0.477,
+        "subset_percent": 0.465,
+        "difference_percentage_points": -0.012
+      },
+      {
+        "country": "IR",
+        "parent_records_with_country": 48,
+        "subset_records_with_country": 17,
+        "parent_percent": 0.468,
+        "subset_percent": 0.465,
+        "difference_percentage_points": -0.003
+      },
+      {
+        "country": "IL",
+        "parent_records_with_country": 47,
+        "subset_records_with_country": 17,
+        "parent_percent": 0.458,
+        "subset_percent": 0.465,
+        "difference_percentage_points": 0.007
+      },
+      {
+        "country": "DK",
+        "parent_records_with_country": 44,
+        "subset_records_with_country": 13,
+        "parent_percent": 0.429,
+        "subset_percent": 0.356,
+        "difference_percentage_points": -0.073
+      },
+      {
+        "country": "GH",
+        "parent_records_with_country": 44,
+        "subset_records_with_country": 17,
+        "parent_percent": 0.429,
+        "subset_percent": 0.465,
+        "difference_percentage_points": 0.036
+      },
+      {
+        "country": "CZ",
+        "parent_records_with_country": 37,
+        "subset_records_with_country": 15,
+        "parent_percent": 0.36,
+        "subset_percent": 0.41,
+        "difference_percentage_points": 0.05
+      },
+      {
+        "country": "IQ",
+        "parent_records_with_country": 37,
+        "subset_records_with_country": 13,
+        "parent_percent": 0.36,
+        "subset_percent": 0.356,
+        "difference_percentage_points": -0.005
+      },
+      {
+        "country": "MO",
+        "parent_records_with_country": 37,
+        "subset_records_with_country": 6,
+        "parent_percent": 0.36,
+        "subset_percent": 0.164,
+        "difference_percentage_points": -0.196
+      },
+      {
+        "country": "HU",
+        "parent_records_with_country": 35,
+        "subset_records_with_country": 9,
+        "parent_percent": 0.341,
+        "subset_percent": 0.246,
+        "difference_percentage_points": -0.095
+      },
+      {
+        "country": "SI",
+        "parent_records_with_country": 32,
+        "subset_records_with_country": 8,
+        "parent_percent": 0.312,
+        "subset_percent": 0.219,
+        "difference_percentage_points": -0.093
+      },
+      {
+        "country": "BE",
+        "parent_records_with_country": 30,
+        "subset_records_with_country": 6,
+        "parent_percent": 0.292,
+        "subset_percent": 0.164,
+        "difference_percentage_points": -0.128
+      },
+      {
+        "country": "KZ",
+        "parent_records_with_country": 30,
+        "subset_records_with_country": 17,
+        "parent_percent": 0.292,
+        "subset_percent": 0.465,
+        "difference_percentage_points": 0.173
+      },
+      {
+        "country": "CY",
+        "parent_records_with_country": 29,
+        "subset_records_with_country": 10,
+        "parent_percent": 0.283,
+        "subset_percent": 0.274,
+        "difference_percentage_points": -0.009
+      },
+      {
+        "country": "CO",
+        "parent_records_with_country": 28,
+        "subset_records_with_country": 11,
+        "parent_percent": 0.273,
+        "subset_percent": 0.301,
+        "difference_percentage_points": 0.028
+      },
+      {
+        "country": "HR",
+        "parent_records_with_country": 28,
+        "subset_records_with_country": 11,
+        "parent_percent": 0.273,
+        "subset_percent": 0.301,
+        "difference_percentage_points": 0.028
+      },
+      {
+        "country": "KW",
+        "parent_records_with_country": 28,
+        "subset_records_with_country": 14,
+        "parent_percent": 0.273,
+        "subset_percent": 0.383,
+        "difference_percentage_points": 0.11
+      },
+      {
+        "country": "MA",
+        "parent_records_with_country": 26,
+        "subset_records_with_country": 9,
+        "parent_percent": 0.253,
+        "subset_percent": 0.246,
+        "difference_percentage_points": -0.007
+      },
+      {
+        "country": "SK",
+        "parent_records_with_country": 26,
+        "subset_records_with_country": 6,
+        "parent_percent": 0.253,
+        "subset_percent": 0.164,
+        "difference_percentage_points": -0.089
+      },
+      {
+        "country": "BG",
+        "parent_records_with_country": 25,
+        "subset_records_with_country": 4,
+        "parent_percent": 0.244,
+        "subset_percent": 0.109,
+        "difference_percentage_points": -0.134
+      },
+      {
+        "country": "LB",
+        "parent_records_with_country": 25,
+        "subset_records_with_country": 6,
+        "parent_percent": 0.244,
+        "subset_percent": 0.164,
+        "difference_percentage_points": -0.079
+      },
+      {
+        "country": "PS",
+        "parent_records_with_country": 25,
+        "subset_records_with_country": 10,
+        "parent_percent": 0.244,
+        "subset_percent": 0.274,
+        "difference_percentage_points": 0.03
+      },
+      {
+        "country": "LK",
+        "parent_records_with_country": 24,
+        "subset_records_with_country": 7,
+        "parent_percent": 0.234,
+        "subset_percent": 0.191,
+        "difference_percentage_points": -0.042
+      },
+      {
+        "country": "LV",
+        "parent_records_with_country": 24,
+        "subset_records_with_country": 8,
+        "parent_percent": 0.234,
+        "subset_percent": 0.219,
+        "difference_percentage_points": -0.015
+      },
+      {
+        "country": "MK",
+        "parent_records_with_country": 24,
+        "subset_records_with_country": 8,
+        "parent_percent": 0.234,
+        "subset_percent": 0.219,
+        "difference_percentage_points": -0.015
+      },
+      {
+        "country": "QA",
+        "parent_records_with_country": 24,
+        "subset_records_with_country": 6,
+        "parent_percent": 0.234,
+        "subset_percent": 0.164,
+        "difference_percentage_points": -0.07
+      },
+      {
+        "country": "CL",
+        "parent_records_with_country": 21,
+        "subset_records_with_country": 7,
+        "parent_percent": 0.205,
+        "subset_percent": 0.191,
+        "difference_percentage_points": -0.013
+      },
+      {
+        "country": "TZ",
+        "parent_records_with_country": 21,
+        "subset_records_with_country": 6,
+        "parent_percent": 0.205,
+        "subset_percent": 0.164,
+        "difference_percentage_points": -0.04
+      }
+    ],
+    "largest_absolute_differences": [
+      {
+        "country": "US",
+        "parent_records_with_country": 1524,
+        "subset_records_with_country": 498,
+        "parent_percent": 14.847,
+        "subset_percent": 13.621,
+        "difference_percentage_points": -1.225
+      },
+      {
+        "country": "ID",
+        "parent_records_with_country": 492,
+        "subset_records_with_country": 216,
+        "parent_percent": 4.793,
+        "subset_percent": 5.908,
+        "difference_percentage_points": 1.115
+      },
+      {
+        "country": "GB",
+        "parent_records_with_country": 654,
+        "subset_records_with_country": 202,
+        "parent_percent": 6.371,
+        "subset_percent": 5.525,
+        "difference_percentage_points": -0.846
+      },
+      {
+        "country": "ZA",
+        "parent_records_with_country": 167,
+        "subset_records_with_country": 90,
+        "parent_percent": 1.627,
+        "subset_percent": 2.462,
+        "difference_percentage_points": 0.835
+      },
+      {
+        "country": "PH",
+        "parent_records_with_country": 181,
+        "subset_records_with_country": 85,
+        "parent_percent": 1.763,
+        "subset_percent": 2.325,
+        "difference_percentage_points": 0.562
+      },
+      {
+        "country": "RU",
+        "parent_records_with_country": 97,
+        "subset_records_with_country": 55,
+        "parent_percent": 0.945,
+        "subset_percent": 1.504,
+        "difference_percentage_points": 0.559
+      },
+      {
+        "country": "IT",
+        "parent_records_with_country": 118,
+        "subset_records_with_country": 22,
+        "parent_percent": 1.15,
+        "subset_percent": 0.602,
+        "difference_percentage_points": -0.548
+      },
+      {
+        "country": "MY",
+        "parent_records_with_country": 240,
+        "subset_records_with_country": 105,
+        "parent_percent": 2.338,
+        "subset_percent": 2.872,
+        "difference_percentage_points": 0.534
+      },
+      {
+        "country": "VN",
+        "parent_records_with_country": 124,
+        "subset_records_with_country": 61,
+        "parent_percent": 1.208,
+        "subset_percent": 1.668,
+        "difference_percentage_points": 0.461
+      },
+      {
+        "country": "EC",
+        "parent_records_with_country": 60,
+        "subset_records_with_country": 34,
+        "parent_percent": 0.585,
+        "subset_percent": 0.93,
+        "difference_percentage_points": 0.345
+      },
+      {
+        "country": "PE",
+        "parent_records_with_country": 54,
+        "subset_records_with_country": 31,
+        "parent_percent": 0.526,
+        "subset_percent": 0.848,
+        "difference_percentage_points": 0.322
+      },
+      {
+        "country": "AU",
+        "parent_records_with_country": 426,
+        "subset_records_with_country": 163,
+        "parent_percent": 4.15,
+        "subset_percent": 4.458,
+        "difference_percentage_points": 0.308
+      }
+    ]
+  },
+  "comparison_included_vs_DOI_proxy_attempts": {
+    "comparison": "included_10265_vs_DOI_linked_attempts_4834_semicolon_corrected",
+    "parent_records_n": 10265,
+    "subset_records_n": 4834,
+    "parent_missing_country_n": 2763,
+    "subset_missing_country_n": 986,
+    "parent_malformed_country_n": 0,
+    "subset_malformed_country_n": 0,
+    "multi_country_incidence": "A paper may have multiple countries: percentages and differences need not total 100%, not a multinomial composition.",
+    "country_reports_min_parent_count": 20,
+    "suppressed_country_count": 81,
+    "frequent_country_incidence": [
+      {
+        "country": "US",
+        "parent_records_with_country": 1524,
+        "subset_records_with_country": 718,
+        "parent_percent": 14.847,
+        "subset_percent": 14.853,
+        "difference_percentage_points": 0.007
+      },
+      {
+        "country": "CN",
+        "parent_records_with_country": 740,
+        "subset_records_with_country": 373,
+        "parent_percent": 7.209,
+        "subset_percent": 7.716,
+        "difference_percentage_points": 0.507
+      },
+      {
+        "country": "GB",
+        "parent_records_with_country": 654,
+        "subset_records_with_country": 330,
+        "parent_percent": 6.371,
+        "subset_percent": 6.827,
+        "difference_percentage_points": 0.455
+      },
+      {
+        "country": "ID",
+        "parent_records_with_country": 492,
+        "subset_records_with_country": 263,
+        "parent_percent": 4.793,
+        "subset_percent": 5.441,
+        "difference_percentage_points": 0.648
+      },
+      {
+        "country": "AU",
+        "parent_records_with_country": 426,
+        "subset_records_with_country": 226,
+        "parent_percent": 4.15,
+        "subset_percent": 4.675,
+        "difference_percentage_points": 0.525
+      },
+      {
+        "country": "SA",
+        "parent_records_with_country": 276,
+        "subset_records_with_country": 126,
+        "parent_percent": 2.689,
+        "subset_percent": 2.607,
+        "difference_percentage_points": -0.082
+      },
+      {
+        "country": "CA",
+        "parent_records_with_country": 273,
+        "subset_records_with_country": 133,
+        "parent_percent": 2.66,
+        "subset_percent": 2.751,
+        "difference_percentage_points": 0.092
+      },
+      {
+        "country": "IN",
+        "parent_records_with_country": 270,
+        "subset_records_with_country": 129,
+        "parent_percent": 2.63,
+        "subset_percent": 2.669,
+        "difference_percentage_points": 0.038
+      },
+      {
+        "country": "MY",
+        "parent_records_with_country": 240,
+        "subset_records_with_country": 124,
+        "parent_percent": 2.338,
+        "subset_percent": 2.565,
+        "difference_percentage_points": 0.227
+      },
+      {
+        "country": "TR",
+        "parent_records_with_country": 233,
+        "subset_records_with_country": 102,
+        "parent_percent": 2.27,
+        "subset_percent": 2.11,
+        "difference_percentage_points": -0.16
+      },
+      {
+        "country": "DE",
+        "parent_records_with_country": 227,
+        "subset_records_with_country": 104,
+        "parent_percent": 2.211,
+        "subset_percent": 2.151,
+        "difference_percentage_points": -0.06
+      },
+      {
+        "country": "ES",
+        "parent_records_with_country": 209,
+        "subset_records_with_country": 122,
+        "parent_percent": 2.036,
+        "subset_percent": 2.524,
+        "difference_percentage_points": 0.488
+      },
+      {
+        "country": "PK",
+        "parent_records_with_country": 207,
+        "subset_records_with_country": 107,
+        "parent_percent": 2.017,
+        "subset_percent": 2.213,
+        "difference_percentage_points": 0.197
+      },
+      {
+        "country": "PH",
+        "parent_records_with_country": 181,
+        "subset_records_with_country": 101,
+        "parent_percent": 1.763,
+        "subset_percent": 2.089,
+        "difference_percentage_points": 0.326
+      },
+      {
+        "country": "ZA",
+        "parent_records_with_country": 167,
+        "subset_records_with_country": 110,
+        "parent_percent": 1.627,
+        "subset_percent": 2.276,
+        "difference_percentage_points": 0.649
+      },
+      {
+        "country": "HK",
+        "parent_records_with_country": 149,
+        "subset_records_with_country": 69,
+        "parent_percent": 1.452,
+        "subset_percent": 1.427,
+        "difference_percentage_points": -0.024
+      },
+      {
+        "country": "AE",
+        "parent_records_with_country": 142,
+        "subset_records_with_country": 76,
+        "parent_percent": 1.383,
+        "subset_percent": 1.572,
+        "difference_percentage_points": 0.189
+      },
+      {
+        "country": "KR",
+        "parent_records_with_country": 137,
+        "subset_records_with_country": 66,
+        "parent_percent": 1.335,
+        "subset_percent": 1.365,
+        "difference_percentage_points": 0.031
+      },
+      {
+        "country": "JP",
+        "parent_records_with_country": 128,
+        "subset_records_with_country": 53,
+        "parent_percent": 1.247,
+        "subset_percent": 1.096,
+        "difference_percentage_points": -0.151
+      },
+      {
+        "country": "VN",
+        "parent_records_with_country": 124,
+        "subset_records_with_country": 72,
+        "parent_percent": 1.208,
+        "subset_percent": 1.489,
+        "difference_percentage_points": 0.281
+      },
+      {
+        "country": "IT",
+        "parent_records_with_country": 118,
+        "subset_records_with_country": 39,
+        "parent_percent": 1.15,
+        "subset_percent": 0.807,
+        "difference_percentage_points": -0.343
+      },
+      {
+        "country": "MX",
+        "parent_records_with_country": 98,
+        "subset_records_with_country": 64,
+        "parent_percent": 0.955,
+        "subset_percent": 1.324,
+        "difference_percentage_points": 0.369
+      },
+      {
+        "country": "RU",
+        "parent_records_with_country": 97,
+        "subset_records_with_country": 63,
+        "parent_percent": 0.945,
+        "subset_percent": 1.303,
+        "difference_percentage_points": 0.358
+      },
+      {
+        "country": "SE",
+        "parent_records_with_country": 93,
+        "subset_records_with_country": 45,
+        "parent_percent": 0.906,
+        "subset_percent": 0.931,
+        "difference_percentage_points": 0.025
+      },
+      {
+        "country": "JO",
+        "parent_records_with_country": 92,
+        "subset_records_with_country": 50,
+        "parent_percent": 0.896,
+        "subset_percent": 1.034,
+        "difference_percentage_points": 0.138
+      },
+      {
+        "country": "UA",
+        "parent_records_with_country": 92,
+        "subset_records_with_country": 51,
+        "parent_percent": 0.896,
+        "subset_percent": 1.055,
+        "difference_percentage_points": 0.159
+      },
+      {
+        "country": "NL",
+        "parent_records_with_country": 91,
+        "subset_records_with_country": 35,
+        "parent_percent": 0.887,
+        "subset_percent": 0.724,
+        "difference_percentage_points": -0.162
+      },
+      {
+        "country": "TW",
+        "parent_records_with_country": 90,
+        "subset_records_with_country": 39,
+        "parent_percent": 0.877,
+        "subset_percent": 0.807,
+        "difference_percentage_points": -0.07
+      },
+      {
+        "country": "SG",
+        "parent_records_with_country": 86,
+        "subset_records_with_country": 46,
+        "parent_percent": 0.838,
+        "subset_percent": 0.952,
+        "difference_percentage_points": 0.114
+      },
+      {
+        "country": "NG",
+        "parent_records_with_country": 85,
+        "subset_records_with_country": 46,
+        "parent_percent": 0.828,
+        "subset_percent": 0.952,
+        "difference_percentage_points": 0.124
+      },
+      {
+        "country": "BR",
+        "parent_records_with_country": 80,
+        "subset_records_with_country": 48,
+        "parent_percent": 0.779,
+        "subset_percent": 0.993,
+        "difference_percentage_points": 0.214
+      },
+      {
+        "country": "GR",
+        "parent_records_with_country": 80,
+        "subset_records_with_country": 50,
+        "parent_percent": 0.779,
+        "subset_percent": 1.034,
+        "difference_percentage_points": 0.255
+      },
+      {
+        "country": "CH",
+        "parent_records_with_country": 79,
+        "subset_records_with_country": 30,
+        "parent_percent": 0.77,
+        "subset_percent": 0.621,
+        "difference_percentage_points": -0.149
+      },
+      {
+        "country": "TH",
+        "parent_records_with_country": 79,
+        "subset_records_with_country": 39,
+        "parent_percent": 0.77,
+        "subset_percent": 0.807,
+        "difference_percentage_points": 0.037
+      },
+      {
+        "country": "EG",
+        "parent_records_with_country": 76,
+        "subset_records_with_country": 34,
+        "parent_percent": 0.74,
+        "subset_percent": 0.703,
+        "difference_percentage_points": -0.037
+      },
+      {
+        "country": "BD",
+        "parent_records_with_country": 72,
+        "subset_records_with_country": 34,
+        "parent_percent": 0.701,
+        "subset_percent": 0.703,
+        "difference_percentage_points": 0.002
+      },
+      {
+        "country": "IE",
+        "parent_records_with_country": 67,
+        "subset_records_with_country": 30,
+        "parent_percent": 0.653,
+        "subset_percent": 0.621,
+        "difference_percentage_points": -0.032
+      },
+      {
+        "country": "PT",
+        "parent_records_with_country": 62,
+        "subset_records_with_country": 36,
+        "parent_percent": 0.604,
+        "subset_percent": 0.745,
+        "difference_percentage_points": 0.141
+      },
+      {
+        "country": "PL",
+        "parent_records_with_country": 61,
+        "subset_records_with_country": 23,
+        "parent_percent": 0.594,
+        "subset_percent": 0.476,
+        "difference_percentage_points": -0.118
+      },
+      {
+        "country": "EC",
+        "parent_records_with_country": 60,
+        "subset_records_with_country": 47,
+        "parent_percent": 0.585,
+        "subset_percent": 0.972,
+        "difference_percentage_points": 0.388
+      },
+      {
+        "country": "NZ",
+        "parent_records_with_country": 60,
+        "subset_records_with_country": 28,
+        "parent_percent": 0.585,
+        "subset_percent": 0.579,
+        "difference_percentage_points": -0.005
+      },
+      {
+        "country": "FR",
+        "parent_records_with_country": 59,
+        "subset_records_with_country": 25,
+        "parent_percent": 0.575,
+        "subset_percent": 0.517,
+        "difference_percentage_points": -0.058
+      },
+      {
+        "country": "RO",
+        "parent_records_with_country": 56,
+        "subset_records_with_country": 31,
+        "parent_percent": 0.546,
+        "subset_percent": 0.641,
+        "difference_percentage_points": 0.096
+      },
+      {
+        "country": "AT",
+        "parent_records_with_country": 55,
+        "subset_records_with_country": 28,
+        "parent_percent": 0.536,
+        "subset_percent": 0.579,
+        "difference_percentage_points": 0.043
+      },
+      {
+        "country": "OM",
+        "parent_records_with_country": 55,
+        "subset_records_with_country": 27,
+        "parent_percent": 0.536,
+        "subset_percent": 0.559,
+        "difference_percentage_points": 0.023
+      },
+      {
+        "country": "PE",
+        "parent_records_with_country": 54,
+        "subset_records_with_country": 42,
+        "parent_percent": 0.526,
+        "subset_percent": 0.869,
+        "difference_percentage_points": 0.343
+      },
+      {
+        "country": "NO",
+        "parent_records_with_country": 53,
+        "subset_records_with_country": 20,
+        "parent_percent": 0.516,
+        "subset_percent": 0.414,
+        "difference_percentage_points": -0.103
+      },
+      {
+        "country": "FI",
+        "parent_records_with_country": 49,
+        "subset_records_with_country": 25,
+        "parent_percent": 0.477,
+        "subset_percent": 0.517,
+        "difference_percentage_points": 0.04
+      },
+      {
+        "country": "IR",
+        "parent_records_with_country": 48,
+        "subset_records_with_country": 22,
+        "parent_percent": 0.468,
+        "subset_percent": 0.455,
+        "difference_percentage_points": -0.012
+      },
+      {
+        "country": "IL",
+        "parent_records_with_country": 47,
+        "subset_records_with_country": 31,
+        "parent_percent": 0.458,
+        "subset_percent": 0.641,
+        "difference_percentage_points": 0.183
+      },
+      {
+        "country": "DK",
+        "parent_records_with_country": 44,
+        "subset_records_with_country": 16,
+        "parent_percent": 0.429,
+        "subset_percent": 0.331,
+        "difference_percentage_points": -0.098
+      },
+      {
+        "country": "GH",
+        "parent_records_with_country": 44,
+        "subset_records_with_country": 24,
+        "parent_percent": 0.429,
+        "subset_percent": 0.496,
+        "difference_percentage_points": 0.068
+      },
+      {
+        "country": "CZ",
+        "parent_records_with_country": 37,
+        "subset_records_with_country": 22,
+        "parent_percent": 0.36,
+        "subset_percent": 0.455,
+        "difference_percentage_points": 0.095
+      },
+      {
+        "country": "IQ",
+        "parent_records_with_country": 37,
+        "subset_records_with_country": 16,
+        "parent_percent": 0.36,
+        "subset_percent": 0.331,
+        "difference_percentage_points": -0.029
+      },
+      {
+        "country": "MO",
+        "parent_records_with_country": 37,
+        "subset_records_with_country": 13,
+        "parent_percent": 0.36,
+        "subset_percent": 0.269,
+        "difference_percentage_points": -0.092
+      },
+      {
+        "country": "HU",
+        "parent_records_with_country": 35,
+        "subset_records_with_country": 13,
+        "parent_percent": 0.341,
+        "subset_percent": 0.269,
+        "difference_percentage_points": -0.072
+      },
+      {
+        "country": "SI",
+        "parent_records_with_country": 32,
+        "subset_records_with_country": 14,
+        "parent_percent": 0.312,
+        "subset_percent": 0.29,
+        "difference_percentage_points": -0.022
+      },
+      {
+        "country": "BE",
+        "parent_records_with_country": 30,
+        "subset_records_with_country": 12,
+        "parent_percent": 0.292,
+        "subset_percent": 0.248,
+        "difference_percentage_points": -0.044
+      },
+      {
+        "country": "KZ",
+        "parent_records_with_country": 30,
+        "subset_records_with_country": 18,
+        "parent_percent": 0.292,
+        "subset_percent": 0.372,
+        "difference_percentage_points": 0.08
+      },
+      {
+        "country": "CY",
+        "parent_records_with_country": 29,
+        "subset_records_with_country": 19,
+        "parent_percent": 0.283,
+        "subset_percent": 0.393,
+        "difference_percentage_points": 0.111
+      },
+      {
+        "country": "CO",
+        "parent_records_with_country": 28,
+        "subset_records_with_country": 18,
+        "parent_percent": 0.273,
+        "subset_percent": 0.372,
+        "difference_percentage_points": 0.1
+      },
+      {
+        "country": "HR",
+        "parent_records_with_country": 28,
+        "subset_records_with_country": 15,
+        "parent_percent": 0.273,
+        "subset_percent": 0.31,
+        "difference_percentage_points": 0.038
+      },
+      {
+        "country": "KW",
+        "parent_records_with_country": 28,
+        "subset_records_with_country": 15,
+        "parent_percent": 0.273,
+        "subset_percent": 0.31,
+        "difference_percentage_points": 0.038
+      },
+      {
+        "country": "MA",
+        "parent_records_with_country": 26,
+        "subset_records_with_country": 13,
+        "parent_percent": 0.253,
+        "subset_percent": 0.269,
+        "difference_percentage_points": 0.016
+      },
+      {
+        "country": "SK",
+        "parent_records_with_country": 26,
+        "subset_records_with_country": 8,
+        "parent_percent": 0.253,
+        "subset_percent": 0.165,
+        "difference_percentage_points": -0.088
+      },
+      {
+        "country": "BG",
+        "parent_records_with_country": 25,
+        "subset_records_with_country": 10,
+        "parent_percent": 0.244,
+        "subset_percent": 0.207,
+        "difference_percentage_points": -0.037
+      },
+      {
+        "country": "LB",
+        "parent_records_with_country": 25,
+        "subset_records_with_country": 7,
+        "parent_percent": 0.244,
+        "subset_percent": 0.145,
+        "difference_percentage_points": -0.099
+      },
+      {
+        "country": "PS",
+        "parent_records_with_country": 25,
+        "subset_records_with_country": 14,
+        "parent_percent": 0.244,
+        "subset_percent": 0.29,
+        "difference_percentage_points": 0.046
+      },
+      {
+        "country": "LK",
+        "parent_records_with_country": 24,
+        "subset_records_with_country": 11,
+        "parent_percent": 0.234,
+        "subset_percent": 0.228,
+        "difference_percentage_points": -0.006
+      },
+      {
+        "country": "LV",
+        "parent_records_with_country": 24,
+        "subset_records_with_country": 12,
+        "parent_percent": 0.234,
+        "subset_percent": 0.248,
+        "difference_percentage_points": 0.014
+      },
+      {
+        "country": "MK",
+        "parent_records_with_country": 24,
+        "subset_records_with_country": 12,
+        "parent_percent": 0.234,
+        "subset_percent": 0.248,
+        "difference_percentage_points": 0.014
+      },
+      {
+        "country": "QA",
+        "parent_records_with_country": 24,
+        "subset_records_with_country": 15,
+        "parent_percent": 0.234,
+        "subset_percent": 0.31,
+        "difference_percentage_points": 0.076
+      },
+      {
+        "country": "CL",
+        "parent_records_with_country": 21,
+        "subset_records_with_country": 15,
+        "parent_percent": 0.205,
+        "subset_percent": 0.31,
+        "difference_percentage_points": 0.106
+      },
+      {
+        "country": "TZ",
+        "parent_records_with_country": 21,
+        "subset_records_with_country": 9,
+        "parent_percent": 0.205,
+        "subset_percent": 0.186,
+        "difference_percentage_points": -0.018
+      }
+    ],
+    "largest_absolute_differences": [
+      {
+        "country": "ZA",
+        "parent_records_with_country": 167,
+        "subset_records_with_country": 110,
+        "parent_percent": 1.627,
+        "subset_percent": 2.276,
+        "difference_percentage_points": 0.649
+      },
+      {
+        "country": "ID",
+        "parent_records_with_country": 492,
+        "subset_records_with_country": 263,
+        "parent_percent": 4.793,
+        "subset_percent": 5.441,
+        "difference_percentage_points": 0.648
+      },
+      {
+        "country": "AU",
+        "parent_records_with_country": 426,
+        "subset_records_with_country": 226,
+        "parent_percent": 4.15,
+        "subset_percent": 4.675,
+        "difference_percentage_points": 0.525
+      },
+      {
+        "country": "CN",
+        "parent_records_with_country": 740,
+        "subset_records_with_country": 373,
+        "parent_percent": 7.209,
+        "subset_percent": 7.716,
+        "difference_percentage_points": 0.507
+      },
+      {
+        "country": "ES",
+        "parent_records_with_country": 209,
+        "subset_records_with_country": 122,
+        "parent_percent": 2.036,
+        "subset_percent": 2.524,
+        "difference_percentage_points": 0.488
+      },
+      {
+        "country": "GB",
+        "parent_records_with_country": 654,
+        "subset_records_with_country": 330,
+        "parent_percent": 6.371,
+        "subset_percent": 6.827,
+        "difference_percentage_points": 0.455
+      },
+      {
+        "country": "EC",
+        "parent_records_with_country": 60,
+        "subset_records_with_country": 47,
+        "parent_percent": 0.585,
+        "subset_percent": 0.972,
+        "difference_percentage_points": 0.388
+      },
+      {
+        "country": "MX",
+        "parent_records_with_country": 98,
+        "subset_records_with_country": 64,
+        "parent_percent": 0.955,
+        "subset_percent": 1.324,
+        "difference_percentage_points": 0.369
+      },
+      {
+        "country": "RU",
+        "parent_records_with_country": 97,
+        "subset_records_with_country": 63,
+        "parent_percent": 0.945,
+        "subset_percent": 1.303,
+        "difference_percentage_points": 0.358
+      },
+      {
+        "country": "IT",
+        "parent_records_with_country": 118,
+        "subset_records_with_country": 39,
+        "parent_percent": 1.15,
+        "subset_percent": 0.807,
+        "difference_percentage_points": -0.343
+      },
+      {
+        "country": "PE",
+        "parent_records_with_country": 54,
+        "subset_records_with_country": 42,
+        "parent_percent": 0.526,
+        "subset_percent": 0.869,
+        "difference_percentage_points": 0.343
+      },
+      {
+        "country": "PH",
+        "parent_records_with_country": 181,
+        "subset_records_with_country": 101,
+        "parent_percent": 1.763,
+        "subset_percent": 2.089,
+        "difference_percentage_points": 0.326
+      }
+    ]
+  },
+  "selection_tracing": {
+    "script_available": true,
+    "MAX_PDFS_literal_assignments": [
+      5000
+    ],
+    "sort_operations": [
+      {
+        "line": 82,
+        "keys_match_priority_then_citations": true,
+        "both_descending": true
+      }
+    ],
+    "head_operations": [
+      {
+        "line": 85,
+        "uses_MAX_PDFS": true,
+        "literal_limit": null
+      }
+    ],
+    "priority_score_assignment_nodes": 1,
+    "selection_pipeline_explicit_priority_score_cited_by_count_descending": true,
+    "selection_pipeline_has_head_MAX_PDFS": true,
+    "caution": "STATIC source inspection only. Definition of priority_score, original data ordering, and executed-version identity require separate verification."
+  },
+  "original_five_thousand_DOI_proxy_summary": {
+    "attempts_n": 5000,
+    "unambiguous_matched_unique_publications": 4834,
+    "attempts_without_doi": 164,
+    "ambiguous_DOI_attempts": 2,
+    "unmatched_DOI_attempts": 0,
+    "manifest_no_openalex_id": true,
+    "precise_5000_original_member_selection_reproduced": false
+  },
+  "limitations": [
+    "Country entries represent one or more institutional-country affiliations for each work, not a fractionalised country-attribution model.",
+    "Only strict two-letter semicolon tokens were recovered; if semicolon_unrecognized remains nonzero, report the unparsed source counts before using geographic conclusions.",
+    "No attempt was made to impute empty countries, which are distinct from unparsed country strings.",
+    "The fulltext subset was nonrandomly prioritised and subject to retrieval failures; descriptive shifts are not automatically statistically significant.",
+    "The 5000 attempted records have no OpenAlex IDs in manifest; matches by unambiguous DOI remain proxy evidence.",
+    "Static AST confirms source statements but not the exact historical version executed or source of priority_score.",
+    "The aggregate does not validate scientific paper eligibility, classifier relevance or inferences about country-specific research quality."
+  ]
+}
