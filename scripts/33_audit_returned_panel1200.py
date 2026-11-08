@@ -164,24 +164,57 @@ def main():
     if candidate_ids!=ids:
         raise ValueError("Panel source row order changed; preserve pristine original order")
     stats=validate(pristine,candidate,phase32)
+    # NOTE: only the scientific DATA columns are immutable. The returned
+    # workbook may contain edited provenance/instructions: audit them
+    # explicitly, rather than assuming human authorship or blindness.
+    excel_reader=load_module("25_compare_independent_screening_qa.py","phase33_instruction_reader")
+    orig_ins=excel_reader.xlsx_sheets(source,{"INSTRUCCIONES"})["INSTRUCCIONES"]
+    ret_ins=excel_reader.xlsx_sheets(returned,{"INSTRUCCIONES"})["INSTRUCCIONES"]
+    def first_two(rows):
+        return [str(rows[i].get(0,"")).strip()+" : "+str(rows[i].get(1,"")).strip()
+                for i in range(min(3,len(rows)))]
+    prior_instructions=first_two(orig_ins)
+    returned_instructions=first_two(ret_ins)
+    instruction_metadata_modified=(prior_instructions!=returned_instructions)
+    # A visible AI marker is NOT definitive proof of automated generation,
+    # and an assertion of human work is NOT proof of genuine independent human
+    # activity. Preserve both claims as an unresolved provenance conflict.
+    ai_tagged=sum(str(x[26]).casefold().startswith("[adjudicación ia]")
+                  for x in candidate.values())
+    ciega_claim=any("tercera calificación ciega" in text.casefold()
+                    for text in returned_instructions)
+    provenance_flags={
+        "returned_instructions_modified_from_original":instruction_metadata_modified,
+        "panel_justifications_with_adjudicacion_IA_prefix_n":ai_tagged,
+        "panel_sheet_claims_third_blinded_rating":ciega_claim,
+        "actual_panel_was_informed_by_visible_AB_ratings":True,
+        "human_authorship_verified_from_workbook":False,
+        "human_authorship_documentation_required":True,
+        "original_and_returned_workbook_SHA256_retained_privately":True,
+        "source_original_sha256":sha256(source),
+        "returned_original_sha256":sha256(returned)
+    }
     if stats["missing_or_inadequate"]:
         raise ValueError("Returned 324-case panel is incomplete or has inadequate justifications: "+
                          json.dumps(stats["missing_or_inadequate"],sort_keys=True))
     result={
       "created_utc":dt.datetime.now(dt.timezone.utc).isoformat(),
-      "status":"panel_324_case_decisions_audited_not_independent_human_validation_or_fulltext_proof",
+      "status":"completed_324_case_data_with_unresolved_panel_AI_provenance_and_fulltext",
       "phase32_original_expert_labels_immutable":True,
       "panel_derived_from_known_A_B_disagreements_not_blind":True,
       "original_1200_case_sample_preserved":True,
       "casebook_n":len(pristine),
       "panel_all_mandatory_fields_complete":True,
       "panel_scientific_reason_diagnostics":stats,
+      "panel_provenance_diagnostics":provenance_flags,
       "prior_legacy_Claude_label_provenance_remains_unresolved":True,
       "source_lineage_proved_from_original_phase32_packet":True,
       "fulltext_actual_access_documented":False,
       "classifier_accuracy_calculated":False,
       "limitations":[
         "The panel saw earlier A/B ratings, so adjudication cannot be portrayed as another independent blind expert review.",
+        "All returned panel reasons marked [Adjudicación IA], if observed, are explicitly disclosed as conflicting source provenance, not silently rebranded as independent human ratings.",
+        "Instruction-sheet edits and claims of a third blind rating must be disclosed; the sheet visibly contains A/B ratings so this panel was not third-party blinded.",
         "PI states the two A/B labels were produced by new human experts despite original Excel stating Claude/AI; evidence of human authorship and independence must be obtained from both experts.",
         "A fulltext_escalation=yes label records a REQUEST for full text, not proof it was read.",
         "Still need a private auditable full-text consultation log, final eligible set definition, and design-weighted estimates for predeclared classifier-vs-reference outcomes.",
@@ -196,11 +229,14 @@ def main():
         "Status: "+result["status"]+"\n\n"
         "## Aggregate record counts\n\n"
         +json.dumps(stats,ensure_ascii=False,indent=2)+"\n\n"+
+        "## Panel provenance warnings (NOT proof of expert authorship)\n\n"+json.dumps(provenance_flags,ensure_ascii=False,indent=2)+"\n\n"+
         "Original case-level records remain protected. Human authority, original metadata conflict and any actual full-text reading still require documentary evidence.\n",
         encoding="utf8")
     print("PHASE33",result["status"])
     print("Panel 324/324 structured fields checked; preserved historic A/B original ratings")
     print("Residual uncertainty R9:",stats["residual"].get("uncertain_relevance_9",0))
+    print("PROVENANCE: IA-marked panel rationales",ai_tagged,"/324; edited instruction metadata",instruction_metadata_modified)
+    print("PROVENANCE: cannot claim third blind adjudication or verified human authorship from these files")
     print("PUBLIC aggregate only:",output/"panel_adjudication_aggregate.json")
     print("STOP: no classifier precision, recall or full-text performance claimed")
 
