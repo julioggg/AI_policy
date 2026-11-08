@@ -64,3 +64,5 @@ jobs:
         run: python3 -m unittest discover -s tests -p 'test_phase29_synthetic.py' -v
       - name: Test Phase30 immediate 1200-record blind full validation sample and privacy
         run: python3 -m unittest discover -s tests -p 'test_phase30_synthetic.py' -v
+      - name: Test Phase31 two Claude AI passes are NOT human validation and reject source tampering
+        run: python3 -m unittest discover -s tests -p 'test_phase31_synthetic.py' -v
