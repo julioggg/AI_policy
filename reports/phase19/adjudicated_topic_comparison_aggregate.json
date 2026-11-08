@@ -1,0 +1,204 @@
+{
+  "generated_utc": "2026-11-08T02:04:23.264081+00:00",
+  "status": "completed_human_adjudication_unblinded_aggregate",
+  "input_integrity": {
+    "GRUPOS": {
+      "records": 48,
+      "unchanged_keys_and_evidence": true
+    },
+    "EJEMPLOS": {
+      "records": 336,
+      "unchanged_keys_and_evidence": true
+    },
+    "DESACUERDOS": {
+      "records": 189,
+      "unchanged_keys_and_evidence": true
+    }
+  },
+  "readiness": {
+    "topic_groups": {
+      "11": {
+        "filled": 48,
+        "total": 48
+      },
+      "12": {
+        "filled": 48,
+        "total": 48
+      },
+      "13": {
+        "filled": 48,
+        "total": 48
+      },
+      "14": {
+        "filled": 48,
+        "total": 48
+      },
+      "15": {
+        "filled": 48,
+        "total": 48
+      }
+    },
+    "disputed_documents": {
+      "12": {
+        "filled": 189,
+        "total": 189
+      },
+      "13": {
+        "filled": 189,
+        "total": 189
+      },
+      "14": {
+        "filled": 189,
+        "total": 189
+      }
+    }
+  },
+  "limitations": [
+    "Only human-completed adjudication values are reported. No automatic filling or third-party ratings are fabricated.",
+    "Adjudication is a consensus decision after viewing A/B scores; it does NOT change the original independent inter-rater kappa or act as a third independent rater.",
+    "On documents with identical A/B scores, the common original judgment is retained, not re-adjudicated.",
+    "The group examples are a deliberately centroid-skewed sample. Group means and document scores are descriptive for those cases, not population-wide accuracy.",
+    "Model groups are unblinded from the private key only AFTER completeness and workbook integrity checks; group names and per-record decisions are never published.",
+    "Small numbers of groups (12 or 18 per model) and dependence among samples preclude automatic significance or winner declarations.",
+    "The Phase5 inclusion/eligibility human-review workflow remains separate and pending.",
+    "The full-text source was character-truncated for many PDFs; results do not imply complete-document coverage."
+  ],
+  "aggregate_results": {
+    "models": {
+      "body_chunks_k12": {
+        "topic_groups": 12,
+        "document_cases": 84,
+        "topic_coherence": {
+          "n": 12,
+          "mean": 2.91667,
+          "median": 3.0,
+          "sd": 0.9962,
+          "min": 2.0,
+          "max": 5.0
+        },
+        "topic_distinctiveness": {
+          "n": 12,
+          "mean": 2.0,
+          "median": 2.0,
+          "sd": 0.4264,
+          "min": 1.0,
+          "max": 3.0
+        },
+        "topic_policy_relevance": {
+          "n": 12,
+          "mean": 1.66667,
+          "median": 2.0,
+          "sd": 0.49237,
+          "min": 1.0,
+          "max": 2.0
+        },
+        "topic_policy_uncertain_n": 0,
+        "document_membership_yes_fraction": 0.75,
+        "document_membership_evaluable": 84,
+        "document_membership_uncertain_n": 0,
+        "document_policy_relevance": {
+          "n": 84,
+          "mean": 1.34524,
+          "median": 1.0,
+          "sd": 0.75241,
+          "min": 0.0,
+          "max": 3.0
+        },
+        "document_policy_uncertain_n": 0,
+        "document_policy_direct_3_fraction": 0.04762,
+        "document_policy_at_least_indirect_2plus_fraction": 0.41667
+      },
+      "body_chunks_k18": {
+        "topic_groups": 18,
+        "document_cases": 126,
+        "topic_coherence": {
+          "n": 18,
+          "mean": 3.5,
+          "median": 4.0,
+          "sd": 0.78591,
+          "min": 2.0,
+          "max": 5.0
+        },
+        "topic_distinctiveness": {
+          "n": 18,
+          "mean": 2.33333,
+          "median": 2.0,
+          "sd": 0.68599,
+          "min": 1.0,
+          "max": 4.0
+        },
+        "topic_policy_relevance": {
+          "n": 18,
+          "mean": 1.77778,
+          "median": 2.0,
+          "sd": 0.54832,
+          "min": 1.0,
+          "max": 3.0
+        },
+        "topic_policy_uncertain_n": 0,
+        "document_membership_yes_fraction": 0.81746,
+        "document_membership_evaluable": 126,
+        "document_membership_uncertain_n": 0,
+        "document_policy_relevance": {
+          "n": 126,
+          "mean": 1.55556,
+          "median": 2.0,
+          "sd": 0.78542,
+          "min": 0.0,
+          "max": 3.0
+        },
+        "document_policy_uncertain_n": 0,
+        "document_policy_direct_3_fraction": 0.09524,
+        "document_policy_at_least_indirect_2plus_fraction": 0.54762
+      },
+      "hybrid_equal_k18": {
+        "topic_groups": 18,
+        "document_cases": 126,
+        "topic_coherence": {
+          "n": 18,
+          "mean": 3.5,
+          "median": 3.5,
+          "sd": 1.15045,
+          "min": 1.0,
+          "max": 5.0
+        },
+        "topic_distinctiveness": {
+          "n": 18,
+          "mean": 2.44444,
+          "median": 2.0,
+          "sd": 0.70479,
+          "min": 1.0,
+          "max": 4.0
+        },
+        "topic_policy_relevance": {
+          "n": 18,
+          "mean": 1.66667,
+          "median": 2.0,
+          "sd": 0.59409,
+          "min": 1.0,
+          "max": 3.0
+        },
+        "topic_policy_uncertain_n": 0,
+        "document_membership_yes_fraction": 0.79365,
+        "document_membership_evaluable": 126,
+        "document_membership_uncertain_n": 0,
+        "document_policy_relevance": {
+          "n": 126,
+          "mean": 1.39683,
+          "median": 1.0,
+          "sd": 0.72751,
+          "min": 0.0,
+          "max": 3.0
+        },
+        "document_policy_uncertain_n": 0,
+        "document_policy_direct_3_fraction": 0.03175,
+        "document_policy_at_least_indirect_2plus_fraction": 0.47619
+      }
+    },
+    "document_consensus_source_counts": {
+      "adjudicated_disputed_cases": 189,
+      "unanimous_A_B_cases_retained_without_adjudication": 147
+    },
+    "decision": "no_automated_model_selection"
+  }
+}
