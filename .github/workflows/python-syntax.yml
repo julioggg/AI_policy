@@ -60,3 +60,5 @@ jobs:
         run: python3 -m unittest discover -s tests -p 'test_phase27_synthetic.py' -v
       - name: Test Phase28 prospective independent calibration pilot, historical exclusion and privacy
         run: python3 -m unittest discover -s tests -p 'test_phase28_synthetic.py' -v
+      - name: Test Phase29 independent pilot interrater scoring and source tamper guardrails
+        run: python3 -m unittest discover -s tests -p 'test_phase29_synthetic.py' -v
