@@ -541,3 +541,26 @@ git push origin main
 Phase23 conservatively validates the unchanged immutable title/abstract metadata, original A/B scores and justifications, matching sample IDs and stratum sampling key, and all four consensus fields for 316 discordant records. When the workbook is complete, it reports aggregate code distributions within each original stratum and **approximate, explicitly conditional design-weighted prevalence** for the four final AI-screening strata only, with finite-population sampling correction and uncertainty separated as code 9. The two earlier bibliographic exclusion strata stay distinct. It does **not** automatically claim binary precision, recall, corpus-level full-text accuracy, or independently verified gold standard.
 
 **Methodological quality caution:** local pre-import audit of the delivered private file found all 1,264 required consensus cells filled, no invalid rubric codes, and unchanged source fields compared with uploaded original human workbooks. For the explicitly disputed dimensions, the adjudication matched reviewer B in 71/89 relevance cases, 212/218 discipline cases, 165/183 policy dimensions. This asymmetry does not prove bias or invalid human judgment; nevertheless, verify adjudicator process, written rationales and a risk-focused independent spot-check, especially of disciplines. Phase23 publishes these asymmetry counts but does not expose per-case details. The raw adjudication workbook must NOT be pushed to GitHub.
+
+
+## Phase24 — genuine independent *blinded* quality control of Phase23 consensus
+
+Phase23 has been completed and verified at `reports/phase23`, with all 316 discordant cases adjudicated and 52 A/B-unanimous cases retained. Conditional four-stratum, final-screening weighted proportions (N=10,283): code0=11.6375%, code1=50.7917%, code2 or3=35.7763% (including direct code3=3.7538%), code9=1.7945%. These are conditional title/abstract consensus proportions, **not** classifier accuracy or publication prevalences for the original much larger discovery universe. Specific concern: of 80 reviewed `screen_include_policy` cases, 59 were assigned code1, only 10 scored 2+, none 3. Adjudication QA alerts: preference for reviewer B in 212/218 discipline disagreements and 165/183 policy-dimension disagreements; only 153 distinct justification strings in 316 resolved rows, and 226 begin with a common relevance-agreement template. These patterns are not themselves proof of invalidity, but warrant an independent blinded quality spot-check before asserting validated screening.
+
+`scripts/24_prepare_blinded_screening_qa.py` takes the **original and returned Phase22 Excel**, private Phase20 A/B sheets + key and the official Phase05/22/23 reports, re-verifies the 368 decisions, then creates a separate reproducible 80-item **risk-enriched** QA sample containing uncertain 9 cases, some B-selected disagreements in relevance/discipline/policy, some auto-`include_policy` consensus1 cases and direct policy3 cases, with a small random safety fill. The reviewer sees only the publication title, abstract, year, type and blank four-field coding rubric; no prior human label, machine label, stratum, case selection criterion, article ID or Phase05 original code. The correspondence is stored in a second PRIVATE CSV on CEDIA. This is **not** a probability sample and is not to be used to estimate accuracy or weighted prevalence.
+
+~~~bash
+cd "$HOME/AI_policy"
+git pull --ff-only
+python scripts/24_prepare_blinded_screening_qa.py \
+  --original-xlsx "$HOME/ai_policy_screening_adjudicacion_privado/Adjudicacion_Cribado_Fase22.xlsx" \
+  --completed-xlsx "$HOME/ai_policy_screening_adjudicacion_recibida_privado/Adjudicacion_Cribado_Fase22_COMPLETADA.xlsx" \
+  --private-in "$HOME/ai_policy_screening_calificaciones_normalizadas_privado" \
+  --private-out "$HOME/ai_policy_screening_qa_independent_privado" \
+  --out reports/phase24
+git add reports/phase24
+git diff --cached --quiet || git commit -m "Phase24: blinded independent screening QA packet (counts only)"
+git push origin main
+~~~
+
+Deliver ONLY `~/ai_policy_screening_qa_independent_privado/Control_Independiente_Cribado_Fase24.xlsx` to an independent expert who has **not** seen the Phase20 A/B or Phase22 consensus results. The expert must make all four judgments independently with specific explanations. Do NOT deliver `correspondencia_qa_privada.csv`, the previous A/B sheets, any code mapping or public report to that expert. The workbook and key must never be pushed to GitHub. No new judgment has been generated yet. If the independent QA disagrees systematically, return to the adjudication protocol and revise cautiously, preserving all earlier forms. Only after a documented QA decision should final screening conclusions be integrated into a manuscript.
