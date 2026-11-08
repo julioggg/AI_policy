@@ -74,3 +74,5 @@ jobs:
         run: python3 -m unittest discover -s tests -p 'test_phase34_synthetic.py' -v
       - name: Test Phase35 design-weighted screening diagnostics on full 1200 cases and privacy
         run: python3 -m unittest discover -s tests -p 'test_phase35_synthetic.py' -v
+      - name: Test Phase36 geographic representativeness and 5000-attempt DOI-proxy diagnostics
+        run: python3 -m unittest discover -s tests -p 'test_phase36_synthetic.py' -v
