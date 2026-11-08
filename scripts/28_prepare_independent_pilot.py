@@ -284,6 +284,7 @@ def main():
         "n":30,
         "reviewers":["A","B"],
         "private_input_files":[f"Piloto_V02_{x}.xlsx" for x in ("A","B")],
+        "reviewer_workbook_sha256":{x:filehash(target/f"Piloto_V02_{x}.xlsx") for x in ("A","B")},
     }
     m=target/"pilot_locked_manifest.json"
     m.write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+"\n",encoding="utf8")
