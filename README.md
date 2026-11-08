@@ -615,3 +615,23 @@ git push origin main
 ~~~
 
 The added `--qa-corrected-xlsx` argument verifies that no original relevance, discipline, source evidence or sample correspondence was altered by the later corrected workbook; it requires a complete separate normalization file with identical official policy codes and reports only aggregated counts of revisions. QA risk-selection is **not representative**; comparisons should not be interpreted as classifier accuracy. The assessor's procedure/independence cannot be established computationally. Synthetic end-to-end tests for this provenance check pass in CI.
+
+
+## Phase26 — diagnostic methods reconciliation for significant Phase25 disagreement
+
+**Important scientific stop rule:** Phase25 finished with integrity passed, but the risk-selected independent QA **does not corroborate** the Phase23 consensus in a defensible way. On the 80 risk-enriched cases, relevance exact agreement=33/80=41.25%, unweighted κ=0.31447 (n=67 excluding 13 consensus cases scored uncertain9), weighted quadratic κ=0.31315; discipline exact=22/80=27.5%, κ=0.13755; *posthoc* normalized policy exact=9/80=11.25%, κ=0.00647. This quality-audit result CANNOT be generalized to all 368 or 10,283 records: selection deliberately enriched risk. Original QA coded 32 cases direct3 vs only six direct3 in the earlier consensus, with 13 unresolved9 cases all assigned 0–3 by QA. These conflicts may stem from construct/codebook mismatch or low evidential specificity, not necessarily a uniquely correct rater. The posthoc normalized policy dimension is not independently assessed using the original codebook. **Do not present Phase23 design-weighted conditional estimates as definitive validated performance, or impute classifier precision/recall.**
+
+To move forward without repeated full-corpus re-rating, `scripts/26_prepare_methodological_reconciliation.py` creates a *single private 80-case methods-panel dossier* containing the original A/B and adjudicated scores, the independent QA relevance/discipline, the explicitly posthoc normalized QA policy dimension, both earlier QA justifications, and four blank final panel fields. It rechecks the protected Phase22/23 consensus, Phase24 original QA, corrected QA and Phase25 public aggregate counts, and retains a strict distinction between evidence sources. Neither OpenAlex IDs, original Phase05 sample IDs, machine labels nor original stratum identity are shown in the panel workbook. Only aggregate counts are published to `reports/phase26`; all human decisions remain pending.
+
+~~~bash
+cd "$HOME/AI_policy"
+git pull --ff-only
+python scripts/26_prepare_methodological_reconciliation.py \
+  --private-out "$HOME/ai_policy_panel_conciliacion_fase26_privado" \
+  --out reports/phase26
+git add reports/phase26
+git diff --cached --quiet || git commit -m "Phase26: prepare private methods reconciliation packet"
+git push origin main
+~~~
+
+Deliver only the XLSX `~/ai_policy_panel_conciliacion_fase26_privado/Conciliacion_Metodologica_Fase26.xlsx` to a competent methods panel; do not share it publicly or with GitHub. It contains 80 rows and all original textual evidence and ratings with four yellow columns for new **documented panel decisions**. BEFORE resolving 80 items, agree on a precise rule distinguishing codes 1 (educational AI without demonstrable policy), 2 (defensible indirect policy implications) and 3 (policy itself is investigated); resolve direct-policy overcalling, handling of 9, interdisciplinarity and primary-policy hierarchy. Full-text escalation should be recorded for ambiguous cases; the panel need not replace all 368 original ratings unless a systematic codebook fault is identified. The file's consensus fields start empty; no human judgments are fabricated.
