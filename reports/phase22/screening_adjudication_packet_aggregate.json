@@ -1,0 +1,22 @@
+{
+  "created_utc": "2026-11-08T02:43:13.806622+00:00",
+  "status": "screening_adjudication_packet_prepared_consensus_pending",
+  "sample_n": 368,
+  "counts": {
+    "relevance": 89,
+    "discipline": 218,
+    "policy": 183,
+    "unique": 316,
+    "original_no_disagreement": 52
+  },
+  "adjudication_fields_required_per_disputed_record": 4,
+  "consensus_values_prepopulated": false,
+  "privacy": "Blinded book is in CEDIA private folder only; no individual texts, scores or IDs in GitHub.",
+  "limitations": [
+    "Adjudication is NOT a third independent expert coding round.",
+    "No machine labels or sample stratum may be shown before consensus.",
+    "Only the 316 records in at least one A/B disagreement are routed to adjudication; unanimous ratings of 52 records stay as independent concordant opinions.",
+    "9=uncertain may remain after adjudication; titles/abstracts do not necessarily resolve true inclusion.",
+    "Screening error rates require a later design-based, per-stratum analysis with source eligibility logic; early bibliographic-filter exclusions are not classifier negatives."
+  ]
+}
