@@ -190,9 +190,8 @@ def main():
         "actual_panel_was_informed_by_visible_AB_ratings":True,
         "human_authorship_verified_from_workbook":False,
         "human_authorship_documentation_required":True,
-        "original_and_returned_workbook_SHA256_retained_privately":True,
-        "source_original_sha256":sha256(source),
-        "returned_original_sha256":sha256(returned)
+        "original_and_returned_workbook_SHA256_retained_privately":False,
+        "hashes_not_published_to_public_report":True
     }
     if stats["missing_or_inadequate"]:
         raise ValueError("Returned 324-case panel is incomplete or has inadequate justifications: "+
