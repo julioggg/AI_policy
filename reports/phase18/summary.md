@@ -1,0 +1,30 @@
+# Phase 18 — Blinded human adjudication packet
+
+Status: adjudication_packet_prepared_human_consensus_pending
+UTC: 2026-11-08T01:37:43.935179+00:00
+
+## Counts only
+{
+  "blind_topic_groups_total": 48,
+  "document_examples_for_context": 336,
+  "disputed_unique_document_cases": 189,
+  "document_membership_disagreements": 28,
+  "document_policy_relevance_disagreements": 176,
+  "document_cases_with_both_disagreements": 15,
+  "topic_coherence_disagreements": 26,
+  "topic_distinctiveness_disagreements": 18,
+  "topic_policy_relevance_disagreements": 31
+}
+
+The private Excel is prepared on CEDIA, outside GitHub.
+Two independent ratings already exist. No third-party adjudication has occurred.
+The adjudicator does not see which cluster was produced by which model or k.
+
+## Scientific limitations
+- No third-party adjudication has occurred yet and no consensus is auto-filled.
+- The full source text was character-capped in the original extraction and supplied excerpts may contain formatting noise.
+- The adjudicator can observe A and B ratings but not model identity; this is reconciliation, not independent blind rating.
+- The 7 examples per topic overrepresent centroid-proximate cases and cannot estimate topic population-wide precision without adjustment.
+- Any agreement in both independent ratings is not necessarily scientifically correct.
+- The final topic names and decisions require documented expert judgment.
+- Phase5 relevance/eligibility screening audit remains separate and unfinished.
