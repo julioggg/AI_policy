@@ -114,7 +114,7 @@ def workbook_file(out,name,rater,records):
             [16,57,107,16,24,25,24,33,72],FIELD_EDIT)),
         ("ESCALAS",excel.basic_sheet(scale,[31,115]))
     ]
-    phases.xlsx_generic(out,tabs,excel)
+    phases.xlsx_generic(out/name,tabs,excel)
 
 
 def read_returned(path,expected_rater):
