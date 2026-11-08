@@ -72,7 +72,7 @@ def make_originals(root):
             "any_discipline_disagreement":218,
             "any_policy_dimension_disagreement":183,
             "unique_records_disagreeing_in_one_or_more_fields":316
-        }}))
+        }}}))
     p05=root/"phase05.json"
     p05.write_text(json.dumps({
         "sample_size":368,
