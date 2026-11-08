@@ -46,3 +46,5 @@ jobs:
         run: python3 -m unittest discover -s tests -p 'test_phase20_synthetic.py' -v
       - name: Test Phase21 independent screening agreement and six-stratum public aggregation
         run: python3 -m unittest discover -s tests -p 'test_phase21_synthetic.py' -v
+      - name: Test Phase22 private blinded screening adjudication export and integrity
+        run: python3 -m unittest discover -s tests -p 'test_phase22_synthetic.py' -v
