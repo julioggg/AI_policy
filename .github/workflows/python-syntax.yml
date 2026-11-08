@@ -70,3 +70,5 @@ jobs:
         run: python3 -m unittest discover -s tests -p 'test_phase32_synthetic.py' -v
       - name: Test Phase33 324-case human panel return integrity, missing ratings and no false classifier claims
         run: python3 -m unittest discover -s tests -p 'test_phase33_synthetic.py' -v
+      - name: Test Phase34 private masked 148-case full-text evidence packets and strict inclusion of 74 R9
+        run: python3 -m unittest discover -s tests -p 'test_phase34_synthetic.py' -v
