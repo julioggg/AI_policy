@@ -473,3 +473,22 @@ python scripts/20_screening_reviewer_excel.py \
 ~~~
 
 Phase20 import verifies exact sample IDs, evidence metadata, allowed categories and original reviewer identities; it preserves the original Phase05 private CSVs and key, while writing normalized responses into a different private folder. **It does NOT calculate kappa or classifier precision yet**: those will be implemented only after actual expert labels exist. The parent-universe metrics will require explicit stratum inclusion probabilities and eligibility logic; never claim naive 368/368 overall precision or recall.
+
+
+## Phase21 — independent reviewer agreement for Phase05 screening
+
+Once both returned private Phase20 Excel books are imported into `~/ai_policy_screening_calificaciones_normalizadas_privado` using `scripts/20_screening_reviewer_excel.py`, run:
+
+~~~bash
+cd "$HOME/AI_policy"
+git pull --ff-only
+python scripts/21_score_human_screening.py \
+  --private-in "$HOME/ai_policy_screening_calificaciones_normalizadas_privado" \
+  --phase05-report reports/phase05/sample_aggregate.json \
+  --out reports/phase21
+git add reports/phase21
+git diff --cached --quiet || git commit -m "Phase21: two-reviewer stratified screening agreement"
+git push origin main
+~~~
+
+The script verifies the private correspondence IDs, immutable reviewed metadata, allowed categories, all six original sampling strata and completion. It publishes only aggregates. It reports unweighted and quadratic weighted Cohen kappa for relevance 0–3 excluding code 9, nominal kappas for discipline and principal policy dimension including `uncertain` as a class, and distributions with per-stratum denominators. It flags counts for human adjudication. It intentionally **does not** report machine screening precision/recall before human consensus, and never equates earlier bibliographic filter exclusions to classifier-negative cases. Original private CSVs, texts, IDs and keys must never be committed to GitHub. No AI-generated human assessments.
